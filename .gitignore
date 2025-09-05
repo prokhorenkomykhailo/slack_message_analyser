@@ -88,3 +88,9 @@ proper_clustering_results/
 # Data directories (uncomment if you want to exclude all data)
 # data/
 EOF
+# Environment files with secrets
+.env
+.env.*
+*.env
+.env.backup*
+
