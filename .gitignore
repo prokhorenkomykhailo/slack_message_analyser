@@ -44,8 +44,7 @@ ehthumbs.db
 Thumbs.db
 
 # Large data files (adjust patterns as needed)
-*.csv
-*.json
+
 *.pkl
 *.pickle
 *.h5

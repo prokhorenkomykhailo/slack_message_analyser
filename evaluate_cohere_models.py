@@ -116,21 +116,21 @@ def evaluate_cohere_models(messages: List[Dict], output_dir: str):
             "path": "CohereLabs/c4ai-command-r-plus-08-2024",
             "quantization": None
         },
-        {
-            "name": "cohere_command-r-plus",
-            "path": "CohereLabs/c4ai-command-r-plus",
-            "quantization": None
-        },
-        {
-            "name": "cohere_command-r-plus-8bit",
-            "path": "CohereLabs/c4ai-command-r-plus",
-            "quantization": "8bit"
-        },
-        {
-            "name": "cohere_command-r-plus-4bit",
-            "path": "CohereLabs/c4ai-command-r-plus",
-            "quantization": "4bit"
-        }
+        # {
+        #     "name": "cohere_command-r-plus",
+        #     "path": "CohereLabs/c4ai-command-r-plus",
+        #     "quantization": None
+        # },
+        # {
+        #     "name": "cohere_command-r-plus-8bit",
+        #     "path": "CohereLabs/c4ai-command-r-plus",
+        #     "quantization": "8bit"
+        # },
+        # {
+        #     "name": "cohere_command-r-plus-4bit",
+        #     "path": "CohereLabs/c4ai-command-r-plus",
+        #     "quantization": "4bit"
+        # }
     ]
     
     results = {}

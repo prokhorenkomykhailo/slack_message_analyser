@@ -1,0 +1,46 @@
+[
+  {
+    "topic_id": 1,
+    "summary": "Project kickoff and requirements gathering.",
+    "thread_ids": [1],
+    "participants": ["alice", "bob", "carol"],
+    "actions": [
+      {"description": "Set up notes doc", "owner": "carol"},
+      {"description": "Gather requirements", "owner": "bob"}
+    ]
+  },
+  {
+    "topic_id": 2,
+    "summary": "Staging deployment reminder and assignment.",
+    "thread_ids": [2],
+    "participants": ["alice", "bob", "carol"],
+    "actions": [
+      {"description": "Deploy to staging", "owner": "bob"}
+    ]
+  },
+  {
+    "topic_id": 3,
+    "summary": "Lunch coordination.",
+    "thread_ids": [3],
+    "participants": ["dan", "alice", "bob"],
+    "actions": []
+  },
+  {
+    "topic_id": 4,
+    "summary": "API errors and frontend issues.",
+    "thread_ids": [4],
+    "participants": ["erin", "frank"],
+    "actions": [
+      {"description": "Check logs", "owner": "frank"}
+    ]
+  },
+  {
+    "topic_id": 5,
+    "summary": "Unit testing for new feature.",
+    "thread_ids": [5],
+    "participants": ["grace", "erin"],
+    "actions": [
+      {"description": "Write unit tests", "owner": "erin"}
+    ]
+  }
+] 

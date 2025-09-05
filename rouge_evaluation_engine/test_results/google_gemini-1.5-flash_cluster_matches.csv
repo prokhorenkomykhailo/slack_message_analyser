@@ -1,0 +1,8 @@
+predicted_cluster,reference_cluster,rouge_l_f1,message_overlap,overlap_ratio
+EcoBloom Summer Campaign: Planning & Revisions,EcoBloom Campaign,0.5714285714285715,44,1.0
+"FitFusion Rebranding Project: Design, Messaging & Legal",FitFusion Rebranding,0.5,47,0.7833333333333333
+TechNova Product Launch: Campaign & Budget,TechNova Product Launch,0.7499999999999999,46,1.0
+"GreenScape Sustainability Report: Content, Design & Legal",GreenScape Sustainability Report,0.6666666666666666,37,1.0
+UrbanEdge Social Media Strategy & Market Research,UrbanEdge Social Media Strategy,0.8,37,1.0
+Q3 Content Calendar Development,Q3 Content Calendar,0.8571428571428571,25,1.0
+GreenScape Sustainability Report Deadline Extension,GreenScape Sustainability Report,0.7499999999999999,29,1.0
