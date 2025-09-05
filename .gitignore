@@ -1,0 +1,90 @@
+cat > .gitignore << 'EOF'
+# Python virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large data files (adjust patterns as needed)
+*.csv
+*.json
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.parquet
+*.feather
+
+# Model files and checkpoints
+*.bin
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+models/
+checkpoints/
+
+# Logs and temporary files
+*.log
+logs/
+temp/
+tmp/
+*.tmp
+
+# API keys and secrets
+.env
+.env.local
+.env.*.local
+*.key
+secrets/
+config/secrets/
+
+# Output directories that might contain large files
+output/
+results/
+enhanced_rouge_results/
+proper_clustering_results/
+
+# Data directories (uncomment if you want to exclude all data)
+# data/
+EOF
