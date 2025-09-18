@@ -1,0 +1,30 @@
+MODEL_SCORE_91_1_VERIFICATION,Formula,Value,Explanation
+Cluster Count Score,=MIN(6,7)/MAX(6,7)*100,85.7,Penalty for generating 7 clusters instead of 6 expected
+Coverage Score,=6/6*100,100.0,Found all 6 expected benchmark clusters
+Precision Score,=AVERAGE(100,78.33,100,100,100,100,100),96.9,Average precision across all 7 clusters
+Deviation Score,=MAX(0,100-18.24),81.76,Penalty for message count deviations from benchmark
+Final Model Score,=A2*0.25+A3*0.25+A4*0.25+A5*0.25,91.1,Weighted average of all four metrics
+,,,,,
+Raw Data for Verification,,,,,
+Cluster,Precision,Recall,Coverage,Deviation,Matched,Missing,Extra
+EcoBloom Campaign,100.0,100.0,100.0,0.0,44,0,0
+FitFusion Rebranding,78.33,100.0,100.0,27.66,47,0,13
+TechNova Product Launch,100.0,100.0,100.0,0.0,68,0,0
+GreenScape Report,100.0,56.06,56.06,-43.94,37,29,0
+UrbanEdge Strategy,100.0,100.0,100.0,0.0,37,0,0
+Q3 Content Calendar,100.0,100.0,100.0,0.0,25,0,0
+GreenScape Extension,100.0,43.94,43.94,-56.06,29,37,0
+,,,,,
+Step-by-Step Calculation,,,,,
+Step 1: Cluster Count,=MIN(6,7)/MAX(6,7)*100,85.7,Expected: 6 clusters, Generated: 7 clusters
+Step 2: Coverage,=6/6*100,100.0,Found all 6 expected clusters
+Step 3: Precision,=AVERAGE(100,78.33,100,100,100,100,100),96.9,Average of all precision values
+Step 4: Deviation,=MAX(0,100-18.24),81.76,Average absolute deviation: 18.24%
+Step 5: Final Score,=85.7*0.25+100*0.25+96.9*0.25+81.76*0.25,91.1,Weighted sum of all components
+,,,,,
+Component Breakdown,,,,,
+Cluster Count Weight,=85.7*0.25,21.43,25% weight
+Coverage Weight,=100*0.25,25.0,25% weight
+Precision Weight,=96.9*0.25,24.23,25% weight
+Deviation Weight,=81.76*0.25,20.44,25% weight
+TOTAL,=21.43+25.0+24.23+20.44,91.1,Sum of all weighted components
