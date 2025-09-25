@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "model": "microsoft/DialoGPT-medium",
+  "device": "cpu",
+  "parameters": "345M",
+  "messages_tested": 3,
+  "simple_response": "Group these messages:\n\n1. Unknown:...\n2. Unknown:...\n3. Unknown:...\n\nReturn JSON clusters. Unknown :...",
+  "clustering_response": "Group these messages:\n\n1. Unknown:...\n2. Unknown:...\n3. Unknown:...\n\nReturn JSON clusters. Unknown :...",
+  "minimal_model": true
+}

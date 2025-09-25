@@ -78,8 +78,6 @@ tmp/
 secrets/
 config/secrets/
 
-# Output directories that might contain large files
-output/
 results/
 enhanced_rouge_results/
 proper_clustering_results/
