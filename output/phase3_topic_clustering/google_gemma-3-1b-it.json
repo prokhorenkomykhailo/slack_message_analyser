@@ -1,0 +1,143 @@
+{
+  "provider": "google",
+  "model": "gemma-3-1b-it",
+  "phase": "phase3_topic_clustering",
+  "timestamp": "2025-09-04T09:14:10.004167",
+  "success": true,
+  "duration": 2.484342098236084,
+  "usage": {
+    "prompt_tokens": 7432,
+    "completion_tokens": 502,
+    "total_tokens": 7934
+  },
+  "cost": {
+    "input_cost": 0.0,
+    "output_cost": 0.0,
+    "total_cost": 0.0,
+    "input_tokens": 7432,
+    "output_tokens": 502
+  },
+  "clusters": [
+    {
+      "cluster_id": "cluster_001",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "draft_title": "EcoBloom Summer Campaign Planning",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_001"
+    },
+    {
+      "cluster_id": "cluster_002",
+      "message_ids": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "draft_title": "UrbanEdge Social Media Strategy",
+      "participants": [
+        "Devon",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_006"
+    },
+    {
+      "cluster_id": "cluster_003",
+      "message_ids": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "draft_title": "TechNova Product Launch",
+      "participants": [
+        "Devon",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_003"
+    },
+    {
+      "cluster_id": "cluster_004",
+      "message_ids": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "draft_title": "EcoBloom Sustainability Report",
+      "participants": [
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_004"
+    },
+    {
+      "cluster_id": "cluster_005",
+      "message_ids": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "draft_title": "FitFusion Brand Identity",
+      "participants": [
+        "Devon",
+        "Sam"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_005"
+    }
+  ],
+  "metrics": {
+    "num_clusters": 5,
+    "total_messages_clustered": 25,
+    "avg_cluster_size": 5.0,
+    "max_cluster_size": 5,
+    "min_cluster_size": 5,
+    "coverage": 0.08333333333333333,
+    "thread_coherence": 1.0,
+    "cluster_titles": [
+      "EcoBloom Summer Campaign Planning",
+      "UrbanEdge Social Media Strategy",
+      "TechNova Product Launch",
+      "EcoBloom Sustainability Report",
+      "FitFusion Brand Identity"
+    ],
+    "unique_threads": 5
+  },
+  "comparison_metrics": {
+    "precision": 0.92,
+    "recall": 0.08013937282229965,
+    "f1_score": 0.14743589743589744,
+    "cluster_similarity": 0.3765469489859734,
+    "title_similarity": 0.65,
+    "participant_accuracy": 0.65,
+    "cluster_count_similarity": 0.8333333333333334,
+    "size_similarity": 0.1045296167247387,
+    "ref_cluster_count": 6,
+    "pred_cluster_count": 5
+  },
+  "raw_response": "```json\n{\n  \"clusters\": [\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [1, 2, 3, 4, 5],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\", \"Jordan\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\"\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [6, 7, 8, 9, 10],\n      \"draft_title\": \"UrbanEdge Social Media Strategy\",\n      \"participants\": [\"Devon\", \"Leah\", \"Jordan\"],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_006\"\n    },\n    {\n      \"cluster_id\": \"cluster_003\",\n      \"message_ids\": [11, 12, 13, 14, 15],\n      \"draft_title\": \"TechNova Product Launch\",\n      \"participants\": [\"Devon\", \"Jordan\"],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_003\"\n    },\n    {\n      \"cluster_id\": \"cluster_004\",\n      \"message_ids\": [16, 17, 18, 19, 20],\n      \"draft_title\": \"EcoBloom Sustainability Report\",\n      \"participants\": [\"Leah\", \"Jordan\"],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\"\n    },\n    {\n      \"cluster_id\": \"cluster_005\",\n      \"message_ids\": [21, 22, 23, 24, 25],\n      \"draft_title\": \"FitFusion Brand Identity\",\n      \"participants\": [\"Devon\", \"Sam\"],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_005\"\n    }\n  ]\n}\n```",
+  "error": "",
+  "prompt_tokens_estimated": 6960,
+  "messages_used": 86
+}

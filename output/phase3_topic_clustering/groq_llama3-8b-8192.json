@@ -1,0 +1,40 @@
+{
+  "provider": "groq",
+  "model": "llama3-8b-8192",
+  "phase": "phase3_topic_clustering",
+  "timestamp": "2025-09-04T09:15:11.022462",
+  "success": false,
+  "duration": 0,
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "cost": {
+    "input_cost": 0.0,
+    "output_cost": 0.0,
+    "total_cost": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "clusters": [],
+  "metrics": {
+    "num_clusters": 0,
+    "total_messages_clustered": 0,
+    "avg_cluster_size": 0,
+    "coverage": 0.0,
+    "thread_coherence": 0.0
+  },
+  "comparison_metrics": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "cluster_similarity": 0.0,
+    "title_similarity": 0.0,
+    "participant_accuracy": 0.0
+  },
+  "raw_response": "",
+  "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+  "prompt_tokens_estimated": 6960,
+  "messages_used": 86
+}

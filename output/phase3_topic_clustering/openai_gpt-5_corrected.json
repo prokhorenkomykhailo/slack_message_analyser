@@ -1,0 +1,192 @@
+{
+  "provider": "openai",
+  "model": "gpt-5",
+  "success": true,
+  "duration": 72.22657442092896,
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 9477
+  },
+  "cost": {
+    "input_cost": 0.0,
+    "output_cost": 0.0,
+    "total_cost": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "clusters": [
+    {
+      "cluster_id": "cluster_001",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "draft_title": "EcoBloom Summer Campaign Planning and Revisions (July 28, 2025 deadline)",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": null
+    },
+    {
+      "cluster_id": "cluster_002",
+      "message_ids": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "draft_title": "FitFusion Rebrand Planning and Trademark/Legal Review (Aug 15, 2025)",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": null
+    },
+    {
+      "cluster_id": "cluster_003",
+      "message_ids": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "draft_title": "TechNova Smart Home Product Launch Planning (Sept 10, 2025)",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_003"
+    },
+    {
+      "cluster_id": "cluster_004",
+      "message_ids": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "draft_title": "GreenScape Sustainability Report Coordination (Aug 30, 2025)",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_004"
+    },
+    {
+      "cluster_id": "cluster_005",
+      "message_ids": [
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73
+      ],
+      "draft_title": "UrbanEdge Social Media Strategy Development (July 20, 2025)",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_005"
+    }
+  ],
+  "timestamp": "2025-09-02T23:55:32.581695",
+  "messages_used": 100
+}

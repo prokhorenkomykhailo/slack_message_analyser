@@ -1,0 +1,310 @@
+{
+  "provider": "google",
+  "model": "gemma-3-4b-it",
+  "phase": "phase3_topic_clustering",
+  "timestamp": "2025-09-04T09:14:19.384610",
+  "success": true,
+  "duration": 9.372690439224243,
+  "usage": {
+    "prompt_tokens": 7432,
+    "completion_tokens": 0,
+    "total_tokens": 7432
+  },
+  "cost": {
+    "input_cost": 0.0,
+    "output_cost": 0.0,
+    "total_cost": 0.0,
+    "input_tokens": 7432,
+    "output_tokens": 0
+  },
+  "clusters": [
+    {
+      "cluster_id": "cluster_001",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "draft_title": "EcoBloom Summer Campaign Kickoff & Initial Planning",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_001"
+    },
+    {
+      "cluster_id": "cluster_002",
+      "message_ids": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "draft_title": "EcoBloom Campaign Timeline & Deliverables",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_001"
+    },
+    {
+      "cluster_id": "cluster_003",
+      "message_ids": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "draft_title": "FitFusion Rebranding Project - Initial Brief",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_002"
+    },
+    {
+      "cluster_id": "cluster_004",
+      "message_ids": [
+        19,
+        20,
+        21
+      ],
+      "draft_title": "FitFusion Timeline & Deliverables",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_002"
+    },
+    {
+      "cluster_id": "cluster_005",
+      "message_ids": [
+        22,
+        23,
+        24
+      ],
+      "draft_title": "FitFusion Contract Review & Legal Considerations",
+      "participants": [
+        "Jordan",
+        "Sam"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_002"
+    },
+    {
+      "cluster_id": "cluster_006",
+      "message_ids": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "draft_title": "FitFusion Brand Voice & Design Alignment",
+      "participants": [
+        "Leah",
+        "Sam",
+        "Devon",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_002"
+    },
+    {
+      "cluster_id": "cluster_007",
+      "message_ids": [
+        29,
+        30,
+        31
+      ],
+      "draft_title": "TechNova Product Launch - Initial Brief",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_003"
+    },
+    {
+      "cluster_id": "cluster_008",
+      "message_ids": [
+        32,
+        33,
+        34
+      ],
+      "draft_title": "TechNova Timeline & Deliverables",
+      "participants": [
+        "Devon",
+        "Jordan",
+        "Sam"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_003"
+    },
+    {
+      "cluster_id": "cluster_009",
+      "message_ids": [
+        35,
+        36,
+        37
+      ],
+      "draft_title": "TechNova Legal Review & Compliance",
+      "participants": [
+        "Jordan",
+        "Devon",
+        "Leah",
+        "Sam"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_003"
+    },
+    {
+      "cluster_id": "cluster_010",
+      "message_ids": [
+        38,
+        39,
+        40
+      ],
+      "draft_title": "TechNova Design Concepts & Messaging",
+      "participants": [
+        "Sam",
+        "Devon",
+        "Leah"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_003"
+    },
+    {
+      "cluster_id": "cluster_011",
+      "message_ids": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "draft_title": "EcoBloom Campaign - Revised Designs & Client Feedback",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_006"
+    },
+    {
+      "cluster_id": "cluster_012",
+      "message_ids": [
+        45,
+        46,
+        47
+      ],
+      "draft_title": "GreenScape Sustainability Report - Initial Client Discussion",
+      "participants": [
+        "Devon",
+        "Leah",
+        "Sam"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_004"
+    },
+    {
+      "cluster_id": "cluster_013",
+      "message_ids": [
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "draft_title": "GreenScape Sustainability Report - Timeline & Legal Review",
+      "participants": [
+        "Devon",
+        "Leah",
+        "Jordan",
+        "Sam"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_004"
+    },
+    {
+      "cluster_id": "cluster_014",
+      "message_ids": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "draft_title": "GreenScape Sustainability Report - Content & Design Development",
+      "participants": [
+        "Leah",
+        "Sam",
+        "Devon",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_004"
+    }
+  ],
+  "metrics": {
+    "num_clusters": 14,
+    "total_messages_clustered": 58,
+    "avg_cluster_size": 4.142857142857143,
+    "max_cluster_size": 8,
+    "min_cluster_size": 3,
+    "coverage": 0.19333333333333333,
+    "thread_coherence": 0.2,
+    "cluster_titles": [
+      "EcoBloom Summer Campaign Kickoff & Initial Planning",
+      "EcoBloom Campaign Timeline & Deliverables",
+      "FitFusion Rebranding Project - Initial Brief",
+      "FitFusion Timeline & Deliverables",
+      "FitFusion Contract Review & Legal Considerations",
+      "FitFusion Brand Voice & Design Alignment",
+      "TechNova Product Launch - Initial Brief",
+      "TechNova Timeline & Deliverables",
+      "TechNova Legal Review & Compliance",
+      "TechNova Design Concepts & Messaging",
+      "EcoBloom Campaign - Revised Designs & Client Feedback",
+      "GreenScape Sustainability Report - Initial Client Discussion",
+      "GreenScape Sustainability Report - Timeline & Legal Review",
+      "GreenScape Sustainability Report - Content & Design Development"
+    ],
+    "unique_threads": 5
+  },
+  "comparison_metrics": {
+    "precision": 0.9655172413793104,
+    "recall": 0.1951219512195122,
+    "f1_score": 0.32463768115942027,
+    "cluster_similarity": 0.31738120486794935,
+    "title_similarity": 0.27755102040816326,
+    "participant_accuracy": 0.8571428571428571,
+    "cluster_count_similarity": 0.4285714285714286,
+    "size_similarity": 0.08661025385764065,
+    "ref_cluster_count": 6,
+    "pred_cluster_count": 14
+  },
+  "raw_response": "```json\n{\n  \"clusters\": [\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [1, 2, 3, 4, 5, 6, 7, 8],\n      \"draft_title\": \"EcoBloom Summer Campaign Kickoff & Initial Planning\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\", \"Jordan\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\"\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [9, 10, 11, 12],\n      \"draft_title\": \"EcoBloom Campaign Timeline & Deliverables\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\"\n    },\n    {\n      \"cluster_id\": \"cluster_003\",\n      \"message_ids\": [13, 14, 15, 16, 17, 18],\n      \"draft_title\": \"FitFusion Rebranding Project - Initial Brief\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\", \"Jordan\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\"\n    },\n    {\n      \"cluster_id\": \"cluster_004\",\n      \"message_ids\": [19, 20, 21],\n      \"draft_title\": \"FitFusion Timeline & Deliverables\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\"\n    },\n    {\n      \"cluster_id\": \"cluster_005\",\n      \"message_ids\": [22, 23, 24],\n      \"draft_title\": \"FitFusion Contract Review & Legal Considerations\",\n      \"participants\": [\"Jordan\", \"Sam\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\"\n    },\n    {\n      \"cluster_id\": \"cluster_006\",\n      \"message_ids\": [25, 26, 27, 28],\n      \"draft_title\": \"FitFusion Brand Voice & Design Alignment\",\n      \"participants\": [\"Leah\", \"Sam\", \"Devon\", \"Jordan\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\"\n    },\n    {\n      \"cluster_id\": \"cluster_007\",\n      \"message_ids\": [29, 30, 31],\n      \"draft_title\": \"TechNova Product Launch - Initial Brief\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\"\n    },\n    {\n      \"cluster_id\": \"cluster_008\",\n      \"message_ids\": [32, 33, 34],\n      \"draft_title\": \"TechNova Timeline & Deliverables\",\n      \"participants\": [\"Devon\", \"Jordan\", \"Sam\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\"\n    },\n    {\n      \"cluster_id\": \"cluster_009\",\n      \"message_ids\": [35, 36, 37],\n      \"draft_title\": \"TechNova Legal Review & Compliance\",\n      \"participants\": [\"Jordan\", \"Devon\", \"Leah\", \"Sam\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\"\n    },\n    {\n      \"cluster_id\": \"cluster_010\",\n      \"message_ids\": [38, 39, 40],\n      \"draft_title\": \"TechNova Design Concepts & Messaging\",\n      \"participants\": [\"Sam\", \"Devon\", \"Leah\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\"\n    },\n    {\n      \"cluster_id\": \"cluster_011\",\n      \"message_ids\": [41, 42, 43, 44],\n      \"draft_title\": \"EcoBloom Campaign - Revised Designs & Client Feedback\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\", \"Jordan\"],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_006\"\n    },\n    {\n      \"cluster_id\": \"cluster_012\",\n      \"message_ids\": [45, 46, 47],\n      \"draft_title\": \"GreenScape Sustainability Report - Initial Client Discussion\",\n      \"participants\": [\"Devon\", \"Leah\", \"Sam\"],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\"\n    },\n    {\n      \"cluster_id\": \"cluster_013\",\n      \"message_ids\": [48, 49, 50, 51, 52],\n      \"draft_title\": \"GreenScape Sustainability Report - Timeline & Legal Review\",\n      \"participants\": [\"Devon\", \"Leah\", \"Jordan\", \"Sam\"],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\"\n    },\n    {\n      \"cluster_id\": \"cluster_014\",\n      \"message_ids\": [53, 54, 55, 56, 57, 58],\n      \"draft_title\": \"GreenScape Sustainability Report - Content & Design Development\",\n      \"participants\": [\"Leah\", \"Sam\", \"Devon\", \"Jordan\"],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\"\n    }\n  ]\n}\n```",
+  "error": "",
+  "prompt_tokens_estimated": 6960,
+  "messages_used": 86
+}

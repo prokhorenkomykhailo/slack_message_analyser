@@ -1,0 +1,81 @@
+{
+  "total_models_tested": 21,
+  "successful_models": 14,
+  "success_rate": 0.6666666666666666,
+  "best_performers": {
+    "coverage": {
+      "model": "openai_gpt-4o",
+      "provider": "openai",
+      "model_name": "gpt-4o",
+      "duration": 12.781770706176758,
+      "num_clusters": 11,
+      "coverage": 0.6666666666666666,
+      "avg_cluster_size": 18.181818181818183,
+      "total_cost": 0.07769999999999999,
+      "input_tokens": 11709,
+      "output_tokens": 1277
+    },
+    "cost_efficiency": {
+      "model": "google_gemma-3-1b-it",
+      "provider": "google",
+      "model_name": "gemma-3-1b-it",
+      "duration": 2.307324171066284,
+      "num_clusters": 5,
+      "coverage": 0.016666666666666666,
+      "avg_cluster_size": 5.0,
+      "total_cost": 0.0,
+      "input_tokens": 13125,
+      "output_tokens": 428
+    },
+    "speed": {
+      "model": "google_gemma-3-1b-it",
+      "provider": "google",
+      "model_name": "gemma-3-1b-it",
+      "duration": 2.307324171066284,
+      "num_clusters": 5,
+      "coverage": 0.016666666666666666,
+      "avg_cluster_size": 5.0,
+      "total_cost": 0.0,
+      "input_tokens": 13125,
+      "output_tokens": 428
+    },
+    "cluster_count": {
+      "model": "openai_gpt-3.5-turbo",
+      "provider": "openai",
+      "model_name": "gpt-3.5-turbo",
+      "duration": 11.821510791778564,
+      "num_clusters": 14,
+      "coverage": 0.6066666666666667,
+      "avg_cluster_size": 13.0,
+      "total_cost": 0.020744,
+      "input_tokens": 11972,
+      "output_tokens": 1393
+    }
+  },
+  "provider_stats": {
+    "google": {
+      "coverage_mean": 0.5563,
+      "coverage_max": 0.6667,
+      "total_cost_mean": 0.0164,
+      "total_cost_min": 0.0,
+      "duration_mean": 16.9822,
+      "duration_min": 2.3073
+    },
+    "openai": {
+      "coverage_mean": 0.6367,
+      "coverage_max": 0.6667,
+      "total_cost_mean": 0.0492,
+      "total_cost_min": 0.0207,
+      "duration_mean": 12.3016,
+      "duration_min": 11.8215
+    },
+    "xai": {
+      "coverage_mean": 0.6667,
+      "coverage_max": 0.6667,
+      "total_cost_mean": 0.0205,
+      "total_cost_min": 0.017,
+      "duration_mean": 24.4176,
+      "duration_min": 10.6564
+    }
+  }
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "cluster_id": "cluster_001",
+    "message_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "draft_title": "EcoBloom Summer Campaign Planning",
+    "participants": [
+      "Devon",
+      "Sam",
+      "Leah",
+      "Jordan"
+    ],
+    "channel": "#campaign-briefs",
+    "thread_id": "thread_001"
+  },
+  {
+    "cluster_id": "cluster_002",
+    "message_ids": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "draft_title": "UrbanEdge Social Media Strategy",
+    "participants": [
+      "Devon",
+      "Leah",
+      "Jordan"
+    ],
+    "channel": "#client-communications",
+    "thread_id": "thread_006"
+  },
+  {
+    "cluster_id": "cluster_003",
+    "message_ids": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "draft_title": "TechNova Product Launch",
+    "participants": [
+      "Devon",
+      "Jordan"
+    ],
+    "channel": "#client-communications",
+    "thread_id": "thread_003"
+  },
+  {
+    "cluster_id": "cluster_004",
+    "message_ids": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "draft_title": "EcoBloom Sustainability Report",
+    "participants": [
+      "Leah",
+      "Jordan"
+    ],
+    "channel": "#client-communications",
+    "thread_id": "thread_004"
+  },
+  {
+    "cluster_id": "cluster_005",
+    "message_ids": [
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "draft_title": "FitFusion Brand Identity",
+    "participants": [
+      "Devon",
+      "Sam"
+    ],
+    "channel": "#client-communications",
+    "thread_id": "thread_005"
+  }
+]

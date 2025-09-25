@@ -1,0 +1,40 @@
+{
+  "provider": "openai",
+  "model": "gpt-3.5-turbo",
+  "phase": "phase3_topic_clustering",
+  "timestamp": "2025-09-04T09:05:48.547755",
+  "success": false,
+  "duration": 0,
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "cost": {
+    "input_cost": 0.0,
+    "output_cost": 0.0,
+    "total_cost": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "clusters": [],
+  "metrics": {
+    "num_clusters": 0,
+    "total_messages_clustered": 0,
+    "avg_cluster_size": 0,
+    "coverage": 0.0,
+    "thread_coherence": 0.0
+  },
+  "comparison_metrics": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "cluster_similarity": 0.0,
+    "title_similarity": 0.0,
+    "participant_accuracy": 0.0
+  },
+  "raw_response": "",
+  "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 16385 tokens. However, you requested 17319 tokens (13223 in the messages, 4096 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+  "prompt_tokens_estimated": 13615,
+  "messages_used": 171
+}
