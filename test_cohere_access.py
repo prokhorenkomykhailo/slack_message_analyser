@@ -7,7 +7,7 @@ import os
 import sys
 from dotenv import load_dotenv
 
-# Load environment variables
+
 load_dotenv()
 
 def test_cohere_access():
@@ -16,7 +16,7 @@ def test_cohere_access():
     print("🧪 Testing Cohere Command R+ Access")
     print("=" * 40)
     
-    # Check token
+    
     token = os.getenv('HUGGINGFACE_TOKEN')
     if not token:
         print("❌ No HUGGINGFACE_TOKEN found")
@@ -31,7 +31,7 @@ def test_cohere_access():
         print(f"❌ Transformers import failed: {e}")
         return False
     
-    # Test tokenizer loading
+    
     models_to_test = [
         "CohereLabs/c4ai-command-r-plus-08-2024",
         "CohereLabs/c4ai-command-r-plus"
@@ -45,7 +45,7 @@ def test_cohere_access():
             tokenizer = AutoTokenizer.from_pretrained(model_id)
             print(f"✅ Tokenizer loaded successfully")
             
-            # Test chat template
+            
             messages = [{"role": "user", "content": "Hello"}]
             prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
             print(f"✅ Chat template working")
@@ -63,10 +63,10 @@ def test_cohere_access():
     
     print(f"\n🎉 Success! Working model: {working_model}")
     
-    # Test small model loading (if you have enough memory)
+    
     print(f"\n🔍 Testing model loading (this may take a moment)...")
     try:
-        # Try to load a small part of the model to test
+        
         model = AutoModelForCausalLM.from_pretrained(
             working_model,
             torch_dtype="auto",
@@ -75,12 +75,12 @@ def test_cohere_access():
         )
         print("✅ Model loaded successfully!")
         
-        # Test generation
+        
         print("🔍 Testing generation...")
         messages = [{"role": "user", "content": "Say hello in one word."}]
         input_ids = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
         
-        # Move to same device as model
+        
         if hasattr(model, 'device'):
             input_ids = input_ids.to(model.device)
         
@@ -101,7 +101,7 @@ def test_cohere_access():
         print(f"❌ Model loading failed: {e}")
         print("   This might be due to insufficient GPU memory")
         print("   The tokenizer test passed, so access is working")
-        return True  # Access is working, just memory issue
+        return True  
 
 def main():
     """Main test function"""

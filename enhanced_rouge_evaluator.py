@@ -51,35 +51,35 @@ class EnhancedRougeEvaluator:
             'semantic_richness': []
         }
         
-        # Analyze each cluster
+        
         for cluster in clusters:
-            # Cluster size analysis
+            
             message_count = len(cluster.get('message_ids', []))
             results['cluster_sizes'].append(message_count)
             
-            # Summary quality (if available)
+            
             summary = cluster.get('summary', '') or cluster.get('draft_title', '')
             if summary:
                 results['summary_quality'].append(self.analyze_summary_quality(summary))
             
-            # Semantic richness (message diversity within cluster)
+            
             if message_count > 1:
                 results['semantic_richness'].append(self.calculate_semantic_richness(cluster))
         
-        # Calculate aggregate metrics
+        
         results['avg_cluster_size'] = np.mean(results['cluster_sizes']) if results['cluster_sizes'] else 0
         results['cluster_size_std'] = np.std(results['cluster_sizes']) if results['cluster_sizes'] else 0
         results['avg_summary_quality'] = np.mean(results['summary_quality']) if results['summary_quality'] else 0
         results['avg_semantic_richness'] = np.mean(results['semantic_richness']) if results['semantic_richness'] else 0
         
-        # Calculate coverage metrics
+        
         total_clustered_messages = sum(results['cluster_sizes'])
         results['total_clustered_messages'] = total_clustered_messages
         
         if total_messages:
             results['coverage'] = total_clustered_messages / total_messages
             results['missing_messages'] = total_messages - total_clustered_messages
-            results['coverage_penalty'] = 1.0 - results['coverage']  # Higher penalty for lower coverage
+            results['coverage_penalty'] = 1.0 - results['coverage']  
         else:
             results['coverage'] = 0.0
             results['missing_messages'] = 0
@@ -92,24 +92,24 @@ class EnhancedRougeEvaluator:
         if not summary:
             return 0.0
         
-        # Length appropriateness (not too short, not too long)
+        
         words = summary.split()
         if len(words) < 3:
-            length_score = 0.3  # Too short
+            length_score = 0.3  
         elif len(words) < 15:
-            length_score = 1.0  # Good length
+            length_score = 1.0  
         elif len(words) < 25:
-            length_score = 0.8  # Slightly long
+            length_score = 0.8  
         else:
-            length_score = 0.5  # Too long
+            length_score = 0.5  
         
-        # Clarity indicators
+        
         clarity_indicators = [
             'clear', 'specific', 'focused', 'comprehensive', 'detailed',
             'vague', 'unclear', 'confusing', 'general', 'broad'
         ]
         
-        clarity_score = 0.5  # Base score
+        clarity_score = 0.5  
         for indicator in clarity_indicators:
             if indicator in summary.lower():
                 if indicator in ['clear', 'specific', 'focused', 'comprehensive', 'detailed']:
@@ -119,7 +119,7 @@ class EnhancedRougeEvaluator:
         
         clarity_score = max(0.0, min(1.0, clarity_score))
         
-        # Actionability (does it suggest next steps?)
+        
         action_words = ['implement', 'develop', 'create', 'improve', 'optimize', 'analyze', 'review']
         action_score = 0.5
         for word in action_words:
@@ -128,25 +128,25 @@ class EnhancedRougeEvaluator:
         
         action_score = min(1.0, action_score)
         
-        # Combined score
+        
         return (length_score + clarity_score + action_score) / 3
     
     def calculate_semantic_richness(self, cluster: Dict) -> float:
         """Calculate semantic richness of a cluster"""
-        # This is a simplified version - in practice you'd use embeddings
-        # For now, we'll use message count and variety as proxy
+        
+        
         
         message_count = len(cluster.get('message_ids', []))
         if message_count <= 1:
             return 0.0
         
-        # More messages = more semantic content (up to a point)
+        
         if message_count <= 5:
             richness = message_count / 5
         elif message_count <= 15:
             richness = 1.0
         else:
-            richness = 15 / message_count  # Diminishing returns
+            richness = 15 / message_count  
         
         return richness
     
@@ -157,7 +157,7 @@ class EnhancedRougeEvaluator:
         
         results = {}
         
-        # ROUGE-based similarity (but not as primary metric)
+        
         rouge_scores = []
         for pred_cluster in predicted_clusters:
             pred_text = self.extract_cluster_text(pred_cluster)
@@ -173,7 +173,7 @@ class EnhancedRougeEvaluator:
         if rouge_scores:
             results['avg_rouge_l'] = np.mean(rouge_scores)
             results['max_rouge_l'] = np.max(rouge_scores)
-            results['rouge_consistency'] = 1.0 - np.std(rouge_scores)  # Higher is better
+            results['rouge_consistency'] = 1.0 - np.std(rouge_scores)  
         
         return results
     
@@ -200,13 +200,13 @@ class EnhancedRougeEvaluator:
         """Comprehensive evaluation combining multiple approaches"""
         print(f"\n🔍 Enhanced evaluation of {model_name}...")
         
-        # 1. Intrinsic quality evaluation (no reference needed)
+        
         intrinsic_quality = self.evaluate_cluster_quality(predicted_clusters, total_messages)
         
-        # 2. Reference-based evaluation (if available)
+        
         reference_evaluation = self.evaluate_with_reference(predicted_clusters, model_name)
         
-        # 3. Combined scoring
+        
         combined_score = self.calculate_combined_score(intrinsic_quality, reference_evaluation)
         
         results = {
@@ -221,22 +221,22 @@ class EnhancedRougeEvaluator:
     
     def calculate_combined_score(self, intrinsic: Dict, reference: Dict) -> Dict[str, float]:
         """Calculate combined quality score"""
-        # Weight intrinsic quality higher than reference matching
+        
         intrinsic_weight = 0.6
         reference_weight = 0.2
-        coverage_weight = 0.2  # New: coverage penalty
+        coverage_weight = 0.2  
         
-        # Intrinsic quality components
+        
         intrinsic_score = (
             intrinsic.get('avg_summary_quality', 0) * 0.4 +
             intrinsic.get('avg_semantic_richness', 0) * 0.3 +
             (1.0 - intrinsic.get('cluster_size_std', 0) / max(intrinsic.get('avg_cluster_size', 1), 1)) * 0.3
         )
         
-        # Coverage penalty (critical for clustering quality)
-        coverage_score = intrinsic.get('coverage', 0)  # Higher is better
         
-        # Reference matching (if available)
+        coverage_score = intrinsic.get('coverage', 0)  
+        
+        
         reference_score = 0.0
         if reference:
             reference_score = (
@@ -244,7 +244,7 @@ class EnhancedRougeEvaluator:
                 reference.get('rouge_consistency', 0) * 0.4
             )
         
-        # Combined score with coverage penalty
+        
         combined = (
             intrinsic_score * intrinsic_weight + 
             reference_score * reference_weight + 
@@ -321,7 +321,7 @@ def main():
     print("Focuses on semantic quality rather than rigid structural matching")
     print("Better suited for unlimited topics and summary types")
     
-    # Example usage
+    
     print("\n📝 To evaluate a model:")
     print("evaluator = EnhancedRougeEvaluator('phases/phase3_clusters.json')")
     print("results = evaluator.comprehensive_evaluation(clusters, 'model_name')")

@@ -11,7 +11,7 @@ def check_cuda():
     print("🔍 CUDA and GPU Check")
     print("=" * 40)
     
-    # Check PyTorch CUDA availability
+    
     print("1. PyTorch CUDA Support:")
     print(f"   PyTorch version: {torch.__version__}")
     print(f"   CUDA available: {torch.cuda.is_available()}")
@@ -28,11 +28,11 @@ def check_cuda():
     
     print("\n2. System GPU Information:")
     try:
-        # Check nvidia-smi
+        
         result = subprocess.run(['nvidia-smi'], capture_output=True, text=True, timeout=10)
         if result.returncode == 0:
             print("   ✅ nvidia-smi found:")
-            print("   " + result.stdout.split('\n')[1])  # GPU info line
+            print("   " + result.stdout.split('\n')[1])  
         else:
             print("   ❌ nvidia-smi not found or no GPU")
     except (subprocess.TimeoutExpired, FileNotFoundError):
@@ -40,7 +40,7 @@ def check_cuda():
     
     print("\n3. CUDA Installation Check:")
     try:
-        # Check if CUDA is installed
+        
         result = subprocess.run(['nvcc', '--version'], capture_output=True, text=True, timeout=5)
         if result.returncode == 0:
             print("   ✅ CUDA compiler found:")

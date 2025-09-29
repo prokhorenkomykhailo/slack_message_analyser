@@ -12,7 +12,7 @@ def main():
     print("=" * 40)
     
     try:
-        # Configure 8-bit quantization to prevent memory issues
+        
         bnb_config = BitsAndBytesConfig(
             load_in_8bit=True,
             bnb_8bit_compute_dtype=torch.float16,
@@ -22,14 +22,14 @@ def main():
         model_id = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"🔄 Loading tokenizer from {model_id} (using cached version)...")
         
-        # Load tokenizer from cache
+        
         tokenizer = AutoTokenizer.from_pretrained(model_id, local_files_only=True)
         print(f"   pad_token: {tokenizer.pad_token}")
         print(f"   eos_token: {tokenizer.eos_token}")
         
         print("🔄 Loading model...")
         
-        # Load model with quantization from cache
+        
         model = AutoModelForCausalLM.from_pretrained(
             model_id, 
             quantization_config=bnb_config,
@@ -42,7 +42,7 @@ def main():
         
         print("✅ Model loaded")
         
-        # Format message with the command-r-plus chat template
+        
         messages = [{"role": "user", "content": "Hello, how are you?"}]
         input_ids = tokenizer.apply_chat_template(
             messages, 
@@ -54,7 +54,7 @@ def main():
         print(f"🧪 Test 1: Simple generation...")
         print(f"   Input shape: {input_ids.shape}")
         
-        # Generate with proper parameters
+        
         gen_tokens = model.generate(
             input_ids, 
             max_new_tokens=50, 

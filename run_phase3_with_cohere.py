@@ -9,10 +9,10 @@ import sys
 import subprocess
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+
 load_dotenv()
 
-# Add current directory to path
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 def check_cohere_setup():
@@ -67,7 +67,7 @@ def main():
     print("🚀 Phase 3 Topic Clustering with Cohere Command R+")
     print("=" * 55)
     
-    # Step 1: Check and install Cohere dependencies
+    
     print("\n📋 Step 1: Checking Cohere setup...")
     if not check_cohere_setup():
         print("⚠️ Cohere dependencies not found. Installing...")
@@ -82,11 +82,11 @@ def main():
         print("✅ Cohere dependencies already installed")
         cohere_available = True
     
-    # Step 2: Run standard Phase 3 evaluation
+    
     print("\n📋 Step 2: Running standard Phase 3 evaluation...")
     standard_success = run_standard_phase3()
     
-    # Step 3: Run Cohere evaluation (if available)
+    
     cohere_success = False
     if cohere_available:
         print("\n📋 Step 3: Running Cohere Command R+ evaluation...")
@@ -94,7 +94,7 @@ def main():
     else:
         print("\n📋 Step 3: Skipping Cohere evaluation (dependencies not available)")
     
-    # Summary
+    
     print("\n" + "=" * 55)
     print("📊 EVALUATION SUMMARY")
     print("=" * 55)

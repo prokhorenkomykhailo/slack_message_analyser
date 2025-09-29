@@ -14,10 +14,10 @@ from datetime import datetime
 import sys
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+
 load_dotenv()
 
-# Add parent directory to path for imports
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.model_clients import call_model_with_retry
@@ -31,13 +31,13 @@ class Phase3Evaluator:
         self.output_dir = os.path.join("output", self.phase_name)
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Load data from CSV
+        
         self.messages = self.load_messages_from_csv()
         
-        # Load reference clusters (ground truth)
+        
         self.reference_clusters = self.load_reference_clusters()
         
-        # Topic clustering prompt
+        
         self.prompt_template = self.get_clustering_prompt()
         
         print(f"📊 Loaded {len(self.messages)} messages from CSV")
@@ -66,9 +66,9 @@ class Phase3Evaluator:
             with open(csv_path, "r", encoding='utf-8') as f:
                 reader = csv.DictReader(f)
                 for i, row in enumerate(reader):
-                    # Create a message object with an ID
+                    
                     message = {
-                        "id": i + 1,  # Add sequential ID
+                        "id": i + 1,  
                         "channel": row["channel"],
                         "user": row["user_name"],
                         "user_id": row["user_id"],
@@ -149,16 +149,16 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         total_tokens = 0
         
         for msg in self.messages:
-            # Format each message
+            
             msg_text = (
                 f"ID: {msg['id']} | Channel: {msg['channel']} | User: {msg['user']} | "
                 f"Thread: {msg.get('thread_ts', 'None')} | Text: {msg['text'][:300]}..."
             )
             
-            # Estimate tokens for this message
+            
             msg_tokens = self.estimate_tokens(msg_text)
             
-            # Check if adding this message would exceed the limit
+            
             if total_tokens + msg_tokens > max_tokens:
                 print(f"⚠️  Token limit reached. Using {len(formatted)} messages out of {len(self.messages)}")
                 break
@@ -172,35 +172,35 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         """Evaluate a single model on topic clustering"""
         print(f"  🧪 Testing {provider}/{model_name}...")
         
-        # Get model limits
+        
         model_config = get_model_config(provider, model_name)
         max_tokens = MODEL_LIMITS.get(model_name, {}).get("max_tokens", 4096)
         context_length = MODEL_LIMITS.get(model_name, {}).get("context_length", 8192)
         
-        # Calculate available tokens for input (reserve some for output)
-        available_tokens = min(context_length * 0.8, 80000)  # Conservative limit
         
-        # Prepare prompt
+        available_tokens = min(context_length * 0.8, 80000)  
+        
+        
         messages_str = self.format_messages_for_prompt(int(available_tokens))
         prompt = self.prompt_template.replace("{messages}", messages_str)
         
-        # Estimate prompt tokens
+        
         prompt_tokens = self.estimate_tokens(prompt)
         print(f"    📝 Estimated prompt tokens: {prompt_tokens:,}")
         
-        # Call model
+        
         result = call_model_with_retry(provider, model_name, prompt, max_retries=3)
         
-        # Parse response
+        
         clusters = self.parse_clustering_response(result)
         
-        # Calculate metrics
+        
         metrics = self.calculate_clustering_metrics(clusters)
         
-        # Calculate comparison metrics against reference
+        
         comparison_metrics = self.compare_with_reference(clusters)
         
-        # Calculate cost
+        
         cost = self.calculate_cost(provider, model_name, result)
         
         return {
@@ -227,18 +227,18 @@ Analyze the messages and provide the clustering results in the specified JSON fo
             return []
         
         try:
-            # Try to extract JSON from response
+            
             response_text = result["response"]
             
-            # Find JSON block
+            
             start_idx = response_text.find("{")
             end_idx = response_text.rfind("}") + 1
             
             if start_idx != -1 and end_idx != 0:
                 json_str = response_text[start_idx:end_idx]
-                # Try to clean up common JSON issues
+                
                 json_str = json_str.replace('\n', ' ').replace('\r', ' ')
-                # Remove any trailing commas before closing braces
+                
                 json_str = json_str.replace(',}', '}').replace(',]', ']')
                 parsed = json.loads(json_str)
                 return parsed.get("clusters", [])
@@ -247,9 +247,9 @@ Analyze the messages and provide the clustering results in the specified JSON fo
                 return []
         except (json.JSONDecodeError, KeyError) as e:
             print(f"    ⚠️  JSON parsing error: {e}")
-            # Try to extract partial clusters if possible
+            
             try:
-                # Look for cluster patterns in the response
+                
                 clusters = []
                 lines = response_text.split('\n')
                 current_cluster = None
@@ -260,13 +260,13 @@ Analyze the messages and provide the clustering results in the specified JSON fo
                             clusters.append(current_cluster)
                         current_cluster = {}
                     elif '"message_ids"' in line or '"messageIds"' in line:
-                        # Extract message IDs from the line
+                        
                         import re
                         ids = re.findall(r'\d+', line)
                         if current_cluster:
                             current_cluster['message_ids'] = [int(id) for id in ids]
                     elif '"draft_title"' in line:
-                        # Extract title
+                        
                         title_match = re.search(r'"draft_title":\s*"([^"]+)"', line)
                         if title_match and current_cluster:
                             current_cluster['draft_title'] = title_match.group(1)
@@ -294,7 +294,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
                 "participant_accuracy": 0.0
             }
         
-        # Convert clusters to sets of message IDs for comparison
+        
         reference_sets = {}
         predicted_sets = {}
         
@@ -304,7 +304,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         for i, cluster in enumerate(predicted_clusters):
             predicted_sets[f"pred_{i}"] = set(cluster.get("message_ids", []))
         
-        # Calculate precision and recall
+        
         total_intersection = 0
         total_predicted = 0
         total_reference = 0
@@ -325,7 +325,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         recall = total_intersection / total_reference if total_reference > 0 else 0
         f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
         
-        # Calculate title similarity (simple word overlap)
+        
         title_similarities = []
         for pred_cluster in predicted_clusters:
             pred_title = pred_cluster.get("draft_title", "").lower()
@@ -341,7 +341,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         
         avg_title_similarity = np.mean(title_similarities) if title_similarities else 0
         
-        # Calculate participant accuracy
+        
         participant_accuracies = []
         for pred_cluster in predicted_clusters:
             pred_participants = set(pred_cluster.get("participants", []))
@@ -355,23 +355,23 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         
         avg_participant_accuracy = np.mean(participant_accuracies) if participant_accuracies else 0
         
-        # Calculate cluster structure similarity
+        
         ref_cluster_count = len(self.reference_clusters)
         pred_cluster_count = len(predicted_clusters)
         cluster_count_similarity = 1.0 - abs(ref_cluster_count - pred_cluster_count) / max(ref_cluster_count, pred_cluster_count)
         
-        # Calculate average cluster size similarity
+        
         ref_avg_size = np.mean([len(cluster.get("message_ids", [])) for cluster in self.reference_clusters])
         pred_avg_size = np.mean([len(cluster.get("message_ids", [])) for cluster in predicted_clusters])
         size_similarity = 1.0 - abs(ref_avg_size - pred_avg_size) / max(ref_avg_size, pred_avg_size) if max(ref_avg_size, pred_avg_size) > 0 else 0
         
-        # Overall similarity score (weighted combination)
+        
         overall_similarity = (
-            f1_score * 0.4 +  # Message grouping accuracy
-            cluster_count_similarity * 0.2 +  # Cluster structure similarity
-            size_similarity * 0.2 +  # Cluster size similarity
-            avg_title_similarity * 0.15 +  # Title quality
-            avg_participant_accuracy * 0.05  # Participant accuracy
+            f1_score * 0.4 +  
+            cluster_count_similarity * 0.2 +  
+            size_similarity * 0.2 +  
+            avg_title_similarity * 0.15 +  
+            avg_participant_accuracy * 0.05  
         )
         
         return {
@@ -398,7 +398,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
                 "thread_coherence": 0.0
             }
         
-        # Count messages in clusters
+        
         clustered_messages = set()
         thread_clusters = {}
         
@@ -406,7 +406,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
             message_ids = cluster.get("message_ids", [])
             clustered_messages.update(message_ids)
             
-            # Track thread coherence
+            
             thread_id = cluster.get("thread_id")
             if thread_id:
                 if thread_id not in thread_clusters:
@@ -418,7 +418,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         
         cluster_sizes = [len(cluster.get("message_ids", [])) for cluster in clusters]
         
-        # Calculate thread coherence (how well threads are kept together)
+        
         thread_coherence = 0.0
         if thread_clusters:
             coherent_threads = sum(1 for thread_cluster_list in thread_clusters.values() 
@@ -497,18 +497,18 @@ Analyze the messages and provide the clustering results in the specified JSON fo
                     }
                     results[f"{provider}_{model_name}"] = result
                 
-                # Save individual result
+                
                 output_file = os.path.join(self.output_dir, f"{provider}_{model_name}.json")
                 with open(output_file, "w") as f:
                     json.dump(result, f, indent=2)
                 
-                # Save model's clusters to separate file
+                
                 if result["success"] and result["clusters"]:
                     clusters_file = os.path.join(self.output_dir, f"{provider}_{model_name}_clusters.json")
                     with open(clusters_file, "w") as f:
                         json.dump(result["clusters"], f, indent=2)
                 
-                # Print status
+                
                 status = "✅" if result["success"] else "❌"
                 if result["success"]:
                     successful_models += 1
@@ -529,15 +529,15 @@ Analyze the messages and provide the clustering results in the specified JSON fo
                     print(f"  {status} {model_name}: {result['duration']:.2f}s, "
                           f"Error: {error_msg[:100]}...")
         
-        # Save comprehensive results
+        
         comprehensive_output = os.path.join(self.output_dir, "comprehensive_results.json")
         with open(comprehensive_output, "w") as f:
             json.dump(results, f, indent=2)
         
-        # Find and save best model
+        
         self.find_and_save_best_model(results)
         
-        # Generate summary
+        
         self.generate_summary(results, total_models, successful_models)
     
     def find_and_save_best_model(self, results: Dict):
@@ -548,7 +548,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
             print("⚠️  No successful results to analyze")
             return
         
-        # Find best model by F1 score (primary metric)
+        
         best_model = None
         best_f1 = -1
         
@@ -561,7 +561,7 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         if best_model:
             best_result = successful_results[best_model]
             
-            # Save best model's clusters
+            
             best_clusters_file = os.path.join(self.output_dir, "best_model_clusters.json")
             with open(best_clusters_file, "w") as f:
                 json.dump(best_result["clusters"], f, indent=2)
@@ -584,23 +584,23 @@ Analyze the messages and provide the clustering results in the specified JSON fo
         print(f"Successful models: {successful_models}")
         print(f"Success rate: {(successful_models/total_models*100):.1f}%" if total_models > 0 else "0%")
         
-        # Find best performing models
+        
         successful_results = {k: v for k, v in results.items() if v["success"]}
         
         if successful_results:
-            # Best by F1 score
+            
             best_f1 = max(successful_results.items(), 
                          key=lambda x: x[1]["comparison_metrics"]["f1_score"])
             
-            # Best by title similarity
+            
             best_title = max(successful_results.items(),
                            key=lambda x: x[1]["comparison_metrics"]["title_similarity"])
             
-            # Best by cost efficiency
+            
             best_cost_efficiency = min(successful_results.items(),
                                      key=lambda x: x[1]["cost"]["total_cost"])
             
-            # Best by speed
+            
             best_speed = min(successful_results.items(),
                            key=lambda x: x[1]["duration"])
             

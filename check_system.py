@@ -10,7 +10,7 @@ def check_system():
     print("🔍 VPS System Check")
     print("=" * 40)
     
-    # Check GPU hardware
+    
     print("1. GPU Hardware:")
     try:
         result = subprocess.run(['lspci', '|', 'grep', '-i', 'nvidia'], 
@@ -23,7 +23,7 @@ def check_system():
     except:
         print("   ❌ Could not check GPU hardware")
     
-    # Check NVIDIA driver
+    
     print("\n2. NVIDIA Driver:")
     try:
         result = subprocess.run(['nvidia-smi'], capture_output=True, text=True, timeout=5)
@@ -43,7 +43,7 @@ def check_system():
     except FileNotFoundError:
         print("   ❌ nvidia-smi not found")
     
-    # Check CUDA toolkit
+    
     print("\n3. CUDA Toolkit:")
     try:
         result = subprocess.run(['nvcc', '--version'], capture_output=True, text=True, timeout=5)
@@ -57,7 +57,7 @@ def check_system():
     except subprocess.TimeoutExpired:
         print("   ❌ CUDA toolkit timeout")
     
-    # Check system memory
+    
     print("\n4. System Memory:")
     try:
         with open('/proc/meminfo', 'r') as f:
@@ -70,7 +70,7 @@ def check_system():
     except:
         print("   ❌ Could not read memory info")
     
-    # Check available disk space
+    
     print("\n5. Disk Space:")
     try:
         result = subprocess.run(['df', '-h', '/'], capture_output=True, text=True)

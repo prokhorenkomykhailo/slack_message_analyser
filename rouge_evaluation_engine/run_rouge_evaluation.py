@@ -16,11 +16,11 @@ def load_model_results(model_file: str) -> List[Dict]:
         with open(model_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        # Handle different file formats
+        
         if isinstance(data, list):
-            return data  # Direct cluster list
+            return data  
         elif 'clusters' in data:
-            return data['clusters']  # Model result with clusters
+            return data['clusters']  
         else:
             print(f"⚠️  Unexpected format in {model_file}")
             return []
@@ -34,7 +34,7 @@ def find_model_files(base_dir: str) -> List[str]:
     pattern = os.path.join(base_dir, "google_gemini-*.json")
     files = glob.glob(pattern)
     
-    # Filter out _clusters.json files and other variants
+    
     model_files = [f for f in files if not f.endswith('_clusters.json') and 'lite' not in f]
     
     return sorted(model_files)
@@ -45,28 +45,28 @@ def run_comprehensive_evaluation():
     print("🎯 COMPREHENSIVE ROUGE EVALUATION")
     print("=" * 60)
     
-    # Initialize evaluator
+    
     evaluator = RougeClusteringEvaluator(
         reference_path="../phases/phase3_clusters.json",
         output_dir="rouge_results"
     )
     
-    # Find all model files
+    
     base_dir = "../output/phase3_topic_clustering"
     model_files = find_model_files(base_dir)
     
     print(f"📁 Found {len(model_files)} model files to evaluate")
     print()
     
-    # Store all results for comparison
+    
     all_results = []
     
-    # Evaluate each model
+    
     for model_file in model_files:
         model_name = os.path.basename(model_file).replace('.json', '')
         print(f"🔍 Evaluating {model_name}...")
         
-        # Load clusters
+        
         clusters = load_model_results(model_file)
         if not clusters:
             print(f"   ⚠️  No clusters found, skipping")
@@ -74,17 +74,17 @@ def run_comprehensive_evaluation():
         
         print(f"   📊 Loaded {len(clusters)} clusters")
         
-        # Run evaluation
+        
         try:
             results = evaluator.evaluate_clusters(clusters, model_name)
             
-            # Save individual results
+            
             evaluator.save_results(results, model_name)
             
-            # Store for comparison
+            
             all_results.append(results)
             
-            # Print summary
+            
             evaluator.print_summary(results)
             
         except Exception as e:
@@ -93,7 +93,7 @@ def run_comprehensive_evaluation():
         
         print("-" * 60)
     
-    # Create comprehensive comparison
+    
     if all_results:
         create_comparison_report(all_results)
     
@@ -105,7 +105,7 @@ def create_comparison_report(all_results: List[Dict[str, Any]]):
     print("\n📊 CREATING COMPREHENSIVE COMPARISON REPORT")
     print("=" * 60)
     
-    # Prepare data for comparison
+    
     comparison_data = []
     
     for results in all_results:
@@ -132,18 +132,18 @@ def create_comparison_report(all_results: List[Dict[str, Any]]):
             'Message_Overlap': message['total_overlap']
         })
     
-    # Create DataFrame
+    
     df = pd.DataFrame(comparison_data)
     
-    # Sort by ROUGE-L F1 score (primary metric)
+    
     df_sorted = df.sort_values('ROUGEL_F1', ascending=False)
     
-    # Save comparison CSV
+    
     comparison_file = "rouge_results/model_comparison.csv"
     df_sorted.to_csv(comparison_file, index=False)
     print(f"💾 Comparison report saved to: {comparison_file}")
     
-    # Print top performers
+    
     print("\n🏆 TOP PERFORMING MODELS BY ROUGE-L F1:")
     print("-" * 50)
     for i, row in df_sorted.head(5).iterrows():
@@ -154,13 +154,13 @@ def create_comparison_report(all_results: List[Dict[str, Any]]):
         print(f"   Clusters: {row['Predicted_Clusters']}")
         print()
     
-    # Print metric correlations
+    
     print("📈 METRIC CORRELATIONS:")
     print("-" * 30)
     correlations = df[['ROUGEL_F1', 'Message_F1', 'ARI', 'V_Measure']].corr()
     print(correlations)
     
-    # Save correlation matrix
+    
     corr_file = "rouge_results/metric_correlations.csv"
     correlations.to_csv(corr_file)
     print(f"💾 Correlations saved to: {corr_file}")
@@ -169,7 +169,7 @@ def main():
     """Main execution"""
     print("🚀 Starting ROUGE-based clustering evaluation...")
     
-    # Check if we're in the right directory
+    
     if not os.path.exists("../phases/phase3_clusters.json"):
         print("❌ Error: phase3_clusters.json not found!")
         print("   Please run this script from the rouge_evaluation_engine directory")
@@ -180,7 +180,7 @@ def main():
         print("   Please run this script from the rouge_evaluation_engine directory")
         return
     
-    # Run evaluation
+    
     run_comprehensive_evaluation()
 
 if __name__ == "__main__":

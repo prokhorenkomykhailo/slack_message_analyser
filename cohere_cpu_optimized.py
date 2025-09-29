@@ -17,31 +17,31 @@ def main():
         model_id = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"🔄 Loading tokenizer from {model_id} (cached)...")
         
-        # Load tokenizer from cache
+        
         tokenizer = AutoTokenizer.from_pretrained(model_id, local_files_only=True)
         print(f"   pad_token: {tokenizer.pad_token}")
         print(f"   eos_token: {tokenizer.eos_token}")
         
         print("🔄 Loading model (CPU-optimized for 31GB RAM)...")
         
-        # Create offload directory for memory management
+        
         os.makedirs("./offload", exist_ok=True)
         
-        # Load model with CPU optimization
+        
         model = AutoModelForCausalLM.from_pretrained(
             model_id, 
-            device_map="cpu",  # CPU only
+            device_map="cpu",  
             trust_remote_code=True,
-            torch_dtype=torch.float32,  # Float32 for CPU stability
+            torch_dtype=torch.float32,  
             low_cpu_mem_usage=True,
             local_files_only=True,
-            offload_folder="./offload",  # Offload to disk if needed
-            max_memory={"cpu": "30GB"}  # Use most of your 31GB RAM
+            offload_folder="./offload",  
+            max_memory={"cpu": "30GB"}  
         )
         
         print("✅ Model loaded on CPU with 30GB RAM allocation")
         
-        # Test 1: Simple generation
+        
         print("\n🧪 Test 1: Simple generation...")
         messages = [{"role": "user", "content": "Hello, how are you?"}]
         input_ids = tokenizer.apply_chat_template(
@@ -53,7 +53,7 @@ def main():
         
         print(f"   Input shape: {input_ids.shape}")
         
-        with torch.no_grad():  # Disable gradients to save memory
+        with torch.no_grad():  
             gen_tokens = model.generate(
                 input_ids, 
                 max_new_tokens=50,
@@ -61,14 +61,14 @@ def main():
                 temperature=0.7,
                 pad_token_id=tokenizer.pad_token_id,
                 eos_token_id=tokenizer.eos_token_id,
-                use_cache=True  # Enable KV cache for efficiency
+                use_cache=True  
             )
         
         gen_text = tokenizer.decode(gen_tokens[0], skip_special_tokens=True)
         print("✅ Generation successful!")
         print(f"Response: {gen_text}")
         
-        # Test 2: Clustering test
+        
         print("\n🧪 Test 2: Message clustering...")
         clustering_prompt = """Group these messages by topic:
 

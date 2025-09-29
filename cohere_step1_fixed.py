@@ -44,23 +44,23 @@ def test_cohere_step1_clustering():
     print("🚀 Cohere Step 1 Clustering (Fixed Version)")
     print("=" * 50)
     
-    # Load messages
+    
     messages = load_messages()
     if not messages:
         return
     
-    # Use first 30 messages for testing (to avoid token limits)
+    
     test_messages = messages[:30]
     print(f"📝 Testing with {len(test_messages)} messages")
     
     try:
-        # Load model
+        
         model_name = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"🔄 Loading {model_name}...")
         
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         
-        # Fix the attention mask issue by setting pad token properly
+        
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
             print("✅ Set pad_token to eos_token")
@@ -74,7 +74,7 @@ def test_cohere_step1_clustering():
         
         print("✅ Model loaded")
         
-        # Create clustering prompt
+        
         messages_text = "\\n".join([
             f"{i+1}. {msg['user']} in {msg['channel']}: {msg['content'][:120]}"
             for i, msg in enumerate(test_messages)
@@ -112,19 +112,19 @@ Return JSON format:
   ]
 }}"""
         
-        # Format with chat template
+        
         messages_chat = [{"role": "user", "content": prompt}]
         
-        # Apply chat template and get attention mask
+        
         inputs = tokenizer.apply_chat_template(
             messages_chat, 
             tokenize=True, 
             add_generation_prompt=True, 
             return_tensors="pt",
-            return_attention_mask=True  # This fixes the attention mask issue
+            return_attention_mask=True  
         )
         
-        # Extract input_ids and attention_mask
+        
         if isinstance(inputs, tuple):
             input_ids, attention_mask = inputs
         else:
@@ -133,11 +133,11 @@ Return JSON format:
         
         print("🔄 Generating clusters...")
         
-        # Generate with proper attention mask
+        
         with torch.no_grad():
             gen_tokens = model.generate(
                 input_ids,
-                attention_mask=attention_mask,  # This fixes the warning
+                attention_mask=attention_mask,  
                 max_new_tokens=1200,
                 do_sample=True,
                 temperature=0.1,
@@ -145,7 +145,7 @@ Return JSON format:
                 eos_token_id=tokenizer.eos_token_id
             )
         
-        # Decode response (skip the input part)
+        
         response = tokenizer.decode(gen_tokens[0][len(input_ids[0]):], skip_special_tokens=True)
         
         print("✅ Generation completed")
@@ -154,14 +154,14 @@ Return JSON format:
         print(response)
         print("-" * 50)
         
-        # Try to parse clusters
+        
         clusters = parse_clustering_response(response)
         
         print(f"\\n📊 Parsed {len(clusters)} clusters:")
         for i, cluster in enumerate(clusters):
             print(f"   {i+1}. {cluster.get('title', 'Untitled')} - {len(cluster.get('message_ids', []))} messages")
         
-        # Save results
+        
         result = {
             "success": True,
             "model": model_name,
@@ -193,7 +193,7 @@ def parse_clustering_response(response: str) -> List[Dict]:
     """Parse clustering response from Cohere"""
     
     try:
-        # Try to extract JSON from response
+        
         if "```json" in response:
             json_start = response.find("```json") + 7
             json_end = response.find("```", json_start)
@@ -206,7 +206,7 @@ def parse_clustering_response(response: str) -> List[Dict]:
             print("⚠️ No JSON found in response")
             return create_fallback_clusters()
         
-        # Parse JSON
+        
         data = json.loads(json_str)
         
         if "clusters" in data:

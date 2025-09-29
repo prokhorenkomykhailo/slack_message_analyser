@@ -12,7 +12,7 @@ def setup_and_test():
     print("🔧 Cohere Command R+ Setup and Test")
     print("=" * 40)
     
-    # Check if token is provided as argument
+    
     if len(sys.argv) > 1:
         token = sys.argv[1]
         print(f"✅ Token provided (length: {len(token)})")
@@ -23,21 +23,21 @@ def setup_and_test():
         print("\n🔗 Get your token from: https://huggingface.co/settings/tokens")
         return False
     
-    # Set environment variable
+    
     os.environ['HUGGINGFACE_TOKEN'] = token
     print("✅ Token set in environment")
     
-    # Test authentication
+    
     print("\n🔐 Testing authentication...")
     
     try:
         from huggingface_hub import login, whoami
         
-        # Login with token
+        
         login(token=token)
         print("✅ Login successful")
         
-        # Verify user
+        
         user_info = whoami()
         print(f"✅ Authenticated as: {user_info['name']}")
         
@@ -64,7 +64,7 @@ def test_cohere_access():
             from huggingface_hub import HfApi
             api = HfApi()
             
-            # Test access
+            
             files = api.list_repo_files(model_name)
             print(f"✅ Have access to {model_name}")
             print(f"   Available files: {len(files)}")
@@ -88,7 +88,7 @@ def test_model_loading(model_name):
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         print("   ✅ Tokenizer loaded")
         
-        # Test basic functionality
+        
         test_text = "Hello, how are you?"
         tokens = tokenizer.encode(test_text)
         print(f"   ✅ Tokenization works ({len(tokens)} tokens)")
@@ -119,7 +119,7 @@ def test_cohere_clustering():
     print("🚀 Testing Cohere Step 1 Clustering")
     print("=" * 40)
     
-    # Load messages
+    
     messages_file = "data/Synthetic_Slack_Messages.csv"
     if not os.path.exists(messages_file):
         print(f"❌ File not found: {messages_file}")
@@ -139,10 +139,10 @@ def test_cohere_clustering():
         
         print(f"✅ Loaded {len(messages)} messages")
         
-        # Test with first 20 messages
+        
         test_messages = messages[:20]
         
-        # Load model
+        
         model_name = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"🔄 Loading {model_name}...")
         
@@ -156,7 +156,7 @@ def test_cohere_clustering():
         
         print("✅ Model loaded")
         
-        # Create simple clustering prompt
+        
         messages_text = "\\n".join([
             f"{i+1}. {msg['user']}: {msg['content'][:100]}"
             for i, msg in enumerate(test_messages)
@@ -168,7 +168,7 @@ def test_cohere_clustering():
 
 Return JSON with clusters containing message numbers, titles, and participants."""
         
-        # Generate
+        
         messages_chat = [{"role": "user", "content": prompt}]
         input_ids = tokenizer.apply_chat_template(
             messages_chat, 
@@ -211,23 +211,23 @@ if __name__ == "__main__":
 def main():
     """Main function"""
     
-    # Step 1: Setup and authenticate
+    
     if not setup_and_test():
         return
     
-    # Step 2: Test model access
+    
     accessible_model = test_cohere_access()
     if not accessible_model:
         print("\n❌ No access to any Cohere model")
         print("Please request access at: https://huggingface.co/CohereLabs/c4ai-command-r-plus")
         return
     
-    # Step 3: Test model loading
+    
     if not test_model_loading(accessible_model):
         print("\n❌ Model loading failed")
         return
     
-    # Step 4: Create test script
+    
     create_simple_test()
     
     print("\n🎉 Setup completed successfully!")

@@ -11,7 +11,7 @@ def simple_test():
     print("=" * 40)
     
     try:
-        # Check CUDA
+        
         print(f"CUDA available: {torch.cuda.is_available()}")
         if torch.cuda.is_available():
             print(f"GPU: {torch.cuda.get_device_name(0)}")
@@ -20,12 +20,12 @@ def simple_test():
         model_name = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"\n🔄 Loading {model_name}...")
         
-        # Load tokenizer
+        
         tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
         
-        # Load model with minimal memory usage
+        
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             torch_dtype=torch.float16,
@@ -33,13 +33,13 @@ def simple_test():
             trust_remote_code=True,
             local_files_only=True,
             low_cpu_mem_usage=True,
-            max_memory={0: "12GB"}  # Use only 12GB of 16GB
+            max_memory={0: "12GB"}  
         )
         
         print("✅ Model loaded")
         print(f"Model device: {next(model.parameters()).device}")
         
-        # Simple test
+        
         print("\n🧪 Simple generation test...")
         messages = [{"role": "user", "content": "Hi"}]
         
@@ -50,20 +50,20 @@ def simple_test():
             return_tensors="pt"
         )
         
-        # Move to same device as model
+        
         inputs = inputs.to(next(model.parameters()).device)
         print(f"Input device: {inputs.device}")
         print(f"Input shape: {inputs.shape}")
         
-        # Clear cache
+        
         torch.cuda.empty_cache()
         
         print("🔄 Generating (this should be fast)...")
         with torch.no_grad():
             outputs = model.generate(
                 inputs,
-                max_new_tokens=5,  # Very short generation
-                do_sample=False,   # No sampling for speed
+                max_new_tokens=5,  
+                do_sample=False,   
                 pad_token_id=tokenizer.pad_token_id
             )
         
@@ -81,4 +81,3 @@ def simple_test():
 
 if __name__ == "__main__":
     simple_test()
-

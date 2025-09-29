@@ -38,10 +38,10 @@ class OpenAIClient(ModelClient):
         try:
             self.client = OpenAI(api_key=OPENAI_API_KEY)
         except TypeError as e:
-            # Handle older OpenAI client versions
+            
             if "proxies" in str(e):
                 import httpx
-                # Create a custom httpx client without proxies
+                
                 http_client = httpx.Client()
                 self.client = OpenAI(api_key=OPENAI_API_KEY, http_client=http_client)
             else:
@@ -51,17 +51,17 @@ class OpenAIClient(ModelClient):
         try:
             start_time = time.time()
             
-            # Handle GPT-5 models which use responses.create() instead of chat.completions.create()
+            
             if self.model_name.startswith("gpt-5"):
-                # GPT-5 models use the new responses API with minimal parameters
+                
                 response = self.client.responses.create(
                     model=self.model_name,
                     input=prompt,
-                    reasoning={"effort": "medium"},  # GPT-5 specific: minimal, low, medium, high
-                    text={"verbosity": "medium"}     # GPT-5 specific: low, medium, high
+                    reasoning={"effort": "medium"},  
+                    text={"verbosity": "medium"}     
                 )
             else:
-                # Older models use max_tokens
+                
                 response = self.client.chat.completions.create(
                     model=self.model_name,
                     messages=[{"role": "user", "content": prompt}],
@@ -72,9 +72,9 @@ class OpenAIClient(ModelClient):
             
             end_time = time.time()
             
-            # Handle different response structures for GPT-5 vs other models
+            
             if self.model_name.startswith("gpt-5"):
-                # GPT-5 uses responses API with different structure
+                
                 return {
                     "success": True,
                     "response": response.output_text,
@@ -86,7 +86,7 @@ class OpenAIClient(ModelClient):
                     }
                 }
             else:
-                # Standard chat completions API
+                
                 return {
                     "success": True,
                     "response": response.choices[0].message.content,
@@ -312,6 +312,6 @@ def call_model_with_retry(provider: str, model_name: str, prompt: str, max_retri
         if result["success"]:
             return result
         elif attempt < max_retries - 1:
-            time.sleep(2 ** attempt)  # Exponential backoff
+            time.sleep(2 ** attempt)  
     
     return result

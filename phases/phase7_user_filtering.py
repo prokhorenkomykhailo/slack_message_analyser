@@ -12,7 +12,7 @@ from typing import Dict, List, Any
 from datetime import datetime
 import sys
 
-# Add parent directory to path for imports
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.model_clients import call_model_with_retry
@@ -26,10 +26,10 @@ class Phase7Evaluator:
         self.output_dir = os.path.join("output", self.phase_name)
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Load topics from Phase 5
+        
         self.topics = self.load_topics()
         
-        # Define test users
+        
         self.test_users = [
             {"name": "alice", "channels": ["#general", "#planning"]},
             {"name": "bob", "channels": ["#general", "#tech"]},
@@ -37,13 +37,13 @@ class Phase7Evaluator:
             {"name": "david", "channels": ["#general", "#marketing"]}
         ]
         
-        # User filtering prompt
+        
         self.prompt_template = self.get_filtering_prompt()
     
     def load_topics(self) -> List[Dict]:
         """Load topics from Phase 5"""
         try:
-            # Try to load from Phase 5 results
+            
             phase5_dir = os.path.join("output", "phase5_metadata_generation")
             comprehensive_file = os.path.join(phase5_dir, "comprehensive_results.json")
             
@@ -51,12 +51,12 @@ class Phase7Evaluator:
                 with open(comprehensive_file, "r") as f:
                     results = json.load(f)
                 
-                # Get the best performing model's topics
+                
                 best_model = self.get_best_phase5_model(results)
                 if best_model:
                     return results[best_model]["metadata_results"]
             
-            # Fallback: create dummy topics for testing
+            
             return self.create_dummy_topics()
             
         except Exception as e:
@@ -70,7 +70,7 @@ class Phase7Evaluator:
         if not successful_results:
             return None
         
-        # Find model with highest success rate
+        
         best_model = max(successful_results.items(), 
                         key=lambda x: x[1]["metrics"]["success_rate"])
         return best_model[0]
@@ -198,26 +198,26 @@ Tags: {metadata.get('tags', [])}
         total_duration = 0
         total_tokens = 0
         
-        # Process each user
+        
         for user in self.test_users:
-            # Prepare prompt for this user
+            
             user_info = self.format_user_info(user)
             topics_str = self.format_topics_for_prompt()
             prompt = self.prompt_template.replace("{user_info}", user_info).replace("{topics}", topics_str)
             
-            # Call model
+            
             result = call_model_with_retry(provider, model_name, prompt, max_retries=3)
             
-            # Parse response
+            
             user_result = self.parse_filtering_response(result, user['name'])
             all_user_results.append(user_result)
             
-            # Accumulate costs and timing
+            
             total_cost += self.calculate_cost(provider, model_name, result)["total_cost"]
             total_duration += result["duration"]
             total_tokens += result["usage"].get("total_tokens", 0)
         
-        # Calculate overall metrics
+        
         metrics = self.calculate_filtering_metrics(all_user_results)
         
         return {
@@ -246,10 +246,10 @@ Tags: {metadata.get('tags', [])}
             }
         
         try:
-            # Try to extract JSON from response
+            
             response_text = result["response"]
             
-            # Find JSON block
+            
             start_idx = response_text.find("{")
             end_idx = response_text.rfind("}") + 1
             
@@ -294,7 +294,7 @@ Tags: {metadata.get('tags', [])}
                 "avg_filtered_out": 0
             }
         
-        # Calculate metrics
+        
         success_rate = len(successful_results) / len(user_results)
         
         visible_counts = [len(r["visible_topics"]) for r in successful_results]
@@ -350,12 +350,12 @@ Tags: {metadata.get('tags', [])}
                 result = self.evaluate_model(provider, model_name)
                 results[f"{provider}_{model_name}"] = result
                 
-                # Save individual result
+                
                 output_file = os.path.join(self.output_dir, f"{provider}_{model_name}.json")
                 with open(output_file, "w") as f:
                     json.dump(result, f, indent=2)
                 
-                # Print status
+                
                 status = "✅" if result["success"] else "❌"
                 if result["success"]:
                     successful_models += 1
@@ -368,12 +368,12 @@ Tags: {metadata.get('tags', [])}
                     print(f"  {status} {model_name}: {result['duration']:.2f}s, "
                           f"Users: {result['users_processed']}")
         
-        # Save comprehensive results
+        
         comprehensive_output = os.path.join(self.output_dir, "comprehensive_results.json")
         with open(comprehensive_output, "w") as f:
             json.dump(results, f, indent=2)
         
-        # Generate summary
+        
         self.generate_summary(results, total_models, successful_models)
     
     def generate_summary(self, results: Dict, total_models: int, successful_models: int):
@@ -385,19 +385,19 @@ Tags: {metadata.get('tags', [])}
         print(f"Successful models: {successful_models}")
         print(f"Success rate: {(successful_models/total_models*100):.1f}%" if total_models > 0 else "0%")
         
-        # Find best performing models
+        
         successful_results = {k: v for k, v in results.items() if v["success"]}
         
         if successful_results:
-            # Best by success rate
+            
             best_success_rate = max(successful_results.items(), 
                                   key=lambda x: x[1]["metrics"]["success_rate"])
             
-            # Best by filtering precision
+            
             best_precision = max(successful_results.items(),
                                key=lambda x: x[1]["metrics"]["avg_visible_topics"])
             
-            # Best by cost efficiency
+            
             best_cost_efficiency = min(successful_results.items(),
                                      key=lambda x: x[1]["cost"]["total_cost"])
             

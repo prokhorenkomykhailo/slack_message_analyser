@@ -44,7 +44,7 @@ def test_cohere_memory_optimized():
     print("=" * 50)
     print("💡 Using 194GB cached model with smart memory management")
     
-    # Load messages
+    
     messages = load_messages()
     if not messages:
         return False
@@ -56,30 +56,30 @@ def test_cohere_memory_optimized():
         model_name = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"🔄 Loading {model_name} (194GB cached model)...")
         
-        # Load tokenizer from cache
+        
         tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
         
-        # Load model with smart memory management
-        # This will use GPU for what fits, CPU for the rest
+        
+        
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             torch_dtype=torch.float16,
-            device_map="auto",  # Automatically distribute between GPU and CPU
+            device_map="auto",  
             trust_remote_code=True,
-            local_files_only=True,  # Use cached model
+            local_files_only=True,  
             low_cpu_mem_usage=True,
             max_memory={
-                0: "15GB",  # Use 15GB of 16GB GPU
-                "cpu": "25GB"  # Use 25GB of 31GB RAM
+                0: "15GB",  
+                "cpu": "25GB"  
             }
         )
         
         print("✅ Model loaded with smart memory distribution")
         print(f"✅ Model device: {next(model.parameters()).device}")
         
-        # Test 1: Simple generation
+        
         print("\n🧪 Test 1: Simple generation...")
         test_prompt = "Hello, how are you?"
         messages_chat = [{"role": "user", "content": test_prompt}]
@@ -91,13 +91,13 @@ def test_cohere_memory_optimized():
             return_tensors="pt"
         )
         
-        # Move inputs to same device as model
+        
         inputs = inputs.to(next(model.parameters()).device)
         
         print(f"   Input shape: {inputs.shape}")
         print(f"   Input device: {inputs.device}")
         
-        # Clear cache before generation
+        
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
         
@@ -117,11 +117,11 @@ def test_cohere_memory_optimized():
         print("✅ Simple generation works!")
         print(f"Response: {response}")
         
-        # Clear cache after generation
+        
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
         
-        # Test 2: Clustering
+        
         print("\n🧪 Test 2: Message clustering...")
         messages_text = "\n".join([
             f"{i+1}. {msg['user']}: {msg['content'][:40]}..."
@@ -145,7 +145,7 @@ Return JSON clusters."""
         
         print(f"   Input shape: {inputs.shape}")
         
-        # Clear cache before generation
+        
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
         
@@ -169,7 +169,7 @@ Return JSON clusters."""
         print(response)
         print("-" * 40)
         
-        # Save results
+        
         result = {
             "success": True,
             "model": model_name,

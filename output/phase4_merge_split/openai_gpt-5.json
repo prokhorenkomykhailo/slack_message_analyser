@@ -1,0 +1,132 @@
+{
+  "provider": "openai",
+  "model": "gpt-5",
+  "phase": "phase4_merge_split",
+  "timestamp": "2025-09-29T10:01:01.757425",
+  "success": true,
+  "duration": 53.806185483932495,
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 5040
+  },
+  "cost": {
+    "input_cost": 0.0,
+    "output_cost": 0.0,
+    "total_cost": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "initial_clusters": [
+    {
+      "cluster_id": "cluster_001",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "draft_title": "Project Planning",
+      "participants": [
+        "@alice",
+        "@bob"
+      ],
+      "channel": "#general"
+    },
+    {
+      "cluster_id": "cluster_002",
+      "message_ids": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "draft_title": "Technical Discussion",
+      "participants": [
+        "@charlie",
+        "@david"
+      ],
+      "channel": "#tech"
+    },
+    {
+      "cluster_id": "cluster_003",
+      "message_ids": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "draft_title": "Meeting Scheduling",
+      "participants": [
+        "@alice",
+        "@eve"
+      ],
+      "channel": "#general"
+    }
+  ],
+  "refined_clusters": [
+    {
+      "cluster_id": "cluster_ecobloom_campaign",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "draft_title": "EcoBloom Summer Campaign: Planning, Scheduling, and Deadlines",
+      "participants": [
+        "@Devon",
+        "@Sam",
+        "@Leah",
+        "@Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "merge_reason": "Merged cluster_001 and cluster_002 due to very high semantic similarity (>0.85) and strong overlap in topic (EcoBloom campaign), participants, channel, and thread (thread_001). Also absorbed EcoBloom-related messages (11\u201313) from cluster_003 after splitting.",
+      "split_reason": "Split cluster_003 to separate out EcoBloom thread_001 updates (msgs 11\u201313) from the distinct FitFusion thread_002 topic."
+    },
+    {
+      "cluster_id": "cluster_fitfusion_kickoff",
+      "message_ids": [
+        14,
+        15
+      ],
+      "draft_title": "FitFusion Rebranding Kickoff and Timeline",
+      "participants": [
+        "@Devon",
+        "@Sam"
+      ],
+      "channel": "#campaign-briefs",
+      "merge_reason": null,
+      "split_reason": "Separated from cluster_003 because it is a distinct project in a different thread (thread_002) with its own scope and deadline (Aug 15, 2025)."
+    }
+  ],
+  "metrics": {
+    "num_initial_clusters": 3,
+    "num_refined_clusters": 2,
+    "merge_operations": 1,
+    "split_operations": 2,
+    "total_operations": 3,
+    "avg_cluster_size": 7.5,
+    "max_cluster_size": 13,
+    "min_cluster_size": 2,
+    "coverage": 0.05,
+    "cluster_titles": [
+      "EcoBloom Summer Campaign: Planning, Scheduling, and Deadlines",
+      "FitFusion Rebranding Kickoff and Timeline"
+    ]
+  },
+  "raw_response": "{\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_ecobloom_campaign\",\n      \"message_ids\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],\n      \"draft_title\": \"EcoBloom Summer Campaign: Planning, Scheduling, and Deadlines\",\n      \"participants\": [\"@Devon\", \"@Sam\", \"@Leah\", \"@Jordan\"],\n      \"channel\": \"#campaign-briefs\",\n      \"merge_reason\": \"Merged cluster_001 and cluster_002 due to very high semantic similarity (>0.85) and strong overlap in topic (EcoBloom campaign), participants, channel, and thread (thread_001). Also absorbed EcoBloom-related messages (11\u201313) from cluster_003 after splitting.\",\n      \"split_reason\": \"Split cluster_003 to separate out EcoBloom thread_001 updates (msgs 11\u201313) from the distinct FitFusion thread_002 topic.\"\n    },\n    {\n      \"cluster_id\": \"cluster_fitfusion_kickoff\",\n      \"message_ids\": [14, 15],\n      \"draft_title\": \"FitFusion Rebranding Kickoff and Timeline\",\n      \"participants\": [\"@Devon\", \"@Sam\"],\n      \"channel\": \"#campaign-briefs\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Separated from cluster_003 because it is a distinct project in a different thread (thread_002) with its own scope and deadline (Aug 15, 2025).\"\n    }\n  ],\n  \"operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters_involved\": [\"cluster_001\", \"cluster_002\"],\n      \"reason\": \"High semantic similarity (>0.9) across EcoBloom summer campaign planning and scheduling within the same channel (#campaign-briefs), same thread (thread_001), overlapping participants, and contiguous timing.\"\n    },\n    {\n      \"operation\": \"split\",\n      \"clusters_involved\": [\"cluster_003\"],\n      \"reason\": \"Cluster_003 mixed two distinct topics/threads: EcoBloom updates (msgs 11\u201313, thread_001) and FitFusion rebranding kickoff (msgs 14\u201315, thread_002). Split along thread/topic boundaries.\"\n    },\n    {\n      \"operation\": \"merge\",\n      \"clusters_involved\": [\"cluster_001+cluster_002 (merged)\", \"cluster_003 EcoBloom subset (msgs 11\u201313)\"],\n      \"reason\": \"EcoBloom subset from cluster_003 shared identical topic, participants, channel, and temporal context with the merged EcoBloom cluster; similarity >0.9.\"\n    }\n  ]\n}",
+  "error": ""
+}

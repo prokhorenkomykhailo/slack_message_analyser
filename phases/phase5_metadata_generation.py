@@ -12,7 +12,7 @@ from typing import Dict, List, Any
 from datetime import datetime
 import sys
 
-# Add parent directory to path for imports
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.model_clients import call_model_with_retry
@@ -26,17 +26,17 @@ class Phase5Evaluator:
         self.output_dir = os.path.join("output", self.phase_name)
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Load refined clusters from Phase 4
+        
         self.refined_clusters = self.load_refined_clusters()
         self.messages = self.load_messages()
         
-        # Metadata generation prompt
+        
         self.prompt_template = self.get_metadata_prompt()
     
     def load_refined_clusters(self) -> List[Dict]:
         """Load refined clusters from Phase 4"""
         try:
-            # Try to load from Phase 4 results
+            
             phase4_dir = os.path.join("output", "phase4_merge_split")
             comprehensive_file = os.path.join(phase4_dir, "comprehensive_results.json")
             
@@ -44,12 +44,12 @@ class Phase5Evaluator:
                 with open(comprehensive_file, "r") as f:
                     results = json.load(f)
                 
-                # Get the best performing model's clusters
+                
                 best_model = self.get_best_phase4_model(results)
                 if best_model:
                     return results[best_model]["refined_clusters"]
             
-            # Fallback: create dummy clusters for testing
+            
             return self.create_dummy_clusters()
             
         except Exception as e:
@@ -63,7 +63,7 @@ class Phase5Evaluator:
         if not successful_results:
             return None
         
-        # Find model with most operations performed
+        
         best_model = max(successful_results.items(), 
                         key=lambda x: x[1]["metrics"]["total_operations"])
         return best_model[0]
@@ -181,26 +181,26 @@ Message IDs: {cluster['message_ids']}
         total_duration = 0
         total_tokens = 0
         
-        # Process each cluster
+        
         for cluster in self.refined_clusters:
-            # Prepare prompt for this cluster
+            
             cluster_info = self.format_cluster_for_prompt(cluster)
             messages_str = self.format_messages_for_prompt(cluster['message_ids'])
             prompt = self.prompt_template.replace("{cluster_info}", cluster_info).replace("{messages}", messages_str)
             
-            # Call model
+            
             result = call_model_with_retry(provider, model_name, prompt, max_retries=3)
             
-            # Parse response
+            
             metadata = self.parse_metadata_response(result, cluster['cluster_id'])
             all_metadata.append(metadata)
             
-            # Accumulate costs and timing
+            
             total_cost += self.calculate_cost(provider, model_name, result)["total_cost"]
             total_duration += result["duration"]
             total_tokens += result["usage"].get("total_tokens", 0)
         
-        # Calculate overall metrics
+        
         metrics = self.calculate_metadata_metrics(all_metadata)
         
         return {
@@ -228,10 +228,10 @@ Message IDs: {cluster['message_ids']}
             }
         
         try:
-            # Try to extract JSON from response
+            
             response_text = result["response"]
             
-            # Find JSON block
+            
             start_idx = response_text.find("{")
             end_idx = response_text.rfind("}") + 1
             
@@ -272,7 +272,7 @@ Message IDs: {cluster['message_ids']}
                 "avg_tags": 0
             }
         
-        # Calculate metrics
+        
         success_rate = len(successful_results) / len(metadata_results)
         
         action_items_counts = []
@@ -281,11 +281,11 @@ Message IDs: {cluster['message_ids']}
         for result in successful_results:
             metadata = result["metadata"]
             
-            # Count action items
+            
             action_items = metadata.get("action_items", [])
             action_items_counts.append(len(action_items))
             
-            # Count tags
+            
             tags = metadata.get("tags", [])
             tags_counts.append(len(tags))
         
@@ -339,12 +339,12 @@ Message IDs: {cluster['message_ids']}
                 result = self.evaluate_model(provider, model_name)
                 results[f"{provider}_{model_name}"] = result
                 
-                # Save individual result
+                
                 output_file = os.path.join(self.output_dir, f"{provider}_{model_name}.json")
                 with open(output_file, "w") as f:
                     json.dump(result, f, indent=2)
                 
-                # Print status
+                
                 status = "✅" if result["success"] else "❌"
                 if result["success"]:
                     successful_models += 1
@@ -357,12 +357,12 @@ Message IDs: {cluster['message_ids']}
                     print(f"  {status} {model_name}: {result['duration']:.2f}s, "
                           f"Clusters: {result['clusters_processed']}")
         
-        # Save comprehensive results
+        
         comprehensive_output = os.path.join(self.output_dir, "comprehensive_results.json")
         with open(comprehensive_output, "w") as f:
             json.dump(results, f, indent=2)
         
-        # Generate summary
+        
         self.generate_summary(results, total_models, successful_models)
     
     def generate_summary(self, results: Dict, total_models: int, successful_models: int):
@@ -374,19 +374,19 @@ Message IDs: {cluster['message_ids']}
         print(f"Successful models: {successful_models}")
         print(f"Success rate: {(successful_models/total_models*100):.1f}%" if total_models > 0 else "0%")
         
-        # Find best performing models
+        
         successful_results = {k: v for k, v in results.items() if v["success"]}
         
         if successful_results:
-            # Best by success rate
+            
             best_success_rate = max(successful_results.items(), 
                                   key=lambda x: x[1]["metrics"]["success_rate"])
             
-            # Best by action items generated
+            
             best_action_items = max(successful_results.items(),
                                   key=lambda x: x[1]["metrics"]["total_action_items"])
             
-            # Best by cost efficiency
+            
             best_cost_efficiency = min(successful_results.items(),
                                      key=lambda x: x[1]["cost"]["total_cost"])
             

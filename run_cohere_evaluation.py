@@ -12,7 +12,7 @@ def setup_environment():
     
     print("🔧 Setting up environment for Cohere model evaluation...")
     
-    # Check if we have the required dependencies
+    
     required_packages = [
         "transformers",
         "torch", 
@@ -37,14 +37,14 @@ def apply_fixes():
     
     print("🔧 Applying fixes to model loading...")
     
-    # Run the fix script
+    
     try:
         result = subprocess.run([sys.executable, "fix_model_loading_error.py"], 
                               capture_output=True, text=True)
         if result.returncode == 0:
             print("✅ Fixes applied successfully")
             
-            # Backup original and replace with fixed version
+            
             if os.path.exists("cohere_clustering.py"):
                 os.rename("cohere_clustering.py", "cohere_clustering_backup.py")
                 print("📁 Backed up original to cohere_clustering_backup.py")
@@ -68,7 +68,7 @@ def run_evaluation():
     print("🚀 Starting Cohere model evaluation...")
     
     try:
-        # First try the cohere-specific evaluation
+        
         result = subprocess.run([sys.executable, "evaluate_cohere_models.py"], 
                               capture_output=False, text=True)
         
@@ -77,7 +77,7 @@ def run_evaluation():
             return True
         else:
             print("⚠️ Evaluation completed with some issues")
-            return True  # Still return True as it likely produced some results
+            return True  
             
     except Exception as e:
         print(f"❌ Error running evaluation: {e}")
@@ -89,17 +89,17 @@ def main():
     print("🎯 Cohere Model Evaluation Setup and Run")
     print("=" * 50)
     
-    # Step 1: Setup environment
+    
     if not setup_environment():
         print("❌ Environment setup failed")
         return
     
-    # Step 2: Apply fixes
+    
     if not apply_fixes():
         print("❌ Could not apply fixes")
         return
     
-    # Step 3: Run evaluation
+    
     if not run_evaluation():
         print("❌ Evaluation failed")
         return

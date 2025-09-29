@@ -43,7 +43,7 @@ def test_cohere_simple():
     print("🚀 Simple Cohere Test (Using Downloaded Model)")
     print("=" * 50)
     
-    # Load messages (just first 5 for testing)
+    
     messages = load_messages()
     if not messages:
         return
@@ -52,30 +52,30 @@ def test_cohere_simple():
     print(f"📝 Testing with {len(test_messages)} messages")
     
     try:
-        # Load model (should use cached version)
+        
         model_name = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"🔄 Loading {model_name} from cache...")
         
-        # This should NOT re-download if model is already cached
+        
         tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=False)
         
-        # Fix attention mask issue
+        
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.unk_token
             print("✅ Fixed attention mask")
         
-        # Load model from cache
+        
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             torch_dtype=torch.float16,
             device_map="auto",
             trust_remote_code=True,
-            local_files_only=False  # Allow cache usage
+            local_files_only=False  
         )
         
         print("✅ Model loaded from cache")
         
-        # Simple test
+        
         print("🔄 Testing simple generation...")
         
         test_prompt = "Hello, how are you?"
@@ -101,7 +101,7 @@ def test_cohere_simple():
         print("✅ Simple generation works!")
         print(f"Response: {response}")
         
-        # Now test clustering
+        
         print("\\n🔄 Testing clustering...")
         
         messages_text = "\\n".join([
@@ -137,7 +137,7 @@ def test_cohere_simple():
         print(response)
         print("-" * 40)
         
-        # Save results
+        
         result = {
             "success": True,
             "model": model_name,

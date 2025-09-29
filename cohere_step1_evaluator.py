@@ -25,10 +25,10 @@ class CohereStep1Evaluator:
         print(f"🔄 Loading Cohere Command R+ model: {self.model_path}")
         
         try:
-            # Load tokenizer
+            
             self.tokenizer = AutoTokenizer.from_pretrained(self.model_path)
             
-            # Load model with proper configuration
+            
             self.model = AutoModelForCausalLM.from_pretrained(
                 self.model_path,
                 torch_dtype=torch.float16,
@@ -51,10 +51,10 @@ class CohereStep1Evaluator:
     def create_step1_prompt(self, messages: List[Dict]) -> str:
         """Create Step 1 clustering prompt for corpus-wide topic analysis"""
         
-        # Format messages for analysis
+        
         messages_text = "\n\n".join([
             f"Message {i+1} ({msg.get('user', 'Unknown')} in {msg.get('channel', '#general')}): {msg.get('content', '')[:200]}"
-            for i, msg in enumerate(messages[:100])  # Limit to first 100 messages
+            for i, msg in enumerate(messages[:100])  
         ])
         
         prompt = f"""You are an AI assistant specialized in analyzing workplace communication patterns. Your task is to analyze the following Slack messages and create topic clusters.
@@ -103,10 +103,10 @@ Please analyze the messages and create appropriate clusters:"""
             return {"success": False, "error": "Model not loaded"}
         
         try:
-            # Create Step 1 prompt
+            
             prompt = self.create_step1_prompt(messages)
             
-            # Format with Cohere's chat template
+            
             messages_chat = [{"role": "user", "content": prompt}]
             input_ids = self.tokenizer.apply_chat_template(
                 messages_chat, 
@@ -115,7 +115,7 @@ Please analyze the messages and create appropriate clusters:"""
                 return_tensors="pt"
             )
             
-            # Generate response
+            
             start_time = time.time()
             
             with torch.no_grad():
@@ -129,10 +129,10 @@ Please analyze the messages and create appropriate clusters:"""
             
             generation_time = time.time() - start_time
             
-            # Decode response
+            
             response_text = self.tokenizer.decode(gen_tokens[0], skip_special_tokens=True)
             
-            # Extract clustering results
+            
             clusters = self.parse_clustering_response(response_text)
             
             return {
@@ -152,7 +152,7 @@ Please analyze the messages and create appropriate clusters:"""
         """Parse the clustering response from Cohere"""
         
         try:
-            # Extract JSON from response
+            
             if "```json" in response:
                 json_start = response.find("```json") + 7
                 json_end = response.find("```", json_start)
@@ -165,7 +165,7 @@ Please analyze the messages and create appropriate clusters:"""
                 print("⚠️ No JSON found in response, creating fallback clusters")
                 return self.create_fallback_clusters()
             
-            # Parse JSON
+            
             clustering_data = json.loads(json_str)
             
             if "clusters" in clustering_data:
@@ -194,20 +194,20 @@ def main():
     print("🚀 Testing Cohere Step 1 Evaluator")
     print("=" * 50)
     
-    # Initialize evaluator
+    
     evaluator = CohereStep1Evaluator()
     
-    # Load test messages
+    
     messages_file = "data/Synthetic_Slack_Messages.csv"
     if not os.path.exists(messages_file):
         print(f"❌ Messages file not found: {messages_file}")
         return
     
-    # Load messages (you'll need to implement this based on your data format)
-    print(f"📁 Loading messages from: {messages_file}")
-    # messages = load_messages(messages_file)  # Implement this
     
-    # Load model
+    print(f"📁 Loading messages from: {messages_file}")
+    
+    
+    
     if not evaluator.load_model():
         print("❌ Could not load Cohere model")
         return

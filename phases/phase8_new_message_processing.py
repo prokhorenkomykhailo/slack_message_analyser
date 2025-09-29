@@ -12,7 +12,7 @@ from typing import Dict, List, Any
 from datetime import datetime
 import sys
 
-# Add parent directory to path for imports
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.model_clients import call_model_with_retry
@@ -26,19 +26,19 @@ class Phase8Evaluator:
         self.output_dir = os.path.join("output", self.phase_name)
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Load existing topics from Phase 5
+        
         self.existing_topics = self.load_existing_topics()
         
-        # Create new test messages
+        
         self.new_messages = self.create_new_messages()
         
-        # New message processing prompt
+        
         self.prompt_template = self.get_processing_prompt()
     
     def load_existing_topics(self) -> List[Dict]:
         """Load existing topics from Phase 5"""
         try:
-            # Try to load from Phase 5 results
+            
             phase5_dir = os.path.join("output", "phase5_metadata_generation")
             comprehensive_file = os.path.join(phase5_dir, "comprehensive_results.json")
             
@@ -46,12 +46,12 @@ class Phase8Evaluator:
                 with open(comprehensive_file, "r") as f:
                     results = json.load(f)
                 
-                # Get the best performing model's topics
+                
                 best_model = self.get_best_phase5_model(results)
                 if best_model:
                     return results[best_model]["metadata_results"]
             
-            # Fallback: create dummy topics for testing
+            
             return self.create_dummy_topics()
             
         except Exception as e:
@@ -65,7 +65,7 @@ class Phase8Evaluator:
         if not successful_results:
             return None
         
-        # Find model with highest success rate
+        
         best_model = max(successful_results.items(), 
                         key=lambda x: x[1]["metrics"]["success_rate"])
         return best_model[0]
@@ -236,26 +236,26 @@ Tags: {metadata.get('tags', [])}
         total_duration = 0
         total_tokens = 0
         
-        # Process each new message
+        
         for message in self.new_messages:
-            # Prepare prompt for this message
+            
             message_info = self.format_new_message(message)
             topics_str = self.format_existing_topics()
             prompt = self.prompt_template.replace("{new_message}", message_info).replace("{existing_topics}", topics_str)
             
-            # Call model
+            
             result = call_model_with_retry(provider, model_name, prompt, max_retries=3)
             
-            # Parse response
+            
             message_result = self.parse_processing_response(result, message['id'])
             all_message_results.append(message_result)
             
-            # Accumulate costs and timing
+            
             total_cost += self.calculate_cost(provider, model_name, result)["total_cost"]
             total_duration += result["duration"]
             total_tokens += result["usage"].get("total_tokens", 0)
         
-        # Calculate overall metrics
+        
         metrics = self.calculate_processing_metrics(all_message_results)
         
         return {
@@ -284,10 +284,10 @@ Tags: {metadata.get('tags', [])}
             }
         
         try:
-            # Try to extract JSON from response
+            
             response_text = result["response"]
             
-            # Find JSON block
+            
             start_idx = response_text.find("{")
             end_idx = response_text.rfind("}") + 1
             
@@ -337,7 +337,7 @@ Tags: {metadata.get('tags', [])}
                 "new_topic_decisions": 0
             }
         
-        # Calculate metrics
+        
         success_rate = len(successful_results) / len(message_results)
         
         similarity_scores = [r.get("similarity_score", 0) for r in successful_results]
@@ -396,12 +396,12 @@ Tags: {metadata.get('tags', [])}
                 result = self.evaluate_model(provider, model_name)
                 results[f"{provider}_{model_name}"] = result
                 
-                # Save individual result
+                
                 output_file = os.path.join(self.output_dir, f"{provider}_{model_name}.json")
                 with open(output_file, "w") as f:
                     json.dump(result, f, indent=2)
                 
-                # Print status
+                
                 status = "✅" if result["success"] else "❌"
                 if result["success"]:
                     successful_models += 1
@@ -414,12 +414,12 @@ Tags: {metadata.get('tags', [])}
                     print(f"  {status} {model_name}: {result['duration']:.2f}s, "
                           f"Messages: {result['messages_processed']}")
         
-        # Save comprehensive results
+        
         comprehensive_output = os.path.join(self.output_dir, "comprehensive_results.json")
         with open(comprehensive_output, "w") as f:
             json.dump(results, f, indent=2)
         
-        # Generate summary
+        
         self.generate_summary(results, total_models, successful_models)
     
     def generate_summary(self, results: Dict, total_models: int, successful_models: int):
@@ -431,19 +431,19 @@ Tags: {metadata.get('tags', [])}
         print(f"Successful models: {successful_models}")
         print(f"Success rate: {(successful_models/total_models*100):.1f}%" if total_models > 0 else "0%")
         
-        # Find best performing models
+        
         successful_results = {k: v for k, v in results.items() if v["success"]}
         
         if successful_results:
-            # Best by success rate
+            
             best_success_rate = max(successful_results.items(), 
                                   key=lambda x: x[1]["metrics"]["success_rate"])
             
-            # Best by similarity score
+            
             best_similarity = max(successful_results.items(),
                                 key=lambda x: x[1]["metrics"]["avg_similarity_score"])
             
-            # Best by cost efficiency
+            
             best_cost_efficiency = min(successful_results.items(),
                                      key=lambda x: x[1]["cost"]["total_cost"])
             

@@ -32,7 +32,7 @@ def load_phase_results(phase_name: str) -> Dict[str, Any]:
 def analyze_phase_results(results: Dict[str, Any], phase_name: str):
     """Analyze and rank models for a specific phase"""
     
-    # Filter successful models
+    
     successful_models = {}
     for model_name, result in results.items():
         if result.get("success", False):
@@ -46,7 +46,7 @@ def analyze_phase_results(results: Dict[str, Any], phase_name: str):
         print("❌ No successful models found!")
         return
     
-    # Phase-specific analysis
+    
     if "topic_clustering" in phase_name:
         analyze_clustering_results(successful_models)
     elif "summarization" in phase_name:
@@ -56,13 +56,13 @@ def analyze_phase_results(results: Dict[str, Any], phase_name: str):
     else:
         analyze_general_results(successful_models)
     
-    # General analysis for all phases
+    
     analyze_general_metrics(successful_models)
 
 def analyze_clustering_results(successful_models: Dict[str, Any]):
     """Analyze topic clustering specific metrics"""
     
-    # Rank by Coverage
+    
     print("\n🏆 **BEST COVERAGE** (Percentage of messages clustered)")
     coverage_ranked = sorted(successful_models.items(), 
                             key=lambda x: x[1]["metrics"]["coverage"], reverse=True)
@@ -70,7 +70,7 @@ def analyze_clustering_results(successful_models: Dict[str, Any]):
         coverage = result["metrics"]["coverage"] * 100
         print(f"{i+1}. {model}: {coverage:.1f}%")
     
-    # Rank by Thread Coherence
+    
     print("\n🏆 **BEST THREAD COHERENCE** (How well threads are preserved)")
     coherence_ranked = sorted(successful_models.items(), 
                              key=lambda x: x[1]["metrics"]["thread_coherence"], reverse=True)
@@ -78,13 +78,13 @@ def analyze_clustering_results(successful_models: Dict[str, Any]):
         coherence = result["metrics"]["thread_coherence"] * 100
         print(f"{i+1}. {model}: {coherence:.1f}%")
     
-    # Rank by Cluster Quality
+    
     print("\n🏆 **BEST CLUSTER QUALITY** (Optimal number of clusters)")
     cluster_quality = []
     for model, result in successful_models.items():
         num_clusters = result["metrics"]["num_clusters"]
-        # Optimal range: 10-15 clusters for 300 messages
-        quality_score = 1.0 - abs(num_clusters - 12.5) / 12.5  # Distance from optimal
+        
+        quality_score = 1.0 - abs(num_clusters - 12.5) / 12.5  
         cluster_quality.append((model, quality_score, num_clusters))
     
     cluster_quality.sort(key=lambda x: x[1], reverse=True)
@@ -94,7 +94,7 @@ def analyze_clustering_results(successful_models: Dict[str, Any]):
 def analyze_summarization_results(successful_models: Dict[str, Any]):
     """Analyze summarization specific metrics"""
     
-    # Rank by Summary Quality (if available)
+    
     if "summary_quality" in successful_models[list(successful_models.keys())[0]]["metrics"]:
         print("\n🏆 **BEST SUMMARY QUALITY**")
         quality_ranked = sorted(successful_models.items(), 
@@ -103,11 +103,11 @@ def analyze_summarization_results(successful_models: Dict[str, Any]):
             quality = result["metrics"].get("summary_quality", 0)
             print(f"{i+1}. {model}: {quality:.3f}")
     
-    # Rank by Summary Length (if available)
+    
     if "summary_length" in successful_models[list(successful_models.keys())[0]]["metrics"]:
         print("\n🏆 **OPTIMAL SUMMARY LENGTH**")
         length_ranked = sorted(successful_models.items(), 
-                              key=lambda x: abs(x[1]["metrics"].get("summary_length", 0) - 200))  # Target 200 words
+                              key=lambda x: abs(x[1]["metrics"].get("summary_length", 0) - 200))  
         for i, (model, result) in enumerate(length_ranked[:5]):
             length = result["metrics"].get("summary_length", 0)
             print(f"{i+1}. {model}: {length} words")
@@ -115,7 +115,7 @@ def analyze_summarization_results(successful_models: Dict[str, Any]):
 def analyze_extraction_results(successful_models: Dict[str, Any]):
     """Analyze information extraction specific metrics"""
     
-    # Rank by Extraction Accuracy (if available)
+    
     if "extraction_accuracy" in successful_models[list(successful_models.keys())[0]]["metrics"]:
         print("\n🏆 **BEST EXTRACTION ACCURACY**")
         accuracy_ranked = sorted(successful_models.items(), 
@@ -124,7 +124,7 @@ def analyze_extraction_results(successful_models: Dict[str, Any]):
             accuracy = result["metrics"].get("extraction_accuracy", 0) * 100
             print(f"{i+1}. {model}: {accuracy:.1f}%")
     
-    # Rank by Entities Extracted (if available)
+    
     if "entities_extracted" in successful_models[list(successful_models.keys())[0]]["metrics"]:
         print("\n🏆 **MOST ENTITIES EXTRACTED**")
         entities_ranked = sorted(successful_models.items(), 
@@ -137,7 +137,7 @@ def analyze_general_results(successful_models: Dict[str, Any]):
     """Analyze general metrics for any phase"""
     print("\n🏆 **GENERAL PERFORMANCE METRICS**")
     
-    # Show available metrics
+    
     sample_model = list(successful_models.values())[0]
     available_metrics = list(sample_model["metrics"].keys())
     print(f"Available metrics: {', '.join(available_metrics)}")
@@ -145,7 +145,7 @@ def analyze_general_results(successful_models: Dict[str, Any]):
 def analyze_general_metrics(successful_models: Dict[str, Any]):
     """Analyze general performance metrics for all phases"""
     
-    # Rank by Cost Efficiency
+    
     print("\n🏆 **MOST COST EFFICIENT** (Lowest cost per evaluation)")
     cost_ranked = sorted(successful_models.items(), 
                         key=lambda x: x[1]["cost"]["total_cost"])
@@ -153,7 +153,7 @@ def analyze_general_metrics(successful_models: Dict[str, Any]):
         cost = result["cost"]["total_cost"]
         print(f"{i+1}. {model}: ${cost:.6f}")
     
-    # Rank by Speed
+    
     print("\n🏆 **FASTEST** (Lowest response time)")
     speed_ranked = sorted(successful_models.items(), 
                          key=lambda x: x[1]["duration"])
@@ -161,7 +161,7 @@ def analyze_general_metrics(successful_models: Dict[str, Any]):
         duration = result["duration"]
         print(f"{i+1}. {model}: {duration:.2f}s")
     
-    # Rank by Token Efficiency
+    
     print("\n🏆 **MOST TOKEN EFFICIENT** (Lowest tokens per evaluation)")
     token_ranked = sorted(successful_models.items(), 
                          key=lambda x: x[1]["usage"]["total_tokens"])
@@ -169,11 +169,11 @@ def analyze_general_metrics(successful_models: Dict[str, Any]):
         tokens = result["usage"]["total_tokens"]
         print(f"{i+1}. {model}: {tokens:,} tokens")
     
-    # Rank by Overall Score
+    
     print("\n🏆 **OVERALL BEST** (Combined score: performance - normalized cost - normalized time)")
     overall_scores = {}
     for model, result in successful_models.items():
-        # Get primary performance metric (varies by phase)
+        
         metrics = result["metrics"]
         if "coverage" in metrics:
             performance = metrics["coverage"] + metrics.get("thread_coherence", 0)
@@ -182,20 +182,20 @@ def analyze_general_metrics(successful_models: Dict[str, Any]):
         elif "extraction_accuracy" in metrics:
             performance = metrics["extraction_accuracy"]
         else:
-            # Fallback to first available metric
+            
             performance = list(metrics.values())[0] if metrics else 0
         
         cost = result["cost"]["total_cost"]
         duration = result["duration"]
         
-        # Normalize cost and duration (lower is better)
+        
         max_cost = max(r["cost"]["total_cost"] for r in successful_models.values())
         max_duration = max(r["duration"] for r in successful_models.values())
         
         normalized_cost = cost / max_cost if max_cost > 0 else 0
         normalized_duration = duration / max_duration if max_duration > 0 else 0
         
-        # Overall score (higher is better)
+        
         overall_score = performance - normalized_cost - normalized_duration
         overall_scores[model] = overall_score
     
@@ -207,7 +207,7 @@ def analyze_general_metrics(successful_models: Dict[str, Any]):
         tokens = result["usage"]["total_tokens"]
         print(f"{i+1}. {model}: Score {score:.3f} (Cost: ${cost:.6f}, Time: {duration:.2f}s, Tokens: {tokens:,})")
     
-    # Best by provider
+    
     print("\n🏆 **BEST BY PROVIDER**")
     providers = {}
     for model, result in successful_models.items():
@@ -220,7 +220,7 @@ def analyze_general_metrics(successful_models: Dict[str, Any]):
         best_model = max(models, key=lambda x: x[1])
         print(f"{provider.upper()}: {best_model[0]} (Score: {best_model[1]:.3f})")
     
-    # Detailed analysis of top 3
+    
     print("\n🔍 **DETAILED ANALYSIS OF TOP 3 MODELS**")
     for i, (model, score) in enumerate(overall_ranked[:3]):
         result = successful_models[model]
@@ -258,25 +258,25 @@ def main():
     print("🎯 Phase Evaluation Results Analyzer")
     print("=" * 50)
     
-    # List available phases
+    
     available_phases = list_available_phases()
     
     if not available_phases:
         print("\n❌ No phases with results found!")
         return
     
-    # If phase specified as argument, use it
+    
     if len(sys.argv) > 1:
         phase_name = sys.argv[1]
         if phase_name not in available_phases:
             print(f"❌ Phase '{phase_name}' not found in available phases: {available_phases}")
             return
     else:
-        # Use the first available phase (usually phase3)
+        
         phase_name = available_phases[0]
         print(f"\n📊 Analyzing phase: {phase_name}")
     
-    # Load and analyze results
+    
     results = load_phase_results(phase_name)
     if results:
         analyze_phase_results(results, phase_name)

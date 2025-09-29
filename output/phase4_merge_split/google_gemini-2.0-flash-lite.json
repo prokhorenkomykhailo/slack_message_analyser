@@ -1,0 +1,145 @@
+{
+  "provider": "google",
+  "model": "gemini-2.0-flash-lite",
+  "phase": "phase4_merge_split",
+  "timestamp": "2025-09-29T10:01:37.023903",
+  "success": true,
+  "duration": 3.3545773029327393,
+  "usage": {
+    "prompt_tokens": 1754,
+    "completion_tokens": 478,
+    "total_tokens": 2232
+  },
+  "cost": {
+    "input_cost": 0.0,
+    "output_cost": 0.0,
+    "total_cost": 0.0,
+    "input_tokens": 1754,
+    "output_tokens": 478
+  },
+  "initial_clusters": [
+    {
+      "cluster_id": "cluster_001",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "draft_title": "Project Planning",
+      "participants": [
+        "@alice",
+        "@bob"
+      ],
+      "channel": "#general"
+    },
+    {
+      "cluster_id": "cluster_002",
+      "message_ids": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "draft_title": "Technical Discussion",
+      "participants": [
+        "@charlie",
+        "@david"
+      ],
+      "channel": "#tech"
+    },
+    {
+      "cluster_id": "cluster_003",
+      "message_ids": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "draft_title": "Meeting Scheduling",
+      "participants": [
+        "@alice",
+        "@eve"
+      ],
+      "channel": "#general"
+    }
+  ],
+  "refined_clusters": [
+    {
+      "cluster_id": "cluster_001_refined",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "draft_title": "EcoBloom Summer Campaign Planning & Execution",
+      "participants": [
+        "@Devon",
+        "@Sam",
+        "@Leah",
+        "@Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "merge_reason": "Merged planning and scheduling clusters due to high semantic similarity and participant overlap. All messages are related to the EcoBloom campaign.",
+      "split_reason": null
+    },
+    {
+      "cluster_id": "cluster_002_refined",
+      "message_ids": [
+        14,
+        15
+      ],
+      "draft_title": "FitFusion Rebranding Project",
+      "participants": [
+        "@Devon",
+        "@Sam"
+      ],
+      "channel": "#campaign-briefs",
+      "merge_reason": null,
+      "split_reason": null
+    },
+    {
+      "cluster_id": "cluster_003_refined",
+      "message_ids": [],
+      "draft_title": "Technical Discussion",
+      "participants": [
+        "@charlie",
+        "@david"
+      ],
+      "channel": "#tech",
+      "merge_reason": null,
+      "split_reason": "Removed due to lack of relevant messages"
+    }
+  ],
+  "metrics": {
+    "num_initial_clusters": 3,
+    "num_refined_clusters": 3,
+    "merge_operations": 1,
+    "split_operations": 1,
+    "total_operations": 2,
+    "avg_cluster_size": 5.0,
+    "max_cluster_size": 13,
+    "min_cluster_size": 0,
+    "coverage": 0.05,
+    "cluster_titles": [
+      "EcoBloom Summer Campaign Planning & Execution",
+      "FitFusion Rebranding Project",
+      "Technical Discussion"
+    ]
+  },
+  "raw_response": "```json\n{\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_001_refined\",\n      \"message_ids\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning & Execution\",\n      \"participants\": [\"@Devon\", \"@Sam\", \"@Leah\", \"@Jordan\"],\n      \"channel\": \"#campaign-briefs\",\n      \"merge_reason\": \"Merged planning and scheduling clusters due to high semantic similarity and participant overlap. All messages are related to the EcoBloom campaign.\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002_refined\",\n      \"message_ids\": [14, 15],\n      \"draft_title\": \"FitFusion Rebranding Project\",\n      \"participants\": [\"@Devon\", \"@Sam\"],\n      \"channel\": \"#campaign-briefs\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_003_refined\",\n      \"message_ids\": [],\n      \"draft_title\": \"Technical Discussion\",\n      \"participants\": [\"@charlie\", \"@david\"],\n      \"channel\": \"#tech\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Removed due to lack of relevant messages\"\n    }\n  ],\n  \"operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters_involved\": [\"cluster_001\", \"cluster_003\"],\n      \"reason\": \"High semantic similarity in project-related discussions and participant overlap. Both clusters are about project planning and scheduling.\"\n    },\n    {\n      \"operation\": \"split\",\n      \"clusters_involved\": [\"cluster_001\"],\n      \"reason\": \"The original cluster contained messages from different channels and unrelated topics. The split creates a more focused cluster.\"\n    }\n  ]\n}\n```",
+  "error": ""
+}
