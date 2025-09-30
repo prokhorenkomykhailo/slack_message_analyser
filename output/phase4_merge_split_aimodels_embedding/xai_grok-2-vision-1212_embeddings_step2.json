@@ -1,0 +1,1777 @@
+{
+  "provider": "xai",
+  "model": "grok-2-vision-1212",
+  "phase": "phase4_merge_split_aimodels_embedding",
+  "timestamp": "2025-09-29T20:16:22.979326",
+  "success": true,
+  "duration": 1.5,
+  "usage": {
+    "prompt_tokens": 30481,
+    "completion_tokens": 2993,
+    "total_tokens": 33475
+  },
+  "cost": {
+    "input_cost": 0.001,
+    "output_cost": 0.002,
+    "total_cost": 0.003,
+    "input_tokens": 30481,
+    "output_tokens": 2993
+  },
+  "merge_operations": [
+    {
+      "operation": "merge",
+      "clusters": [
+        "cluster_003",
+        "cluster_008"
+      ],
+      "reason": "High embedding similarity (0.534) - Jaccard: 0.514, Cosine: 0.939, TF-IDF: 0.000",
+      "similarity_score": 0.5343273649913742,
+      "similarity_metrics": {
+        "jaccard": 0.5144766146993318,
+        "cosine": 0.9386662342418078,
+        "tfidf": 1.4148508035219791e-05,
+        "combined": 0.5343273649913742
+      }
+    },
+    {
+      "operation": "merge",
+      "clusters": [
+        "cluster_004",
+        "cluster_009"
+      ],
+      "reason": "High embedding similarity (0.526) - Jaccard: 0.496, Cosine: 0.935, TF-IDF: 0.000",
+      "similarity_score": 0.5256294056358061,
+      "similarity_metrics": {
+        "jaccard": 0.49581589958158995,
+        "cosine": 0.9351426790905991,
+        "tfidf": 1.24324858415125e-05,
+        "combined": 0.5256294056358061
+      }
+    },
+    {
+      "operation": "merge",
+      "clusters": [
+        "cluster_005",
+        "cluster_010"
+      ],
+      "reason": "High embedding similarity (0.473) - Jaccard: 0.512, Cosine: 0.765, TF-IDF: 0.000",
+      "similarity_score": 0.47290187531616307,
+      "similarity_metrics": {
+        "jaccard": 0.5124653739612188,
+        "cosine": 0.7654638360291204,
+        "tfidf": 1.3532485933846483e-05,
+        "combined": 0.47290187531616307
+      }
+    }
+  ],
+  "split_operations": [
+    {
+      "operation": "split",
+      "cluster": "cluster_001",
+      "reason": "Large cluster with 29 messages and low coherence (0.138) - should be split",
+      "suggested_clusters": [
+        "EcoBloom Summer Campaign Development - Part A",
+        "EcoBloom Summer Campaign Development - Part B"
+      ],
+      "coherence_metrics": {
+        "jaccard": 0.12277416609585073,
+        "cosine": 0.26300880962750717,
+        "density": 0.10545454545454545,
+        "consistency": 0.005825834562923862,
+        "combined": 0.13799096872050126
+      }
+    },
+    {
+      "operation": "split",
+      "cluster": "cluster_002",
+      "reason": "Large cluster with 38 messages and low coherence (0.173) - should be split",
+      "suggested_clusters": [
+        "FitFusion Rebranding Project - Part A",
+        "FitFusion Rebranding Project - Part B"
+      ],
+      "coherence_metrics": {
+        "jaccard": 0.1488390712672772,
+        "cosine": 0.3398707506979791,
+        "density": 0.10270270270270271,
+        "consistency": 0.02770529547198771,
+        "combined": 0.17269454622451497
+      }
+    },
+    {
+      "operation": "split",
+      "cluster": "cluster_007",
+      "reason": "Large cluster with 25 messages and low coherence (0.208) - should be split",
+      "suggested_clusters": [
+        "Q3 Content Calendar Development - Part A",
+        "Q3 Content Calendar Development - Part B"
+      ],
+      "coherence_metrics": {
+        "jaccard": 0.20320250516576693,
+        "cosine": 0.4093442698144944,
+        "density": 0.10121457489878542,
+        "consistency": 0.018728836414851218,
+        "combined": 0.2077527147568057
+      }
+    }
+  ],
+  "refined_clusters": [
+    {
+      "cluster_id": "cluster_003_merged_cluster_008",
+      "message_ids": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "draft_title": "TechNova Product Launch Preparation & TechNova Budget Finalization",
+      "participants": [
+        "Jordan",
+        "Leah",
+        "Sam",
+        "Devon"
+      ],
+      "channel": "#campaign-briefs, #project-updates",
+      "thread_id": "thread_003, thread_009",
+      "merge_reason": "High embedding similarity (0.534)",
+      "split_reason": null
+    },
+    {
+      "cluster_id": "cluster_004_merged_cluster_009",
+      "message_ids": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196
+      ],
+      "draft_title": "GreenScape Sustainability Report Development & GreenScape Deadline Extension",
+      "participants": [
+        "Jordan",
+        "Leah",
+        "Sam",
+        "Devon"
+      ],
+      "channel": "#client-communications, #project-updates",
+      "thread_id": "thread_004, thread_010",
+      "merge_reason": "High embedding similarity (0.526)",
+      "split_reason": null
+    },
+    {
+      "cluster_id": "cluster_005_merged_cluster_010",
+      "message_ids": [
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234
+      ],
+      "draft_title": "UrbanEdge Market Expansion Research & FitFusion Brand Guidelines Development",
+      "participants": [
+        "Jordan",
+        "Leah",
+        "Sam",
+        "Devon"
+      ],
+      "channel": "#client-communications, #client-communications",
+      "thread_id": "thread_005, thread_012",
+      "merge_reason": "High embedding similarity (0.473)",
+      "split_reason": null
+    },
+    {
+      "cluster_id": "cluster_001_split_A",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        197
+      ],
+      "draft_title": "EcoBloom Summer Campaign Development - Part A",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_001",
+      "merge_reason": null,
+      "split_reason": "Low coherence (0.138) - split by content"
+    },
+    {
+      "cluster_id": "cluster_001_split_B",
+      "message_ids": [
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212
+      ],
+      "draft_title": "EcoBloom Summer Campaign Development - Part B",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_001",
+      "merge_reason": null,
+      "split_reason": "Low coherence (0.138) - split by content"
+    },
+    {
+      "cluster_id": "cluster_002_split_A",
+      "message_ids": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        89,
+        90,
+        91,
+        92
+      ],
+      "draft_title": "FitFusion Rebranding Project - Part A",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_002",
+      "merge_reason": null,
+      "split_reason": "Low coherence (0.173) - split by content"
+    },
+    {
+      "cluster_id": "cluster_002_split_B",
+      "message_ids": [
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111
+      ],
+      "draft_title": "FitFusion Rebranding Project - Part B",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_002",
+      "merge_reason": null,
+      "split_reason": "Low coherence (0.173) - split by content"
+    },
+    {
+      "cluster_id": "cluster_007_split_A",
+      "message_ids": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123
+      ],
+      "draft_title": "Q3 Content Calendar Development - Part A",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#project-updates",
+      "thread_id": "thread_008",
+      "merge_reason": null,
+      "split_reason": "Low coherence (0.208) - split by content"
+    },
+    {
+      "cluster_id": "cluster_007_split_B",
+      "message_ids": [
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136
+      ],
+      "draft_title": "Q3 Content Calendar Development - Part B",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#project-updates",
+      "thread_id": "thread_008",
+      "merge_reason": null,
+      "split_reason": "Low coherence (0.208) - split by content"
+    },
+    {
+      "cluster_id": "cluster_006",
+      "message_ids": [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "draft_title": "EcoBloom Campaign Revisions",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_006",
+      "merge_reason": null,
+      "split_reason": null
+    }
+  ],
+  "metrics": {
+    "num_merge_operations": 3,
+    "num_split_operations": 3,
+    "num_refined_clusters": 10,
+    "avg_similarity_score": 0.5109528819811145,
+    "max_similarity_score": 0.5343273649913742,
+    "min_similarity_score": 0.47290187531616307,
+    "avg_cluster_size": 36.0,
+    "max_cluster_size": 99,
+    "min_cluster_size": 12,
+    "total_messages": 360,
+    "merge_operation_reasons": [
+      "High embedding similarity (0.534) - Jaccard: 0.514, Cosine: 0.939, TF-IDF: 0.000",
+      "High embedding similarity (0.526) - Jaccard: 0.496, Cosine: 0.935, TF-IDF: 0.000",
+      "High embedding similarity (0.473) - Jaccard: 0.512, Cosine: 0.765, TF-IDF: 0.000"
+    ],
+    "split_operation_reasons": [
+      "Large cluster with 29 messages and low coherence (0.138) - should be split",
+      "Large cluster with 38 messages and low coherence (0.173) - should be split",
+      "Large cluster with 25 messages and low coherence (0.208) - should be split"
+    ]
+  },
+  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_003\",\n        \"cluster_008\"\n      ],\n      \"reason\": \"High embedding similarity (0.534) - Jaccard: 0.514, Cosine: 0.939, TF-IDF: 0.000\",\n      \"similarity_score\": 0.5343273649913742,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.5144766146993318,\n        \"cosine\": 0.9386662342418078,\n        \"tfidf\": 1.4148508035219791e-05,\n        \"combined\": 0.5343273649913742\n      }\n    },\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_004\",\n        \"cluster_009\"\n      ],\n      \"reason\": \"High embedding similarity (0.526) - Jaccard: 0.496, Cosine: 0.935, TF-IDF: 0.000\",\n      \"similarity_score\": 0.5256294056358061,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.49581589958158995,\n        \"cosine\": 0.9351426790905991,\n        \"tfidf\": 1.24324858415125e-05,\n        \"combined\": 0.5256294056358061\n      }\n    },\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_005\",\n        \"cluster_010\"\n      ],\n      \"reason\": \"High embedding similarity (0.473) - Jaccard: 0.512, Cosine: 0.765, TF-IDF: 0.000\",\n      \"similarity_score\": 0.47290187531616307,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.5124653739612188,\n        \"cosine\": 0.7654638360291204,\n        \"tfidf\": 1.3532485933846483e-05,\n        \"combined\": 0.47290187531616307\n      }\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_001\",\n      \"reason\": \"Large cluster with 29 messages and low coherence (0.138) - should be split\",\n      \"suggested_clusters\": [\n        \"EcoBloom Summer Campaign Development - Part A\",\n        \"EcoBloom Summer Campaign Development - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.12277416609585073,\n        \"cosine\": 0.26300880962750717,\n        \"density\": 0.10545454545454545,\n        \"consistency\": 0.005825834562923862,\n        \"combined\": 0.13799096872050126\n      }\n    },\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_002\",\n      \"reason\": \"Large cluster with 38 messages and low coherence (0.173) - should be split\",\n      \"suggested_clusters\": [\n        \"FitFusion Rebranding Project - Part A\",\n        \"FitFusion Rebranding Project - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.1488390712672772,\n        \"cosine\": 0.3398707506979791,\n        \"density\": 0.10270270270270271,\n        \"consistency\": 0.02770529547198771,\n        \"combined\": 0.17269454622451497\n      }\n    },\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_007\",\n      \"reason\": \"Large cluster with 25 messages and low coherence (0.208) - should be split\",\n      \"suggested_clusters\": [\n        \"Q3 Content Calendar Development - Part A\",\n        \"Q3 Content Calendar Development - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.20320250516576693,\n        \"cosine\": 0.4093442698144944,\n        \"density\": 0.10121457489878542,\n        \"consistency\": 0.018728836414851218,\n        \"combined\": 0.2077527147568057\n      }\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_003_merged_cluster_008\",\n      \"message_ids\": [\n        29,\n        30,\n        31,\n        32,\n        33,\n        34,\n        35,\n        36,\n        37,\n        38,\n        39,\n        40,\n        41,\n        42,\n        43,\n        137,\n        138,\n        139,\n        140,\n        141,\n        142,\n        143,\n        144,\n        145,\n        146,\n        147,\n        148,\n        149,\n        150,\n        151,\n        152,\n        153,\n        154,\n        155,\n        156,\n        157,\n        158,\n        159,\n        160,\n        161,\n        162,\n        163,\n        164,\n        165,\n        166,\n        167,\n        235,\n        236,\n        237,\n        238,\n        239,\n        240,\n        241,\n        242,\n        243,\n        244,\n        245,\n        246,\n        247,\n        248,\n        249,\n        250,\n        251,\n        252,\n        253,\n        254,\n        255,\n        256,\n        137,\n        138,\n        139,\n        140,\n        141,\n        142,\n        143,\n        144,\n        145,\n        146,\n        147,\n        148,\n        149,\n        150,\n        151,\n        152,\n        153,\n        154,\n        155,\n        156,\n        157,\n        158,\n        159,\n        160,\n        161,\n        162,\n        163,\n        164,\n        165,\n        166,\n        167\n      ],\n      \"draft_title\": \"TechNova Product Launch Preparation & TechNova Budget Finalization\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#campaign-briefs, #project-updates\",\n      \"thread_id\": \"thread_003, thread_009\",\n      \"merge_reason\": \"High embedding similarity (0.534)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_004_merged_cluster_009\",\n      \"message_ids\": [\n        44,\n        45,\n        46,\n        47,\n        48,\n        49,\n        50,\n        51,\n        52,\n        53,\n        54,\n        55,\n        56,\n        57,\n        58,\n        168,\n        169,\n        170,\n        171,\n        172,\n        173,\n        174,\n        175,\n        176,\n        177,\n        178,\n        179,\n        180,\n        181,\n        182,\n        183,\n        184,\n        185,\n        186,\n        187,\n        188,\n        189,\n        190,\n        191,\n        192,\n        193,\n        194,\n        195,\n        196,\n        257,\n        258,\n        259,\n        260,\n        261,\n        262,\n        263,\n        264,\n        265,\n        266,\n        267,\n        268,\n        269,\n        270,\n        271,\n        272,\n        273,\n        274,\n        275,\n        276,\n        277,\n        278,\n        168,\n        169,\n        170,\n        171,\n        172,\n        173,\n        174,\n        175,\n        176,\n        177,\n        178,\n        179,\n        180,\n        181,\n        182,\n        183,\n        184,\n        185,\n        186,\n        187,\n        188,\n        189,\n        190,\n        191,\n        192,\n        193,\n        194,\n        195,\n        196\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report Development & GreenScape Deadline Extension\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#client-communications, #project-updates\",\n      \"thread_id\": \"thread_004, thread_010\",\n      \"merge_reason\": \"High embedding similarity (0.526)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_005_merged_cluster_010\",\n      \"message_ids\": [\n        59,\n        60,\n        61,\n        62,\n        63,\n        64,\n        65,\n        66,\n        67,\n        68,\n        69,\n        70,\n        71,\n        72,\n        73,\n        279,\n        280,\n        281,\n        282,\n        283,\n        284,\n        285,\n        286,\n        287,\n        288,\n        289,\n        290,\n        291,\n        292,\n        293,\n        294,\n        295,\n        296,\n        297,\n        298,\n        299,\n        300,\n        213,\n        214,\n        215,\n        216,\n        217,\n        218,\n        219,\n        220,\n        221,\n        222,\n        223,\n        224,\n        225,\n        226,\n        227,\n        228,\n        229,\n        230,\n        231,\n        232,\n        233,\n        234\n      ],\n      \"draft_title\": \"UrbanEdge Market Expansion Research & FitFusion Brand Guidelines Development\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#client-communications, #client-communications\",\n      \"thread_id\": \"thread_005, thread_012\",\n      \"merge_reason\": \"High embedding similarity (0.473)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001_split_A\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8,\n        9,\n        10,\n        11,\n        12,\n        13,\n        197\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Development - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.138) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_001_split_B\",\n      \"message_ids\": [\n        198,\n        199,\n        200,\n        201,\n        202,\n        203,\n        204,\n        205,\n        206,\n        207,\n        208,\n        209,\n        210,\n        211,\n        212\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Development - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.138) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_A\",\n      \"message_ids\": [\n        14,\n        15,\n        16,\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28,\n        89,\n        90,\n        91,\n        92\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.173) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_B\",\n      \"message_ids\": [\n        93,\n        94,\n        95,\n        96,\n        97,\n        98,\n        99,\n        100,\n        101,\n        102,\n        103,\n        104,\n        105,\n        106,\n        107,\n        108,\n        109,\n        110,\n        111\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.173) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_007_split_A\",\n      \"message_ids\": [\n        112,\n        113,\n        114,\n        115,\n        116,\n        117,\n        118,\n        119,\n        120,\n        121,\n        122,\n        123\n      ],\n      \"draft_title\": \"Q3 Content Calendar Development - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_008\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.208) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_007_split_B\",\n      \"message_ids\": [\n        124,\n        125,\n        126,\n        127,\n        128,\n        129,\n        130,\n        131,\n        132,\n        133,\n        134,\n        135,\n        136\n      ],\n      \"draft_title\": \"Q3 Content Calendar Development - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_008\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.208) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_006\",\n      \"message_ids\": [\n        74,\n        75,\n        76,\n        77,\n        78,\n        79,\n        80,\n        81,\n        82,\n        83,\n        84,\n        85,\n        86,\n        87,\n        88\n      ],\n      \"draft_title\": \"EcoBloom Campaign Revisions\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_006\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
+  "error": "",
+  "prompt_tokens_estimated": 30481,
+  "messages_used": 360,
+  "original_clusters": [
+    {
+      "cluster_id": "cluster_001",
+      "message_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212
+      ],
+      "draft_title": "EcoBloom Summer Campaign Development",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_001"
+    },
+    {
+      "cluster_id": "cluster_002",
+      "message_ids": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111
+      ],
+      "draft_title": "FitFusion Rebranding Project",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_002"
+    },
+    {
+      "cluster_id": "cluster_003",
+      "message_ids": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ],
+      "draft_title": "TechNova Product Launch Preparation",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#campaign-briefs",
+      "thread_id": "thread_003"
+    },
+    {
+      "cluster_id": "cluster_004",
+      "message_ids": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278
+      ],
+      "draft_title": "GreenScape Sustainability Report Development",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_004"
+    },
+    {
+      "cluster_id": "cluster_005",
+      "message_ids": [
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300
+      ],
+      "draft_title": "UrbanEdge Market Expansion Research",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_005"
+    },
+    {
+      "cluster_id": "cluster_006",
+      "message_ids": [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "draft_title": "EcoBloom Campaign Revisions",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_006"
+    },
+    {
+      "cluster_id": "cluster_007",
+      "message_ids": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136
+      ],
+      "draft_title": "Q3 Content Calendar Development",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#project-updates",
+      "thread_id": "thread_008"
+    },
+    {
+      "cluster_id": "cluster_008",
+      "message_ids": [
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "draft_title": "TechNova Budget Finalization",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#project-updates",
+      "thread_id": "thread_009"
+    },
+    {
+      "cluster_id": "cluster_009",
+      "message_ids": [
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196
+      ],
+      "draft_title": "GreenScape Deadline Extension",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#project-updates",
+      "thread_id": "thread_010"
+    },
+    {
+      "cluster_id": "cluster_010",
+      "message_ids": [
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234
+      ],
+      "draft_title": "FitFusion Brand Guidelines Development",
+      "participants": [
+        "Devon",
+        "Sam",
+        "Leah",
+        "Jordan"
+      ],
+      "channel": "#client-communications",
+      "thread_id": "thread_012"
+    }
+  ],
+  "total_messages_analyzed": 360,
+  "cluster_similarities": [
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_002",
+      "similarity_metrics": {
+        "jaccard": 0.35789473684210527,
+        "cosine": 0.8466723187618337,
+        "tfidf": 1.051580247108116e-05,
+        "combined": 0.43949583525410163
+      },
+      "combined_similarity": 0.43949583525410163
+    },
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_003",
+      "similarity_metrics": {
+        "jaccard": 0.3284403669724771,
+        "cosine": 0.823184300228647,
+        "tfidf": 9.112714135325602e-06,
+        "combined": 0.41949293004755106
+      },
+      "combined_similarity": 0.41949293004755106
+    },
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_004",
+      "similarity_metrics": {
+        "jaccard": 0.3072916666666667,
+        "cosine": 0.7722783777633903,
+        "tfidf": 7.775806151215124e-06,
+        "combined": 0.393216042835391
+      },
+      "combined_similarity": 0.393216042835391
+    },
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_005",
+      "similarity_metrics": {
+        "jaccard": 0.34467120181405897,
+        "cosine": 0.8005520792045612,
+        "tfidf": 1.0721635400245634e-05,
+        "combined": 0.41806438885607006
+      },
+      "combined_similarity": 0.41806438885607006
+    },
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_006",
+      "similarity_metrics": {
+        "jaccard": 0.3398328690807799,
+        "cosine": 0.8560668544831375,
+        "tfidf": 1.5586212870916667e-05,
+        "combined": 0.43556044325462784
+      },
+      "combined_similarity": 0.43556044325462784
+    },
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_007",
+      "similarity_metrics": {
+        "jaccard": 0.29850746268656714,
+        "cosine": 0.8050926346378048,
+        "tfidf": 1.2793488476329828e-05,
+        "combined": 0.40118860556997765
+      },
+      "combined_similarity": 0.40118860556997765
+    },
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_008",
+      "similarity_metrics": {
+        "jaccard": 0.28426395939086296,
+        "cosine": 0.794704969443957,
+        "tfidf": 1.3494897185181877e-05,
+        "combined": 0.39185569678602644
+      },
+      "combined_similarity": 0.39185569678602644
+    },
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_009",
+      "similarity_metrics": {
+        "jaccard": 0.23373493975903614,
+        "cosine": 0.6809585220437512,
+        "tfidf": 1.07237769784046e-05,
+        "combined": 0.331832139563172
+      },
+      "combined_similarity": 0.331832139563172
+    },
+    {
+      "cluster1": "cluster_001",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.35945945945945945,
+        "cosine": 0.7485203093601759,
+        "tfidf": 1.3038066476764734e-05,
+        "combined": 0.40576915157646454
+      },
+      "combined_similarity": 0.40576915157646454
+    },
+    {
+      "cluster1": "cluster_002",
+      "cluster2": "cluster_003",
+      "similarity_metrics": {
+        "jaccard": 0.37416107382550334,
+        "cosine": 0.8631526802804935,
+        "tfidf": 8.642670379454422e-06,
+        "combined": 0.4517700282959689
+      },
+      "combined_similarity": 0.4517700282959689
+    },
+    {
+      "cluster1": "cluster_002",
+      "cluster2": "cluster_004",
+      "similarity_metrics": {
+        "jaccard": 0.3147286821705426,
+        "cosine": 0.8363792889219601,
+        "tfidf": 7.438699319902654e-06,
+        "combined": 0.41862608366573306
+      },
+      "combined_similarity": 0.41862608366573306
+    },
+    {
+      "cluster1": "cluster_002",
+      "cluster2": "cluster_005",
+      "similarity_metrics": {
+        "jaccard": 0.3230769230769231,
+        "cosine": 0.8221527229736665,
+        "tfidf": 9.236737599086655e-06,
+        "combined": 0.41698653145595227
+      },
+      "combined_similarity": 0.41698653145595227
+    },
+    {
+      "cluster1": "cluster_002",
+      "cluster2": "cluster_006",
+      "similarity_metrics": {
+        "jaccard": 0.3150684931506849,
+        "cosine": 0.8304969064213928,
+        "tfidf": 1.2258877194347506e-05,
+        "combined": 0.41670437922706005
+      },
+      "combined_similarity": 0.41670437922706005
+    },
+    {
+      "cluster1": "cluster_002",
+      "cluster2": "cluster_007",
+      "similarity_metrics": {
+        "jaccard": 0.2669404517453799,
+        "cosine": 0.7623892954665504,
+        "tfidf": 9.891825047702962e-06,
+        "combined": 0.37361490706770656
+      },
+      "combined_similarity": 0.37361490706770656
+    },
+    {
+      "cluster1": "cluster_002",
+      "cluster2": "cluster_008",
+      "similarity_metrics": {
+        "jaccard": 0.23155737704918034,
+        "cosine": 0.784345062125639,
+        "tfidf": 1.0636693230640433e-05,
+        "combined": 0.36714638173695346
+      },
+      "combined_similarity": 0.36714638173695346
+    },
+    {
+      "cluster1": "cluster_002",
+      "cluster2": "cluster_009",
+      "similarity_metrics": {
+        "jaccard": 0.21887550200803213,
+        "cosine": 0.7416450423239697,
+        "tfidf": 9.62723076709423e-06,
+        "combined": 0.34712837242429395
+      },
+      "combined_similarity": 0.34712837242429395
+    },
+    {
+      "cluster1": "cluster_002",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.3378076062639821,
+        "cosine": 0.8639555800621057,
+        "tfidf": 1.2321246144203132e-05,
+        "combined": 0.4375105758388659
+      },
+      "combined_similarity": 0.4375105758388659
+    },
+    {
+      "cluster1": "cluster_003",
+      "cluster2": "cluster_004",
+      "similarity_metrics": {
+        "jaccard": 0.37537091988130566,
+        "cosine": 0.8347938312620669,
+        "tfidf": 7.266065116148569e-06,
+        "combined": 0.44232802541052474
+      },
+      "combined_similarity": 0.44232802541052474
+    },
+    {
+      "cluster1": "cluster_003",
+      "cluster2": "cluster_005",
+      "similarity_metrics": {
+        "jaccard": 0.40219378427787933,
+        "cosine": 0.8373305461421572,
+        "tfidf": 9.145460124600572e-06,
+        "combined": 0.4539454912259379
+      },
+      "combined_similarity": 0.4539454912259379
+    },
+    {
+      "cluster1": "cluster_003",
+      "cluster2": "cluster_006",
+      "similarity_metrics": {
+        "jaccard": 0.27184466019417475,
+        "cosine": 0.8309595427788682,
+        "tfidf": 1.0668072004066496e-05,
+        "combined": 0.39957637106827476
+      },
+      "combined_similarity": 0.39957637106827476
+    },
+    {
+      "cluster1": "cluster_003",
+      "cluster2": "cluster_007",
+      "similarity_metrics": {
+        "jaccard": 0.28650646950092423,
+        "cosine": 0.7797187882057471,
+        "tfidf": 9.31313361529412e-06,
+        "combined": 0.38750649195578496
+      },
+      "combined_similarity": 0.38750649195578496
+    },
+    {
+      "cluster1": "cluster_003",
+      "cluster2": "cluster_008",
+      "similarity_metrics": {
+        "jaccard": 0.5144766146993318,
+        "cosine": 0.9386662342418078,
+        "tfidf": 1.4148508035219791e-05,
+        "combined": 0.5343273649913742
+      },
+      "combined_similarity": 0.5343273649913742
+    },
+    {
+      "cluster1": "cluster_003",
+      "cluster2": "cluster_009",
+      "similarity_metrics": {
+        "jaccard": 0.19304347826086957,
+        "cosine": 0.7297990743067392,
+        "tfidf": 8.390669058863377e-06,
+        "combined": 0.3326491649789713
+      },
+      "combined_similarity": 0.3326491649789713
+    },
+    {
+      "cluster1": "cluster_003",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.4045643153526971,
+        "cosine": 0.8171028409859841,
+        "tfidf": 1.1051645019793782e-05,
+        "combined": 0.4478144833974282
+      },
+      "combined_similarity": 0.4478144833974282
+    },
+    {
+      "cluster1": "cluster_004",
+      "cluster2": "cluster_005",
+      "similarity_metrics": {
+        "jaccard": 0.37005163511187605,
+        "cosine": 0.8093261824998037,
+        "tfidf": 8.000005271206294e-06,
+        "combined": 0.43128681792099943
+      },
+      "combined_similarity": 0.43128681792099943
+    },
+    {
+      "cluster1": "cluster_004",
+      "cluster2": "cluster_006",
+      "similarity_metrics": {
+        "jaccard": 0.2808988764044944,
+        "cosine": 0.77991935676411,
+        "tfidf": 9.282577692120938e-06,
+        "combined": 0.3853336460736592
+      },
+      "combined_similarity": 0.3853336460736592
+    },
+    {
+      "cluster1": "cluster_004",
+      "cluster2": "cluster_007",
+      "similarity_metrics": {
+        "jaccard": 0.3016157989228007,
+        "cosine": 0.721762144248062,
+        "tfidf": 8.048980356871295e-06,
+        "combined": 0.3732650823010312
+      },
+      "combined_similarity": 0.3732650823010312
+    },
+    {
+      "cluster1": "cluster_004",
+      "cluster2": "cluster_008",
+      "similarity_metrics": {
+        "jaccard": 0.2309027777777778,
+        "cosine": 0.7606047520631416,
+        "tfidf": 8.590712896926474e-06,
+        "combined": 0.35857492201143487
+      },
+      "combined_similarity": 0.35857492201143487
+    },
+    {
+      "cluster1": "cluster_004",
+      "cluster2": "cluster_009",
+      "similarity_metrics": {
+        "jaccard": 0.49581589958158995,
+        "cosine": 0.9351426790905991,
+        "tfidf": 1.24324858415125e-05,
+        "combined": 0.5256294056358061
+      },
+      "combined_similarity": 0.5256294056358061
+    },
+    {
+      "cluster1": "cluster_004",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.36293436293436293,
+        "cosine": 0.7802059580342953,
+        "tfidf": 9.438948364502975e-06,
+        "combined": 0.4182481902228396
+      },
+      "combined_similarity": 0.4182481902228396
+    },
+    {
+      "cluster1": "cluster_005",
+      "cluster2": "cluster_006",
+      "similarity_metrics": {
+        "jaccard": 0.3132832080200501,
+        "cosine": 0.7957910979884959,
+        "tfidf": 1.2909289278066665e-05,
+        "combined": 0.4038433948263131
+      },
+      "combined_similarity": 0.4038433948263131
+    },
+    {
+      "cluster1": "cluster_005",
+      "cluster2": "cluster_007",
+      "similarity_metrics": {
+        "jaccard": 0.2988505747126437,
+        "cosine": 0.7627323505572017,
+        "tfidf": 1.1091770472032712e-05,
+        "combined": 0.38649932552269606
+      },
+      "combined_similarity": 0.38649932552269606
+    },
+    {
+      "cluster1": "cluster_005",
+      "cluster2": "cluster_008",
+      "similarity_metrics": {
+        "jaccard": 0.27972027972027974,
+        "cosine": 0.7697120056257796,
+        "tfidf": 1.1887201475808462e-05,
+        "combined": 0.3812902856575037
+      },
+      "combined_similarity": 0.3812902856575037
+    },
+    {
+      "cluster1": "cluster_005",
+      "cluster2": "cluster_009",
+      "similarity_metrics": {
+        "jaccard": 0.20915032679738563,
+        "cosine": 0.7064050039435572,
+        "tfidf": 9.96013154591462e-06,
+        "combined": 0.33090437213208573
+      },
+      "combined_similarity": 0.33090437213208573
+    },
+    {
+      "cluster1": "cluster_005",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.5124653739612188,
+        "cosine": 0.7654638360291204,
+        "tfidf": 1.3532485933846483e-05,
+        "combined": 0.47290187531616307
+      },
+      "combined_similarity": 0.47290187531616307
+    },
+    {
+      "cluster1": "cluster_006",
+      "cluster2": "cluster_007",
+      "similarity_metrics": {
+        "jaccard": 0.29428571428571426,
+        "cosine": 0.7692616112921451,
+        "tfidf": 1.5386552229188154e-05,
+        "combined": 0.38695969630459376
+      },
+      "combined_similarity": 0.38695969630459376
+    },
+    {
+      "cluster1": "cluster_006",
+      "cluster2": "cluster_008",
+      "similarity_metrics": {
+        "jaccard": 0.2557471264367816,
+        "cosine": 0.7950707292950989,
+        "tfidf": 1.6751454111833202e-05,
+        "combined": 0.3805777936915252
+      },
+      "combined_similarity": 0.3805777936915252
+    },
+    {
+      "cluster1": "cluster_006",
+      "cluster2": "cluster_009",
+      "similarity_metrics": {
+        "jaccard": 0.26571428571428574,
+        "cosine": 0.6966195591124706,
+        "tfidf": 1.425505666940506e-05,
+        "combined": 0.3501061237392463
+      },
+      "combined_similarity": 0.3501061237392463
+    },
+    {
+      "cluster1": "cluster_006",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.35625,
+        "cosine": 0.7422565149192996,
+        "tfidf": 1.638254932398552e-05,
+        "combined": 0.4022938758590858
+      },
+      "combined_similarity": 0.4022938758590858
+    },
+    {
+      "cluster1": "cluster_007",
+      "cluster2": "cluster_008",
+      "similarity_metrics": {
+        "jaccard": 0.3389355742296919,
+        "cosine": 0.7735608278929108,
+        "tfidf": 1.5527232509699576e-05,
+        "combined": 0.40632440126252295
+      },
+      "combined_similarity": 0.40632440126252295
+    },
+    {
+      "cluster1": "cluster_007",
+      "cluster2": "cluster_009",
+      "similarity_metrics": {
+        "jaccard": 0.26370757180156656,
+        "cosine": 0.6357493435408738,
+        "tfidf": 1.1619041073261603e-05,
+        "combined": 0.3279982037202008
+      },
+      "combined_similarity": 0.3279982037202008
+    },
+    {
+      "cluster1": "cluster_007",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.3418079096045198,
+        "cosine": 0.6920164756338928,
+        "tfidf": 1.349374282383503e-05,
+        "combined": 0.3789323037493763
+      },
+      "combined_similarity": 0.3789323037493763
+    },
+    {
+      "cluster1": "cluster_008",
+      "cluster2": "cluster_009",
+      "similarity_metrics": {
+        "jaccard": 0.20930232558139536,
+        "cosine": 0.6766343918990515,
+        "tfidf": 1.2817901654037489e-05,
+        "combined": 0.3205461718726397
+      },
+      "combined_similarity": 0.3205461718726397
+    },
+    {
+      "cluster1": "cluster_008",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.3227665706051873,
+        "cosine": 0.7245054672905943,
+        "tfidf": 1.5094618461736893e-05,
+        "combined": 0.3826873154483984
+      },
+      "combined_similarity": 0.3826873154483984
+    },
+    {
+      "cluster1": "cluster_009",
+      "cluster2": "cluster_010",
+      "similarity_metrics": {
+        "jaccard": 0.23342175066312998,
+        "cosine": 0.6626322915618674,
+        "tfidf": 1.2412421970522046e-05,
+        "combined": 0.3252931054173982
+      },
+      "combined_similarity": 0.3252931054173982
+    }
+  ],
+  "cluster_coherences": [
+    {
+      "cluster": "cluster_001",
+      "coherence_metrics": {
+        "jaccard": 0.12277416609585073,
+        "cosine": 0.26300880962750717,
+        "density": 0.10545454545454545,
+        "consistency": 0.005825834562923862,
+        "combined": 0.13799096872050126
+      },
+      "combined_coherence": 0.13799096872050126
+    },
+    {
+      "cluster": "cluster_002",
+      "coherence_metrics": {
+        "jaccard": 0.1488390712672772,
+        "cosine": 0.3398707506979791,
+        "density": 0.10270270270270271,
+        "consistency": 0.02770529547198771,
+        "combined": 0.17269454622451497
+      },
+      "combined_coherence": 0.17269454622451497
+    },
+    {
+      "cluster": "cluster_003",
+      "coherence_metrics": {
+        "jaccard": 0.13988242616717145,
+        "cosine": 0.33939255004396973,
+        "density": 0.1514476614699332,
+        "consistency": 0.02835765975714461,
+        "combined": 0.17974355710875792
+      },
+      "combined_coherence": 0.17974355710875792
+    },
+    {
+      "cluster": "cluster_004",
+      "coherence_metrics": {
+        "jaccard": 0.13960971486045376,
+        "cosine": 0.3234376132300867,
+        "density": 0.13807531380753138,
+        "consistency": 0.01658108401310956,
+        "combined": 0.16984547799129032
+      },
+      "combined_coherence": 0.16984547799129032
+    },
+    {
+      "cluster": "cluster_005",
+      "coherence_metrics": {
+        "jaccard": 0.15626889772622068,
+        "cosine": 0.33013704653631454,
+        "density": 0.11635220125786164,
+        "consistency": 0.02493216048370941,
+        "combined": 0.17417865562707477
+      },
+      "combined_coherence": 0.17417865562707477
+    },
+    {
+      "cluster": "cluster_006",
+      "coherence_metrics": {
+        "jaccard": 0.1713352016714155,
+        "cosine": 0.4093459718938908,
+        "density": 0.07281553398058252,
+        "consistency": 0.04725897920604915,
+        "combined": 0.19821925470691823
+      },
+      "combined_coherence": 0.19821925470691823
+    },
+    {
+      "cluster": "cluster_007",
+      "coherence_metrics": {
+        "jaccard": 0.20320250516576693,
+        "cosine": 0.4093442698144944,
+        "density": 0.10121457489878542,
+        "consistency": 0.018728836414851218,
+        "combined": 0.2077527147568057
+      },
+      "combined_coherence": 0.2077527147568057
+    },
+    {
+      "cluster": "cluster_008",
+      "coherence_metrics": {
+        "jaccard": 0.1804092219112293,
+        "cosine": 0.3999332810243266,
+        "density": 0.1341991341991342,
+        "consistency": 0.04010684028212513,
+        "combined": 0.20896394577691865
+      },
+      "combined_coherence": 0.20896394577691865
+    },
+    {
+      "cluster": "cluster_009",
+      "coherence_metrics": {
+        "jaccard": 0.20418143754437695,
+        "cosine": 0.429397777828794,
+        "density": 0.12236286919831224,
+        "consistency": 0.026321554880911396,
+        "combined": 0.21981064942779602
+      },
+      "combined_coherence": 0.21981064942779602
+    },
+    {
+      "cluster": "cluster_010",
+      "coherence_metrics": {
+        "jaccard": 0.1815152909731304,
+        "cosine": 0.3942853899006547,
+        "density": 0.09649122807017543,
+        "consistency": 0.02542550956083211,
+        "combined": 0.19712355178833704
+      },
+      "combined_coherence": 0.19712355178833704
+    }
+  ]
+}
