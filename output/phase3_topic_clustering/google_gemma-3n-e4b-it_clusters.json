@@ -28,7 +28,21 @@
       10,
       11,
       12,
-      13,
+      13
+    ],
+    "draft_title": "EcoBloom Summer Campaign Timeline & Deliverables",
+    "participants": [
+      "Devon",
+      "Sam",
+      "Leah",
+      "Jordan"
+    ],
+    "channel": "#campaign-briefs",
+    "thread_id": "thread_001"
+  },
+  {
+    "cluster_id": "cluster_003",
+    "message_ids": [
       14,
       15,
       16,
@@ -44,7 +58,21 @@
       26,
       27,
       28,
-      29,
+      29
+    ],
+    "draft_title": "FitFusion Rebranding Project Planning",
+    "participants": [
+      "Devon",
+      "Sam",
+      "Leah",
+      "Jordan"
+    ],
+    "channel": "#campaign-briefs",
+    "thread_id": "thread_002"
+  },
+  {
+    "cluster_id": "cluster_004",
+    "message_ids": [
       30,
       31,
       32,
@@ -58,7 +86,21 @@
       40,
       41,
       42,
-      43,
+      43
+    ],
+    "draft_title": "UrbanEdge Social Media Strategy Development",
+    "participants": [
+      "Devon",
+      "Leah",
+      "Sam",
+      "Jordan"
+    ],
+    "channel": "#client-communications",
+    "thread_id": "thread_005"
+  },
+  {
+    "cluster_id": "cluster_005",
+    "message_ids": [
       44,
       45,
       46,
@@ -103,70 +145,14 @@
       85,
       86
     ],
-    "draft_title": "EcoBloom Rebrand Project",
+    "draft_title": "EcoBloom Summer Campaign Design Revisions & Legal Review",
     "participants": [
       "Devon",
       "Sam",
       "Leah",
       "Jordan"
     ],
-    "channel": "#campaign-briefs",
-    "thread_id": "thread_002"
-  },
-  {
-    "cluster_id": "cluster_003",
-    "message_ids": [
-      1,
-      30,
-      44,
-      60,
-      74,
-      86
-    ],
-    "draft_title": "UrbanEdge Social Media Strategy",
-    "participants": [
-      "Devon",
-      "Leah",
-      "Sam"
-    ],
     "channel": "#client-communications",
-    "thread_id": "thread_005"
-  },
-  {
-    "cluster_id": "cluster_004",
-    "message_ids": [
-      1,
-      45,
-      65,
-      79,
-      85,
-      86
-    ],
-    "draft_title": "GreenScape Sustainability Report",
-    "participants": [
-      "Devon",
-      "Leah",
-      "Jordan"
-    ],
-    "channel": "#client-communications",
-    "thread_id": "thread_004"
-  },
-  {
-    "cluster_id": "cluster_005",
-    "message_ids": [
-      1,
-      63,
-      77,
-      82,
-      86
-    ],
-    "draft_title": "TechNova Product Launch Campaign",
-    "participants": [
-      "Devon",
-      "Sam",
-      "Jordan"
-    ],
-    "channel": "#client-communications",
-    "thread_id": "thread_003"
+    "thread_id": "thread_006"
   }
 ]

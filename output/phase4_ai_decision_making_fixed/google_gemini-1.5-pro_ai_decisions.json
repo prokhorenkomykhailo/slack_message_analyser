@@ -1,0 +1,7 @@
+{
+  "provider": "google",
+  "model": "gemini-1.5-pro",
+  "success": false,
+  "error": "404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+  "duration": 0.18243718147277832
+}

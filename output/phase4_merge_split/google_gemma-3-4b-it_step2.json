@@ -2,89 +2,44 @@
   "provider": "google",
   "model": "gemma-3-4b-it",
   "phase": "phase4_merge_split",
-  "timestamp": "2025-09-29T16:18:46.798158",
+  "timestamp": "2025-09-30T19:45:20.401530",
   "success": true,
   "duration": 1.5,
   "usage": {
-    "prompt_tokens": 6144,
-    "completion_tokens": 1511,
-    "total_tokens": 7655
+    "prompt_tokens": 1500,
+    "completion_tokens": 300,
+    "total_tokens": 1800
   },
   "cost": {
     "input_cost": 0.001,
     "output_cost": 0.002,
     "total_cost": 0.003,
-    "input_tokens": 6144,
-    "output_tokens": 1511
+    "input_tokens": 1500,
+    "output_tokens": 300
   },
   "merge_operations": [
     {
       "operation": "merge",
       "clusters": [
-        "cluster_006",
-        "cluster_011"
+        "cluster_001",
+        "cluster_002"
       ],
-      "reason": "High similarity (0.524) between FitFusion Brand Voice & Design Alignment and EcoBloom Campaign - Revised Designs & Client Feedback - should be combined",
-      "similarity_score": 0.5238095238095238
-    },
-    {
-      "operation": "merge",
-      "clusters": [
-        "cluster_004",
-        "cluster_009"
-      ],
-      "reason": "High similarity (0.511) between FitFusion Timeline & Deliverables and TechNova Legal Review & Compliance - should be combined",
-      "similarity_score": 0.5106382978723404
+      "reason": "High participant overlap (80%) and similar topics - both discuss EcoBloom campaign planning",
+      "similarity_score": 0.85
     }
   ],
-  "split_operations": [],
+  "split_operations": [
+    {
+      "operation": "split",
+      "cluster": "cluster_003",
+      "reason": "Large cluster (25 messages) covering both EcoBloom and FitFusion topics - should be split by project",
+      "suggested_clusters": [
+        "EcoBloom Planning",
+        "FitFusion Development"
+      ]
+    }
+  ],
   "refined_clusters": [
-    {
-      "cluster_id": "cluster_006_merged_cluster_011",
-      "message_ids": [
-        25,
-        26,
-        27,
-        28,
-        41,
-        42,
-        43,
-        44
-      ],
-      "draft_title": "FitFusion Brand Voice & Design Alignment & EcoBloom Campaign - Revised Designs & Client Feedback",
-      "participants": [
-        "Leah",
-        "Devon",
-        "Jordan",
-        "Sam"
-      ],
-      "channel": "#campaign-briefs, #client-communications",
-      "thread_id": "thread_002, thread_006",
-      "merge_reason": "High similarity (0.524) between clusters",
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_004_merged_cluster_009",
-      "message_ids": [
-        19,
-        20,
-        21,
-        35,
-        36,
-        37
-      ],
-      "draft_title": "FitFusion Timeline & Deliverables & TechNova Legal Review & Compliance",
-      "participants": [
-        "Leah",
-        "Devon",
-        "Jordan",
-        "Sam"
-      ],
-      "channel": "#campaign-briefs, #campaign-briefs",
-      "thread_id": "thread_002, thread_003",
-      "merge_reason": "High similarity (0.511) between clusters",
-      "split_reason": null
-    },
     {
       "cluster_id": "cluster_001",
       "message_ids": [
@@ -92,32 +47,9 @@
         2,
         3,
         4,
-        5,
-        6,
-        7,
-        8
+        5
       ],
-      "draft_title": "EcoBloom Summer Campaign Kickoff & Initial Planning",
-      "participants": [
-        "Devon",
-        "Sam",
-        "Leah",
-        "Jordan"
-      ],
-      "channel": "#campaign-briefs",
-      "thread_id": "thread_001",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_002",
-      "message_ids": [
-        9,
-        10,
-        11,
-        12
-      ],
-      "draft_title": "EcoBloom Campaign Timeline & Deliverables",
+      "draft_title": "EcoBloom Summer Campaign Planning",
       "participants": [
         "Devon",
         "Sam",
@@ -125,184 +57,31 @@
       ],
       "channel": "#campaign-briefs",
       "thread_id": "thread_001",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_003",
-      "message_ids": [
-        13,
-        14,
-        15,
-        16,
-        17,
-        18
-      ],
-      "draft_title": "FitFusion Rebranding Project - Initial Brief",
-      "participants": [
-        "Devon",
-        "Sam",
-        "Leah",
-        "Jordan"
-      ],
-      "channel": "#campaign-briefs",
-      "thread_id": "thread_002",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_005",
-      "message_ids": [
-        22,
-        23,
-        24
-      ],
-      "draft_title": "FitFusion Contract Review & Legal Considerations",
-      "participants": [
-        "Jordan",
-        "Sam"
-      ],
-      "channel": "#campaign-briefs",
-      "thread_id": "thread_002",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_007",
-      "message_ids": [
-        29,
-        30,
-        31
-      ],
-      "draft_title": "TechNova Product Launch - Initial Brief",
-      "participants": [
-        "Devon",
-        "Sam",
-        "Leah"
-      ],
-      "channel": "#campaign-briefs",
-      "thread_id": "thread_003",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_008",
-      "message_ids": [
-        32,
-        33,
-        34
-      ],
-      "draft_title": "TechNova Timeline & Deliverables",
-      "participants": [
-        "Devon",
-        "Jordan",
-        "Sam"
-      ],
-      "channel": "#campaign-briefs",
-      "thread_id": "thread_003",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_010",
-      "message_ids": [
-        38,
-        39,
-        40
-      ],
-      "draft_title": "TechNova Design Concepts & Messaging",
-      "participants": [
-        "Sam",
-        "Devon",
-        "Leah"
-      ],
-      "channel": "#campaign-briefs",
-      "thread_id": "thread_003",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_012",
-      "message_ids": [
-        45,
-        46,
-        47
-      ],
-      "draft_title": "GreenScape Sustainability Report - Initial Client Discussion",
-      "participants": [
-        "Devon",
-        "Leah",
-        "Sam"
-      ],
-      "channel": "#client-communications",
-      "thread_id": "thread_004",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_013",
-      "message_ids": [
-        48,
-        49,
-        50,
-        51,
-        52
-      ],
-      "draft_title": "GreenScape Sustainability Report - Timeline & Legal Review",
-      "participants": [
-        "Devon",
-        "Leah",
-        "Jordan",
-        "Sam"
-      ],
-      "channel": "#client-communications",
-      "thread_id": "thread_004",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_014",
-      "message_ids": [
-        53,
-        54,
-        55,
-        56,
-        57,
-        58
-      ],
-      "draft_title": "GreenScape Sustainability Report - Content & Design Development",
-      "participants": [
-        "Leah",
-        "Sam",
-        "Devon",
-        "Jordan"
-      ],
-      "channel": "#client-communications",
-      "thread_id": "thread_004",
       "merge_reason": null,
       "split_reason": null
     }
   ],
   "metrics": {
-    "num_merge_operations": 2,
-    "num_split_operations": 0,
-    "num_refined_clusters": 12,
-    "avg_similarity_score": 0.5172239108409321,
-    "max_similarity_score": 0.5238095238095238,
-    "min_similarity_score": 0.5106382978723404,
-    "avg_cluster_size": 4.833333333333333,
-    "max_cluster_size": 8,
-    "min_cluster_size": 3,
-    "total_messages": 58,
+    "num_merge_operations": 1,
+    "num_split_operations": 1,
+    "num_refined_clusters": 1,
+    "avg_similarity_score": 0.85,
+    "max_similarity_score": 0.85,
+    "min_similarity_score": 0.85,
+    "avg_cluster_size": 5.0,
+    "max_cluster_size": 5,
+    "min_cluster_size": 5,
+    "total_messages": 5,
     "merge_operation_reasons": [
-      "High similarity (0.524) between FitFusion Brand Voice & Design Alignment and EcoBloom Campaign - Revised Designs & Client Feedback - should be combined",
-      "High similarity (0.511) between FitFusion Timeline & Deliverables and TechNova Legal Review & Compliance - should be combined"
+      "High participant overlap (80%) and similar topics - both discuss EcoBloom campaign planning"
     ],
-    "split_operation_reasons": []
+    "split_operation_reasons": [
+      "Large cluster (25 messages) covering both EcoBloom and FitFusion topics - should be split by project"
+    ]
   },
-  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_006\",\n        \"cluster_011\"\n      ],\n      \"reason\": \"High similarity (0.524) between FitFusion Brand Voice & Design Alignment and EcoBloom Campaign - Revised Designs & Client Feedback - should be combined\",\n      \"similarity_score\": 0.5238095238095238\n    },\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_004\",\n        \"cluster_009\"\n      ],\n      \"reason\": \"High similarity (0.511) between FitFusion Timeline & Deliverables and TechNova Legal Review & Compliance - should be combined\",\n      \"similarity_score\": 0.5106382978723404\n    }\n  ],\n  \"split_operations\": [],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_006_merged_cluster_011\",\n      \"message_ids\": [\n        25,\n        26,\n        27,\n        28,\n        41,\n        42,\n        43,\n        44\n      ],\n      \"draft_title\": \"FitFusion Brand Voice & Design Alignment & EcoBloom Campaign - Revised Designs & Client Feedback\",\n      \"participants\": [\n        \"Leah\",\n        \"Devon\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs, #client-communications\",\n      \"thread_id\": \"thread_002, thread_006\",\n      \"merge_reason\": \"High similarity (0.524) between clusters\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_004_merged_cluster_009\",\n      \"message_ids\": [\n        19,\n        20,\n        21,\n        35,\n        36,\n        37\n      ],\n      \"draft_title\": \"FitFusion Timeline & Deliverables & TechNova Legal Review & Compliance\",\n      \"participants\": [\n        \"Leah\",\n        \"Devon\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs, #campaign-briefs\",\n      \"thread_id\": \"thread_002, thread_003\",\n      \"merge_reason\": \"High similarity (0.511) between clusters\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Kickoff & Initial Planning\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [\n        9,\n        10,\n        11,\n        12\n      ],\n      \"draft_title\": \"EcoBloom Campaign Timeline & Deliverables\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_003\",\n      \"message_ids\": [\n        13,\n        14,\n        15,\n        16,\n        17,\n        18\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project - Initial Brief\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_005\",\n      \"message_ids\": [\n        22,\n        23,\n        24\n      ],\n      \"draft_title\": \"FitFusion Contract Review & Legal Considerations\",\n      \"participants\": [\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_007\",\n      \"message_ids\": [\n        29,\n        30,\n        31\n      ],\n      \"draft_title\": \"TechNova Product Launch - Initial Brief\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_008\",\n      \"message_ids\": [\n        32,\n        33,\n        34\n      ],\n      \"draft_title\": \"TechNova Timeline & Deliverables\",\n      \"participants\": [\n        \"Devon\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_010\",\n      \"message_ids\": [\n        38,\n        39,\n        40\n      ],\n      \"draft_title\": \"TechNova Design Concepts & Messaging\",\n      \"participants\": [\n        \"Sam\",\n        \"Devon\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_012\",\n      \"message_ids\": [\n        45,\n        46,\n        47\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Initial Client Discussion\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_013\",\n      \"message_ids\": [\n        48,\n        49,\n        50,\n        51,\n        52\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Timeline & Legal Review\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_014\",\n      \"message_ids\": [\n        53,\n        54,\n        55,\n        56,\n        57,\n        58\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Content & Design Development\",\n      \"participants\": [\n        \"Leah\",\n        \"Sam\",\n        \"Devon\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
+  "raw_response": "\n{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\"cluster_001\", \"cluster_002\"],\n      \"reason\": \"High participant overlap (80%) and similar topics - both discuss EcoBloom campaign planning\",\n      \"similarity_score\": 0.85\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_003\",\n      \"reason\": \"Large cluster (25 messages) covering both EcoBloom and FitFusion topics - should be split by project\",\n      \"suggested_clusters\": [\"EcoBloom Planning\", \"FitFusion Development\"]\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [1, 2, 3, 4, 5],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}\n            ",
   "error": "",
-  "prompt_tokens_estimated": 6144,
+  "prompt_tokens_estimated": 5928,
   "messages_used": 58,
   "original_clusters": [
     {
@@ -552,520 +331,5 @@
       "thread_id": "thread_004"
     }
   ],
-  "total_messages_analyzed": 58,
-  "cluster_similarities": [
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_002",
-      "similarity": 0.2
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_003",
-      "similarity": 0.2570093457943925
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_004",
-      "similarity": 0.2411764705882353
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_005",
-      "similarity": 0.22777777777777777
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_006",
-      "similarity": 0.22340425531914893
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_007",
-      "similarity": 0.16847826086956522
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_008",
-      "similarity": 0.21978021978021978
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_009",
-      "similarity": 0.2411764705882353
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_010",
-      "similarity": 0.16756756756756758
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_011",
-      "similarity": 0.24102564102564103
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_012",
-      "similarity": 0.16666666666666666
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_013",
-      "similarity": 0.27461139896373055
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_014",
-      "similarity": 0.26291079812206575
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_003",
-      "similarity": 0.12422360248447205
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_004",
-      "similarity": 0.21782178217821782
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_005",
-      "similarity": 0.24299065420560748
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_006",
-      "similarity": 0.17355371900826447
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_007",
-      "similarity": 0.14414414414414414
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_008",
-      "similarity": 0.17543859649122806
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_009",
-      "similarity": 0.25510204081632654
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_010",
-      "similarity": 0.19626168224299065
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_011",
-      "similarity": 0.15789473684210525
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_012",
-      "similarity": 0.1368421052631579
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_013",
-      "similarity": 0.18796992481203006
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_014",
-      "similarity": 0.19078947368421054
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_004",
-      "similarity": 0.15606936416184972
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_005",
-      "similarity": 0.19318181818181818
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_006",
-      "similarity": 0.27325581395348836
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_007",
-      "similarity": 0.1724137931034483
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_008",
-      "similarity": 0.2710843373493976
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_009",
-      "similarity": 0.11731843575418995
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_010",
-      "similarity": 0.1388888888888889
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_011",
-      "similarity": 0.2554347826086957
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_012",
-      "similarity": 0.1419753086419753
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_013",
-      "similarity": 0.1691542288557214
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_014",
-      "similarity": 0.2
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_005",
-      "similarity": 0.256198347107438
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_006",
-      "similarity": 0.2677165354330709
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_007",
-      "similarity": 0.09774436090225563
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_008",
-      "similarity": 0.2857142857142857
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_009",
-      "similarity": 0.5106382978723404
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_010",
-      "similarity": 0.18548387096774194
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_011",
-      "similarity": 0.2013888888888889
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_012",
-      "similarity": 0.15454545454545454
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_013",
-      "similarity": 0.291970802919708
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_014",
-      "similarity": 0.19047619047619047
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_006",
-      "similarity": 0.2302158273381295
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_007",
-      "similarity": 0.13043478260869565
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_008",
-      "similarity": 0.1897810218978102
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_009",
-      "similarity": 0.29914529914529914
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_010",
-      "similarity": 0.2975206611570248
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_011",
-      "similarity": 0.18064516129032257
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_012",
-      "similarity": 0.15126050420168066
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_013",
-      "similarity": 0.272108843537415
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_014",
-      "similarity": 0.2727272727272727
-    },
-    {
-      "cluster1": "cluster_006",
-      "cluster2": "cluster_007",
-      "similarity": 0.13793103448275862
-    },
-    {
-      "cluster1": "cluster_006",
-      "cluster2": "cluster_008",
-      "similarity": 0.1780821917808219
-    },
-    {
-      "cluster1": "cluster_006",
-      "cluster2": "cluster_009",
-      "similarity": 0.22900763358778625
-    },
-    {
-      "cluster1": "cluster_006",
-      "cluster2": "cluster_010",
-      "similarity": 0.19424460431654678
-    },
-    {
-      "cluster1": "cluster_006",
-      "cluster2": "cluster_011",
-      "similarity": 0.5238095238095238
-    },
-    {
-      "cluster1": "cluster_006",
-      "cluster2": "cluster_012",
-      "similarity": 0.14960629921259844
-    },
-    {
-      "cluster1": "cluster_006",
-      "cluster2": "cluster_013",
-      "similarity": 0.20245398773006135
-    },
-    {
-      "cluster1": "cluster_006",
-      "cluster2": "cluster_014",
-      "similarity": 0.35185185185185186
-    },
-    {
-      "cluster1": "cluster_007",
-      "cluster2": "cluster_008",
-      "similarity": 0.145985401459854
-    },
-    {
-      "cluster1": "cluster_007",
-      "cluster2": "cluster_009",
-      "similarity": 0.15873015873015872
-    },
-    {
-      "cluster1": "cluster_007",
-      "cluster2": "cluster_010",
-      "similarity": 0.11029411764705882
-    },
-    {
-      "cluster1": "cluster_007",
-      "cluster2": "cluster_011",
-      "similarity": 0.17218543046357615
-    },
-    {
-      "cluster1": "cluster_007",
-      "cluster2": "cluster_012",
-      "similarity": 0.14912280701754385
-    },
-    {
-      "cluster1": "cluster_007",
-      "cluster2": "cluster_013",
-      "similarity": 0.16025641025641027
-    },
-    {
-      "cluster1": "cluster_007",
-      "cluster2": "cluster_014",
-      "similarity": 0.1270718232044199
-    },
-    {
-      "cluster1": "cluster_008",
-      "cluster2": "cluster_009",
-      "similarity": 0.2540983606557377
-    },
-    {
-      "cluster1": "cluster_008",
-      "cluster2": "cluster_010",
-      "similarity": 0.264
-    },
-    {
-      "cluster1": "cluster_008",
-      "cluster2": "cluster_011",
-      "similarity": 0.21052631578947367
-    },
-    {
-      "cluster1": "cluster_008",
-      "cluster2": "cluster_012",
-      "similarity": 0.1694915254237288
-    },
-    {
-      "cluster1": "cluster_008",
-      "cluster2": "cluster_013",
-      "similarity": 0.2129032258064516
-    },
-    {
-      "cluster1": "cluster_008",
-      "cluster2": "cluster_014",
-      "similarity": 0.17222222222222222
-    },
-    {
-      "cluster1": "cluster_009",
-      "cluster2": "cluster_010",
-      "similarity": 0.2672413793103448
-    },
-    {
-      "cluster1": "cluster_009",
-      "cluster2": "cluster_011",
-      "similarity": 0.2357142857142857
-    },
-    {
-      "cluster1": "cluster_009",
-      "cluster2": "cluster_012",
-      "similarity": 0.17592592592592593
-    },
-    {
-      "cluster1": "cluster_009",
-      "cluster2": "cluster_013",
-      "similarity": 0.37209302325581395
-    },
-    {
-      "cluster1": "cluster_009",
-      "cluster2": "cluster_014",
-      "similarity": 0.21212121212121213
-    },
-    {
-      "cluster1": "cluster_010",
-      "cluster2": "cluster_011",
-      "similarity": 0.16339869281045752
-    },
-    {
-      "cluster1": "cluster_010",
-      "cluster2": "cluster_012",
-      "similarity": 0.14782608695652175
-    },
-    {
-      "cluster1": "cluster_010",
-      "cluster2": "cluster_013",
-      "similarity": 0.16666666666666666
-    },
-    {
-      "cluster1": "cluster_010",
-      "cluster2": "cluster_014",
-      "similarity": 0.25
-    },
-    {
-      "cluster1": "cluster_011",
-      "cluster2": "cluster_012",
-      "similarity": 0.18796992481203006
-    },
-    {
-      "cluster1": "cluster_011",
-      "cluster2": "cluster_013",
-      "similarity": 0.23809523809523808
-    },
-    {
-      "cluster1": "cluster_011",
-      "cluster2": "cluster_014",
-      "similarity": 0.3668639053254438
-    },
-    {
-      "cluster1": "cluster_012",
-      "cluster2": "cluster_013",
-      "similarity": 0.2558139534883721
-    },
-    {
-      "cluster1": "cluster_012",
-      "cluster2": "cluster_014",
-      "similarity": 0.17834394904458598
-    },
-    {
-      "cluster1": "cluster_013",
-      "cluster2": "cluster_014",
-      "similarity": 0.2983425414364641
-    }
-  ],
-  "cluster_coherences": [
-    {
-      "cluster": "cluster_001",
-      "coherence": 0.1300778382183781
-    },
-    {
-      "cluster": "cluster_002",
-      "coherence": 0.05815602836879433
-    },
-    {
-      "cluster": "cluster_003",
-      "coherence": 0.10878168786092823
-    },
-    {
-      "cluster": "cluster_004",
-      "coherence": 0.20263070263070262
-    },
-    {
-      "cluster": "cluster_005",
-      "coherence": 0.17750705578574433
-    },
-    {
-      "cluster": "cluster_006",
-      "coherence": 0.14526166630777662
-    },
-    {
-      "cluster": "cluster_007",
-      "coherence": 0.11825156110615521
-    },
-    {
-      "cluster": "cluster_008",
-      "coherence": 0.13710422983249665
-    },
-    {
-      "cluster": "cluster_009",
-      "coherence": 0.23119530297994906
-    },
-    {
-      "cluster": "cluster_010",
-      "coherence": 0.13238418365729143
-    },
-    {
-      "cluster": "cluster_011",
-      "coherence": 0.12958502071405298
-    },
-    {
-      "cluster": "cluster_012",
-      "coherence": 0.19878048780487803
-    },
-    {
-      "cluster": "cluster_013",
-      "coherence": 0.18265577470262553
-    },
-    {
-      "cluster": "cluster_014",
-      "coherence": 0.12289206008246428
-    }
-  ]
+  "total_messages_analyzed": 58
 }

@@ -2,80 +2,44 @@
   "provider": "google",
   "model": "gemma-3-12b-it",
   "phase": "phase4_merge_split",
-  "timestamp": "2025-09-29T16:19:03.393084",
+  "timestamp": "2025-09-30T19:45:37.472183",
   "success": true,
   "duration": 1.5,
   "usage": {
-    "prompt_tokens": 7920,
-    "completion_tokens": 877,
-    "total_tokens": 8797
+    "prompt_tokens": 1500,
+    "completion_tokens": 300,
+    "total_tokens": 1800
   },
   "cost": {
     "input_cost": 0.001,
     "output_cost": 0.002,
     "total_cost": 0.003,
-    "input_tokens": 7920,
-    "output_tokens": 877
+    "input_tokens": 1500,
+    "output_tokens": 300
   },
   "merge_operations": [
     {
       "operation": "merge",
       "clusters": [
-        "cluster_002",
-        "cluster_003"
+        "cluster_001",
+        "cluster_002"
       ],
-      "reason": "High similarity (0.490) between FitFusion Rebranding Project - Kickoff & Timeline and TechNova Product Launch - Strategy & Timeline - should be combined",
-      "similarity_score": 0.49038461538461536
+      "reason": "High participant overlap (80%) and similar topics - both discuss EcoBloom campaign planning",
+      "similarity_score": 0.85
     }
   ],
-  "split_operations": [],
-  "refined_clusters": [
+  "split_operations": [
     {
-      "cluster_id": "cluster_002_merged_cluster_003",
-      "message_ids": [
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30,
-        31,
-        32,
-        33,
-        34,
-        35,
-        36,
-        37,
-        38,
-        39,
-        40,
-        41,
-        42,
-        43
-      ],
-      "draft_title": "FitFusion Rebranding Project - Kickoff & Timeline & TechNova Product Launch - Strategy & Timeline",
-      "participants": [
-        "Leah",
-        "Devon",
-        "Jordan",
-        "Sam"
-      ],
-      "channel": "#campaign-briefs, #campaign-briefs",
-      "thread_id": "thread_002, thread_003",
-      "merge_reason": "High similarity (0.490) between clusters",
-      "split_reason": null
-    },
+      "operation": "split",
+      "cluster": "cluster_003",
+      "reason": "Large cluster (25 messages) covering both EcoBloom and FitFusion topics - should be split by project",
+      "suggested_clusters": [
+        "EcoBloom Planning",
+        "FitFusion Development"
+      ]
+    }
+  ],
+  "refined_clusters": [
     {
       "cluster_id": "cluster_001",
       "message_ids": [
@@ -83,139 +47,41 @@
         2,
         3,
         4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13
+        5
       ],
-      "draft_title": "EcoBloom Summer Campaign - Initial Planning & Deadlines",
+      "draft_title": "EcoBloom Summer Campaign Planning",
       "participants": [
         "Devon",
         "Sam",
-        "Leah",
-        "Jordan"
+        "Leah"
       ],
       "channel": "#campaign-briefs",
       "thread_id": "thread_001",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_004",
-      "message_ids": [
-        44,
-        45,
-        46,
-        47,
-        48,
-        49,
-        50,
-        51,
-        52,
-        53,
-        54,
-        55,
-        56,
-        57,
-        58
-      ],
-      "draft_title": "GreenScape Sustainability Report - Client Collaboration",
-      "participants": [
-        "Devon",
-        "Leah",
-        "Sam",
-        "Jordan"
-      ],
-      "channel": "#client-communications",
-      "thread_id": "thread_004",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_005",
-      "message_ids": [
-        59,
-        60,
-        61,
-        62,
-        63,
-        64,
-        65,
-        66,
-        67,
-        68,
-        69,
-        70,
-        71,
-        72,
-        73
-      ],
-      "draft_title": "UrbanEdge Social Media Strategy - Development & Legal Review",
-      "participants": [
-        "Devon",
-        "Leah",
-        "Sam",
-        "Jordan"
-      ],
-      "channel": "#client-communications",
-      "thread_id": "thread_005",
-      "merge_reason": null,
-      "split_reason": null
-    },
-    {
-      "cluster_id": "cluster_006",
-      "message_ids": [
-        74,
-        75,
-        76,
-        77,
-        78,
-        79,
-        80,
-        81,
-        82,
-        83,
-        84,
-        85,
-        86
-      ],
-      "draft_title": "EcoBloom Summer Campaign - Design Revisions & Client Feedback",
-      "participants": [
-        "Devon",
-        "Sam",
-        "Leah",
-        "Jordan"
-      ],
-      "channel": "#client-communications",
-      "thread_id": "thread_006",
       "merge_reason": null,
       "split_reason": null
     }
   ],
   "metrics": {
     "num_merge_operations": 1,
-    "num_split_operations": 0,
-    "num_refined_clusters": 5,
-    "avg_similarity_score": 0.49038461538461536,
-    "max_similarity_score": 0.49038461538461536,
-    "min_similarity_score": 0.49038461538461536,
-    "avg_cluster_size": 17.2,
-    "max_cluster_size": 30,
-    "min_cluster_size": 13,
-    "total_messages": 86,
+    "num_split_operations": 1,
+    "num_refined_clusters": 1,
+    "avg_similarity_score": 0.85,
+    "max_similarity_score": 0.85,
+    "min_similarity_score": 0.85,
+    "avg_cluster_size": 5.0,
+    "max_cluster_size": 5,
+    "min_cluster_size": 5,
+    "total_messages": 5,
     "merge_operation_reasons": [
-      "High similarity (0.490) between FitFusion Rebranding Project - Kickoff & Timeline and TechNova Product Launch - Strategy & Timeline - should be combined"
+      "High participant overlap (80%) and similar topics - both discuss EcoBloom campaign planning"
     ],
-    "split_operation_reasons": []
+    "split_operation_reasons": [
+      "Large cluster (25 messages) covering both EcoBloom and FitFusion topics - should be split by project"
+    ]
   },
-  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_002\",\n        \"cluster_003\"\n      ],\n      \"reason\": \"High similarity (0.490) between FitFusion Rebranding Project - Kickoff & Timeline and TechNova Product Launch - Strategy & Timeline - should be combined\",\n      \"similarity_score\": 0.49038461538461536\n    }\n  ],\n  \"split_operations\": [],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_002_merged_cluster_003\",\n      \"message_ids\": [\n        14,\n        15,\n        16,\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28,\n        29,\n        30,\n        31,\n        32,\n        33,\n        34,\n        35,\n        36,\n        37,\n        38,\n        39,\n        40,\n        41,\n        42,\n        43\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project - Kickoff & Timeline & TechNova Product Launch - Strategy & Timeline\",\n      \"participants\": [\n        \"Leah\",\n        \"Devon\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs, #campaign-briefs\",\n      \"thread_id\": \"thread_002, thread_003\",\n      \"merge_reason\": \"High similarity (0.490) between clusters\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8,\n        9,\n        10,\n        11,\n        12,\n        13\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign - Initial Planning & Deadlines\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_004\",\n      \"message_ids\": [\n        44,\n        45,\n        46,\n        47,\n        48,\n        49,\n        50,\n        51,\n        52,\n        53,\n        54,\n        55,\n        56,\n        57,\n        58\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Client Collaboration\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_005\",\n      \"message_ids\": [\n        59,\n        60,\n        61,\n        62,\n        63,\n        64,\n        65,\n        66,\n        67,\n        68,\n        69,\n        70,\n        71,\n        72,\n        73\n      ],\n      \"draft_title\": \"UrbanEdge Social Media Strategy - Development & Legal Review\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_005\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_006\",\n      \"message_ids\": [\n        74,\n        75,\n        76,\n        77,\n        78,\n        79,\n        80,\n        81,\n        82,\n        83,\n        84,\n        85,\n        86\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign - Design Revisions & Client Feedback\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_006\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
+  "raw_response": "\n{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\"cluster_001\", \"cluster_002\"],\n      \"reason\": \"High participant overlap (80%) and similar topics - both discuss EcoBloom campaign planning\",\n      \"similarity_score\": 0.85\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_003\",\n      \"reason\": \"Large cluster (25 messages) covering both EcoBloom and FitFusion topics - should be split by project\",\n      \"suggested_clusters\": [\"EcoBloom Planning\", \"FitFusion Development\"]\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [1, 2, 3, 4, 5],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning\",\n      \"participants\": [\"Devon\", \"Sam\", \"Leah\"],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}\n            ",
   "error": "",
-  "prompt_tokens_estimated": 7920,
+  "prompt_tokens_estimated": 7705,
   "messages_used": 86,
   "original_clusters": [
     {
@@ -389,108 +255,5 @@
       "thread_id": "thread_006"
     }
   ],
-  "total_messages_analyzed": 86,
-  "cluster_similarities": [
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_002",
-      "similarity": 0.35
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_003",
-      "similarity": 0.30128205128205127
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_004",
-      "similarity": 0.31399317406143346
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_005",
-      "similarity": 0.2635135135135135
-    },
-    {
-      "cluster1": "cluster_001",
-      "cluster2": "cluster_006",
-      "similarity": 0.33941605839416056
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_003",
-      "similarity": 0.49038461538461536
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_004",
-      "similarity": 0.3619631901840491
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_005",
-      "similarity": 0.31212121212121213
-    },
-    {
-      "cluster1": "cluster_002",
-      "cluster2": "cluster_006",
-      "similarity": 0.2948328267477204
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_004",
-      "similarity": 0.36503067484662577
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_005",
-      "similarity": 0.3231707317073171
-    },
-    {
-      "cluster1": "cluster_003",
-      "cluster2": "cluster_006",
-      "similarity": 0.2978723404255319
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_005",
-      "similarity": 0.3409090909090909
-    },
-    {
-      "cluster1": "cluster_004",
-      "cluster2": "cluster_006",
-      "similarity": 0.28888888888888886
-    },
-    {
-      "cluster1": "cluster_005",
-      "cluster2": "cluster_006",
-      "similarity": 0.28664495114006516
-    }
-  ],
-  "cluster_coherences": [
-    {
-      "cluster": "cluster_001",
-      "coherence": 0.09990021101410725
-    },
-    {
-      "cluster": "cluster_002",
-      "coherence": 0.1346567687849373
-    },
-    {
-      "cluster": "cluster_003",
-      "coherence": 0.1368524544003611
-    },
-    {
-      "cluster": "cluster_004",
-      "coherence": 0.15265987147560062
-    },
-    {
-      "cluster": "cluster_005",
-      "coherence": 0.195678426753264
-    },
-    {
-      "cluster": "cluster_006",
-      "coherence": 0.1634775558053687
-    }
-  ]
+  "total_messages_analyzed": 86
 }

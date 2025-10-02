@@ -2,7 +2,7 @@
   "provider": "google",
   "model": "gemma-3n-e2b-it",
   "phase": "phase4_merge_split_aimodels_embedding",
-  "timestamp": "2025-09-29T20:16:58.069969",
+  "timestamp": "2025-09-30T19:55:58.306889",
   "success": true,
   "duration": 1.5,
   "usage": {
@@ -29,7 +29,7 @@
       "similarity_metrics": {
         "jaccard": 0.45433255269320844,
         "cosine": 0.923377627045807,
-        "tfidf": 1.3226511422461228e-05,
+        "tfidf": 1.3226511422461224e-05,
         "combined": 0.5049184971711714
       }
     }
@@ -221,7 +221,7 @@
       "Large cluster with 20 messages and low coherence (0.131) - should be split"
     ]
   },
-  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_003\",\n        \"cluster_004\"\n      ],\n      \"reason\": \"High embedding similarity (0.505) - Jaccard: 0.454, Cosine: 0.923, TF-IDF: 0.000\",\n      \"similarity_score\": 0.5049184971711714,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.45433255269320844,\n        \"cosine\": 0.923377627045807,\n        \"tfidf\": 1.3226511422461228e-05,\n        \"combined\": 0.5049184971711714\n      }\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_002\",\n      \"reason\": \"Large cluster with 20 messages and low coherence (0.131) - should be split\",\n      \"suggested_clusters\": [\n        \"FitFusion Rebrand Project - Part A\",\n        \"FitFusion Rebrand Project - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.10833971413580218,\n        \"cosine\": 0.2714059774930947,\n        \"density\": 0.07936507936507936,\n        \"consistency\": 0.007034327518289252,\n        \"combined\": 0.13120358886534278\n      }\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_003_merged_cluster_004\",\n      \"message_ids\": [\n        39,\n        40,\n        41,\n        42,\n        43,\n        44,\n        45,\n        46,\n        47,\n        48,\n        49,\n        50,\n        51,\n        52,\n        53,\n        54,\n        55,\n        56,\n        57,\n        58,\n        59,\n        60,\n        61,\n        62,\n        63,\n        64,\n        65,\n        66,\n        67,\n        68,\n        69,\n        70,\n        71,\n        72,\n        73,\n        74,\n        75,\n        76,\n        77,\n        78,\n        79,\n        80,\n        81,\n        82,\n        83,\n        84,\n        85,\n        86,\n        74,\n        75,\n        76,\n        77,\n        78,\n        79,\n        80,\n        81,\n        82,\n        83,\n        84,\n        85,\n        86\n      ],\n      \"draft_title\": \"UrbanEdge Social Media Strategy & EcoBloom Campaign Revision\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#client-communications, #client-communications\",\n      \"thread_id\": \"thread_005, thread_006\",\n      \"merge_reason\": \"High embedding similarity (0.505)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_A\",\n      \"message_ids\": [\n        9,\n        10,\n        11,\n        12,\n        13,\n        14,\n        15,\n        16,\n        17,\n        18\n      ],\n      \"draft_title\": \"FitFusion Rebrand Project - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.131) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_B\",\n      \"message_ids\": [\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28\n      ],\n      \"draft_title\": \"FitFusion Rebrand Project - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.131) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Kickoff\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
+  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_003\",\n        \"cluster_004\"\n      ],\n      \"reason\": \"High embedding similarity (0.505) - Jaccard: 0.454, Cosine: 0.923, TF-IDF: 0.000\",\n      \"similarity_score\": 0.5049184971711714,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.45433255269320844,\n        \"cosine\": 0.923377627045807,\n        \"tfidf\": 1.3226511422461224e-05,\n        \"combined\": 0.5049184971711714\n      }\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_002\",\n      \"reason\": \"Large cluster with 20 messages and low coherence (0.131) - should be split\",\n      \"suggested_clusters\": [\n        \"FitFusion Rebrand Project - Part A\",\n        \"FitFusion Rebrand Project - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.10833971413580218,\n        \"cosine\": 0.2714059774930947,\n        \"density\": 0.07936507936507936,\n        \"consistency\": 0.007034327518289252,\n        \"combined\": 0.13120358886534278\n      }\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_003_merged_cluster_004\",\n      \"message_ids\": [\n        39,\n        40,\n        41,\n        42,\n        43,\n        44,\n        45,\n        46,\n        47,\n        48,\n        49,\n        50,\n        51,\n        52,\n        53,\n        54,\n        55,\n        56,\n        57,\n        58,\n        59,\n        60,\n        61,\n        62,\n        63,\n        64,\n        65,\n        66,\n        67,\n        68,\n        69,\n        70,\n        71,\n        72,\n        73,\n        74,\n        75,\n        76,\n        77,\n        78,\n        79,\n        80,\n        81,\n        82,\n        83,\n        84,\n        85,\n        86,\n        74,\n        75,\n        76,\n        77,\n        78,\n        79,\n        80,\n        81,\n        82,\n        83,\n        84,\n        85,\n        86\n      ],\n      \"draft_title\": \"UrbanEdge Social Media Strategy & EcoBloom Campaign Revision\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#client-communications, #client-communications\",\n      \"thread_id\": \"thread_005, thread_006\",\n      \"merge_reason\": \"High embedding similarity (0.505)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_A\",\n      \"message_ids\": [\n        9,\n        10,\n        11,\n        12,\n        13,\n        14,\n        15,\n        16,\n        17,\n        18\n      ],\n      \"draft_title\": \"FitFusion Rebrand Project - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.131) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_B\",\n      \"message_ids\": [\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28\n      ],\n      \"draft_title\": \"FitFusion Rebrand Project - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.131) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Kickoff\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
   "error": "",
   "prompt_tokens_estimated": 7857,
   "messages_used": 86,
@@ -376,7 +376,7 @@
       "similarity_metrics": {
         "jaccard": 0.2226027397260274,
         "cosine": 0.682513840094823,
-        "tfidf": 1.5601393777734434e-05,
+        "tfidf": 1.5601393777734428e-05,
         "combined": 0.32792484027204344
       },
       "combined_similarity": 0.32792484027204344
@@ -387,7 +387,7 @@
       "similarity_metrics": {
         "jaccard": 0.1490280777537797,
         "cosine": 0.7257933256172121,
-        "tfidf": 9.692902661258676e-06,
+        "tfidf": 9.69290266125868e-06,
         "combined": 0.3136413182932014
       },
       "combined_similarity": 0.3136413182932014
@@ -409,7 +409,7 @@
       "similarity_metrics": {
         "jaccard": 0.3235867446393762,
         "cosine": 0.8864401378267981,
-        "tfidf": 1.0236721176858816e-05,
+        "tfidf": 1.0236721176858815e-05,
         "combined": 0.439691305275424
       },
       "combined_similarity": 0.439691305275424
@@ -420,7 +420,7 @@
       "similarity_metrics": {
         "jaccard": 0.31563421828908556,
         "cosine": 0.8145021872020604,
-        "tfidf": 1.5863510871463904e-05,
+        "tfidf": 1.5863510871463914e-05,
         "combined": 0.41133341871407325
       },
       "combined_similarity": 0.41133341871407325
@@ -431,7 +431,7 @@
       "similarity_metrics": {
         "jaccard": 0.45433255269320844,
         "cosine": 0.923377627045807,
-        "tfidf": 1.3226511422461228e-05,
+        "tfidf": 1.3226511422461224e-05,
         "combined": 0.5049184971711714
       },
       "combined_similarity": 0.5049184971711714

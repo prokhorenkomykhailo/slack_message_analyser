@@ -1,178 +1,67 @@
 #!/usr/bin/env python3
-"""
-Simple Cohere test that uses the already downloaded model
-This won't re-download the model
-"""
-
-import os
-import torch
 import json
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForCausalLM
-
-def load_messages():
-    """Load test messages"""
-    messages_file = "data/Synthetic_Slack_Messages.csv"
-    
-    if not os.path.exists(messages_file):
-        print(f"❌ File not found: {messages_file}")
-        return []
-    
-    try:
-        df = pd.read_csv(messages_file)
-        messages = []
-        
-        for _, row in df.iterrows():
-            messages.append({
-                "id": row.get("id", len(messages) + 1),
-                "user": row.get("user", "Unknown"),
-                "content": row.get("content", ""),
-                "channel": row.get("channel", "#general")
-            })
-        
-        print(f"✅ Loaded {len(messages)} messages")
-        return messages
-        
-    except Exception as e:
-        print(f"❌ Error loading messages: {e}")
-        return []
-
-def test_cohere_simple():
-    """Simple Cohere test using already downloaded model"""
-    
-    print("🚀 Simple Cohere Test (Using Downloaded Model)")
-    print("=" * 50)
-    
-    
-    messages = load_messages()
-    if not messages:
-        return
-    
-    test_messages = messages[:5]
-    print(f"📝 Testing with {len(test_messages)} messages")
-    
-    try:
-        
-        model_name = "CohereLabs/c4ai-command-r-plus-08-2024"
-        print(f"🔄 Loading {model_name} from cache...")
-        
-        
-        tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=False)
-        
-        
-        if tokenizer.pad_token is None:
-            tokenizer.pad_token = tokenizer.unk_token
-            print("✅ Fixed attention mask")
-        
-        
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            torch_dtype=torch.float16,
-            device_map="auto",
-            trust_remote_code=True,
-            local_files_only=False  
-        )
-        
-        print("✅ Model loaded from cache")
-        
-        
-        print("🔄 Testing simple generation...")
-        
-        test_prompt = "Hello, how are you?"
-        messages_chat = [{"role": "user", "content": test_prompt}]
-        
-        inputs = tokenizer.apply_chat_template(
-            messages_chat, 
-            tokenize=True, 
-            add_generation_prompt=True, 
-            return_tensors="pt"
-        )
-        
-        with torch.no_grad():
-            outputs = model.generate(
-                inputs,
-                max_new_tokens=20,
-                do_sample=False,
-                pad_token_id=tokenizer.pad_token_id
-            )
-        
-        response = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
-        
-        print("✅ Simple generation works!")
-        print(f"Response: {response}")
-        
-        
-        print("\\n🔄 Testing clustering...")
-        
-        messages_text = "\\n".join([
-            f"{i+1}. {msg['user']}: {msg['content'][:40]}"
-            for i, msg in enumerate(test_messages)
-        ])
-        
-        clustering_prompt = f"Group these messages: {messages_text}. Return JSON clusters."
-        
-        messages_chat = [{"role": "user", "content": clustering_prompt}]
-        
-        inputs = tokenizer.apply_chat_template(
-            messages_chat, 
-            tokenize=True, 
-            add_generation_prompt=True, 
-            return_tensors="pt"
-        )
-        
-        with torch.no_grad():
-            outputs = model.generate(
-                inputs,
-                max_new_tokens=100,
-                do_sample=True,
-                temperature=0.3,
-                pad_token_id=tokenizer.pad_token_id
-            )
-        
-        response = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
-        
-        print("✅ Clustering test completed!")
-        print("\\n📋 Clustering Response:")
-        print("-" * 40)
-        print(response)
-        print("-" * 40)
-        
-        
-        result = {
-            "success": True,
-            "model": model_name,
-            "messages_tested": len(test_messages),
-            "simple_response": "Hello, how are you?",
-            "clustering_response": response,
-            "attention_mask_fixed": True
-        }
-        
-        os.makedirs("output", exist_ok=True)
-        with open("output/cohere_simple_test_results.json", "w") as f:
-            json.dump(result, f, indent=2)
-        
-        print("\\n💾 Results saved to output/cohere_simple_test_results.json")
-        print("\\n🎉 Cohere is working! No re-download needed.")
-        
-        return True
-        
-    except Exception as e:
-        print(f"❌ Test failed: {e}")
-        return False
+import torch
+from datetime import datetime
+import os
 
 def main():
-    """Main function"""
+    print("🚀 Testing CohereLabs c4ai-command-r-plus-4bit (44GB cached)")
+    print("=" * 60)
     
-    if test_cohere_simple():
-        print("\\n🎯 SUCCESS!")
-        print("=" * 15)
-        print("✅ Model loaded from cache (no re-download)")
-        print("✅ Attention mask fixed")
-        print("✅ Generation works")
-        print("✅ Clustering works")
-        print("\\n📈 Ready for full Step 1 evaluation!")
-    else:
-        print("\\n❌ Test failed")
+    # Load data
+    csv_path = "data/Synthetic_Slack_Messages.csv"
+    messages_df = pd.read_csv(csv_path)
+    print(f"✅ Loaded {len(messages_df)} messages")
+    
+    # Load model from cache
+    model_id = "CohereLabs/c4ai-command-r-plus-4bit"
+    print(f"Loading model: {model_id}")
+    
+    tokenizer = AutoTokenizer.from_pretrained(model_id, local_files_only=True)
+    model = AutoModelForCausalLM.from_pretrained(
+        model_id,
+        local_files_only=True,
+        torch_dtype=torch.float16,
+        device_map="auto"
+    )
+    
+    print("Model loaded successfully!")
+    
+    # Simple test prompt
+    prompt = "Analyze these Slack messages and group them into 6 topic clusters. Messages: " + " ".join(messages_df["text"].head(10).tolist())
+    
+    messages = [{"role": "user", "content": prompt}]
+    input_ids = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
+    
+    if torch.cuda.is_available():
+        input_ids = input_ids.to(model.device)
+    
+    print("Generating response...")
+    with torch.no_grad():
+        gen_tokens = model.generate(input_ids, max_new_tokens=500, do_sample=True, temperature=0.3)
+    
+    response = tokenizer.decode(gen_tokens[0], skip_special_tokens=True)
+    model_response = response[len(tokenizer.decode(input_ids[0], skip_special_tokens=True)):]
+    
+    # Save results
+    output_path = "output/cohere_c4ai_command_r_plus_4bit_results.json"
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    
+    results = {
+        "model": "CohereLabs/c4ai-command-r-plus-4bit",
+        "timestamp": datetime.now().isoformat(),
+        "response": model_response
+    }
+    
+    with open(output_path, "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print(f"✅ Results saved to: {output_path}")
+    print("\n🎯 Model Response:")
+    print("-" * 40)
+    print(model_response)
 
 if __name__ == "__main__":
     main()

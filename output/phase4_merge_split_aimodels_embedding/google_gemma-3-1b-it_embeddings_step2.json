@@ -2,7 +2,7 @@
   "provider": "google",
   "model": "gemma-3-1b-it",
   "phase": "phase4_merge_split_aimodels_embedding",
-  "timestamp": "2025-09-29T20:15:33.829995",
+  "timestamp": "2025-09-30T19:54:35.423490",
   "success": true,
   "duration": 1.5,
   "usage": {
@@ -29,7 +29,7 @@
       "similarity_metrics": {
         "jaccard": 0.2839506172839506,
         "cosine": 0.7364242402922112,
-        "tfidf": 3.618174415847786e-05,
+        "tfidf": 3.6181744158477865e-05,
         "combined": 0.3713377764518938
       }
     },
@@ -44,7 +44,7 @@
       "similarity_metrics": {
         "jaccard": 0.2222222222222222,
         "cosine": 0.6581638298422339,
-        "tfidf": 2.9019703843821738e-05,
+        "tfidf": 2.901970384382173e-05,
         "combined": 0.3192534842596317
       }
     }
@@ -68,9 +68,9 @@
       "draft_title": "EcoBloom Sustainability Report & FitFusion Brand Identity",
       "participants": [
         "Jordan",
-        "Devon",
+        "Leah",
         "Sam",
-        "Leah"
+        "Devon"
       ],
       "channel": "#client-communications, #client-communications",
       "thread_id": "thread_004, thread_005",
@@ -141,7 +141,7 @@
     ],
     "split_operation_reasons": []
   },
-  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_004\",\n        \"cluster_005\"\n      ],\n      \"reason\": \"High embedding similarity (0.371) - Jaccard: 0.284, Cosine: 0.736, TF-IDF: 0.000\",\n      \"similarity_score\": 0.3713377764518938,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.2839506172839506,\n        \"cosine\": 0.7364242402922112,\n        \"tfidf\": 3.618174415847786e-05,\n        \"combined\": 0.3713377764518938\n      }\n    },\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_001\",\n        \"cluster_003\"\n      ],\n      \"reason\": \"High embedding similarity (0.319) - Jaccard: 0.222, Cosine: 0.658, TF-IDF: 0.000\",\n      \"similarity_score\": 0.3192534842596317,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.2222222222222222,\n        \"cosine\": 0.6581638298422339,\n        \"tfidf\": 2.9019703843821738e-05,\n        \"combined\": 0.3192534842596317\n      }\n    }\n  ],\n  \"split_operations\": [],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_004_merged_cluster_005\",\n      \"message_ids\": [\n        16,\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25\n      ],\n      \"draft_title\": \"EcoBloom Sustainability Report & FitFusion Brand Identity\",\n      \"participants\": [\n        \"Jordan\",\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#client-communications, #client-communications\",\n      \"thread_id\": \"thread_004, thread_005\",\n      \"merge_reason\": \"High embedding similarity (0.371)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001_merged_cluster_003\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        11,\n        12,\n        13,\n        14,\n        15\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning & TechNova Product Launch\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#campaign-briefs, #client-communications\",\n      \"thread_id\": \"thread_001, thread_003\",\n      \"merge_reason\": \"High embedding similarity (0.319)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [\n        6,\n        7,\n        8,\n        9,\n        10\n      ],\n      \"draft_title\": \"UrbanEdge Social Media Strategy\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_006\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
+  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_004\",\n        \"cluster_005\"\n      ],\n      \"reason\": \"High embedding similarity (0.371) - Jaccard: 0.284, Cosine: 0.736, TF-IDF: 0.000\",\n      \"similarity_score\": 0.3713377764518938,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.2839506172839506,\n        \"cosine\": 0.7364242402922112,\n        \"tfidf\": 3.6181744158477865e-05,\n        \"combined\": 0.3713377764518938\n      }\n    },\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_001\",\n        \"cluster_003\"\n      ],\n      \"reason\": \"High embedding similarity (0.319) - Jaccard: 0.222, Cosine: 0.658, TF-IDF: 0.000\",\n      \"similarity_score\": 0.3192534842596317,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.2222222222222222,\n        \"cosine\": 0.6581638298422339,\n        \"tfidf\": 2.901970384382173e-05,\n        \"combined\": 0.3192534842596317\n      }\n    }\n  ],\n  \"split_operations\": [],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_004_merged_cluster_005\",\n      \"message_ids\": [\n        16,\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25\n      ],\n      \"draft_title\": \"EcoBloom Sustainability Report & FitFusion Brand Identity\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#client-communications, #client-communications\",\n      \"thread_id\": \"thread_004, thread_005\",\n      \"merge_reason\": \"High embedding similarity (0.371)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001_merged_cluster_003\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        11,\n        12,\n        13,\n        14,\n        15\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning & TechNova Product Launch\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#campaign-briefs, #client-communications\",\n      \"thread_id\": \"thread_001, thread_003\",\n      \"merge_reason\": \"High embedding similarity (0.319)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [\n        6,\n        7,\n        8,\n        9,\n        10\n      ],\n      \"draft_title\": \"UrbanEdge Social Media Strategy\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_006\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
   "error": "",
   "prompt_tokens_estimated": 2841,
   "messages_used": 25,
@@ -243,7 +243,7 @@
       "similarity_metrics": {
         "jaccard": 0.17647058823529413,
         "cosine": 0.44572008222188325,
-        "tfidf": 2.4474449024909916e-05,
+        "tfidf": 2.447444902490991e-05,
         "combined": 0.226596382684033
       },
       "combined_similarity": 0.226596382684033
@@ -254,7 +254,7 @@
       "similarity_metrics": {
         "jaccard": 0.2222222222222222,
         "cosine": 0.6581638298422339,
-        "tfidf": 2.9019703843821738e-05,
+        "tfidf": 2.901970384382173e-05,
         "combined": 0.3192534842596317
       },
       "combined_similarity": 0.3192534842596317
@@ -265,7 +265,7 @@
       "similarity_metrics": {
         "jaccard": 0.26380368098159507,
         "cosine": 0.5668169585773634,
-        "tfidf": 2.580166443215482e-05,
+        "tfidf": 2.580166443215481e-05,
         "combined": 0.30391385831082324
       },
       "combined_similarity": 0.30391385831082324
@@ -276,7 +276,7 @@
       "similarity_metrics": {
         "jaccard": 0.18435754189944134,
         "cosine": 0.59361261321481,
-        "tfidf": 2.478345603494508e-05,
+        "tfidf": 2.4783456034945073e-05,
         "combined": 0.2815136272489688
       },
       "combined_similarity": 0.2815136272489688
@@ -287,7 +287,7 @@
       "similarity_metrics": {
         "jaccard": 0.2695035460992908,
         "cosine": 0.5243415600862051,
-        "tfidf": 3.381150977753075e-05,
+        "tfidf": 3.381150977753074e-05,
         "combined": 0.2913294173473325
       },
       "combined_similarity": 0.2913294173473325
@@ -298,7 +298,7 @@
       "similarity_metrics": {
         "jaccard": 0.23076923076923078,
         "cosine": 0.5275753175915314,
-        "tfidf": 3.3010738684814337e-05,
+        "tfidf": 3.301073868481433e-05,
         "combined": 0.27696730614939946
       },
       "combined_similarity": 0.27696730614939946
@@ -331,7 +331,7 @@
       "similarity_metrics": {
         "jaccard": 0.192090395480226,
         "cosine": 0.6511868563787774,
-        "tfidf": 2.9755782845488252e-05,
+        "tfidf": 2.9755782845488255e-05,
         "combined": 0.30475899687037383
       },
       "combined_similarity": 0.30475899687037383
@@ -342,7 +342,7 @@
       "similarity_metrics": {
         "jaccard": 0.2839506172839506,
         "cosine": 0.7364242402922112,
-        "tfidf": 3.618174415847786e-05,
+        "tfidf": 3.6181744158477865e-05,
         "combined": 0.3713377764518938
       },
       "combined_similarity": 0.3713377764518938

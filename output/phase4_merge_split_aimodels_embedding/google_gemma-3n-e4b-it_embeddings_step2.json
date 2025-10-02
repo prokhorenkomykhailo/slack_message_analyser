@@ -2,7 +2,7 @@
   "provider": "google",
   "model": "gemma-3n-e4b-it",
   "phase": "phase4_merge_split_aimodels_embedding",
-  "timestamp": "2025-09-29T20:16:26.626497",
+  "timestamp": "2025-09-30T19:55:27.241814",
   "success": true,
   "duration": 1.5,
   "usage": {
@@ -29,7 +29,7 @@
       "similarity_metrics": {
         "jaccard": 0.46285714285714286,
         "cosine": 0.8253696459278429,
-        "tfidf": 3.273426992321123e-05,
+        "tfidf": 3.273426992321125e-05,
         "combined": 0.47403041678508295
       }
     }
@@ -254,7 +254,7 @@
       "Large cluster with 81 messages and low coherence (0.155) - should be split"
     ]
   },
-  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_003\",\n        \"cluster_005\"\n      ],\n      \"reason\": \"High embedding similarity (0.474) - Jaccard: 0.463, Cosine: 0.825, TF-IDF: 0.000\",\n      \"similarity_score\": 0.47403041678508295,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.46285714285714286,\n        \"cosine\": 0.8253696459278429,\n        \"tfidf\": 3.273426992321123e-05,\n        \"combined\": 0.47403041678508295\n      }\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_002\",\n      \"reason\": \"Large cluster with 81 messages and low coherence (0.155) - should be split\",\n      \"suggested_clusters\": [\n        \"EcoBloom Rebrand Project - Part A\",\n        \"EcoBloom Rebrand Project - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.11824864409662844,\n        \"cosine\": 0.28921231873211284,\n        \"density\": 0.147005444646098,\n        \"consistency\": 0.014554674865733634,\n        \"combined\": 0.1545503127509887\n      }\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_003_merged_cluster_005\",\n      \"message_ids\": [\n        1,\n        30,\n        44,\n        60,\n        74,\n        86,\n        1,\n        63,\n        77,\n        82,\n        86\n      ],\n      \"draft_title\": \"UrbanEdge Social Media Strategy & TechNova Product Launch Campaign\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#client-communications, #client-communications\",\n      \"thread_id\": \"thread_005, thread_003\",\n      \"merge_reason\": \"High embedding similarity (0.474)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_A\",\n      \"message_ids\": [\n        6,\n        7,\n        8,\n        9,\n        10,\n        11,\n        12,\n        13,\n        14,\n        15,\n        16,\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28,\n        29,\n        30,\n        31,\n        32,\n        33,\n        34,\n        35,\n        36,\n        37,\n        38,\n        39,\n        40,\n        41,\n        42,\n        43,\n        44,\n        45\n      ],\n      \"draft_title\": \"EcoBloom Rebrand Project - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.155) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_B\",\n      \"message_ids\": [\n        46,\n        47,\n        48,\n        49,\n        50,\n        51,\n        52,\n        53,\n        54,\n        55,\n        56,\n        57,\n        58,\n        59,\n        60,\n        61,\n        62,\n        63,\n        64,\n        65,\n        66,\n        67,\n        68,\n        69,\n        70,\n        71,\n        72,\n        73,\n        74,\n        75,\n        76,\n        77,\n        78,\n        79,\n        80,\n        81,\n        82,\n        83,\n        84,\n        85,\n        86\n      ],\n      \"draft_title\": \"EcoBloom Rebrand Project - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.155) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Kickoff & Initial Planning\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_004\",\n      \"message_ids\": [\n        1,\n        45,\n        65,\n        79,\n        85,\n        86\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
+  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_003\",\n        \"cluster_005\"\n      ],\n      \"reason\": \"High embedding similarity (0.474) - Jaccard: 0.463, Cosine: 0.825, TF-IDF: 0.000\",\n      \"similarity_score\": 0.47403041678508295,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.46285714285714286,\n        \"cosine\": 0.8253696459278429,\n        \"tfidf\": 3.273426992321125e-05,\n        \"combined\": 0.47403041678508295\n      }\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_002\",\n      \"reason\": \"Large cluster with 81 messages and low coherence (0.155) - should be split\",\n      \"suggested_clusters\": [\n        \"EcoBloom Rebrand Project - Part A\",\n        \"EcoBloom Rebrand Project - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.11824864409662844,\n        \"cosine\": 0.28921231873211284,\n        \"density\": 0.147005444646098,\n        \"consistency\": 0.014554674865733634,\n        \"combined\": 0.1545503127509887\n      }\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_003_merged_cluster_005\",\n      \"message_ids\": [\n        1,\n        30,\n        44,\n        60,\n        74,\n        86,\n        1,\n        63,\n        77,\n        82,\n        86\n      ],\n      \"draft_title\": \"UrbanEdge Social Media Strategy & TechNova Product Launch Campaign\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#client-communications, #client-communications\",\n      \"thread_id\": \"thread_005, thread_003\",\n      \"merge_reason\": \"High embedding similarity (0.474)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_A\",\n      \"message_ids\": [\n        6,\n        7,\n        8,\n        9,\n        10,\n        11,\n        12,\n        13,\n        14,\n        15,\n        16,\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28,\n        29,\n        30,\n        31,\n        32,\n        33,\n        34,\n        35,\n        36,\n        37,\n        38,\n        39,\n        40,\n        41,\n        42,\n        43,\n        44,\n        45\n      ],\n      \"draft_title\": \"EcoBloom Rebrand Project - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.155) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_002_split_B\",\n      \"message_ids\": [\n        46,\n        47,\n        48,\n        49,\n        50,\n        51,\n        52,\n        53,\n        54,\n        55,\n        56,\n        57,\n        58,\n        59,\n        60,\n        61,\n        62,\n        63,\n        64,\n        65,\n        66,\n        67,\n        68,\n        69,\n        70,\n        71,\n        72,\n        73,\n        74,\n        75,\n        76,\n        77,\n        78,\n        79,\n        80,\n        81,\n        82,\n        83,\n        84,\n        85,\n        86\n      ],\n      \"draft_title\": \"EcoBloom Rebrand Project - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.155) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Kickoff & Initial Planning\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_004\",\n      \"message_ids\": [\n        1,\n        45,\n        65,\n        79,\n        85,\n        86\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
   "error": "",
   "prompt_tokens_estimated": 9195,
   "messages_used": 103,
@@ -438,7 +438,7 @@
       "similarity_metrics": {
         "jaccard": 0.1369150779896014,
         "cosine": 0.7260602321065875,
-        "tfidf": 7.6649655081087e-06,
+        "tfidf": 7.664965508108702e-06,
         "combined": 0.3088890286745232
       },
       "combined_similarity": 0.3088890286745232
@@ -449,7 +449,7 @@
       "similarity_metrics": {
         "jaccard": 0.3370165745856354,
         "cosine": 0.7570500647319786,
-        "tfidf": 2.7687687843170328e-05,
+        "tfidf": 2.768768784317033e-05,
         "combined": 0.39978107441240746
       },
       "combined_similarity": 0.39978107441240746
@@ -460,7 +460,7 @@
       "similarity_metrics": {
         "jaccard": 0.31693989071038253,
         "cosine": 0.7245798959680193,
-        "tfidf": 2.786128994530215e-05,
+        "tfidf": 2.7861289945302136e-05,
         "combined": 0.38038588519544614
       },
       "combined_similarity": 0.38038588519544614
@@ -471,7 +471,7 @@
       "similarity_metrics": {
         "jaccard": 0.36585365853658536,
         "cosine": 0.7304637943164761,
-        "tfidf": 3.2533757915111525e-05,
+        "tfidf": 3.253375791511154e-05,
         "combined": 0.4020119248648795
       },
       "combined_similarity": 0.4020119248648795
@@ -482,7 +482,7 @@
       "similarity_metrics": {
         "jaccard": 0.23518850987432674,
         "cosine": 0.8263111690278936,
-        "tfidf": 8.5864694024406e-06,
+        "tfidf": 8.586469402440605e-06,
         "combined": 0.383286459726844
       },
       "combined_similarity": 0.383286459726844
@@ -493,7 +493,7 @@
       "similarity_metrics": {
         "jaccard": 0.2333931777378815,
         "cosine": 0.8343463876511921,
-        "tfidf": 9.216006221609934e-06,
+        "tfidf": 9.216006221609936e-06,
         "combined": 0.3853808107746252
       },
       "combined_similarity": 0.3853808107746252
@@ -504,7 +504,7 @@
       "similarity_metrics": {
         "jaccard": 0.20287253141831238,
         "cosine": 0.8456956043654406,
-        "tfidf": 9.696696370954087e-06,
+        "tfidf": 9.696696370954089e-06,
         "combined": 0.3771448982693219
       },
       "combined_similarity": 0.3771448982693219
@@ -515,7 +515,7 @@
       "similarity_metrics": {
         "jaccard": 0.4368421052631579,
         "cosine": 0.8173642827269441,
-        "tfidf": 2.876344600509519e-05,
+        "tfidf": 2.8763446005095183e-05,
         "combined": 0.46082153192119485
       },
       "combined_similarity": 0.46082153192119485
@@ -526,7 +526,7 @@
       "similarity_metrics": {
         "jaccard": 0.46285714285714286,
         "cosine": 0.8253696459278429,
-        "tfidf": 3.273426992321123e-05,
+        "tfidf": 3.273426992321125e-05,
         "combined": 0.47403041678508295
       },
       "combined_similarity": 0.47403041678508295
@@ -537,7 +537,7 @@
       "similarity_metrics": {
         "jaccard": 0.44886363636363635,
         "cosine": 0.784995232241119,
-        "tfidf": 3.2905760445110965e-05,
+        "tfidf": 3.290576044511097e-05,
         "combined": 0.4543020122699575
       },
       "combined_similarity": 0.4543020122699575

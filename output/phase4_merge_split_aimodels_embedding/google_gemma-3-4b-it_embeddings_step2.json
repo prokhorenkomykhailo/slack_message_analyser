@@ -2,7 +2,7 @@
   "provider": "google",
   "model": "gemma-3-4b-it",
   "phase": "phase4_merge_split_aimodels_embedding",
-  "timestamp": "2025-09-29T20:16:10.611830",
+  "timestamp": "2025-09-30T19:55:11.418060",
   "success": true,
   "duration": 1.5,
   "usage": {
@@ -44,7 +44,7 @@
       "similarity_metrics": {
         "jaccard": 0.5106382978723404,
         "cosine": 0.7229369234418661,
-        "tfidf": 7.615175107772906e-05,
+        "tfidf": 7.615175107772907e-05,
         "combined": 0.4573022802913587
       }
     }
@@ -66,9 +66,9 @@
       "draft_title": "FitFusion Brand Voice & Design Alignment & EcoBloom Campaign - Revised Designs & Client Feedback",
       "participants": [
         "Jordan",
+        "Leah",
         "Devon",
-        "Sam",
-        "Leah"
+        "Sam"
       ],
       "channel": "#campaign-briefs, #client-communications",
       "thread_id": "thread_002, thread_006",
@@ -312,7 +312,7 @@
     ],
     "split_operation_reasons": []
   },
-  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_006\",\n        \"cluster_011\"\n      ],\n      \"reason\": \"High embedding similarity (0.502) - Jaccard: 0.524, Cosine: 0.834, TF-IDF: 0.000\",\n      \"similarity_score\": 0.5015439769663989,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.5238095238095238,\n        \"cosine\": 0.8342993356105523,\n        \"tfidf\": 6.159991558376349e-05,\n        \"combined\": 0.5015439769663989\n      }\n    },\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_004\",\n        \"cluster_009\"\n      ],\n      \"reason\": \"High embedding similarity (0.457) - Jaccard: 0.511, Cosine: 0.723, TF-IDF: 0.000\",\n      \"similarity_score\": 0.4573022802913587,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.5106382978723404,\n        \"cosine\": 0.7229369234418661,\n        \"tfidf\": 7.615175107772906e-05,\n        \"combined\": 0.4573022802913587\n      }\n    }\n  ],\n  \"split_operations\": [],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_006_merged_cluster_011\",\n      \"message_ids\": [\n        25,\n        26,\n        27,\n        28,\n        41,\n        42,\n        43,\n        44\n      ],\n      \"draft_title\": \"FitFusion Brand Voice & Design Alignment & EcoBloom Campaign - Revised Designs & Client Feedback\",\n      \"participants\": [\n        \"Jordan\",\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs, #client-communications\",\n      \"thread_id\": \"thread_002, thread_006\",\n      \"merge_reason\": \"High embedding similarity (0.502)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_004_merged_cluster_009\",\n      \"message_ids\": [\n        19,\n        20,\n        21,\n        35,\n        36,\n        37\n      ],\n      \"draft_title\": \"FitFusion Timeline & Deliverables & TechNova Legal Review & Compliance\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#campaign-briefs, #campaign-briefs\",\n      \"thread_id\": \"thread_002, thread_003\",\n      \"merge_reason\": \"High embedding similarity (0.457)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Kickoff & Initial Planning\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [\n        9,\n        10,\n        11,\n        12\n      ],\n      \"draft_title\": \"EcoBloom Campaign Timeline & Deliverables\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_003\",\n      \"message_ids\": [\n        13,\n        14,\n        15,\n        16,\n        17,\n        18\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project - Initial Brief\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_005\",\n      \"message_ids\": [\n        22,\n        23,\n        24\n      ],\n      \"draft_title\": \"FitFusion Contract Review & Legal Considerations\",\n      \"participants\": [\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_007\",\n      \"message_ids\": [\n        29,\n        30,\n        31\n      ],\n      \"draft_title\": \"TechNova Product Launch - Initial Brief\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_008\",\n      \"message_ids\": [\n        32,\n        33,\n        34\n      ],\n      \"draft_title\": \"TechNova Timeline & Deliverables\",\n      \"participants\": [\n        \"Devon\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_010\",\n      \"message_ids\": [\n        38,\n        39,\n        40\n      ],\n      \"draft_title\": \"TechNova Design Concepts & Messaging\",\n      \"participants\": [\n        \"Sam\",\n        \"Devon\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_012\",\n      \"message_ids\": [\n        45,\n        46,\n        47\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Initial Client Discussion\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_013\",\n      \"message_ids\": [\n        48,\n        49,\n        50,\n        51,\n        52\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Timeline & Legal Review\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_014\",\n      \"message_ids\": [\n        53,\n        54,\n        55,\n        56,\n        57,\n        58\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Content & Design Development\",\n      \"participants\": [\n        \"Leah\",\n        \"Sam\",\n        \"Devon\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
+  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_006\",\n        \"cluster_011\"\n      ],\n      \"reason\": \"High embedding similarity (0.502) - Jaccard: 0.524, Cosine: 0.834, TF-IDF: 0.000\",\n      \"similarity_score\": 0.5015439769663989,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.5238095238095238,\n        \"cosine\": 0.8342993356105523,\n        \"tfidf\": 6.159991558376349e-05,\n        \"combined\": 0.5015439769663989\n      }\n    },\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_004\",\n        \"cluster_009\"\n      ],\n      \"reason\": \"High embedding similarity (0.457) - Jaccard: 0.511, Cosine: 0.723, TF-IDF: 0.000\",\n      \"similarity_score\": 0.4573022802913587,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.5106382978723404,\n        \"cosine\": 0.7229369234418661,\n        \"tfidf\": 7.615175107772907e-05,\n        \"combined\": 0.4573022802913587\n      }\n    }\n  ],\n  \"split_operations\": [],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_006_merged_cluster_011\",\n      \"message_ids\": [\n        25,\n        26,\n        27,\n        28,\n        41,\n        42,\n        43,\n        44\n      ],\n      \"draft_title\": \"FitFusion Brand Voice & Design Alignment & EcoBloom Campaign - Revised Designs & Client Feedback\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Devon\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs, #client-communications\",\n      \"thread_id\": \"thread_002, thread_006\",\n      \"merge_reason\": \"High embedding similarity (0.502)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_004_merged_cluster_009\",\n      \"message_ids\": [\n        19,\n        20,\n        21,\n        35,\n        36,\n        37\n      ],\n      \"draft_title\": \"FitFusion Timeline & Deliverables & TechNova Legal Review & Compliance\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#campaign-briefs, #campaign-briefs\",\n      \"thread_id\": \"thread_002, thread_003\",\n      \"merge_reason\": \"High embedding similarity (0.457)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Kickoff & Initial Planning\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [\n        9,\n        10,\n        11,\n        12\n      ],\n      \"draft_title\": \"EcoBloom Campaign Timeline & Deliverables\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_003\",\n      \"message_ids\": [\n        13,\n        14,\n        15,\n        16,\n        17,\n        18\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project - Initial Brief\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_005\",\n      \"message_ids\": [\n        22,\n        23,\n        24\n      ],\n      \"draft_title\": \"FitFusion Contract Review & Legal Considerations\",\n      \"participants\": [\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_007\",\n      \"message_ids\": [\n        29,\n        30,\n        31\n      ],\n      \"draft_title\": \"TechNova Product Launch - Initial Brief\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_008\",\n      \"message_ids\": [\n        32,\n        33,\n        34\n      ],\n      \"draft_title\": \"TechNova Timeline & Deliverables\",\n      \"participants\": [\n        \"Devon\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_010\",\n      \"message_ids\": [\n        38,\n        39,\n        40\n      ],\n      \"draft_title\": \"TechNova Design Concepts & Messaging\",\n      \"participants\": [\n        \"Sam\",\n        \"Devon\",\n        \"Leah\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_012\",\n      \"message_ids\": [\n        45,\n        46,\n        47\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Initial Client Discussion\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_013\",\n      \"message_ids\": [\n        48,\n        49,\n        50,\n        51,\n        52\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Timeline & Legal Review\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Jordan\",\n        \"Sam\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_014\",\n      \"message_ids\": [\n        53,\n        54,\n        55,\n        56,\n        57,\n        58\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report - Content & Design Development\",\n      \"participants\": [\n        \"Leah\",\n        \"Sam\",\n        \"Devon\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": null\n    }\n  ]\n}",
   "error": "",
   "prompt_tokens_estimated": 6144,
   "messages_used": 58,
@@ -583,7 +583,7 @@
       "similarity_metrics": {
         "jaccard": 0.2570093457943925,
         "cosine": 0.6372128909998416,
-        "tfidf": 1.9843122211763732e-05,
+        "tfidf": 1.9843122211763722e-05,
         "combined": 0.3258332109482545
       },
       "combined_similarity": 0.3258332109482545
@@ -594,7 +594,7 @@
       "similarity_metrics": {
         "jaccard": 0.2411764705882353,
         "cosine": 0.6115245676038863,
-        "tfidf": 2.7655309401857266e-05,
+        "tfidf": 2.7655309401857276e-05,
         "combined": 0.3105111007240048
       },
       "combined_similarity": 0.3105111007240048
@@ -605,7 +605,7 @@
       "similarity_metrics": {
         "jaccard": 0.22777777777777777,
         "cosine": 0.6632466844138464,
-        "tfidf": 2.6933127743129796e-05,
+        "tfidf": 2.693312774312979e-05,
         "combined": 0.3232541839378931
       },
       "combined_similarity": 0.3232541839378931
@@ -616,7 +616,7 @@
       "similarity_metrics": {
         "jaccard": 0.22340425531914893,
         "cosine": 0.602184968691815,
-        "tfidf": 2.5250032433323138e-05,
+        "tfidf": 2.525003243332313e-05,
         "combined": 0.30013275367790315
       },
       "combined_similarity": 0.30013275367790315
@@ -627,7 +627,7 @@
       "similarity_metrics": {
         "jaccard": 0.16847826086956522,
         "cosine": 0.4775451384723702,
-        "tfidf": 1.877223752654906e-05,
+        "tfidf": 1.8772237526549064e-05,
         "combined": 0.23453679587253728
       },
       "combined_similarity": 0.23453679587253728
@@ -638,7 +638,7 @@
       "similarity_metrics": {
         "jaccard": 0.21978021978021978,
         "cosine": 0.5759458636331082,
-        "tfidf": 2.2855859089396376e-05,
+        "tfidf": 2.2855859089396393e-05,
         "combined": 0.2894988541484481
       },
       "combined_similarity": 0.2894988541484481
@@ -649,7 +649,7 @@
       "similarity_metrics": {
         "jaccard": 0.2411764705882353,
         "cosine": 0.5936837598712571,
-        "tfidf": 2.7347127068346826e-05,
+        "tfidf": 2.7347127068346836e-05,
         "combined": 0.3042667409720012
       },
       "combined_similarity": 0.3042667409720012
@@ -660,7 +660,7 @@
       "similarity_metrics": {
         "jaccard": 0.16756756756756758,
         "cosine": 0.5818328012443815,
-        "tfidf": 2.3972413685557066e-05,
+        "tfidf": 2.397241368555707e-05,
         "combined": 0.2706745005659819
       },
       "combined_similarity": 0.2706745005659819
@@ -671,7 +671,7 @@
       "similarity_metrics": {
         "jaccard": 0.24102564102564103,
         "cosine": 0.6035694006813788,
-        "tfidf": 2.22097229885569e-05,
+        "tfidf": 2.2209722988556915e-05,
         "combined": 0.3076650990794861
       },
       "combined_similarity": 0.3076650990794861
@@ -682,7 +682,7 @@
       "similarity_metrics": {
         "jaccard": 0.16666666666666666,
         "cosine": 0.4614791034954487,
-        "tfidf": 2.235985520290775e-05,
+        "tfidf": 2.2359855202907745e-05,
         "combined": 0.22818994285387445
       },
       "combined_similarity": 0.22818994285387445
@@ -693,7 +693,7 @@
       "similarity_metrics": {
         "jaccard": 0.27461139896373055,
         "cosine": 0.6176991195168654,
-        "tfidf": 2.309983474893345e-05,
+        "tfidf": 2.3099834748933445e-05,
         "combined": 0.32604502637508237
       },
       "combined_similarity": 0.32604502637508237
@@ -704,7 +704,7 @@
       "similarity_metrics": {
         "jaccard": 0.26291079812206575,
         "cosine": 0.6509041421700773,
-        "tfidf": 1.967612487849261e-05,
+        "tfidf": 1.967612487849262e-05,
         "combined": 0.33298568803957296
       },
       "combined_similarity": 0.33298568803957296
@@ -748,7 +748,7 @@
       "similarity_metrics": {
         "jaccard": 0.17355371900826447,
         "cosine": 0.5433608156678456,
-        "tfidf": 4.940898950207746e-05,
+        "tfidf": 4.9408989502077455e-05,
         "combined": 0.25961012533442723
       },
       "combined_similarity": 0.25961012533442723
@@ -770,7 +770,7 @@
       "similarity_metrics": {
         "jaccard": 0.17543859649122806,
         "cosine": 0.48185269278469295,
-        "tfidf": 4.2609835793184145e-05,
+        "tfidf": 4.260983579318415e-05,
         "combined": 0.23883453353008205
       },
       "combined_similarity": 0.23883453353008205
@@ -803,7 +803,7 @@
       "similarity_metrics": {
         "jaccard": 0.15789473684210525,
         "cosine": 0.5000797384583652,
-        "tfidf": 3.7657484337359514e-05,
+        "tfidf": 3.765748433735952e-05,
         "combined": 0.23819521756835424
       },
       "combined_similarity": 0.23819521756835424
@@ -847,7 +847,7 @@
       "similarity_metrics": {
         "jaccard": 0.15606936416184972,
         "cosine": 0.6132657415453407,
-        "tfidf": 2.9870583700737386e-05,
+        "tfidf": 2.9870583700737383e-05,
         "combined": 0.27707822285153433
       },
       "combined_similarity": 0.27707822285153433
@@ -858,7 +858,7 @@
       "similarity_metrics": {
         "jaccard": 0.19318181818181818,
         "cosine": 0.6693954199810234,
-        "tfidf": 3.0470659290693173e-05,
+        "tfidf": 3.0470659290693177e-05,
         "combined": 0.31156874193090806
       },
       "combined_similarity": 0.31156874193090806
@@ -891,7 +891,7 @@
       "similarity_metrics": {
         "jaccard": 0.2710843373493976,
         "cosine": 0.6513730979643525,
-        "tfidf": 3.106251230912068e-05,
+        "tfidf": 3.106251230912069e-05,
         "combined": 0.3364220848553597
       },
       "combined_similarity": 0.3364220848553597
@@ -902,7 +902,7 @@
       "similarity_metrics": {
         "jaccard": 0.11731843575418995,
         "cosine": 0.5525842111054661,
-        "tfidf": 2.6495887773728476e-05,
+        "tfidf": 2.6495887773728466e-05,
         "combined": 0.24033847216053253
       },
       "combined_similarity": 0.24033847216053253
@@ -957,7 +957,7 @@
       "similarity_metrics": {
         "jaccard": 0.2,
         "cosine": 0.6661894192044917,
-        "tfidf": 2.1866988829375498e-05,
+        "tfidf": 2.1866988829375495e-05,
         "combined": 0.31317176346877945
       },
       "combined_similarity": 0.31317176346877945
@@ -1001,7 +1001,7 @@
       "similarity_metrics": {
         "jaccard": 0.2857142857142857,
         "cosine": 0.6741424693692455,
-        "tfidf": 5.173612303068534e-05,
+        "tfidf": 5.173612303068536e-05,
         "combined": 0.3502485125957079
       },
       "combined_similarity": 0.3502485125957079
@@ -1012,7 +1012,7 @@
       "similarity_metrics": {
         "jaccard": 0.5106382978723404,
         "cosine": 0.7229369234418661,
-        "tfidf": 7.615175107772906e-05,
+        "tfidf": 7.615175107772907e-05,
         "combined": 0.4573022802913587
       },
       "combined_similarity": 0.4573022802913587
@@ -1023,7 +1023,7 @@
       "similarity_metrics": {
         "jaccard": 0.18548387096774194,
         "cosine": 0.47949772231793664,
-        "tfidf": 3.7269368532762316e-05,
+        "tfidf": 3.726936853276232e-05,
         "combined": 0.2420270685405078
       },
       "combined_similarity": 0.2420270685405078
@@ -1034,7 +1034,7 @@
       "similarity_metrics": {
         "jaccard": 0.2013888888888889,
         "cosine": 0.5492763834851682,
-        "tfidf": 3.460834678901718e-05,
+        "tfidf": 3.46083467890172e-05,
         "combined": 0.2728109418620617
       },
       "combined_similarity": 0.2728109418620617
@@ -1045,7 +1045,7 @@
       "similarity_metrics": {
         "jaccard": 0.15454545454545454,
         "cosine": 0.4155906026429838,
-        "tfidf": 3.888670470070913e-05,
+        "tfidf": 3.8886704700709136e-05,
         "combined": 0.20728461441940135
       },
       "combined_similarity": 0.20728461441940135
@@ -1056,7 +1056,7 @@
       "similarity_metrics": {
         "jaccard": 0.291970802919708,
         "cosine": 0.673154556285518,
-        "tfidf": 4.48420338947072e-05,
+        "tfidf": 4.4842033894707227e-05,
         "combined": 0.3524036263762882
       },
       "combined_similarity": 0.3524036263762882
@@ -1078,7 +1078,7 @@
       "similarity_metrics": {
         "jaccard": 0.2302158273381295,
         "cosine": 0.6226611588507842,
-        "tfidf": 4.245212253210356e-05,
+        "tfidf": 4.2452122532103556e-05,
         "combined": 0.3100283495636593
       },
       "combined_similarity": 0.3100283495636593
@@ -1089,7 +1089,7 @@
       "similarity_metrics": {
         "jaccard": 0.13043478260869565,
         "cosine": 0.45483840462282293,
-        "tfidf": 2.865959385999576e-05,
+        "tfidf": 2.8659593859995753e-05,
         "combined": 0.21137451955993128
       },
       "combined_similarity": 0.21137451955993128
@@ -1100,7 +1100,7 @@
       "similarity_metrics": {
         "jaccard": 0.1897810218978102,
         "cosine": 0.5604796868005573,
-        "tfidf": 3.5522141454551085e-05,
+        "tfidf": 3.552214145455109e-05,
         "combined": 0.2720891796746827
       },
       "combined_similarity": 0.2720891796746827
@@ -1111,7 +1111,7 @@
       "similarity_metrics": {
         "jaccard": 0.29914529914529914,
         "cosine": 0.6394065895762592,
-        "tfidf": 5.144809065613147e-05,
+        "tfidf": 5.144809065613146e-05,
         "combined": 0.3434632880324744
       },
       "combined_similarity": 0.3434632880324744
@@ -1122,7 +1122,7 @@
       "similarity_metrics": {
         "jaccard": 0.2975206611570248,
         "cosine": 0.6502082539322874,
-        "tfidf": 4.924078338474597e-05,
+        "tfidf": 4.9240783384745944e-05,
         "combined": 0.34659346353495674
       },
       "combined_similarity": 0.34659346353495674
@@ -1133,7 +1133,7 @@
       "similarity_metrics": {
         "jaccard": 0.18064516129032257,
         "cosine": 0.5835660335808756,
-        "tfidf": 3.2477411031045315e-05,
+        "tfidf": 3.247741103104531e-05,
         "combined": 0.2765142956221932
       },
       "combined_similarity": 0.2765142956221932
@@ -1144,7 +1144,7 @@
       "similarity_metrics": {
         "jaccard": 0.15126050420168066,
         "cosine": 0.4760505641921013,
-        "tfidf": 3.914757871713221e-05,
+        "tfidf": 3.914757871713222e-05,
         "combined": 0.22713168604258702
       },
       "combined_similarity": 0.22713168604258702
@@ -1155,7 +1155,7 @@
       "similarity_metrics": {
         "jaccard": 0.272108843537415,
         "cosine": 0.6819619923058102,
-        "tfidf": 4.025358740785561e-05,
+        "tfidf": 4.0253587407855615e-05,
         "combined": 0.3475402981188515
       },
       "combined_similarity": 0.3475402981188515
@@ -1166,7 +1166,7 @@
       "similarity_metrics": {
         "jaccard": 0.2727272727272727,
         "cosine": 0.6795716036029078,
-        "tfidf": 3.188056227395951e-05,
+        "tfidf": 3.1880562273959495e-05,
         "combined": 0.34694894049249525
       },
       "combined_similarity": 0.34694894049249525
@@ -1177,7 +1177,7 @@
       "similarity_metrics": {
         "jaccard": 0.13793103448275862,
         "cosine": 0.4862311622230867,
-        "tfidf": 3.144650957472123e-05,
+        "tfidf": 3.144650957472122e-05,
         "combined": 0.22536118219857748
       },
       "combined_similarity": 0.22536118219857748
@@ -1199,7 +1199,7 @@
       "similarity_metrics": {
         "jaccard": 0.22900763358778625,
         "cosine": 0.5505409183179117,
-        "tfidf": 4.266797122580514e-05,
+        "tfidf": 4.2667971225805126e-05,
         "combined": 0.28430304183919003
       },
       "combined_similarity": 0.28430304183919003
@@ -1232,7 +1232,7 @@
       "similarity_metrics": {
         "jaccard": 0.14960629921259844,
         "cosine": 0.4489608933134425,
-        "tfidf": 3.730862522466583e-05,
+        "tfidf": 3.7308625224665825e-05,
         "combined": 0.2169881595010504
       },
       "combined_similarity": 0.2169881595010504
@@ -1254,7 +1254,7 @@
       "similarity_metrics": {
         "jaccard": 0.35185185185185186,
         "cosine": 0.7198037847129084,
-        "tfidf": 3.7091933714522544e-05,
+        "tfidf": 3.709193371452252e-05,
         "combined": 0.3926813383736873
       },
       "combined_similarity": 0.3926813383736873
@@ -1287,7 +1287,7 @@
       "similarity_metrics": {
         "jaccard": 0.11029411764705882,
         "cosine": 0.41468816423779337,
-        "tfidf": 2.7648769288932493e-05,
+        "tfidf": 2.764876928893249e-05,
         "combined": 0.18926541673437344
       },
       "combined_similarity": 0.18926541673437344
@@ -1298,7 +1298,7 @@
       "similarity_metrics": {
         "jaccard": 0.17218543046357615,
         "cosine": 0.5852417689454448,
-        "tfidf": 3.308389914170339e-05,
+        "tfidf": 3.3083899141703395e-05,
         "combined": 0.2737170622911216
       },
       "combined_similarity": 0.2737170622911216
@@ -1309,7 +1309,7 @@
       "similarity_metrics": {
         "jaccard": 0.14912280701754385,
         "cosine": 0.4543539137445073,
-        "tfidf": 3.8594323462357936e-05,
+        "tfidf": 3.859432346235795e-05,
         "combined": 0.21868264119846065
       },
       "combined_similarity": 0.21868264119846065
@@ -1320,7 +1320,7 @@
       "similarity_metrics": {
         "jaccard": 0.16025641025641027,
         "cosine": 0.5075459213253763,
-        "tfidf": 2.793493888704003e-05,
+        "tfidf": 2.7934938887040028e-05,
         "combined": 0.2417506203011676
       },
       "combined_similarity": 0.2417506203011676
@@ -1342,7 +1342,7 @@
       "similarity_metrics": {
         "jaccard": 0.2540983606557377,
         "cosine": 0.6959326635644953,
-        "tfidf": 5.3062593351089393e-05,
+        "tfidf": 5.306259335108937e-05,
         "combined": 0.3452290421582062
       },
       "combined_similarity": 0.3452290421582062
@@ -1353,7 +1353,7 @@
       "similarity_metrics": {
         "jaccard": 0.264,
         "cosine": 0.5381714130937846,
-        "tfidf": 3.898266479086654e-05,
+        "tfidf": 3.898266479086655e-05,
         "combined": 0.29396974024902234
       },
       "combined_similarity": 0.29396974024902234
@@ -1364,7 +1364,7 @@
       "similarity_metrics": {
         "jaccard": 0.21052631578947367,
         "cosine": 0.6275031044575765,
-        "tfidf": 3.518831334983732e-05,
+        "tfidf": 3.518831334983731e-05,
         "combined": 0.30384540995427867
       },
       "combined_similarity": 0.30384540995427867
@@ -1375,7 +1375,7 @@
       "similarity_metrics": {
         "jaccard": 0.1694915254237288,
         "cosine": 0.4663911490731223,
-        "tfidf": 3.821819234386885e-05,
+        "tfidf": 3.821819234386884e-05,
         "combined": 0.23104306689317025
       },
       "combined_similarity": 0.23104306689317025
@@ -1386,7 +1386,7 @@
       "similarity_metrics": {
         "jaccard": 0.2129032258064516,
         "cosine": 0.6115306862454085,
-        "tfidf": 3.382605704749243e-05,
+        "tfidf": 3.3826057047492426e-05,
         "combined": 0.29920548702273553
       },
       "combined_similarity": 0.29920548702273553
@@ -1408,7 +1408,7 @@
       "similarity_metrics": {
         "jaccard": 0.2672413793103448,
         "cosine": 0.5399479878036001,
-        "tfidf": 4.5695458151820906e-05,
+        "tfidf": 4.56954581518209e-05,
         "combined": 0.29588977131993593
       },
       "combined_similarity": 0.29588977131993593
@@ -1419,7 +1419,7 @@
       "similarity_metrics": {
         "jaccard": 0.2357142857142857,
         "cosine": 0.6102207493362906,
-        "tfidf": 4.0281281785020986e-05,
+        "tfidf": 4.028128178502097e-05,
         "combined": 0.30787304687386224
       },
       "combined_similarity": 0.30787304687386224
@@ -1441,7 +1441,7 @@
       "similarity_metrics": {
         "jaccard": 0.37209302325581395,
         "cosine": 0.6936136460496428,
-        "tfidf": 4.998168875285831e-05,
+        "tfidf": 4.998168875285832e-05,
         "combined": 0.39161448084188877
       },
       "combined_similarity": 0.39161448084188877
@@ -1452,7 +1452,7 @@
       "similarity_metrics": {
         "jaccard": 0.21212121212121213,
         "cosine": 0.5748106595785062,
-        "tfidf": 2.888928643765409e-05,
+        "tfidf": 2.8889286437654097e-05,
         "combined": 0.2860394380225714
       },
       "combined_similarity": 0.2860394380225714
@@ -1463,7 +1463,7 @@
       "similarity_metrics": {
         "jaccard": 0.16339869281045752,
         "cosine": 0.4922930370171432,
-        "tfidf": 2.8943859320786038e-05,
+        "tfidf": 2.894385932078603e-05,
         "combined": 0.2376692760450133
       },
       "combined_similarity": 0.2376692760450133
@@ -1485,7 +1485,7 @@
       "similarity_metrics": {
         "jaccard": 0.16666666666666666,
         "cosine": 0.4718838991521307,
-        "tfidf": 2.7369911805991477e-05,
+        "tfidf": 2.736991180599148e-05,
         "combined": 0.2318328738478639
       },
       "combined_similarity": 0.2318328738478639
@@ -1529,7 +1529,7 @@
       "similarity_metrics": {
         "jaccard": 0.3668639053254438,
         "cosine": 0.7330176836128797,
-        "tfidf": 3.2958601182069816e-05,
+        "tfidf": 3.2958601182069796e-05,
         "combined": 0.4033099910449809
       },
       "combined_similarity": 0.4033099910449809
@@ -1540,7 +1540,7 @@
       "similarity_metrics": {
         "jaccard": 0.2558139534883721,
         "cosine": 0.6543234281576986,
-        "tfidf": 4.901246383540098e-05,
+        "tfidf": 4.9012463835400994e-05,
         "combined": 0.3313510343665022
       },
       "combined_similarity": 0.3313510343665022
@@ -1562,7 +1562,7 @@
       "similarity_metrics": {
         "jaccard": 0.2983425414364641,
         "cosine": 0.7499269153399486,
-        "tfidf": 3.166795730875429e-05,
+        "tfidf": 3.1667957308754295e-05,
         "combined": 0.38181935393289484
       },
       "combined_similarity": 0.38181935393289484

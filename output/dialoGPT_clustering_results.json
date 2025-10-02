@@ -1,0 +1,18 @@
+{
+  "model": "microsoft/DialoGPT-medium",
+  "timestamp": "2025-09-30T17:24:32.263833",
+  "response": "",
+  "sample_messages": [
+    "@team I've scheduled our kickoff meeting for the EcoBloom summer campaign tomorrow at 10 AM. Please come prepared with your initial ideas and availability for the next two months. This is a high priority project with a deadline of July 28, 2025.",
+    "@Devon I've prepared some initial design concepts for EcoBloom's summer campaign. Focusing on vibrant colors and natural elements to match their brand identity.",
+    "@Devon I've drafted the content strategy for EcoBloom's summer campaign. It includes social media posts, blog articles, and email newsletters. Looking forward to discussing it in the meeting tomorrow!",
+    "@Devon I've reviewed EcoBloom's contract terms for the summer campaign. There are specific clauses about deliverables and timelines that we need to adhere to. The deadline of July 28, 2025 is firm, with penalties for delays.",
+    "@Jordan Thank you for the contract review. We need to ensure all deliverables are completed by July 28, 2025. @Sam and @Leah, please factor this into your timelines. This is a high priority project.",
+    "@Devon I'll need final content by July 10, 2025 to complete the designs on time. That gives me about 2.5 weeks for revisions before the July 28, 2025 deadline.",
+    "@Sam I can have the initial content ready for review by June 30, 2025. That should give us enough time for revisions before your July 10, 2025 deadline.",
+    "@team Great meeting this morning! To recap: EcoBloom summer campaign deadline is July 28, 2025. @Leah will have content ready by June 30, 2025. @Sam will have designs ready by July 21, 2025. @Jordan will handle all legal reviews by July 14, 2025.",
+    "@Devon I'll need all marketing materials by July 7, 2025 to complete the legal review by July 14, 2025. This is urgent as the client requires approval before production.",
+    "@Devon, sure no problem."
+  ],
+  "method": "DialoGPT-medium clustering"
+}

@@ -149,9 +149,9 @@
     "draft_title": "TechNova Legal Review & Compliance",
     "participants": [
       "Jordan",
-      "Devon",
       "Leah",
-      "Sam"
+      "Sam",
+      "Devon"
     ],
     "channel": "#campaign-briefs",
     "thread_id": "thread_003"
@@ -180,15 +180,15 @@
       43,
       44
     ],
-    "draft_title": "EcoBloom Campaign - Revised Designs & Client Feedback",
+    "draft_title": "TechNova Campaign - Team Coordination & Review",
     "participants": [
       "Devon",
       "Sam",
       "Leah",
       "Jordan"
     ],
-    "channel": "#client-communications",
-    "thread_id": "thread_006"
+    "channel": "#campaign-briefs",
+    "thread_id": "thread_003"
   },
   {
     "cluster_id": "cluster_012",
@@ -197,11 +197,12 @@
       46,
       47
     ],
-    "draft_title": "GreenScape Sustainability Report - Initial Client Discussion",
+    "draft_title": "GreenScape Sustainability Report - Initial Request",
     "participants": [
       "Devon",
       "Leah",
-      "Sam"
+      "Sam",
+      "Jordan"
     ],
     "channel": "#client-communications",
     "thread_id": "thread_004"
@@ -212,15 +213,14 @@
       48,
       49,
       50,
-      51,
-      52
+      51
     ],
-    "draft_title": "GreenScape Sustainability Report - Timeline & Legal Review",
+    "draft_title": "GreenScape Sustainability Report - Timeline & Review",
     "participants": [
       "Devon",
       "Leah",
-      "Jordan",
-      "Sam"
+      "Sam",
+      "Jordan"
     ],
     "channel": "#client-communications",
     "thread_id": "thread_004"
@@ -228,6 +228,7 @@
   {
     "cluster_id": "cluster_014",
     "message_ids": [
+      52,
       53,
       54,
       55,
@@ -244,5 +245,42 @@
     ],
     "channel": "#client-communications",
     "thread_id": "thread_004"
+  },
+  {
+    "cluster_id": "cluster_015",
+    "message_ids": [
+      59,
+      60,
+      61
+    ],
+    "draft_title": "UrbanEdge Social Media Strategy - Initial Brief",
+    "participants": [
+      "Devon",
+      "Sam",
+      "Leah"
+    ],
+    "channel": "#campaign-briefs",
+    "thread_id": "thread_005"
+  },
+  {
+    "cluster_id": "cluster_016",
+    "message_ids": [
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68
+    ],
+    "draft_title": "UrbanEdge Social Media Strategy - Development & Review",
+    "participants": [
+      "Leah",
+      "Sam",
+      "Devon",
+      "Jordan"
+    ],
+    "channel": "#campaign-briefs",
+    "thread_id": "thread_005"
   }
 ]

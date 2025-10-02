@@ -2,7 +2,7 @@
   "provider": "google",
   "model": "gemini-2.5-flash-lite",
   "phase": "phase4_merge_split_aimodels_embedding",
-  "timestamp": "2025-09-29T20:16:00.372428",
+  "timestamp": "2025-09-30T19:55:01.088991",
   "success": true,
   "duration": 1.5,
   "usage": {
@@ -29,7 +29,7 @@
       "similarity_metrics": {
         "jaccard": 0.40625,
         "cosine": 0.8273638535108503,
-        "tfidf": 8.884514771661743e-06,
+        "tfidf": 8.884514771661739e-06,
         "combined": 0.4520795698574905
       }
     }
@@ -530,7 +530,7 @@
       "Large cluster with 25 messages and low coherence (0.208) - should be split"
     ]
   },
-  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_002\",\n        \"cluster_005\"\n      ],\n      \"reason\": \"High embedding similarity (0.452) - Jaccard: 0.406, Cosine: 0.827, TF-IDF: 0.000\",\n      \"similarity_score\": 0.4520795698574905,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.40625,\n        \"cosine\": 0.8273638535108503,\n        \"tfidf\": 8.884514771661743e-06,\n        \"combined\": 0.4520795698574905\n      }\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_001\",\n      \"reason\": \"Large cluster with 29 messages and low coherence (0.138) - should be split\",\n      \"suggested_clusters\": [\n        \"EcoBloom Summer Campaign Planning and Execution - Part A\",\n        \"EcoBloom Summer Campaign Planning and Execution - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.12277416609585073,\n        \"cosine\": 0.26300880962750717,\n        \"density\": 0.10545454545454545,\n        \"consistency\": 0.005825834562923862,\n        \"combined\": 0.13799096872050126\n      }\n    },\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_003\",\n      \"reason\": \"Large cluster with 46 messages and low coherence (0.181) - should be split\",\n      \"suggested_clusters\": [\n        \"TechNova Product Launch Campaign and Budget - Part A\",\n        \"TechNova Product Launch Campaign and Budget - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.14678894532087725,\n        \"cosine\": 0.3528885792240773,\n        \"density\": 0.12332439678284182,\n        \"consistency\": 0.03434786137488841,\n        \"combined\": 0.1814377089950324\n      }\n    },\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_004\",\n      \"reason\": \"Large cluster with 66 messages and low coherence (0.170) - should be split\",\n      \"suggested_clusters\": [\n        \"GreenScape Sustainability Report and Data Visualizations - Part A\",\n        \"GreenScape Sustainability Report and Data Visualizations - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.13960971486045376,\n        \"cosine\": 0.3234376132300867,\n        \"density\": 0.13807531380753138,\n        \"consistency\": 0.01658108401310956,\n        \"combined\": 0.16984547799129032\n      }\n    },\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_006\",\n      \"reason\": \"Large cluster with 25 messages and low coherence (0.208) - should be split\",\n      \"suggested_clusters\": [\n        \"Q3 Content Calendar Development - Part A\",\n        \"Q3 Content Calendar Development - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.20320250516576693,\n        \"cosine\": 0.4093442698144944,\n        \"density\": 0.10121457489878542,\n        \"consistency\": 0.018728836414851218,\n        \"combined\": 0.2077527147568057\n      }\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_002_merged_cluster_005\",\n      \"message_ids\": [\n        14,\n        15,\n        16,\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28,\n        89,\n        90,\n        91,\n        92,\n        93,\n        94,\n        95,\n        96,\n        97,\n        98,\n        99,\n        100,\n        101,\n        102,\n        103,\n        104,\n        105,\n        106,\n        107,\n        108,\n        109,\n        110,\n        111,\n        213,\n        214,\n        215,\n        216,\n        217,\n        218,\n        219,\n        220,\n        221,\n        222,\n        223,\n        224,\n        225,\n        226,\n        227,\n        228,\n        229,\n        230,\n        231,\n        232,\n        233,\n        234,\n        59,\n        60,\n        61,\n        62,\n        63,\n        64,\n        65,\n        66,\n        67,\n        68,\n        69,\n        70,\n        71,\n        72,\n        73,\n        279,\n        280,\n        281,\n        282,\n        283,\n        284,\n        285,\n        286,\n        287,\n        288,\n        289,\n        290,\n        291,\n        292,\n        293,\n        294,\n        295,\n        296,\n        297,\n        298,\n        299,\n        300\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project Management & UrbanEdge Social Media Strategy and Market Research\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#campaign-briefs, #client-communications\",\n      \"thread_id\": \"thread_002, thread_005\",\n      \"merge_reason\": \"High embedding similarity (0.452)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001_split_A\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8,\n        9,\n        10,\n        11,\n        12,\n        13,\n        197\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning and Execution - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.138) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_001_split_B\",\n      \"message_ids\": [\n        198,\n        199,\n        200,\n        201,\n        202,\n        203,\n        204,\n        205,\n        206,\n        207,\n        208,\n        209,\n        210,\n        211,\n        212\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning and Execution - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.138) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_003_split_A\",\n      \"message_ids\": [\n        29,\n        30,\n        31,\n        32,\n        33,\n        34,\n        35,\n        36,\n        37,\n        38,\n        39,\n        40,\n        41,\n        42,\n        43,\n        137,\n        138,\n        139,\n        140,\n        141,\n        142,\n        143,\n        144\n      ],\n      \"draft_title\": \"TechNova Product Launch Campaign and Budget - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.181) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_003_split_B\",\n      \"message_ids\": [\n        145,\n        146,\n        147,\n        148,\n        149,\n        150,\n        151,\n        152,\n        153,\n        154,\n        155,\n        156,\n        157,\n        158,\n        159,\n        160,\n        161,\n        162,\n        163,\n        164,\n        165,\n        166,\n        167\n      ],\n      \"draft_title\": \"TechNova Product Launch Campaign and Budget - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.181) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_004_split_A\",\n      \"message_ids\": [\n        44,\n        45,\n        46,\n        47,\n        48,\n        49,\n        50,\n        51,\n        52,\n        53,\n        54,\n        55,\n        56,\n        57,\n        58,\n        168,\n        169,\n        170,\n        171,\n        172,\n        173,\n        174,\n        175,\n        176,\n        177,\n        178,\n        179,\n        180,\n        181,\n        182,\n        183,\n        184,\n        185\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report and Data Visualizations - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.170) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_004_split_B\",\n      \"message_ids\": [\n        186,\n        187,\n        188,\n        189,\n        190,\n        191,\n        192,\n        193,\n        194,\n        195,\n        196,\n        257,\n        258,\n        259,\n        260,\n        261,\n        262,\n        263,\n        264,\n        265,\n        266,\n        267,\n        268,\n        269,\n        270,\n        271,\n        272,\n        273,\n        274,\n        275,\n        276,\n        277,\n        278\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report and Data Visualizations - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.170) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_006_split_A\",\n      \"message_ids\": [\n        112,\n        113,\n        114,\n        115,\n        116,\n        117,\n        118,\n        119,\n        120,\n        121,\n        122,\n        123\n      ],\n      \"draft_title\": \"Q3 Content Calendar Development - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_008\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.208) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_006_split_B\",\n      \"message_ids\": [\n        124,\n        125,\n        126,\n        127,\n        128,\n        129,\n        130,\n        131,\n        132,\n        133,\n        134,\n        135,\n        136\n      ],\n      \"draft_title\": \"Q3 Content Calendar Development - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_008\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.208) - split by content\"\n    }\n  ]\n}",
+  "raw_response": "{\n  \"merge_operations\": [\n    {\n      \"operation\": \"merge\",\n      \"clusters\": [\n        \"cluster_002\",\n        \"cluster_005\"\n      ],\n      \"reason\": \"High embedding similarity (0.452) - Jaccard: 0.406, Cosine: 0.827, TF-IDF: 0.000\",\n      \"similarity_score\": 0.4520795698574905,\n      \"similarity_metrics\": {\n        \"jaccard\": 0.40625,\n        \"cosine\": 0.8273638535108503,\n        \"tfidf\": 8.884514771661739e-06,\n        \"combined\": 0.4520795698574905\n      }\n    }\n  ],\n  \"split_operations\": [\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_001\",\n      \"reason\": \"Large cluster with 29 messages and low coherence (0.138) - should be split\",\n      \"suggested_clusters\": [\n        \"EcoBloom Summer Campaign Planning and Execution - Part A\",\n        \"EcoBloom Summer Campaign Planning and Execution - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.12277416609585073,\n        \"cosine\": 0.26300880962750717,\n        \"density\": 0.10545454545454545,\n        \"consistency\": 0.005825834562923862,\n        \"combined\": 0.13799096872050126\n      }\n    },\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_003\",\n      \"reason\": \"Large cluster with 46 messages and low coherence (0.181) - should be split\",\n      \"suggested_clusters\": [\n        \"TechNova Product Launch Campaign and Budget - Part A\",\n        \"TechNova Product Launch Campaign and Budget - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.14678894532087725,\n        \"cosine\": 0.3528885792240773,\n        \"density\": 0.12332439678284182,\n        \"consistency\": 0.03434786137488841,\n        \"combined\": 0.1814377089950324\n      }\n    },\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_004\",\n      \"reason\": \"Large cluster with 66 messages and low coherence (0.170) - should be split\",\n      \"suggested_clusters\": [\n        \"GreenScape Sustainability Report and Data Visualizations - Part A\",\n        \"GreenScape Sustainability Report and Data Visualizations - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.13960971486045376,\n        \"cosine\": 0.3234376132300867,\n        \"density\": 0.13807531380753138,\n        \"consistency\": 0.01658108401310956,\n        \"combined\": 0.16984547799129032\n      }\n    },\n    {\n      \"operation\": \"split\",\n      \"cluster\": \"cluster_006\",\n      \"reason\": \"Large cluster with 25 messages and low coherence (0.208) - should be split\",\n      \"suggested_clusters\": [\n        \"Q3 Content Calendar Development - Part A\",\n        \"Q3 Content Calendar Development - Part B\"\n      ],\n      \"coherence_metrics\": {\n        \"jaccard\": 0.20320250516576693,\n        \"cosine\": 0.4093442698144944,\n        \"density\": 0.10121457489878542,\n        \"consistency\": 0.018728836414851218,\n        \"combined\": 0.2077527147568057\n      }\n    }\n  ],\n  \"refined_clusters\": [\n    {\n      \"cluster_id\": \"cluster_002_merged_cluster_005\",\n      \"message_ids\": [\n        14,\n        15,\n        16,\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28,\n        89,\n        90,\n        91,\n        92,\n        93,\n        94,\n        95,\n        96,\n        97,\n        98,\n        99,\n        100,\n        101,\n        102,\n        103,\n        104,\n        105,\n        106,\n        107,\n        108,\n        109,\n        110,\n        111,\n        213,\n        214,\n        215,\n        216,\n        217,\n        218,\n        219,\n        220,\n        221,\n        222,\n        223,\n        224,\n        225,\n        226,\n        227,\n        228,\n        229,\n        230,\n        231,\n        232,\n        233,\n        234,\n        59,\n        60,\n        61,\n        62,\n        63,\n        64,\n        65,\n        66,\n        67,\n        68,\n        69,\n        70,\n        71,\n        72,\n        73,\n        279,\n        280,\n        281,\n        282,\n        283,\n        284,\n        285,\n        286,\n        287,\n        288,\n        289,\n        290,\n        291,\n        292,\n        293,\n        294,\n        295,\n        296,\n        297,\n        298,\n        299,\n        300\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project Management & UrbanEdge Social Media Strategy and Market Research\",\n      \"participants\": [\n        \"Jordan\",\n        \"Leah\",\n        \"Sam\",\n        \"Devon\"\n      ],\n      \"channel\": \"#campaign-briefs, #client-communications\",\n      \"thread_id\": \"thread_002, thread_005\",\n      \"merge_reason\": \"High embedding similarity (0.452)\",\n      \"split_reason\": null\n    },\n    {\n      \"cluster_id\": \"cluster_001_split_A\",\n      \"message_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8,\n        9,\n        10,\n        11,\n        12,\n        13,\n        197\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning and Execution - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.138) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_001_split_B\",\n      \"message_ids\": [\n        198,\n        199,\n        200,\n        201,\n        202,\n        203,\n        204,\n        205,\n        206,\n        207,\n        208,\n        209,\n        210,\n        211,\n        212\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign Planning and Execution - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.138) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_003_split_A\",\n      \"message_ids\": [\n        29,\n        30,\n        31,\n        32,\n        33,\n        34,\n        35,\n        36,\n        37,\n        38,\n        39,\n        40,\n        41,\n        42,\n        43,\n        137,\n        138,\n        139,\n        140,\n        141,\n        142,\n        143,\n        144\n      ],\n      \"draft_title\": \"TechNova Product Launch Campaign and Budget - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.181) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_003_split_B\",\n      \"message_ids\": [\n        145,\n        146,\n        147,\n        148,\n        149,\n        150,\n        151,\n        152,\n        153,\n        154,\n        155,\n        156,\n        157,\n        158,\n        159,\n        160,\n        161,\n        162,\n        163,\n        164,\n        165,\n        166,\n        167\n      ],\n      \"draft_title\": \"TechNova Product Launch Campaign and Budget - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_003\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.181) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_004_split_A\",\n      \"message_ids\": [\n        44,\n        45,\n        46,\n        47,\n        48,\n        49,\n        50,\n        51,\n        52,\n        53,\n        54,\n        55,\n        56,\n        57,\n        58,\n        168,\n        169,\n        170,\n        171,\n        172,\n        173,\n        174,\n        175,\n        176,\n        177,\n        178,\n        179,\n        180,\n        181,\n        182,\n        183,\n        184,\n        185\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report and Data Visualizations - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.170) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_004_split_B\",\n      \"message_ids\": [\n        186,\n        187,\n        188,\n        189,\n        190,\n        191,\n        192,\n        193,\n        194,\n        195,\n        196,\n        257,\n        258,\n        259,\n        260,\n        261,\n        262,\n        263,\n        264,\n        265,\n        266,\n        267,\n        268,\n        269,\n        270,\n        271,\n        272,\n        273,\n        274,\n        275,\n        276,\n        277,\n        278\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report and Data Visualizations - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.170) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_006_split_A\",\n      \"message_ids\": [\n        112,\n        113,\n        114,\n        115,\n        116,\n        117,\n        118,\n        119,\n        120,\n        121,\n        122,\n        123\n      ],\n      \"draft_title\": \"Q3 Content Calendar Development - Part A\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_008\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.208) - split by content\"\n    },\n    {\n      \"cluster_id\": \"cluster_006_split_B\",\n      \"message_ids\": [\n        124,\n        125,\n        126,\n        127,\n        128,\n        129,\n        130,\n        131,\n        132,\n        133,\n        134,\n        135,\n        136\n      ],\n      \"draft_title\": \"Q3 Content Calendar Development - Part B\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_008\",\n      \"merge_reason\": null,\n      \"split_reason\": \"Low coherence (0.208) - split by content\"\n    }\n  ]\n}",
   "error": "",
   "prompt_tokens_estimated": 22215,
   "messages_used": 263,
@@ -891,7 +891,7 @@
       "similarity_metrics": {
         "jaccard": 0.3622641509433962,
         "cosine": 0.8361275405500402,
-        "tfidf": 9.306447830617637e-06,
+        "tfidf": 9.306447830617628e-06,
         "combined": 0.4375526261818302
       },
       "combined_similarity": 0.4375526261818302
@@ -902,7 +902,7 @@
       "similarity_metrics": {
         "jaccard": 0.3064516129032258,
         "cosine": 0.8234594461549214,
-        "tfidf": 1.0283539176087695e-05,
+        "tfidf": 1.0283539176087688e-05,
         "combined": 0.41079402220030675
       },
       "combined_similarity": 0.41079402220030675
@@ -913,7 +913,7 @@
       "similarity_metrics": {
         "jaccard": 0.3072916666666667,
         "cosine": 0.7722783777633903,
-        "tfidf": 7.775806151215124e-06,
+        "tfidf": 7.775806151215116e-06,
         "combined": 0.393216042835391
       },
       "combined_similarity": 0.393216042835391
@@ -924,7 +924,7 @@
       "similarity_metrics": {
         "jaccard": 0.34467120181405897,
         "cosine": 0.8005520792045612,
-        "tfidf": 1.0721635400245634e-05,
+        "tfidf": 1.0721635400245641e-05,
         "combined": 0.41806438885607006
       },
       "combined_similarity": 0.41806438885607006
@@ -946,7 +946,7 @@
       "similarity_metrics": {
         "jaccard": 0.36666666666666664,
         "cosine": 0.8387681633798051,
-        "tfidf": 8.564436448973694e-06,
+        "tfidf": 8.564436448973687e-06,
         "combined": 0.44023766495871064
       },
       "combined_similarity": 0.44023766495871064
@@ -957,7 +957,7 @@
       "similarity_metrics": {
         "jaccard": 0.3805970149253731,
         "cosine": 0.8422792824211724,
-        "tfidf": 7.211097786006388e-06,
+        "tfidf": 7.211097786006378e-06,
         "combined": 0.4470383575920061
       },
       "combined_similarity": 0.4470383575920061
@@ -968,7 +968,7 @@
       "similarity_metrics": {
         "jaccard": 0.40625,
         "cosine": 0.8273638535108503,
-        "tfidf": 8.884514771661743e-06,
+        "tfidf": 8.884514771661739e-06,
         "combined": 0.4520795698574905
       },
       "combined_similarity": 0.4520795698574905
@@ -979,7 +979,7 @@
       "similarity_metrics": {
         "jaccard": 0.28044280442804426,
         "cosine": 0.7600986821493689,
-        "tfidf": 8.860656710150938e-06,
+        "tfidf": 8.86065671015094e-06,
         "combined": 0.37821387568767434
       },
       "combined_similarity": 0.37821387568767434
@@ -990,7 +990,7 @@
       "similarity_metrics": {
         "jaccard": 0.31530139103554866,
         "cosine": 0.8178538099163487,
-        "tfidf": 7.613533253001136e-06,
+        "tfidf": 7.613533253001145e-06,
         "combined": 0.4123712932682548
       },
       "combined_similarity": 0.4123712932682548
@@ -1001,7 +1001,7 @@
       "similarity_metrics": {
         "jaccard": 0.32375478927203066,
         "cosine": 0.8174420431885316,
-        "tfidf": 9.605441192648421e-06,
+        "tfidf": 9.605441192648416e-06,
         "combined": 0.4156090321850965
       },
       "combined_similarity": 0.4156090321850965
@@ -1012,7 +1012,7 @@
       "similarity_metrics": {
         "jaccard": 0.2916666666666667,
         "cosine": 0.7844501312930366,
-        "tfidf": 1.0842117258809915e-05,
+        "tfidf": 1.084211725880992e-05,
         "combined": 0.39122692314854424
       },
       "combined_similarity": 0.39122692314854424
@@ -1023,7 +1023,7 @@
       "similarity_metrics": {
         "jaccard": 0.37005163511187605,
         "cosine": 0.8093261824998037,
-        "tfidf": 8.000005271206294e-06,
+        "tfidf": 8.000005271206292e-06,
         "combined": 0.43128681792099943
       },
       "combined_similarity": 0.43128681792099943
@@ -1045,7 +1045,7 @@
       "similarity_metrics": {
         "jaccard": 0.2988505747126437,
         "cosine": 0.7627323505572017,
-        "tfidf": 1.1091770472032712e-05,
+        "tfidf": 1.1091770472032717e-05,
         "combined": 0.38649932552269606
       },
       "combined_similarity": 0.38649932552269606

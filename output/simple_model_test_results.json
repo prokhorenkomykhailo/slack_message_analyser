@@ -1,0 +1,10 @@
+{
+  "model": "microsoft/DialoGPT-medium",
+  "timestamp": "2025-09-30T16:02:45.312077",
+  "response": "Analyze these messages and group them into topics: @team I've scheduled our kickoff meeting for the EcoBloom summer campaign tomorrow at 10 AM. Please come prepared with your initial ideas and availability for the next two months. This is a high priority project with a deadline of July 28, 2025. @Devon I've prepared some initial design concepts for EcoBloom's summer campaign. Focusing on vibrant colors and natural elements to match their brand identity. @Devon I've drafted the content strategy for EcoBloom's summer campaign. It includes social media posts, blog articles, and email newsletters. Looking forward to discussing it in the meeting tomorrow!",
+  "sample_messages": [
+    "@team I've scheduled our kickoff meeting for the EcoBloom summer campaign tomorrow at 10 AM. Please come prepared with your initial ideas and availability for the next two months. This is a high priority project with a deadline of July 28, 2025.",
+    "@Devon I've prepared some initial design concepts for EcoBloom's summer campaign. Focusing on vibrant colors and natural elements to match their brand identity.",
+    "@Devon I've drafted the content strategy for EcoBloom's summer campaign. It includes social media posts, blog articles, and email newsletters. Looking forward to discussing it in the meeting tomorrow!"
+  ]
+}

@@ -2,9 +2,9 @@
   "provider": "google",
   "model": "gemini-2.0-flash",
   "phase": "phase3_topic_clustering",
-  "timestamp": "2025-09-04T09:11:55.735108",
+  "timestamp": "2025-10-01T00:10:31.016595",
   "success": true,
-  "duration": 19.216028690338135,
+  "duration": 21.792323350906372,
   "usage": {
     "prompt_tokens": 25474,
     "completion_tokens": 3240,
@@ -557,14 +557,14 @@
     "unique_threads": 15
   },
   "comparison_metrics": {
-    "precision": 0.9566666666666667,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1_score": 0.9778534923339013,
-    "cluster_similarity": 0.6521821177303789,
+    "f1_score": 1.0,
+    "cluster_similarity": 0.6574170274170275,
     "title_similarity": 0.31611351611351607,
     "participant_accuracy": 1.0,
     "cluster_count_similarity": 0.4,
-    "size_similarity": 0.4181184668989547,
+    "size_similarity": 0.4,
     "ref_cluster_count": 6,
     "pred_cluster_count": 15
   },
