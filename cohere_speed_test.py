@@ -15,12 +15,12 @@ def test_speed():
     test_prompt = "Hello, how are you?"
     messages = [{"role": "user", "content": test_prompt}]
     
-    
+    # Load tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     
-    
+    # Test 1: CPU Performance
     print("\n🖥️  Testing CPU performance...")
     try:
         model_cpu = AutoModelForCausalLM.from_pretrained(
@@ -55,7 +55,7 @@ def test_speed():
         print(f"❌ CPU test failed: {e}")
         cpu_time = None
     
-    
+    # Test 2: GPU Performance
     print("\n🚀 Testing GPU performance...")
     try:
         if torch.cuda.is_available():
@@ -98,7 +98,7 @@ def test_speed():
         print(f"❌ GPU test failed: {e}")
         gpu_time = None
     
-    
+    # Summary
     print("\n📊 Performance Summary:")
     print("-" * 30)
     if cpu_time:

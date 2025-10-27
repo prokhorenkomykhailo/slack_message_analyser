@@ -47,7 +47,7 @@
       211,
       212
     ],
-    "draft_title": "EcoBloom Summer Campaign: Planning, Revisions, and Finalization",
+    "draft_title": "EcoBloom Summer Campaign: Planning, Revisions, and Final Submission",
     "participants": [
       "Devon",
       "Sam",
@@ -55,7 +55,7 @@
       "Jordan"
     ],
     "channel": "#campaign-briefs",
-    "thread_id": null
+    "thread_id": "thread_001, thread_006, thread_011"
   },
   {
     "cluster_id": "cluster_002",
@@ -121,7 +121,7 @@
       233,
       234
     ],
-    "draft_title": "FitFusion Rebranding Project: Strategy, Legal Review, and Brand Guidelines",
+    "draft_title": "FitFusion Rebranding Project: Kickoff, Legal Review, and Brand Guidelines",
     "participants": [
       "Devon",
       "Sam",
@@ -129,7 +129,7 @@
       "Jordan"
     ],
     "channel": "#campaign-briefs",
-    "thread_id": null
+    "thread_id": "thread_002, thread_007, thread_012"
   },
   {
     "cluster_id": "cluster_003",
@@ -211,7 +211,7 @@
       "Jordan"
     ],
     "channel": "#campaign-briefs",
-    "thread_id": null
+    "thread_id": "thread_003, thread_009, thread_013"
   },
   {
     "cluster_id": "cluster_004",
@@ -286,12 +286,12 @@
     "draft_title": "GreenScape Sustainability Report: Planning, Deadline Extension, and Data Visualization",
     "participants": [
       "Devon",
-      "Sam",
       "Leah",
+      "Sam",
       "Jordan"
     ],
     "channel": "#client-communications",
-    "thread_id": null
+    "thread_id": "thread_004, thread_010, thread_014"
   },
   {
     "cluster_id": "cluster_005",
@@ -337,12 +337,12 @@
     "draft_title": "UrbanEdge Market Expansion: Social Media Strategy and Market Research",
     "participants": [
       "Devon",
-      "Sam",
       "Leah",
+      "Sam",
       "Jordan"
     ],
     "channel": "#client-communications",
-    "thread_id": null
+    "thread_id": "thread_005, thread_015"
   },
   {
     "cluster_id": "cluster_006",
@@ -373,7 +373,7 @@
       135,
       136
     ],
-    "draft_title": "Q3 Content Calendar Planning and Finalization",
+    "draft_title": "Internal Q3 Content Calendar Planning",
     "participants": [
       "Devon",
       "Leah",

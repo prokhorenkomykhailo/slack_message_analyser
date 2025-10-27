@@ -15,50 +15,50 @@ def add_final_score():
     
     print("Adding final score to benchmark analysis...")
     
-    
+    # Read the data
     df = pd.read_csv(input_file)
     
-    
+    # Calculate final score for each row
     def calculate_final_score(row):
         """Calculate final score based on benchmark matching metrics"""
         
-        
+        # Handle failed models
         if row['SUCCESS'] == False:
             return 0.0
         
-        
+        # Get metrics
         deviation = abs(row['MESSAGE_COUNT_DEVIATION_PERCENT'])
         coverage = row['COVERAGE_PERCENTAGE']
         precision = row['PRECISION_PERCENT']
         
+        # Calculate score components
+        # 1. Deviation score (40% weight) - closer to 0% is better
+        deviation_score = max(0, 100 - deviation)  # 0% deviation = 100 points, 50% deviation = 50 points
         
+        # 2. Coverage score (30% weight) - higher is better
+        coverage_score = coverage  # 100% coverage = 100 points
         
-        deviation_score = max(0, 100 - deviation)  
+        # 3. Precision score (30% weight) - higher is better
+        precision_score = precision  # 100% precision = 100 points
         
-        
-        coverage_score = coverage  
-        
-        
-        precision_score = precision  
-        
-        
+        # Calculate weighted final score
         final_score = (deviation_score * 0.4) + (coverage_score * 0.3) + (precision_score * 0.3)
         
         return round(final_score, 2)
     
-    
+    # Add final score column
     df['FINAL_SCORE'] = df.apply(calculate_final_score, axis=1)
     
-    
+    # Save the enhanced file
     df.to_csv(output_file, index=False)
     
     print(f"Enhanced file with final score saved to: {output_file}")
     print(f"Total rows: {len(df)}")
     
-    
+    # Show summary statistics
     print("\n=== FINAL SCORE SUMMARY ===")
     
-    
+    # Group by model and calculate averages
     model_stats = df.groupby('MODEL').agg({
         'FINAL_SCORE': 'mean',
         'MESSAGE_COUNT_DEVIATION_PERCENT': 'mean',
@@ -66,7 +66,7 @@ def add_final_score():
         'PRECISION_PERCENT': 'mean'
     }).round(2)
     
-    
+    # Sort by final score
     model_stats = model_stats.sort_values('FINAL_SCORE', ascending=False)
     
     print("\nTOP 10 MODELS RANKED BY FINAL SCORE:")
@@ -79,7 +79,7 @@ def add_final_score():
         print(f"    Precision:   {row['PRECISION_PERCENT']:6.2f}%")
         print()
     
-    
+    # Show sample of the data with final scores
     print("=== SAMPLE WITH FINAL SCORES ===")
     sample_df = df[['MODEL', 'BENCHMARK_TITLE', 'BENCHMARK_MESSAGE_COUNT', 'LLM_MESSAGE_COUNT', 'MESSAGE_COUNT_DEVIATION_PERCENT', 'FINAL_SCORE']].head(10)
     print(sample_df.to_string(index=False))

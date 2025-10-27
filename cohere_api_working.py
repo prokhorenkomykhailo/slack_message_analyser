@@ -46,7 +46,7 @@ def test_cohere_api():
     print("=" * 50)
     print("💡 Using Cohere cloud API - no hardware limitations")
     
-    
+    # Check API key
     api_key = os.getenv("COHERE_API_KEY")
     if not api_key:
         print("❌ COHERE_API_KEY not found!")
@@ -56,7 +56,7 @@ def test_cohere_api():
     
     print("✅ Cohere API key found")
     
-    
+    # Initialize Cohere client
     try:
         co = cohere.Client(api_key)
         print("✅ Cohere client initialized")
@@ -64,7 +64,7 @@ def test_cohere_api():
         print(f"❌ Failed to initialize Cohere client: {e}")
         return False
     
-    
+    # Load messages
     messages = load_messages()
     if not messages:
         return False
@@ -73,7 +73,7 @@ def test_cohere_api():
     print(f"📝 Testing with {len(test_messages)} messages")
     
     try:
-        
+        # Test 1: Simple generation
         print("\n🧪 Test 1: Simple generation...")
         test_prompt = "Hello, how are you?"
         
@@ -87,7 +87,7 @@ def test_cohere_api():
         print("✅ Simple generation works!")
         print(f"Response: {response.generations[0].text}")
         
-        
+        # Test 2: Message clustering
         print("\n🧪 Test 2: Message clustering...")
         messages_text = "\n".join([
             f"{i+1}. {msg['user']}: {msg['content'][:50]}..."
@@ -114,7 +114,7 @@ Return a JSON response with clusters."""
         print(clustering_response)
         print("-" * 40)
         
-        
+        # Save results
         result = {
             "success": True,
             "model": "command-r-plus",
@@ -150,7 +150,7 @@ def test_cohere_api_clustering():
     print("\n🚀 Cohere API Full Clustering Test")
     print("=" * 50)
     
-    
+    # Check API key
     api_key = os.getenv("COHERE_API_KEY")
     if not api_key:
         print("❌ COHERE_API_KEY not found!")
@@ -163,7 +163,7 @@ def test_cohere_api_clustering():
         print(f"❌ Failed to initialize Cohere client: {e}")
         return False
     
-    
+    # Load messages
     messages = load_messages()
     if not messages:
         return False
@@ -171,7 +171,7 @@ def test_cohere_api_clustering():
     print(f"📝 Processing {len(messages)} messages")
     
     try:
-        
+        # Prepare messages for clustering
         messages_text = "\n".join([
             f"{i+1}. {msg['user']}: {msg['content'][:100]}..."
             for i, msg in enumerate(messages)
@@ -209,7 +209,7 @@ Format as JSON array of cluster objects."""
         print(clustering_response)
         print("-" * 40)
         
-        
+        # Save results
         result = {
             "success": True,
             "model": "command-r-plus",
@@ -245,7 +245,7 @@ def main():
     print("🔧 Starting Cohere API test...")
     print("This version uses Cohere's cloud API - no hardware limitations")
     
-    
+    # Test basic functionality
     if test_cohere_api():
         print("\n🎯 Basic API test SUCCESS!")
         print("=" * 15)
@@ -254,7 +254,7 @@ def main():
         print("✅ Clustering works")
         print("🚀 Ready for full message analysis!")
         
-        
+        # Test full clustering
         print("\n" + "="*50)
         if test_cohere_api_clustering():
             print("\n🎯 Full clustering SUCCESS!")

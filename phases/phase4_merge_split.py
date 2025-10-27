@@ -8,13 +8,12 @@ import os
 import json
 import time
 import numpy as np
-import pandas as pd
 from typing import Dict, List, Any
 from datetime import datetime
 import sys
 from sklearn.metrics.pairwise import cosine_similarity
 
-
+# Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.model_clients import call_model_with_retry
@@ -28,17 +27,17 @@ class Phase4Evaluator:
         self.output_dir = os.path.join("output", self.phase_name)
         os.makedirs(self.output_dir, exist_ok=True)
         
-        
+        # Load previous phase results
         self.initial_clusters = self.load_initial_clusters()
         self.messages = self.load_messages()
         
-        
+        # Merge/split prompt
         self.prompt_template = self.get_merge_split_prompt()
     
     def load_initial_clusters(self) -> List[Dict]:
         """Load initial clusters from Phase 3"""
         try:
-            
+            # Try to load from Phase 3 results
             phase3_dir = os.path.join("output", "phase3_topic_clustering")
             comprehensive_file = os.path.join(phase3_dir, "comprehensive_results.json")
             
@@ -46,12 +45,12 @@ class Phase4Evaluator:
                 with open(comprehensive_file, "r") as f:
                     results = json.load(f)
                 
-                
+                # Get the best performing model's clusters
                 best_model = self.get_best_phase3_model(results)
                 if best_model:
                     return results[best_model]["clusters"]
             
-            
+            # Fallback: create dummy clusters for testing
             return self.create_dummy_clusters()
             
         except Exception as e:
@@ -65,7 +64,7 @@ class Phase4Evaluator:
         if not successful_results:
             return None
         
-        
+        # Find model with highest coverage
         best_model = max(successful_results.items(), 
                         key=lambda x: x[1]["metrics"]["coverage"])
         return best_model[0]
@@ -97,33 +96,12 @@ class Phase4Evaluator:
         ]
     
     def load_messages(self) -> List[Dict]:
-        """Load message dataset from CSV file"""
-        
+        """Load message dataset"""
         try:
-            
-            csv_path = os.path.join("data", "Synthetic_Slack_Messages.csv")
-            if not os.path.exists(csv_path):
-                print(f"❌ {csv_path} not found.")
-                return []
-            
-            df = pd.read_csv(csv_path)
-            messages = []
-            
-            for idx, row in df.iterrows():
-                messages.append({
-                    "id": idx + 1,  
-                    "channel": row["channel"],
-                    "user": row["user_name"],
-                    "text": row["text"],
-                    "timestamp": row["timestamp"],
-                    "thread_id": row["thread_id"] if pd.notna(row["thread_id"]) else None
-                })
-            
-            print(f"✅ Loaded {len(messages)} messages from CSV")
-            return messages
-            
-        except Exception as e:
-            print(f"❌ Error loading messages: {e}")
+            with open("../message_dataset.json", "r") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            print("❌ message_dataset.json not found. Please run Phase 1 first.")
             return []
     
     def get_merge_split_prompt(self) -> str:
@@ -160,11 +138,9 @@ Given a set of initial topic clusters, your task is to:
 {messages}
 
 **Instructions:**
-- Analyze the actual message content to understand semantic relationships
-- Use cosine similarity threshold of 0.85 for merging decisions
+- Use cosine similarity threshold of 0.85 for merging
 - Split clusters that have more than 20 messages or cover multiple distinct topics
-- Consider thread relationships, participant patterns, and topic coherence
-- Provide clear reasoning for each merge/split decision based on message content analysis
+- Provide clear reasoning for each merge/split decision
 - Maintain cluster quality and coherence
 
 **Output Format (JSON):**
@@ -205,23 +181,12 @@ Analyze the clusters and provide the refined results in the specified JSON forma
         return "\n".join(formatted)
     
     def format_messages_for_prompt(self) -> str:
-        """Format messages for the prompt with full content"""
+        """Format messages for the prompt"""
         formatted = []
-        
-        
-        cluster_message_ids = set()
-        for cluster in self.initial_clusters:
-            cluster_message_ids.update(cluster.get('message_ids', []))
-        
-        
-        relevant_messages = [msg for msg in self.messages if msg['id'] in cluster_message_ids]
-        
-        
-        for msg in relevant_messages[:100]:  
+        for msg in self.messages[:50]:  # Limit for prompt size
             formatted.append(
                 f"ID: {msg['id']} | Channel: {msg['channel']} | User: {msg['user']} | "
-                f"Thread: {msg.get('thread_id', 'N/A')} | "
-                f"Text: {msg['text']}"  
+                f"Text: {msg['text'][:150]}..."
             )
         return "\n".join(formatted)
     
@@ -229,21 +194,21 @@ Analyze the clusters and provide the refined results in the specified JSON forma
         """Evaluate a single model on merge/split operations"""
         print(f"  🧪 Testing {provider}/{model_name}...")
         
-        
+        # Prepare prompt
         clusters_str = self.format_clusters_for_prompt()
         messages_str = self.format_messages_for_prompt()
         prompt = self.prompt_template.replace("{clusters}", clusters_str).replace("{messages}", messages_str)
         
-        
+        # Call model
         result = call_model_with_retry(provider, model_name, prompt, max_retries=3)
         
-        
+        # Parse response
         refined_clusters = self.parse_merge_split_response(result)
         
-        
+        # Calculate metrics
         metrics = self.calculate_merge_split_metrics(refined_clusters)
         
-        
+        # Calculate cost
         cost = self.calculate_cost(provider, model_name, result)
         
         return {
@@ -268,10 +233,10 @@ Analyze the clusters and provide the refined results in the specified JSON forma
             return []
         
         try:
-            
+            # Try to extract JSON from response
             response_text = result["response"]
             
-            
+            # Find JSON block
             start_idx = response_text.find("{")
             end_idx = response_text.rfind("}") + 1
             
@@ -297,17 +262,17 @@ Analyze the clusters and provide the refined results in the specified JSON forma
                 "coverage": 0.0
             }
         
-        
+        # Count messages in refined clusters
         refined_messages = set()
         for cluster in refined_clusters:
             message_ids = cluster.get("message_ids", [])
             refined_messages.update(message_ids)
         
-        
+        # Count operations
         merge_ops = sum(1 for cluster in refined_clusters if cluster.get("merge_reason"))
         split_ops = sum(1 for cluster in refined_clusters if cluster.get("split_reason"))
         
-        
+        # Calculate metrics
         total_messages = len(self.messages)
         coverage = len(refined_messages) / total_messages if total_messages > 0 else 0
         
@@ -368,12 +333,12 @@ Analyze the clusters and provide the refined results in the specified JSON forma
                 result = self.evaluate_model(provider, model_name)
                 results[f"{provider}_{model_name}"] = result
                 
-                
+                # Save individual result
                 output_file = os.path.join(self.output_dir, f"{provider}_{model_name}.json")
                 with open(output_file, "w") as f:
                     json.dump(result, f, indent=2)
                 
-                
+                # Print status
                 status = "✅" if result["success"] else "❌"
                 if result["success"]:
                     successful_models += 1
@@ -386,12 +351,12 @@ Analyze the clusters and provide the refined results in the specified JSON forma
                     print(f"  {status} {model_name}: {result['duration']:.2f}s, "
                           f"Error: {result['error'][:100]}...")
         
-        
+        # Save comprehensive results
         comprehensive_output = os.path.join(self.output_dir, "comprehensive_results.json")
         with open(comprehensive_output, "w") as f:
             json.dump(results, f, indent=2)
         
-        
+        # Generate summary
         self.generate_summary(results, total_models, successful_models)
     
     def generate_summary(self, results: Dict, total_models: int, successful_models: int):
@@ -403,19 +368,19 @@ Analyze the clusters and provide the refined results in the specified JSON forma
         print(f"Successful models: {successful_models}")
         print(f"Success rate: {(successful_models/total_models*100):.1f}%" if total_models > 0 else "0%")
         
-        
+        # Find best performing models
         successful_results = {k: v for k, v in results.items() if v["success"]}
         
         if successful_results:
-            
+            # Best by operations performed
             best_operations = max(successful_results.items(), 
                                 key=lambda x: x[1]["metrics"]["total_operations"])
             
-            
+            # Best by cost efficiency
             best_cost_efficiency = min(successful_results.items(),
                                      key=lambda x: x[1]["cost"]["total_cost"])
             
-            
+            # Best by speed
             best_speed = min(successful_results.items(),
                            key=lambda x: x[1]["duration"])
             

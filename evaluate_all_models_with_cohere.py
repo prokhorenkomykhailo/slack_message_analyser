@@ -16,7 +16,7 @@ def run_existing_evaluation():
     print("🔄 Running existing Phase 3 evaluation...")
     
     try:
-        
+        # Run the existing evaluation script
         result = subprocess.run([sys.executable, "evaluate_all_models.py"], 
                               capture_output=True, text=True, cwd=".")
         
@@ -36,7 +36,7 @@ def run_cohere_evaluation():
     print("🔄 Running Cohere Command R+ evaluation...")
     
     try:
-        
+        # Run the Cohere evaluation script
         result = subprocess.run([sys.executable, "evaluate_cohere_models.py"], 
                               capture_output=True, text=True, cwd=".")
         
@@ -56,7 +56,7 @@ def merge_results():
     print("🔄 Merging all evaluation results...")
     
     try:
-        
+        # Load existing comprehensive results
         comprehensive_file = "output/phase3_topic_clustering/comprehensive_results.json"
         
         if os.path.exists(comprehensive_file):
@@ -65,7 +65,7 @@ def merge_results():
         else:
             all_results = {}
         
-        
+        # Count models
         total_models = len(all_results)
         successful_models = sum(1 for r in all_results.values() if r.get("success", False))
         
@@ -73,7 +73,7 @@ def merge_results():
         print(f"✅ Successful models: {successful_models}")
         print(f"❌ Failed models: {total_models - successful_models}")
         
-        
+        # Show model breakdown by provider
         providers = {}
         for model_name, result in all_results.items():
             provider = result.get("provider", "unknown").title()
@@ -99,7 +99,7 @@ def generate_updated_csv():
     print("🔄 Generating updated comprehensive CSV...")
     
     try:
-        
+        # Run the CSV generation script
         result = subprocess.run([sys.executable, "generate_comprehensive_csv.py"], 
                               capture_output=True, text=True, cwd=".")
         
@@ -120,28 +120,28 @@ def main():
     print("🚀 Complete Phase 3 Evaluation with Cohere Command R+")
     print("=" * 60)
     
-    
+    # Check if we're in the right directory
     if not os.path.exists("evaluate_all_models.py"):
         print("❌ Please run this script from the phase_evaluation_engine directory")
         return
     
-    
+    # Step 1: Run existing evaluation
     print("\n📋 Step 1: Running existing model evaluations...")
     existing_success = run_existing_evaluation()
     
-    
+    # Step 2: Run Cohere evaluation
     print("\n📋 Step 2: Running Cohere Command R+ evaluation...")
     cohere_success = run_cohere_evaluation()
     
-    
+    # Step 3: Merge results
     print("\n📋 Step 3: Merging all results...")
     merge_success = merge_results()
     
-    
+    # Step 4: Generate updated CSV
     print("\n📋 Step 4: Generating updated CSV...")
     csv_success = generate_updated_csv()
     
-    
+    # Summary
     print("\n" + "=" * 60)
     print("📊 EVALUATION SUMMARY")
     print("=" * 60)

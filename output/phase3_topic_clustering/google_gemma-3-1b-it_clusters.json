@@ -27,14 +27,14 @@
       9,
       10
     ],
-    "draft_title": "TechNova Product Launch Strategy",
+    "draft_title": "UrbanEdge Social Media Strategy",
     "participants": [
       "Devon",
-      "Sam",
-      "Leah"
+      "Leah",
+      "Jordan"
     ],
-    "channel": "#campaign-briefs",
-    "thread_id": "thread_002"
+    "channel": "#client-communications",
+    "thread_id": "thread_006"
   },
   {
     "cluster_id": "cluster_003",
@@ -45,12 +45,12 @@
       14,
       15
     ],
-    "draft_title": "UrbanEdge Campaign Strategy",
+    "draft_title": "TechNova Product Launch",
     "participants": [
       "Devon",
-      "Leah"
+      "Jordan"
     ],
-    "channel": "#campaign-briefs",
+    "channel": "#client-communications",
     "thread_id": "thread_003"
   },
   {
@@ -62,12 +62,12 @@
       19,
       20
     ],
-    "draft_title": "EcoBloom Campaign Content",
+    "draft_title": "EcoBloom Sustainability Report",
     "participants": [
-      "Devon",
-      "Leah"
+      "Leah",
+      "Jordan"
     ],
-    "channel": "#campaign-briefs",
+    "channel": "#client-communications",
     "thread_id": "thread_004"
   },
   {
@@ -79,10 +79,10 @@
       24,
       25
     ],
-    "draft_title": "GreenScape Sustainability Report",
+    "draft_title": "FitFusion Brand Identity",
     "participants": [
       "Devon",
-      "Leah"
+      "Sam"
     ],
     "channel": "#client-communications",
     "thread_id": "thread_005"

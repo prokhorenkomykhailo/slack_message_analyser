@@ -11,10 +11,10 @@ import pandas as pd
 from typing import Dict, List, Any
 from dotenv import load_dotenv
 
-
+# Load environment variables
 load_dotenv()
 
-
+# Import from the same directory
 try:
     from cohere_clustering import CohereCommandRPlusClustering
 except ImportError:
@@ -59,7 +59,7 @@ def check_huggingface_auth():
         print("   Or login with: huggingface-cli login")
         return False
     
-    
+    # Test token validity
     try:
         from huggingface_hub import HfApi
         api = HfApi(token=token)
@@ -75,9 +75,9 @@ def check_cohere_model_access():
     try:
         from transformers import AutoTokenizer
         
-        
+        # Try to load the tokenizer (lightweight test)
         print("🔍 Testing actual model access...")
-        
+        # Test both the original and latest version
         try:
             tokenizer = AutoTokenizer.from_pretrained("CohereLabs/c4ai-command-r-plus-08-2024")
             print("✅ Access to latest Cohere Command R+ model confirmed")
@@ -98,13 +98,13 @@ def check_cohere_model_access():
 def evaluate_cohere_models(messages: List[Dict], output_dir: str):
     """Evaluate Cohere Command R+ models"""
     
-    
+    # Check authentication first
     auth_ok = check_huggingface_auth()
     if not auth_ok:
         print("\n🔄 Trying alternative open models instead...")
         return evaluate_alternative_models(messages, output_dir)
     
-    
+    # Even with valid auth, we need to check if we have access to the specific model
     print("\n🔍 Checking access to Cohere Command R+ model...")
     if not check_cohere_model_access():
         print("\n🔄 No access to gated Cohere model. Using alternative models instead...")
@@ -116,21 +116,21 @@ def evaluate_cohere_models(messages: List[Dict], output_dir: str):
             "path": "CohereLabs/c4ai-command-r-plus-08-2024",
             "quantization": None
         },
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        # {
+        #     "name": "cohere_command-r-plus",
+        #     "path": "CohereLabs/c4ai-command-r-plus",
+        #     "quantization": None
+        # },
+        # {
+        #     "name": "cohere_command-r-plus-8bit",
+        #     "path": "CohereLabs/c4ai-command-r-plus",
+        #     "quantization": "8bit"
+        # },
+        # {
+        #     "name": "cohere_command-r-plus-4bit",
+        #     "path": "CohereLabs/c4ai-command-r-plus",
+        #     "quantization": "4bit"
+        # }
     ]
     
     results = {}
@@ -139,23 +139,23 @@ def evaluate_cohere_models(messages: List[Dict], output_dir: str):
         print(f"\n🚀 Evaluating {model_config['name']}...")
         
         try:
-            
+            # Initialize Cohere clustering engine
             clustering_engine = CohereCommandRPlusClustering(
                 model_path=model_config["path"],
                 quantization=model_config["quantization"]
             )
             
-            
+            # Load model
             if not clustering_engine.load_model():
                 print(f"❌ Failed to load {model_config['name']}")
                 continue
             
-            
+            # Perform clustering
             start_time = time.time()
             clustering_result = clustering_engine.cluster_messages(messages)
             total_time = time.time() - start_time
             
-            
+            # Prepare results
             model_result = {
                 "provider": "cohere",
                 "model": model_config["name"],
@@ -188,7 +188,7 @@ def evaluate_cohere_models(messages: List[Dict], output_dir: str):
             
             results[model_config["name"]] = model_result
             
-            
+            # Save individual result
             output_file = os.path.join(output_dir, f"{model_config['name']}.json")
             with open(output_file, 'w') as f:
                 json.dump(model_result, f, indent=2)
@@ -198,10 +198,10 @@ def evaluate_cohere_models(messages: List[Dict], output_dir: str):
         except Exception as e:
             print(f"❌ Error evaluating {model_config['name']}: {e}")
             
-            
+            # Check if this is an access error
             if "401" in str(e) or "gated" in str(e).lower() or "restricted" in str(e).lower():
                 print("🔄 Access denied detected. Switching to alternative models...")
-                
+                # Return alternative models results instead
                 return evaluate_alternative_models(messages, output_dir)
             
             results[model_config["name"]] = {
@@ -219,7 +219,7 @@ def evaluate_alternative_models(messages: List[Dict], output_dir: str):
     
     print("🔄 Using alternative open models for clustering evaluation...")
     
-    
+    # Alternative models that don't require special access
     alternative_models = [
         {
             "name": "microsoft_dialoGPT_large",
@@ -239,13 +239,13 @@ def evaluate_alternative_models(messages: List[Dict], output_dir: str):
         print(f"\n🚀 Evaluating {model_config['name']}...")
         
         try:
-            
+            # Initialize clustering engine with alternative model
             clustering_engine = CohereCommandRPlusClustering(
                 model_path=model_config["path"],
                 quantization=model_config["quantization"]
             )
             
-            
+            # Load model
             if not clustering_engine.load_model():
                 print(f"❌ Failed to load {model_config['name']}")
                 results[model_config['name']] = {
@@ -256,12 +256,12 @@ def evaluate_alternative_models(messages: List[Dict], output_dir: str):
                 }
                 continue
             
-            
+            # Perform clustering
             start_time = time.time()
             clustering_result = clustering_engine.cluster_messages(messages)
             total_time = time.time() - start_time
             
-            
+            # Prepare results
             model_result = {
                 "success": True,
                 "model_name": model_config['name'],
@@ -298,14 +298,14 @@ def main():
     print("🚀 Phase 3 Topic Clustering Evaluation with Cohere Command R+")
     print("=" * 70)
     
-    
+    # Configuration - use existing Phase 3 data structure
     messages_file = "data/Synthetic_Slack_Messages.csv"
     output_dir = "output/phase3_topic_clustering"
     
-    
+    # Create output directory
     os.makedirs(output_dir, exist_ok=True)
     
-    
+    # Load messages
     print(f"📁 Loading messages from: {messages_file}")
     messages = load_messages(messages_file)
     
@@ -315,27 +315,27 @@ def main():
     
     print(f"📊 Loaded {len(messages)} messages")
     
-    
+    # Evaluate Cohere models
     print("\n🔍 Evaluating Cohere Command R+ models...")
     cohere_results = evaluate_cohere_models(messages, output_dir)
     
-    
+    # Load existing results
     existing_results = {}
     comprehensive_file = os.path.join(output_dir, "comprehensive_results.json")
     if os.path.exists(comprehensive_file):
         with open(comprehensive_file, 'r') as f:
             existing_results = json.load(f)
     
-    
+    # Merge results
     all_results = {**existing_results, **cohere_results}
     
-    
+    # Save comprehensive results
     with open(comprehensive_file, 'w') as f:
         json.dump(all_results, f, indent=2)
     
     print(f"\n💾 Comprehensive results saved to: {comprehensive_file}")
     
-    
+    # Summary
     successful = sum(1 for r in cohere_results.values() if r.get("success", False))
     total = len(cohere_results)
     
@@ -348,7 +348,7 @@ def main():
     else:
         print(f"   Success Rate: 0.0% (No models could be loaded)")
     
-    
+    # Show successful models
     if successful > 0:
         print(f"\n✅ Successfully evaluated models:")
         for name, result in cohere_results.items():

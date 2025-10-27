@@ -43,7 +43,7 @@ def test_cohere_final():
     print("🚀 Cohere Final Working Test")
     print("=" * 50)
     
-    
+    # Load messages
     messages = load_messages()
     if not messages:
         return False
@@ -55,12 +55,12 @@ def test_cohere_final():
         model_name = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"🔄 Loading {model_name} (using cached version)...")
         
-        
+        # Load tokenizer from cache
         tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
         
-        
+        # Load model with proper memory management
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             torch_dtype=torch.float16,
@@ -68,13 +68,13 @@ def test_cohere_final():
             trust_remote_code=True,
             local_files_only=True,
             low_cpu_mem_usage=True,
-            max_memory={0: "14GB", "cpu": "16GB"}  
+            max_memory={0: "14GB", "cpu": "16GB"}  # Use most of GPU, some CPU
         )
         
         print("✅ Model loaded")
         print(f"✅ Model device: {next(model.parameters()).device}")
         
-        
+        # Test 1: Simple generation
         print("\n🧪 Test 1: Simple generation...")
         test_prompt = "Hello, how are you?"
         messages_chat = [{"role": "user", "content": test_prompt}]
@@ -86,13 +86,13 @@ def test_cohere_final():
             return_tensors="pt"
         )
         
-        
+        # Move inputs to same device as model
         inputs = inputs.to(next(model.parameters()).device)
         
         print(f"   Input shape: {inputs.shape}")
         print(f"   Input device: {inputs.device}")
         
-        
+        # Clear cache before generation
         torch.cuda.empty_cache()
         
         print("   🔄 Generating...")
@@ -111,10 +111,10 @@ def test_cohere_final():
         print("✅ Simple generation works!")
         print(f"Response: {response}")
         
-        
+        # Clear cache after generation
         torch.cuda.empty_cache()
         
-        
+        # Test 2: Clustering
         print("\n🧪 Test 2: Message clustering...")
         messages_text = "\n".join([
             f"{i+1}. {msg['user']}: {msg['content'][:40]}..."
@@ -138,7 +138,7 @@ Return JSON clusters."""
         
         print(f"   Input shape: {inputs.shape}")
         
-        
+        # Clear cache before generation
         torch.cuda.empty_cache()
         
         print("   🔄 Generating clustering...")
@@ -161,7 +161,7 @@ Return JSON clusters."""
         print(response)
         print("-" * 40)
         
-        
+        # Save results
         result = {
             "success": True,
             "model": model_name,

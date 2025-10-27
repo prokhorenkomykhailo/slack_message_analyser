@@ -29,7 +29,7 @@ def install_dependencies():
     """Install required dependencies"""
     print("📦 Installing dependencies...")
     
-    
+    # Check if we're in a virtual environment
     if not hasattr(sys, 'real_prefix') and not (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix):
         print("⚠️  Not in a virtual environment. Please activate it first:")
         print("   source venv/bin/activate  # On Linux/Mac")
@@ -39,7 +39,7 @@ def install_dependencies():
     try:
         subprocess.run([sys.executable, "-m", "pip", "install", "--upgrade", "pip"], check=True)
         
-        
+        # Install core dependencies
         dependencies = [
             "numpy>=1.21.0",
             "pandas>=1.3.0", 
@@ -130,19 +130,19 @@ def main():
     print("🚀 Phase Evaluation Engine Setup")
     print("=" * 50)
     
-    
+    # Check Python version
     check_python_version()
     
-    
+    # Create virtual environment
     create_virtual_environment()
     
-    
+    # Create directories
     create_directories()
     
-    
+    # Check data files
     data_ok = check_data_files()
     
-    
+    # Check API keys
     api_ok = check_api_keys()
     
     print("\n" + "=" * 50)

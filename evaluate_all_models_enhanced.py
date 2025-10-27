@@ -18,7 +18,7 @@ def load_model_clusters(file_path: str) -> List[Dict]:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        
+        # Handle different file structures
         if isinstance(data, list):
             return data
         elif 'clusters' in data:
@@ -35,7 +35,7 @@ def load_model_clusters(file_path: str) -> List[Dict]:
 def extract_model_name(file_path: str) -> str:
     """Extract model name from file path"""
     filename = os.path.basename(file_path)
-    
+    # Remove common suffixes
     for suffix in ['_clusters.json', '.json', '_results.json']:
         if filename.endswith(suffix):
             filename = filename[:-len(suffix)]
@@ -49,16 +49,16 @@ def evaluate_all_models_enhanced():
     print("📊 Approach: Intrinsic quality (70%) + Reference similarity (30%)")
     print("=" * 70)
     
-    
+    # Initialize enhanced evaluator
     evaluator = EnhancedRougeEvaluator(
         reference_path="phases/phase3_clusters.json",
         output_dir="enhanced_rouge_results"
     )
     
-    
+    # Find all model files
     model_files = glob.glob("output/phase3_topic_clustering/*.json")
     
-    
+    # Filter out non-model files
     exclude_files = ['detailed_analysis.json', 'comprehensive_results.json']
     model_files = [f for f in model_files if not any(ex in f for ex in exclude_files)]
     
@@ -71,7 +71,7 @@ def evaluate_all_models_enhanced():
         model_name = extract_model_name(model_file)
         print(f"🔍 Enhanced evaluation of {model_name}...")
         
-        
+        # Load clusters
         clusters = load_model_clusters(model_file)
         if not clusters:
             print(f"   ⚠️  No clusters found, skipping")
@@ -80,16 +80,16 @@ def evaluate_all_models_enhanced():
         print(f"   📊 Loaded {len(clusters)} clusters")
         
         try:
+            # Calculate total messages (estimate from cluster data)
+            total_messages = 300  # Based on your data
             
-            total_messages = 300  
-            
-            
+            # Run enhanced evaluation
             results = evaluator.comprehensive_evaluation(clusters, model_name, total_messages)
             
-            
+            # Save enhanced results
             evaluator.save_results(results, model_name)
             
-            
+            # Store for comparison
             combined = results['combined_score']
             intrinsic = results['intrinsic_quality']
             
@@ -118,16 +118,16 @@ def evaluate_all_models_enhanced():
             print(f"   ❌ Error evaluating {model_name}: {e}")
             continue
     
-    
+    # Create comprehensive comparison
     if all_results:
         print("\n" + "=" * 70)
         print("📊 ENHANCED EVALUATION RESULTS COMPARISON")
         print("=" * 70)
         
-        
+        # Create DataFrame for easy comparison
         df = pd.DataFrame(all_results)
         
-        
+        # Sort by overall score (primary metric)
         df_sorted = df.sort_values('overall_score', ascending=False)
         
         print("\n🏆 RANKING BY OVERALL SEMANTIC QUALITY SCORE:")
@@ -145,12 +145,12 @@ def evaluate_all_models_enhanced():
         print("\n🏗️  CLUSTERING STRUCTURE:")
         print(df_sorted[['model_name', 'clusters_count', 'avg_cluster_size', 'cluster_size_std']].to_string(index=False))
         
-        
+        # Save comprehensive results
         comprehensive_file = "enhanced_rouge_results/enhanced_all_models_comparison.csv"
         df_sorted.to_csv(comprehensive_file, index=False)
         print(f"\n💾 Enhanced comparison saved to: {comprehensive_file}")
         
-        
+        # Find best model
         best_model = df_sorted.iloc[0]
         print(f"\n🥇 BEST MODEL: {best_model['model_name']}")
         print(f"   Overall Score: {best_model['overall_score']:.4f}")
@@ -158,7 +158,7 @@ def evaluate_all_models_enhanced():
         print(f"   Reference Similarity: {best_model['reference_score']:.4f}")
         print(f"   Recommendation: {best_model['recommendation']}")
         
-        
+        # Show top 3 models
         print(f"\n🏅 TOP 3 MODELS:")
         for i, (_, model) in enumerate(df_sorted.head(3).iterrows(), 1):
             print(f"   {i}. {model['model_name']} - Score: {model['overall_score']:.4f}")

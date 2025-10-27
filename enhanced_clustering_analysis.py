@@ -34,7 +34,7 @@ def load_rouge_results(rouge_file):
         reader = csv.DictReader(f)
         for row in reader:
             model_name = row['model_name']
-            
+            # Clean model name to match clustering results
             if 'google_' in model_name:
                 model_name = model_name.replace('google_', '')
             elif 'openai_' in model_name:
@@ -65,7 +65,7 @@ def calculate_cluster_matching(benchmark_clusters, llm_clusters):
             if not llm_data['message_ids']:
                 continue
                 
-            
+            # Calculate overlap
             overlap = benchmark_data['message_ids'].intersection(llm_data['message_ids'])
             overlap_count = len(overlap)
             overlap_percentage = (overlap_count / len(benchmark_data['message_ids'])) * 100 if benchmark_data['message_ids'] else 0
@@ -104,7 +104,7 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
             else:
                 message_ids = set()
             
-            
+            # Find matching benchmark cluster
             best_benchmark_match = None
             best_overlap_percentage = 0
             
@@ -123,7 +123,7 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
                         'extra_count': len(message_ids - benchmark_data['message_ids'])
                     }
             
-            
+            # Calculate deviation metrics
             if best_benchmark_match:
                 benchmark_count = best_benchmark_match['benchmark_count']
                 llm_count = len(message_ids)
@@ -131,7 +131,7 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
                 missing_count = best_benchmark_match['missing_count']
                 extra_count = best_benchmark_match['extra_count']
                 
-                
+                # Calculate deviations
                 message_count_deviation = ((llm_count - benchmark_count) / benchmark_count * 100) if benchmark_count > 0 else 0
                 coverage_percentage = (matched_count / benchmark_count * 100) if benchmark_count > 0 else 0
                 precision = (matched_count / llm_count * 100) if llm_count > 0 else 0
@@ -140,7 +140,7 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
                 benchmark_cluster_id = best_benchmark_match['benchmark_id']
                 benchmark_title = best_benchmark_match['benchmark_title']
             else:
-                
+                # No benchmark match found
                 message_count_deviation = 0
                 coverage_percentage = 0
                 precision = 0
@@ -151,7 +151,7 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
                 extra_count = 0
                 matched_count = 0
             
-            
+            # Get ROUGE metrics for this model
             rouge_metrics = rouge_data.get(model, {
                 'overall_score': 0.0,
                 'rouge_similarity': 0.0,
@@ -160,9 +160,9 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
                 'recommendation': 'N/A'
             })
             
-            
+            # Create enhanced row
             enhanced_row = {
-                
+                # Original columns
                 'MODEL': model,
                 'SUCCESS': row['SUCCESS'],
                 'CLUSTER_ID': row['CLUSTER_ID'],
@@ -179,7 +179,7 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
                 'TOKEN_COST': row['TOKEN_COST'],
                 'MESSAGE_IDS': row['MESSAGE_IDS'],
                 
-                
+                # New deviation analysis columns
                 'BENCHMARK_CLUSTER_ID': benchmark_cluster_id,
                 'BENCHMARK_TITLE': benchmark_title,
                 'BENCHMARK_MESSAGE_COUNT': best_benchmark_match['benchmark_count'] if best_benchmark_match else 0,
@@ -192,7 +192,7 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
                 'PRECISION_PERCENT': round(precision, 2),
                 'RECALL_PERCENT': round(recall, 2),
                 
-                
+                # ROUGE metrics
                 'ROUGE_OVERALL_SCORE': round(rouge_metrics['overall_score'], 4),
                 'ROUGE_SIMILARITY': round(rouge_metrics['rouge_similarity'], 4),
                 'ROUGE_CONSISTENCY': round(rouge_metrics['rouge_consistency'], 4),
@@ -205,7 +205,7 @@ def create_enhanced_analysis(original_csv, benchmark_clusters, rouge_data):
     return enhanced_results
 
 def main():
-    
+    # File paths
     benchmark_file = '/home/ubuntu/deemerge/phase_evaluation_engine/phases/phase3_clusters.json'
     original_csv = '/home/ubuntu/deemerge/phase_evaluation_engine/clustering_analysis_expert_complete_simple_format_fixed_final_gpt5_corrected.csv'
     rouge_file = '/home/ubuntu/deemerge/phase_evaluation_engine/enhanced_rouge_results/enhanced_all_models_comparison.csv'
@@ -233,11 +233,11 @@ def main():
     print(f"Enhanced analysis complete! Results saved to: {output_file}")
     print(f"Total enhanced rows: {len(enhanced_results)}")
     
-    
+    # Print summary statistics
     print("\n=== SUMMARY STATISTICS ===")
     df = pd.DataFrame(enhanced_results)
     
-    
+    # Group by model and calculate averages
     model_stats = df.groupby('MODEL').agg({
         'MESSAGE_COUNT_DEVIATION_PERCENT': 'mean',
         'COVERAGE_PERCENTAGE': 'mean',
@@ -252,7 +252,7 @@ def main():
     print("\nAverage Performance by Model:")
     print(model_stats)
     
-    
+    # Best performing models by ROUGE score
     best_rouge = model_stats['ROUGE_OVERALL_SCORE'].idxmax()
     best_coverage = model_stats['COVERAGE_PERCENTAGE'].idxmax()
     best_precision = model_stats['PRECISION_PERCENT'].idxmax()

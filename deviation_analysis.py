@@ -69,7 +69,7 @@ def calculate_cluster_matching(benchmark_clusters, llm_clusters):
             if not llm_data['message_ids']:
                 continue
                 
-            
+            # Calculate overlap
             overlap = benchmark_data['message_ids'].intersection(llm_data['message_ids'])
             overlap_count = len(overlap)
             overlap_percentage = (overlap_count / len(benchmark_data['message_ids'])) * 100 if benchmark_data['message_ids'] else 0
@@ -101,7 +101,7 @@ def create_deviation_analysis(benchmark_clusters, llm_results):
         
         for benchmark_id, match_data in matches.items():
             if match_data is None:
-                
+                # No match found
                 benchmark_data = benchmark_clusters[benchmark_id]
                 results.append({
                     'MODEL': model,
@@ -122,14 +122,14 @@ def create_deviation_analysis(benchmark_clusters, llm_results):
                     'F1_SCORE': 0.0
                 })
             else:
-                
+                # Calculate metrics
                 benchmark_count = match_data['benchmark_count']
                 llm_count = match_data['llm_count']
                 matched_count = match_data['overlap_count']
                 missing_count = len(match_data['missing_messages'])
                 extra_count = len(match_data['extra_messages'])
                 
-                
+                # Calculate deviations and metrics
                 message_count_deviation = ((llm_count - benchmark_count) / benchmark_count * 100) if benchmark_count > 0 else 0
                 coverage_percentage = (matched_count / benchmark_count * 100) if benchmark_count > 0 else 0
                 precision = (matched_count / llm_count * 100) if llm_count > 0 else 0
@@ -158,7 +158,7 @@ def create_deviation_analysis(benchmark_clusters, llm_results):
     return results
 
 def main():
-    
+    # File paths
     benchmark_file = '/home/ubuntu/deemerge/phase_evaluation_engine/phases/phase3_clusters.json'
     llm_results_file = '/home/ubuntu/deemerge/phase_evaluation_engine/clustering_analysis_expert_complete_simple_format_fixed_final_gpt5_corrected.csv'
     output_file = '/home/ubuntu/deemerge/phase_evaluation_engine/clustering_deviation_analysis.csv'
@@ -185,11 +185,11 @@ def main():
     print(f"Deviation analysis complete! Results saved to: {output_file}")
     print(f"Total analysis rows: {len(deviation_results)}")
     
-    
+    # Print summary statistics
     print("\n=== SUMMARY STATISTICS ===")
     df = pd.DataFrame(deviation_results)
     
-    
+    # Group by model and calculate averages
     model_stats = df.groupby('MODEL').agg({
         'OVERLAP_PERCENTAGE': 'mean',
         'MESSAGE_COUNT_DEVIATION': 'mean',
@@ -202,7 +202,7 @@ def main():
     print("\nAverage Performance by Model:")
     print(model_stats)
     
-    
+    # Best performing models
     best_f1 = model_stats['F1_SCORE'].idxmax()
     best_coverage = model_stats['COVERAGE_PERCENTAGE'].idxmax()
     best_precision = model_stats['PRECISION'].idxmax()

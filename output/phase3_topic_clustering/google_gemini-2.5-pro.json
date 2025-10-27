@@ -2,20 +2,20 @@
   "provider": "google",
   "model": "gemini-2.5-pro",
   "phase": "phase3_topic_clustering",
-  "timestamp": "2025-10-01T00:12:28.945531",
+  "timestamp": "2025-09-04T09:14:01.405180",
   "success": true,
-  "duration": 42.26110529899597,
+  "duration": 43.392016649246216,
   "usage": {
     "prompt_tokens": 25689,
-    "completion_tokens": 2024,
-    "total_tokens": 31932
+    "completion_tokens": 2107,
+    "total_tokens": 31064
   },
   "cost": {
     "input_cost": 0.09633375,
-    "output_cost": 0.030359999999999998,
-    "total_cost": 0.12669375,
+    "output_cost": 0.031605,
+    "total_cost": 0.12793875,
     "input_tokens": 25689,
-    "output_tokens": 2024
+    "output_tokens": 2107
   },
   "clusters": [
     {
@@ -66,7 +66,7 @@
         211,
         212
       ],
-      "draft_title": "EcoBloom Summer Campaign: Planning, Revisions, and Finalization",
+      "draft_title": "EcoBloom Summer Campaign: Planning, Revisions, and Final Submission",
       "participants": [
         "Devon",
         "Sam",
@@ -74,7 +74,7 @@
         "Jordan"
       ],
       "channel": "#campaign-briefs",
-      "thread_id": null
+      "thread_id": "thread_001, thread_006, thread_011"
     },
     {
       "cluster_id": "cluster_002",
@@ -140,7 +140,7 @@
         233,
         234
       ],
-      "draft_title": "FitFusion Rebranding Project: Strategy, Legal Review, and Brand Guidelines",
+      "draft_title": "FitFusion Rebranding Project: Kickoff, Legal Review, and Brand Guidelines",
       "participants": [
         "Devon",
         "Sam",
@@ -148,7 +148,7 @@
         "Jordan"
       ],
       "channel": "#campaign-briefs",
-      "thread_id": null
+      "thread_id": "thread_002, thread_007, thread_012"
     },
     {
       "cluster_id": "cluster_003",
@@ -230,7 +230,7 @@
         "Jordan"
       ],
       "channel": "#campaign-briefs",
-      "thread_id": null
+      "thread_id": "thread_003, thread_009, thread_013"
     },
     {
       "cluster_id": "cluster_004",
@@ -305,12 +305,12 @@
       "draft_title": "GreenScape Sustainability Report: Planning, Deadline Extension, and Data Visualization",
       "participants": [
         "Devon",
-        "Sam",
         "Leah",
+        "Sam",
         "Jordan"
       ],
       "channel": "#client-communications",
-      "thread_id": null
+      "thread_id": "thread_004, thread_010, thread_014"
     },
     {
       "cluster_id": "cluster_005",
@@ -356,12 +356,12 @@
       "draft_title": "UrbanEdge Market Expansion: Social Media Strategy and Market Research",
       "participants": [
         "Devon",
-        "Sam",
         "Leah",
+        "Sam",
         "Jordan"
       ],
       "channel": "#client-communications",
-      "thread_id": null
+      "thread_id": "thread_005, thread_015"
     },
     {
       "cluster_id": "cluster_006",
@@ -392,7 +392,7 @@
         135,
         136
       ],
-      "draft_title": "Q3 Content Calendar Planning and Finalization",
+      "draft_title": "Internal Q3 Content Calendar Planning",
       "participants": [
         "Devon",
         "Leah",
@@ -412,28 +412,28 @@
     "coverage": 1.0,
     "thread_coherence": 1.0,
     "cluster_titles": [
-      "EcoBloom Summer Campaign: Planning, Revisions, and Finalization",
-      "FitFusion Rebranding Project: Strategy, Legal Review, and Brand Guidelines",
+      "EcoBloom Summer Campaign: Planning, Revisions, and Final Submission",
+      "FitFusion Rebranding Project: Kickoff, Legal Review, and Brand Guidelines",
       "TechNova Product Launch: Planning, Budgeting, and Product Descriptions",
       "GreenScape Sustainability Report: Planning, Deadline Extension, and Data Visualization",
       "UrbanEdge Market Expansion: Social Media Strategy and Market Research",
-      "Q3 Content Calendar Planning and Finalization"
+      "Internal Q3 Content Calendar Planning"
     ],
-    "unique_threads": 1
+    "unique_threads": 6
   },
   "comparison_metrics": {
-    "precision": 1.0,
+    "precision": 0.9566666666666667,
     "recall": 1.0,
-    "f1_score": 1.0,
-    "cluster_similarity": 0.8949305555555557,
-    "title_similarity": 0.29953703703703705,
+    "f1_score": 0.9778534923339013,
+    "cluster_similarity": 0.8795580636002274,
+    "title_similarity": 0.3138888888888889,
     "participant_accuracy": 1.0,
     "cluster_count_similarity": 1.0,
-    "size_similarity": 1.0,
+    "size_similarity": 0.9566666666666667,
     "ref_cluster_count": 6,
     "pred_cluster_count": 6
   },
-  "raw_response": "```json\n{\n  \"clusters\": [\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign: Planning, Revisions, and Finalization\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": null\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [\n        14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project: Strategy, Legal Review, and Brand Guidelines\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": null\n    },\n    {\n      \"cluster_id\": \"cluster_003\",\n      \"message_ids\": [\n        29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256\n      ],\n      \"draft_title\": \"TechNova Product Launch: Planning, Budgeting, and Product Descriptions\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": null\n    },\n    {\n      \"cluster_id\": \"cluster_004\",\n      \"message_ids\": [\n        44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report: Planning, Deadline Extension, and Data Visualization\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": null\n    },\n    {\n      \"cluster_id\": \"cluster_005\",\n      \"message_ids\": [\n        59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300\n      ],\n      \"draft_title\": \"UrbanEdge Market Expansion: Social Media Strategy and Market Research\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": null\n    },\n    {\n      \"cluster_id\": \"cluster_006\",\n      \"message_ids\": [\n        112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136\n      ],\n      \"draft_title\": \"Q3 Content Calendar Planning and Finalization\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_008\"\n    }\n  ]\n}\n```",
+  "raw_response": "```json\n{\n  \"clusters\": [\n    {\n      \"cluster_id\": \"cluster_001\",\n      \"message_ids\": [\n        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212\n      ],\n      \"draft_title\": \"EcoBloom Summer Campaign: Planning, Revisions, and Final Submission\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_001, thread_006, thread_011\"\n    },\n    {\n      \"cluster_id\": \"cluster_002\",\n      \"message_ids\": [\n        14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234\n      ],\n      \"draft_title\": \"FitFusion Rebranding Project: Kickoff, Legal Review, and Brand Guidelines\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_002, thread_007, thread_012\"\n    },\n    {\n      \"cluster_id\": \"cluster_003\",\n      \"message_ids\": [\n        29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256\n      ],\n      \"draft_title\": \"TechNova Product Launch: Planning, Budgeting, and Product Descriptions\",\n      \"participants\": [\n        \"Devon\",\n        \"Sam\",\n        \"Leah\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#campaign-briefs\",\n      \"thread_id\": \"thread_003, thread_009, thread_013\"\n    },\n    {\n      \"cluster_id\": \"cluster_004\",\n      \"message_ids\": [\n        44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278\n      ],\n      \"draft_title\": \"GreenScape Sustainability Report: Planning, Deadline Extension, and Data Visualization\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_004, thread_010, thread_014\"\n    },\n    {\n      \"cluster_id\": \"cluster_005\",\n      \"message_ids\": [\n        59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300\n      ],\n      \"draft_title\": \"UrbanEdge Market Expansion: Social Media Strategy and Market Research\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#client-communications\",\n      \"thread_id\": \"thread_005, thread_015\"\n    },\n    {\n      \"cluster_id\": \"cluster_006\",\n      \"message_ids\": [\n        112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136\n      ],\n      \"draft_title\": \"Internal Q3 Content Calendar Planning\",\n      \"participants\": [\n        \"Devon\",\n        \"Leah\",\n        \"Sam\",\n        \"Jordan\"\n      ],\n      \"channel\": \"#project-updates\",\n      \"thread_id\": \"thread_008\"\n    }\n  ]\n}\n```",
   "error": "",
   "prompt_tokens_estimated": 23837,
   "messages_used": 300

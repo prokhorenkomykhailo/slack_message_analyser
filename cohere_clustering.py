@@ -25,10 +25,10 @@ class CohereCommandRPlusClustering:
         print(f"🔄 Loading Cohere Command R+ model: {self.model_path}")
         
         try:
-            
+            # Load tokenizer
             self.tokenizer = AutoTokenizer.from_pretrained(self.model_path)
             
-            
+            # Configure quantization if specified
             if self.quantization == "8bit":
                 bnb_config = BitsAndBytesConfig(load_in_8bit=True)
                 self.model = AutoModelForCausalLM.from_pretrained(
@@ -44,7 +44,7 @@ class CohereCommandRPlusClustering:
                     device_map="auto"
                 )
             else:
-                
+                # Load full precision model
                 self.model = AutoModelForCausalLM.from_pretrained(
                     self.model_path,
                     torch_dtype=torch.float16,
@@ -61,7 +61,7 @@ class CohereCommandRPlusClustering:
     def create_clustering_prompt(self, messages: List[Dict]) -> str:
         """Create clustering prompt using Command R+ format"""
         
-        
+        # Convert messages to Command R+ chat format
         conversation = []
         for msg in messages:
             if msg.get('role') == 'user':
@@ -69,7 +69,7 @@ class CohereCommandRPlusClustering:
             else:
                 conversation.append({"role": "assistant", "content": msg['content']})
         
-        
+        # Add clustering instruction
         clustering_instruction = {
             "role": "user",
             "content": """Please analyze the conversation above and create topic clusters. For each cluster:
@@ -82,7 +82,7 @@ Format your response as a JSON structure with clusters array."""
         }
         conversation.append(clustering_instruction)
         
-        
+        # Apply Command R+ chat template
         prompt = self.tokenizer.apply_chat_template(
             conversation,
             tokenize=False,
@@ -99,15 +99,15 @@ Format your response as a JSON structure with clusters array."""
             return []
         
         try:
-            
+            # Create clustering prompt
             prompt = self.create_clustering_prompt(messages)
             
-            
+            # Tokenize input
             input_ids = self.tokenizer.encode(prompt, return_tensors="pt")
             if self.device == "cuda":
                 input_ids = input_ids.cuda()
             
-            
+            # Generate clustering response
             start_time = time.time()
             
             with torch.no_grad():
@@ -121,10 +121,10 @@ Format your response as a JSON structure with clusters array."""
             
             generation_time = time.time() - start_time
             
-            
+            # Decode response
             response_text = self.tokenizer.decode(gen_tokens[0], skip_special_tokens=True)
             
-            
+            # Extract clustering results
             clusters = self.parse_clustering_response(response_text, messages)
             
             return {
@@ -141,7 +141,7 @@ Format your response as a JSON structure with clusters array."""
         """Parse the clustering response from Command R+"""
         
         try:
-            
+            # Try to extract JSON from response
             if "```json" in response:
                 json_start = response.find("```json") + 7
                 json_end = response.find("```", json_start)
@@ -151,10 +151,10 @@ Format your response as a JSON structure with clusters array."""
                 json_end = response.rfind("}") + 1
                 json_str = response[json_start:json_end]
             else:
-                
+                # Fallback: create basic clusters
                 return self.create_fallback_clusters(messages)
             
-            
+            # Parse JSON
             clustering_data = json.loads(json_str)
             
             if "clusters" in clustering_data:
@@ -169,7 +169,7 @@ Format your response as a JSON structure with clusters array."""
     def create_fallback_clusters(self, messages: List[Dict]) -> List[Dict]:
         """Create fallback clusters if parsing fails"""
         
-        
+        # Simple fallback: group by conversation flow
         clusters = []
         current_cluster = {
             "cluster_id": "cluster_001",

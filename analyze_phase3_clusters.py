@@ -43,7 +43,7 @@ def load_existing_phase3_clusters() -> List[Dict]:
 def analyze_clustering_models(results: Dict[str, Any]):
     """Analyze and rank clustering models"""
     
-    
+    # Filter successful models
     successful_models = {}
     for model_name, result in results.items():
         if result.get("success", False):
@@ -57,7 +57,7 @@ def analyze_clustering_models(results: Dict[str, Any]):
         print("❌ No successful clustering models found!")
         return
     
-    
+    # Rank by Coverage
     print("\n🏆 **BEST COVERAGE** (Percentage of messages clustered)")
     coverage_ranked = sorted(successful_models.items(), 
                             key=lambda x: x[1]["metrics"]["coverage"], reverse=True)
@@ -65,7 +65,7 @@ def analyze_clustering_models(results: Dict[str, Any]):
         coverage = result["metrics"]["coverage"] * 100
         print(f"{i+1}. {model}: {coverage:.1f}%")
     
-    
+    # Rank by Thread Coherence
     print("\n🏆 **BEST THREAD COHERENCE** (How well threads are preserved)")
     coherence_ranked = sorted(successful_models.items(), 
                              key=lambda x: x[1]["metrics"]["thread_coherence"], reverse=True)
@@ -73,20 +73,20 @@ def analyze_clustering_models(results: Dict[str, Any]):
         coherence = result["metrics"]["thread_coherence"] * 100
         print(f"{i+1}. {model}: {coherence:.1f}%")
     
-    
+    # Rank by Cluster Quality
     print("\n🏆 **BEST CLUSTER QUALITY** (Optimal number of clusters)")
     cluster_quality = []
     for model, result in successful_models.items():
         num_clusters = result["metrics"]["num_clusters"]
-        
-        quality_score = 1.0 - abs(num_clusters - 12.5) / 12.5  
+        # Optimal range: 10-15 clusters for 300 messages
+        quality_score = 1.0 - abs(num_clusters - 12.5) / 12.5  # Distance from optimal
         cluster_quality.append((model, quality_score, num_clusters))
     
     cluster_quality.sort(key=lambda x: x[1], reverse=True)
     for i, (model, score, num_clusters) in enumerate(cluster_quality[:5]):
         print(f"{i+1}. {model}: {num_clusters} clusters (quality: {score:.3f})")
     
-    
+    # Rank by Cost Efficiency
     print("\n🏆 **MOST COST EFFICIENT** (Lowest cost per evaluation)")
     cost_ranked = sorted(successful_models.items(), 
                         key=lambda x: x[1]["cost"]["total_cost"])
@@ -94,7 +94,7 @@ def analyze_clustering_models(results: Dict[str, Any]):
         cost = result["cost"]["total_cost"]
         print(f"{i+1}. {model}: ${cost:.6f}")
     
-    
+    # Rank by Speed
     print("\n🏆 **FASTEST** (Lowest response time)")
     speed_ranked = sorted(successful_models.items(), 
                          key=lambda x: x[1]["duration"])
@@ -102,7 +102,7 @@ def analyze_clustering_models(results: Dict[str, Any]):
         duration = result["duration"]
         print(f"{i+1}. {model}: {duration:.2f}s")
     
-    
+    # Rank by Overall Score (combined metrics)
     print("\n🏆 **OVERALL BEST** (Combined score: coverage + coherence - normalized cost - normalized time)")
     overall_scores = {}
     for model, result in successful_models.items():
@@ -111,14 +111,14 @@ def analyze_clustering_models(results: Dict[str, Any]):
         cost = result["cost"]["total_cost"]
         duration = result["duration"]
         
-        
+        # Normalize cost and duration (lower is better)
         max_cost = max(r["cost"]["total_cost"] for r in successful_models.values())
         max_duration = max(r["duration"] for r in successful_models.values())
         
         normalized_cost = cost / max_cost if max_cost > 0 else 0
         normalized_duration = duration / max_duration if max_duration > 0 else 0
         
-        
+        # Overall score (higher is better)
         overall_score = (coverage + coherence) - normalized_cost - normalized_duration
         overall_scores[model] = overall_score
     
@@ -131,7 +131,7 @@ def analyze_clustering_models(results: Dict[str, Any]):
         duration = result["duration"]
         print(f"{i+1}. {model}: Score {score:.3f} (Coverage: {coverage:.1f}%, Coherence: {coherence:.1f}%, Cost: ${cost:.6f}, Time: {duration:.2f}s)")
     
-    
+    # Best by provider
     print("\n🏆 **BEST BY PROVIDER**")
     providers = {}
     for model, result in successful_models.items():
@@ -144,7 +144,7 @@ def analyze_clustering_models(results: Dict[str, Any]):
         best_model = max(models, key=lambda x: x[1])
         print(f"{provider.upper()}: {best_model[0]} (Score: {best_model[1]:.3f})")
     
-    
+    # Detailed analysis of top 3
     print("\n🔍 **DETAILED ANALYSIS OF TOP 3 MODELS**")
     for i, (model, score) in enumerate(overall_ranked[:3]):
         result = successful_models[model]
@@ -157,20 +157,20 @@ def analyze_clustering_models(results: Dict[str, Any]):
         print(f"   Duration: {result['duration']:.2f}s")
         print(f"   Tokens: {result['usage']['total_tokens']:,}")
         
-        
+        # Show sample cluster titles
         if result['clusters']:
             titles = [cluster.get('draft_title', 'No title') for cluster in result['clusters'][:3]]
             print(f"   Sample Clusters: {', '.join(titles)}")
     
-    
+    # Save best clusters to file (in correct format - direct array)
     if overall_ranked:
         best_model_name = overall_ranked[0][0]
         best_result = successful_models[best_model_name]
         
-        
+        # Convert clusters to the correct format
         clusters_array = []
         for cluster in best_result["clusters"]:
-            
+            # Ensure all required fields are present
             formatted_cluster = {
                 "cluster_id": cluster.get("cluster_id", f"cluster_{len(clusters_array)+1:03d}"),
                 "message_ids": cluster.get("message_ids", []),
@@ -197,7 +197,7 @@ def compare_with_existing_clusters():
         print(f"\n📊 **EXISTING CLUSTERS ANALYSIS**")
         print(f"   Total clusters: {len(existing_clusters)}")
         
-        
+        # Analyze existing clusters
         total_messages = 0
         unique_participants = set()
         
@@ -211,7 +211,7 @@ def compare_with_existing_clusters():
         print(f"   Unique participants: {len(unique_participants)}")
         print(f"   Average cluster size: {total_messages/len(existing_clusters):.1f}")
         
-        
+        # Show cluster titles
         titles = [cluster.get("draft_title", "Untitled") for cluster in existing_clusters]
         print(f"   Cluster titles: {', '.join(titles)}")
 
@@ -220,10 +220,10 @@ def main():
     print("🎯 Phase 3: Topic Clustering Results Analyzer")
     print("=" * 60)
     
-    
+    # Check for existing clusters first
     compare_with_existing_clusters()
     
-    
+    # Load Phase 3 results
     results = load_phase3_results()
     if results:
         analyze_clustering_models(results)

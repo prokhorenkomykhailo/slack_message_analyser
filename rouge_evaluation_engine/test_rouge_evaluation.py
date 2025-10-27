@@ -13,7 +13,7 @@ def test_single_model():
     print("🧪 TESTING ROUGE EVALUATION")
     print("=" * 50)
     
-    
+    # Check paths
     reference_path = "../phases/phase3_clusters.json"
     model_path = "../output/phase3_topic_clustering/google_gemini-1.5-flash.json"
     
@@ -27,13 +27,13 @@ def test_single_model():
     
     print("✅ Files found, starting evaluation...")
     
-    
+    # Initialize evaluator
     evaluator = RougeClusteringEvaluator(
         reference_path=reference_path,
         output_dir="test_results"
     )
     
-    
+    # Load model clusters
     try:
         with open(model_path, 'r', encoding='utf-8') as f:
             model_data = json.load(f)
@@ -45,13 +45,13 @@ def test_single_model():
         
         print(f"📊 Loaded {len(clusters)} clusters from model")
         
-        
+        # Run evaluation
         results = evaluator.evaluate_clusters(clusters, "google_gemini-1.5-flash")
         
-        
+        # Save results
         evaluator.save_results(results, "google_gemini-1.5-flash")
         
-        
+        # Print summary
         evaluator.print_summary(results)
         
         print("\n✅ Test completed successfully!")

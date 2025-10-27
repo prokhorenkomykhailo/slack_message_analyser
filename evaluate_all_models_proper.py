@@ -17,7 +17,7 @@ def load_model_data(file_path: str) -> Dict[str, Any]:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        
+        # Extract clusters
         clusters = []
         if isinstance(data, list):
             clusters = data
@@ -26,7 +26,7 @@ def load_model_data(file_path: str) -> Dict[str, Any]:
         elif 'results' in data:
             clusters = data['results']
         
-        
+        # Extract metadata
         metadata = {
             'provider': data.get('provider', 'unknown'),
             'model': data.get('model', 'unknown'),
@@ -47,7 +47,7 @@ def load_model_data(file_path: str) -> Dict[str, Any]:
 def extract_model_name(file_path: str) -> str:
     """Extract model name from file path"""
     filename = os.path.basename(file_path)
-    
+    # Remove common suffixes
     for suffix in ['_clusters.json', '.json', '_results.json']:
         if filename.endswith(suffix):
             filename = filename[:-len(suffix)]
@@ -61,16 +61,16 @@ def evaluate_all_models_proper():
     print("📊 Approach: Coverage (35%) + Size (20%) + Matching (25%) + Structure (20%)")
     print("=" * 70)
     
-    
+    # Initialize proper evaluator
     evaluator = ProperClusteringEvaluator(
         reference_path="phases/phase3_clusters.json",
         output_dir="proper_clustering_results"
     )
     
-    
+    # Find all model files
     model_files = glob.glob("output/phase3_topic_clustering/*.json")
     
-    
+    # Filter out non-model files
     exclude_files = ['detailed_analysis.json', 'comprehensive_results.json']
     model_files = [f for f in model_files if not any(ex in f for ex in exclude_files)]
     
@@ -83,7 +83,7 @@ def evaluate_all_models_proper():
         model_name = extract_model_name(model_file)
         print(f"🔍 Proper evaluation of {model_name}...")
         
-        
+        # Load model data
         model_data = load_model_data(model_file)
         clusters = model_data['clusters']
         metadata = model_data['metadata']
@@ -96,13 +96,13 @@ def evaluate_all_models_proper():
         print(f"   💰 Cost: ${metadata['cost'].get('total_cost', 0):.6f}")
         
         try:
-            
+            # Run proper evaluation
             results = evaluator.comprehensive_evaluation(clusters, model_name)
             
-            
+            # Save proper results
             evaluator.save_results(results, model_name)
             
-            
+            # Store for comparison
             overall = results['overall_score']
             coverage = results['coverage_metrics']
             size = results['size_metrics']
@@ -142,16 +142,16 @@ def evaluate_all_models_proper():
             print(f"   ❌ Error evaluating {model_name}: {e}")
             continue
     
-    
+    # Create comprehensive comparison
     if all_results:
         print("\n" + "=" * 70)
         print("📊 PROPER CLUSTERING EVALUATION RESULTS COMPARISON")
         print("=" * 70)
         
-        
+        # Create DataFrame for easy comparison
         df = pd.DataFrame(all_results)
         
-        
+        # Sort by overall score (primary metric)
         df_sorted = df.sort_values('overall_score', ascending=False)
         
         print("\n🏆 RANKING BY OVERALL CLUSTERING QUALITY SCORE:")
@@ -169,15 +169,15 @@ def evaluate_all_models_proper():
         print("\n🏗️  CLUSTERING STRUCTURE (20% weight):")
         print(df_sorted[['model_name', 'structure_score', 'clusters_count']].to_string(index=False))
         
-        
+        # Save comprehensive results
         comprehensive_file = "proper_clustering_results/proper_all_models_comparison.csv"
         df_sorted.to_csv(comprehensive_file, index=False)
         print(f"\n💾 Proper comparison saved to: {comprehensive_file}")
         
+        # Calculate cost-effectiveness (score per dollar)
+        df_sorted['cost_effectiveness'] = df_sorted['overall_score'] / (df_sorted['total_cost'] + 0.000001)  # Avoid division by zero
         
-        df_sorted['cost_effectiveness'] = df_sorted['overall_score'] / (df_sorted['total_cost'] + 0.000001)  
-        
-        
+        # Show cost-effectiveness ranking
         print(f"\n💰 COST-EFFECTIVENESS RANKING (Score per Dollar):")
         print("=" * 80)
         cost_effective_df = df_sorted.sort_values('cost_effectiveness', ascending=False)
@@ -185,7 +185,7 @@ def evaluate_all_models_proper():
         for i, (_, model) in enumerate(cost_effective_df.head(10).iterrows(), 1):
             print(f"{i:<3} {model['model_name'][:40]:<40} Score: {model['overall_score']:.4f}, Cost: ${model['total_cost']:.6f}, Ratio: {model['cost_effectiveness']:.2f}")
         
-        
+        # Find best model
         best_model = df_sorted.iloc[0]
         print(f"\n🥇 BEST OVERALL MODEL: {best_model['model_name']}")
         print(f"   Overall Score: {best_model['overall_score']:.4f}")
@@ -194,14 +194,14 @@ def evaluate_all_models_proper():
         print(f"   Cost: ${best_model['total_cost']:.6f}")
         print(f"   Recommendation: {best_model['recommendation']}")
         
-        
+        # Find most cost-effective model
         most_cost_effective = cost_effective_df.iloc[0]
         print(f"\n💡 MOST COST-EFFECTIVE MODEL: {most_cost_effective['model_name']}")
         print(f"   Cost-Effectiveness: {most_cost_effective['cost_effectiveness']:.2f} score per dollar")
         print(f"   Overall Score: {most_cost_effective['overall_score']:.4f}")
         print(f"   Cost: ${most_cost_effective['total_cost']:.6f}")
         
-        
+        # Show top 10 models with detailed information
         print(f"\n🏅 TOP 10 MODELS:")
         print("=" * 100)
         print(f"{'Rank':<4} {'Model':<35} {'Score':<8} {'Coverage':<10} {'Cost':<12} {'Provider':<15} {'Duration':<10}")
@@ -224,7 +224,7 @@ def evaluate_all_models_proper():
             print(f"   📈 Tokens: {model['input_tokens']:,} input, {model['output_tokens']:,} output")
             print(f"   💡 Recommendation: {model['recommendation']}")
         
-        
+        # Show worst models (for debugging)
         print(f"\n⚠️  MODELS WITH ISSUES (Bottom 5):")
         print("=" * 80)
         for i, (_, model) in enumerate(df_sorted.tail(5).iterrows(), 1):

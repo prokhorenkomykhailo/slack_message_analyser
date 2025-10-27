@@ -1,0 +1,199 @@
+{
+  "model_name": "google_gemini-1.5-flash",
+  "clustering_metrics": {
+    "adjusted_rand_index": 0.7656107251068544,
+    "normalized_mutual_info": 0.8972517118727701,
+    "v_measure": 0.8972517118727701,
+    "homogeneity": 0.9432726944279263,
+    "completeness": 0.855512432283311,
+    "reference_clusters": 6,
+    "predicted_clusters": 7,
+    "total_messages": 300
+  },
+  "rouge_metrics": {
+    "avg_rouge1_precision": 0.55,
+    "std_rouge1_precision": 0.1365679085685713,
+    "avg_rouge1_recall": 1.0,
+    "std_rouge1_recall": 0.0,
+    "avg_rouge1_fmeasure": 0.6993197278911564,
+    "std_rouge1_fmeasure": 0.11791786579530379,
+    "avg_rouge2_precision": 0.4095238095238095,
+    "std_rouge2_precision": 0.21728065802952065,
+    "avg_rouge2_recall": 0.8571428571428571,
+    "std_rouge2_recall": 0.3499271061118826,
+    "avg_rouge2_fmeasure": 0.541156462585034,
+    "std_rouge2_fmeasure": 0.2616099586522071,
+    "avg_rougeL_precision": 0.55,
+    "std_rougeL_precision": 0.1365679085685713,
+    "avg_rougeL_recall": 1.0,
+    "std_rougeL_recall": 0.0,
+    "avg_rougeL_fmeasure": 0.6993197278911564,
+    "std_rougeL_fmeasure": 0.11791786579530379
+  },
+  "message_metrics": {
+    "total_predicted_messages": 278,
+    "total_reference_messages": 287,
+    "total_overlap": 265,
+    "overall_precision": 0.9532374100719424,
+    "overall_recall": 0.9233449477351916,
+    "overall_f1": 0.9380530973451326
+  },
+  "cluster_matches": [
+    {
+      "predicted_cluster": "EcoBloom Summer Campaign: Planning & Revisions",
+      "reference_cluster": "EcoBloom Campaign",
+      "rouge_l_f1": 0.5714285714285715,
+      "message_overlap": 44,
+      "predicted_messages": 44,
+      "reference_messages": 44,
+      "overlap_ratio": 1.0
+    },
+    {
+      "predicted_cluster": "FitFusion Rebranding Project: Design, Messaging & Legal",
+      "reference_cluster": "FitFusion Rebranding",
+      "rouge_l_f1": 0.5,
+      "message_overlap": 47,
+      "predicted_messages": 60,
+      "reference_messages": 47,
+      "overlap_ratio": 0.7833333333333333
+    },
+    {
+      "predicted_cluster": "TechNova Product Launch: Campaign & Budget",
+      "reference_cluster": "TechNova Product Launch",
+      "rouge_l_f1": 0.7499999999999999,
+      "message_overlap": 46,
+      "predicted_messages": 46,
+      "reference_messages": 68,
+      "overlap_ratio": 1.0
+    },
+    {
+      "predicted_cluster": "GreenScape Sustainability Report: Content, Design & Legal",
+      "reference_cluster": "GreenScape Sustainability Report",
+      "rouge_l_f1": 0.6666666666666666,
+      "message_overlap": 37,
+      "predicted_messages": 37,
+      "reference_messages": 66,
+      "overlap_ratio": 1.0
+    },
+    {
+      "predicted_cluster": "UrbanEdge Social Media Strategy & Market Research",
+      "reference_cluster": "UrbanEdge Social Media Strategy",
+      "rouge_l_f1": 0.8,
+      "message_overlap": 37,
+      "predicted_messages": 37,
+      "reference_messages": 37,
+      "overlap_ratio": 1.0
+    },
+    {
+      "predicted_cluster": "Q3 Content Calendar Development",
+      "reference_cluster": "Q3 Content Calendar",
+      "rouge_l_f1": 0.8571428571428571,
+      "message_overlap": 25,
+      "predicted_messages": 25,
+      "reference_messages": 25,
+      "overlap_ratio": 1.0
+    },
+    {
+      "predicted_cluster": "GreenScape Sustainability Report Deadline Extension",
+      "reference_cluster": "GreenScape Sustainability Report",
+      "rouge_l_f1": 0.7499999999999999,
+      "message_overlap": 29,
+      "predicted_messages": 29,
+      "reference_messages": 66,
+      "overlap_ratio": 1.0
+    }
+  ],
+  "detailed_rouge_scores": [
+    {
+      "rouge1_precision": 0.4,
+      "rouge1_recall": 1.0,
+      "rouge1_fmeasure": 0.5714285714285715,
+      "rouge2_precision": 0.0,
+      "rouge2_recall": 0.0,
+      "rouge2_fmeasure": 0.0,
+      "rougeL_precision": 0.4,
+      "rougeL_recall": 1.0,
+      "rougeL_fmeasure": 0.5714285714285715,
+      "cluster_title": "EcoBloom Summer Campaign: Planning & Revisions",
+      "reference_title": "EcoBloom Campaign"
+    },
+    {
+      "rouge1_precision": 0.3333333333333333,
+      "rouge1_recall": 1.0,
+      "rouge1_fmeasure": 0.5,
+      "rouge2_precision": 0.2,
+      "rouge2_recall": 1.0,
+      "rouge2_fmeasure": 0.33333333333333337,
+      "rougeL_precision": 0.3333333333333333,
+      "rougeL_recall": 1.0,
+      "rougeL_fmeasure": 0.5,
+      "cluster_title": "FitFusion Rebranding Project: Design, Messaging & Legal",
+      "reference_title": "FitFusion Rebranding"
+    },
+    {
+      "rouge1_precision": 0.6,
+      "rouge1_recall": 1.0,
+      "rouge1_fmeasure": 0.7499999999999999,
+      "rouge2_precision": 0.5,
+      "rouge2_recall": 1.0,
+      "rouge2_fmeasure": 0.6666666666666666,
+      "rougeL_precision": 0.6,
+      "rougeL_recall": 1.0,
+      "rougeL_fmeasure": 0.7499999999999999,
+      "cluster_title": "TechNova Product Launch: Campaign & Budget",
+      "reference_title": "TechNova Product Launch"
+    },
+    {
+      "rouge1_precision": 0.5,
+      "rouge1_recall": 1.0,
+      "rouge1_fmeasure": 0.6666666666666666,
+      "rouge2_precision": 0.4,
+      "rouge2_recall": 1.0,
+      "rouge2_fmeasure": 0.5714285714285715,
+      "rougeL_precision": 0.5,
+      "rougeL_recall": 1.0,
+      "rougeL_fmeasure": 0.6666666666666666,
+      "cluster_title": "GreenScape Sustainability Report: Content, Design & Legal",
+      "reference_title": "GreenScape Sustainability Report"
+    },
+    {
+      "rouge1_precision": 0.6666666666666666,
+      "rouge1_recall": 1.0,
+      "rouge1_fmeasure": 0.8,
+      "rouge2_precision": 0.6,
+      "rouge2_recall": 1.0,
+      "rouge2_fmeasure": 0.7499999999999999,
+      "rougeL_precision": 0.6666666666666666,
+      "rougeL_recall": 1.0,
+      "rougeL_fmeasure": 0.8,
+      "cluster_title": "UrbanEdge Social Media Strategy & Market Research",
+      "reference_title": "UrbanEdge Social Media Strategy"
+    },
+    {
+      "rouge1_precision": 0.75,
+      "rouge1_recall": 1.0,
+      "rouge1_fmeasure": 0.8571428571428571,
+      "rouge2_precision": 0.6666666666666666,
+      "rouge2_recall": 1.0,
+      "rouge2_fmeasure": 0.8,
+      "rougeL_precision": 0.75,
+      "rougeL_recall": 1.0,
+      "rougeL_fmeasure": 0.8571428571428571,
+      "cluster_title": "Q3 Content Calendar Development",
+      "reference_title": "Q3 Content Calendar"
+    },
+    {
+      "rouge1_precision": 0.6,
+      "rouge1_recall": 1.0,
+      "rouge1_fmeasure": 0.7499999999999999,
+      "rouge2_precision": 0.5,
+      "rouge2_recall": 1.0,
+      "rouge2_fmeasure": 0.6666666666666666,
+      "rougeL_precision": 0.6,
+      "rougeL_recall": 1.0,
+      "rougeL_fmeasure": 0.7499999999999999,
+      "cluster_title": "GreenScape Sustainability Report Deadline Extension",
+      "reference_title": "GreenScape Sustainability Report"
+    }
+  ]
+}

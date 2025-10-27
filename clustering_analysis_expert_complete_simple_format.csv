@@ -1,0 +1,259 @@
+MODEL,SUCCESS,CLUSTER_ID,CLUSTER_TITLE,CLUSTER_MESSAGES,CLUSTER_PARTICIPANTS,TOTAL_CLUSTERS,TOTAL_MESSAGES_CLUSTERED,DURATION_SECONDS,INPUT_TOKENS,OUTPUT_TOKENS,COST_PER_INPUT_TOKEN,COST_PER_OUTPUT_TOKEN,COST_PER_TOTAL_TOKEN,TOKEN_COST,MESSAGE_IDS
+gemini-1.5-flash,TRUE,1,EcoBloom Summer Campaign: Planning & Revisions,44,Devon; Sam; Leah; Jordan,7,300,15.37,25474,2080,0.000075,0.0003,0.000092,0.002535,EcoBloom Campaign
+gemini-1.5-flash,TRUE,2,"FitFusion Rebranding Project: Design, Messaging & Legal",60,Devon; Sam; Leah; Jordan,7,300,15.37,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash,TRUE,3,"TechNova Product Launch: Campaign, Budget & Product Descriptions",68,Devon; Sam; Leah; Jordan,7,300,15.37,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash,TRUE,4,"GreenScape Sustainability Report: Content, Design & Legal",37,Devon; Sam; Leah; Jordan,7,300,15.37,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash,TRUE,5,UrbanEdge Social Media Strategy & Market Research,37,Devon; Sam; Leah; Jordan,7,300,15.37,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash,TRUE,6,Q3 Content Calendar Development,25,Devon; Sam; Leah; Jordan,7,300,15.37,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash,TRUE,7,GreenScape Sustainability Report Deadline Extension,29,Devon; Sam; Leah; Jordan,7,300,15.37,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash-002,TRUE,1,EcoBloom Summer Campaign: Planning & Client Revisions,44,Devon; Sam; Leah; Jordan,7,300,14.74,25474,2081,7e-08,0,0,0,0.9
+gemini-1.5-flash-002,TRUE,2,"FitFusion Rebranding Project: Design, Messaging & Legal",60,Devon; Sam; Leah; Jordan,7,300,14.74,25474,2081,7e-08,0,0,0,0.9
+gemini-1.5-flash-002,TRUE,3,"TechNova Product Launch: Campaign, Budget & Product Descriptions",68,Devon; Sam; Leah; Jordan,7,300,14.74,25474,2081,7e-08,0,0,0,0.9
+gemini-1.5-flash-002,TRUE,4,"GreenScape Sustainability Report: Content, Design & Legal",37,Devon; Sam; Leah; Jordan,7,300,14.74,25474,2081,7e-08,0,0,0,0.9
+gemini-1.5-flash-002,TRUE,5,UrbanEdge Social Media Strategy & Market Research,37,Devon; Sam; Leah; Jordan,7,300,14.74,25474,2081,7e-08,0,0,0,0.9
+gemini-1.5-flash-002,TRUE,6,Q3 Content Calendar Development,25,Devon; Sam; Leah; Jordan,7,300,14.74,25474,2081,7e-08,0,0,0,0.9
+gemini-1.5-flash-002,TRUE,7,GreenScape Sustainability Report Deadline Extension,29,Devon; Sam; Leah; Jordan,7,300,14.74,25474,2081,7e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,1,EcoBloom Summer Campaign Project Updates and Revisions,44,Devon; Sam; Leah; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,2,FitFusion Rebranding Project,14,Devon; Sam; Leah; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,3,TechNova Product Launch Campaign,15,Devon; Sam; Leah; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,4,GreenScape Sustainability Report Project,61,Devon; Leah; Sam; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,5,UrbanEdge Social Media Strategy,15,Devon; Leah; Sam; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,6,FitFusion Brand Guidelines Project,45,Devon; Sam; Leah; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,7,Q3 Content Calendar Project,25,Devon; Leah; Sam; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,8,TechNova Budget Project,31,Devon; Sam; Leah; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-8b,TRUE,9,TechNova Product Descriptions Project,22,Devon; Leah; Sam; Jordan,9,272,10.38,25474,2067,4e-08,0,0,0,0.9
+gemini-1.5-flash-latest,TRUE,1,EcoBloom Summer Campaign: Planning & Revisions,44,Devon; Sam; Leah; Jordan,7,300,14.97,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash-latest,TRUE,2,"FitFusion Rebranding Project: Design, Messaging & Legal",60,Devon; Sam; Leah; Jordan,7,300,14.97,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash-latest,TRUE,3,"TechNova Product Launch: Campaign, Budget & Product Descriptions",68,Devon; Sam; Leah; Jordan,7,300,14.97,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash-latest,TRUE,4,"GreenScape Sustainability Report: Content, Design & Legal",37,Devon; Sam; Leah; Jordan,7,300,14.97,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash-latest,TRUE,5,UrbanEdge Social Media Strategy & Market Research,37,Devon; Sam; Leah; Jordan,7,300,14.97,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash-latest,TRUE,6,Q3 Content Calendar Development,25,Devon; Sam; Leah; Jordan,7,300,14.97,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-flash-latest,TRUE,7,GreenScape Sustainability Report Deadline Extension,29,Devon; Sam; Leah; Jordan,7,300,14.97,25474,2080,7e-08,0,0,0,0.9
+gemini-1.5-pro,TRUE,1,EcoBloom Summer Campaign: Initial Planning and Deadlines,13,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,0.00125,0.005,0.001645,0.045408,EcoBloom Campaign
+gemini-1.5-pro,TRUE,2,FitFusion Rebranding Project Kickoff and Initial Planning,15,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,3,TechNova New Product Launch: Initial Planning and Deadlines,15,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,4,GreenScape Sustainability Report: Initial Planning and Data Collection,15,Devon; Leah; Sam; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,5,UrbanEdge Social Media Strategy Development,15,Devon; Leah; Sam; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,6,EcoBloom Summer Campaign: Design Revisions and Client Feedback,15,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,7,FitFusion Rebranding: Legal Review and Tagline Revisions,23,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,8,Q3 Content Calendar Development and Planning,25,Devon; Leah; Sam; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,9,TechNova Product Launch Campaign Budget Finalization,31,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,10,GreenScape Sustainability Report Deadline Extension and Project Impact,29,Devon; Leah; Sam; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,11,EcoBloom Summer Campaign: Final Design Review and Client Submission,16,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,12,FitFusion Rebranding: Brand Guidelines Development and Legal Review,22,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,13,TechNova Product Launch: Product Descriptions and Compliance Review,22,Devon; Leah; Sam; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,14,GreenScape Sustainability Report: Data Visualization Development and Review,22,Devon; Sam; Leah; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro,TRUE,15,UrbanEdge Market Expansion: Market Research and Compliance Review,22,Devon; Leah; Sam; Jordan,15,300,30.52,25474,2713,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-002,TRUE,1,EcoBloom Summer Campaign,44,Devon; Sam; Leah; Jordan,6,300,28.35,25474,2183,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-002,TRUE,2,FitFusion Rebranding Project,60,Devon; Sam; Leah; Jordan,6,300,28.35,25474,2183,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-002,TRUE,3,TechNova Product Launch,68,Devon; Sam; Leah; Jordan,6,300,28.35,25474,2183,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-002,TRUE,4,GreenScape Sustainability Report,66,Devon; Sam; Leah; Jordan,6,300,28.35,25474,2183,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-002,TRUE,5,UrbanEdge Social Media Strategy and Market Research,37,Devon; Sam; Leah; Jordan,6,300,28.35,25474,2183,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-002,TRUE,6,Q3 Content Calendar Planning,25,Devon; Sam; Leah; Jordan,6,300,28.35,25474,2183,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,1,EcoBloom Summer Campaign: Initial Planning and Deadlines,13,Devon; Sam; Leah; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,2,FitFusion Rebranding Project: Kickoff and Initial Planning,15,Devon; Sam; Leah; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,3,TechNova Product Launch: Initial Planning and Deadlines,15,Devon; Sam; Leah; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,4,GreenScape Sustainability Report: Initial Planning and Requirements,15,Devon; Leah; Sam; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,5,UrbanEdge Social Media Strategy: Planning and Development,15,Devon; Leah; Sam; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,6,EcoBloom Summer Campaign: Design Revisions and Client Feedback,15,Devon; Sam; Leah; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,7,FitFusion Rebranding: Legal Review and Tagline Revisions,23,Devon; Jordan; Sam; Leah,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,8,Q3 Content Calendar Planning and Development,25,Devon; Leah; Sam; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,9,TechNova Product Launch: Budget Planning and Finalization,31,Devon; Sam; Leah; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,10,GreenScape Sustainability Report: Deadline Extension and Project Impact,29,Devon; Leah; Sam; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,11,EcoBloom Summer Campaign: Final Design Review and Client Submission,16,Devon; Sam; Leah; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,12,FitFusion Rebranding: Brand Guidelines Development and Legal Review,22,Devon; Sam; Leah; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,13,TechNova Product Launch: Product Description Development and Compliance Review,22,Devon; Leah; Sam; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,14,GreenScape Sustainability Report: Data Visualization Development and Review,22,Devon; Sam; Leah; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-1.5-pro-latest,TRUE,15,UrbanEdge Market Expansion: Market Research and Compliance Review,22,Devon; Leah; Sam; Jordan,15,300,30.55,25474,2719,1.25e-06,0.000001,0.000005,0.000002,0.9
+gemini-2.0-flash,TRUE,1,EcoBloom Summer Campaign - Initial Planning and Timeline,13,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,2,FitFusion Rebranding Project - Initial Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,3,TechNova Product Launch Campaign - Initial Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,4,GreenScape Sustainability Report - Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,5,UrbanEdge Social Media Strategy - Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,6,EcoBloom Summer Campaign - Design Revisions Based on Client Feedback,15,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,7,FitFusion Rebranding - Legal Review and Tagline Approval,23,Jordan; Devon; Sam; Leah,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,8,Q3 Content Calendar Development and Finalization,25,Devon; Leah; Sam; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,9,TechNova Product Launch - Budget Finalization,31,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,10,GreenScape Sustainability Report - Deadline Extension Approval and Timeline Adjustments,29,Devon; Leah; Sam; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,11,EcoBloom Summer Campaign - Final Design Approval and Submission,16,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,12,FitFusion Rebranding - Brand Guidelines Development and Approval,22,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,13,TechNova Product Launch - Product Description Development and Compliance Review,22,Devon; Leah; Sam; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,14,GreenScape Sustainability Report - Data Visualization Development and Review,22,Devon; Sam; Leah; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash,TRUE,15,UrbanEdge Market Expansion - Market Research and Compliance Review,22,Devon; Leah; Sam; Jordan,15,300,19.22,25474,3240,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,1,EcoBloom Summer Campaign - Initial Planning and Timeline,13,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,2,FitFusion Rebranding Project - Initial Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,3,TechNova Product Launch Campaign - Initial Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,4,GreenScape Sustainability Report - Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,5,UrbanEdge Social Media Strategy - Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,6,EcoBloom Summer Campaign - Design Revisions Based on Client Feedback,15,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,7,FitFusion Rebranding - Legal Review and Tagline Approval,23,Jordan; Devon; Sam; Leah,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,8,Q3 Content Calendar Development and Finalization,25,Devon; Leah; Sam; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,9,TechNova Product Launch - Budget Finalization,31,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,10,GreenScape Sustainability Report - Deadline Extension,29,Devon; Leah; Sam; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,11,EcoBloom Summer Campaign - Final Design Approval and Submission,16,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,12,FitFusion Rebranding - Brand Guidelines Development and Approval,22,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,13,TechNova Product Launch - Product Description Finalization and Approval,22,Devon; Leah; Sam; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,14,GreenScape Sustainability Report - Data Visualization Development and Approval,22,Devon; Sam; Leah; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-001,TRUE,15,UrbanEdge Market Expansion - Market Research and Compliance Review,22,Devon; Leah; Sam; Jordan,15,300,17.87,25474,3236,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,1,"EcoBloom Summer Campaign - Initial Planning, Timelines, and Contract Review",13,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,2,"FitFusion Rebranding Project - Initial Planning, Timelines, and Contract Review",15,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,3,"TechNova Product Launch - Initial Planning, Timelines, and Agreement Review",15,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,4,"GreenScape Sustainability Report - Initial Planning, Requirements, and Timeline",15,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,5,"UrbanEdge Social Media Strategy - Initial Planning, Requirements, and Timeline",15,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,6,EcoBloom Summer Campaign - Design Revisions and Legal Review,15,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,7,FitFusion Rebrand - Trademark Review and Tagline Selection,23,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,8,Q3 Content Calendar Development and Finalization,25,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,9,TechNova Product Launch - Budget Development and Finalization,31,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,10,GreenScape Sustainability Report - Deadline Extension and Impact on Other Projects,29,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,11,EcoBloom Summer Campaign - Final Design Review and Client Submission,16,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,12,FitFusion Rebrand - Brand Guidelines Development and Legal Review,22,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,13,TechNova Product Launch - Product Description Development and Compliance Review,22,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,14,GreenScape Sustainability Report - Data Visualization Development and Review,22,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite,TRUE,15,UrbanEdge Market Research - Development and Compliance Review,22,Devon; Sam; Leah; Jordan,15,300,14.15,25474,2740,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,1,EcoBloom Summer Campaign - Initial Planning and Timeline,13,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,2,FitFusion Rebranding Project - Initial Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,3,TechNova Product Launch - Initial Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,4,GreenScape Sustainability Report - Initial Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,5,UrbanEdge Social Media Strategy - Initial Planning and Timeline,15,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,6,EcoBloom Summer Campaign - Design Revisions and Feedback,15,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,7,FitFusion Rebrand - Trademark Review and Tagline Selection,23,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,8,Q3 Content Calendar Development and Finalization,25,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,9,TechNova Product Launch - Budget Development and Finalization,31,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,10,GreenScape Sustainability Report - Deadline Extension and Project Adjustments,29,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,11,EcoBloom Summer Campaign - Final Design Review and Submission,16,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,12,FitFusion Rebrand - Brand Guidelines Development and Legal Review,22,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,13,TechNova Product Launch - Product Description Development and Compliance Review,22,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,14,GreenScape Sustainability Report - Data Visualization Development and Review,22,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.0-flash-lite-001,TRUE,15,UrbanEdge Market Research - Development and Compliance Review,22,Devon; Sam; Leah; Jordan,15,300,13.81,25474,2715,5e-07,0,0,0,0.9
+gemini-2.5-flash-lite,TRUE,1,EcoBloom Summer Campaign Planning and Execution,29,Devon; Sam; Leah; Jordan,6,263,6.1,25689,2109,5e-07,0,0,0,0.9
+gemini-2.5-flash-lite,TRUE,2,FitFusion Rebranding Project Management,60,Devon; Sam; Leah; Jordan,6,263,6.1,25689,2109,5e-07,0,0,0,0.9
+gemini-2.5-flash-lite,TRUE,3,TechNova Product Launch Campaign and Budget,46,Devon; Sam; Leah; Jordan,6,263,6.1,25689,2109,5e-07,0,0,0,0.9
+gemini-2.5-flash-lite,TRUE,4,GreenScape Sustainability Report and Data Visualizations,66,Devon; Sam; Leah; Jordan,6,263,6.1,25689,2109,5e-07,0,0,0,0.9
+gemini-2.5-flash-lite,TRUE,5,UrbanEdge Social Media Strategy and Market Research,37,Devon; Sam; Leah; Jordan,6,263,6.1,25689,2109,5e-07,0,0,0,0.9
+gemini-2.5-flash-lite,TRUE,6,Q3 Content Calendar Development,25,Devon; Leah; Sam; Jordan,6,263,6.1,25689,2109,5e-07,0,0,0,0.9
+gemini-2.5-pro,TRUE,1,"EcoBloom Summer Campaign: Planning, Revisions, and Final Submission",44,Devon; Sam; Leah; Jordan,6,300,43.39,25689,2107,5e-07,0.000001,0.00001,0.000002,0.9
+gemini-2.5-pro,TRUE,2,"FitFusion Rebranding Project: Kickoff, Legal Review, and Brand Guidelines",60,Devon; Sam; Leah; Jordan,6,300,43.39,25689,2107,5e-07,0.000001,0.00001,0.000002,0.9
+gemini-2.5-pro,TRUE,3,"TechNova Product Launch: Planning, Budgeting, and Product Descriptions",68,Devon; Sam; Leah; Jordan,6,300,43.39,25689,2107,5e-07,0.000001,0.00001,0.000002,0.9
+gemini-2.5-pro,TRUE,4,"GreenScape Sustainability Report: Planning, Deadline Extension, and Data Visualization",66,Devon; Leah; Sam; Jordan,6,300,43.39,25689,2107,5e-07,0.000001,0.00001,0.000002,0.9
+gemini-2.5-pro,TRUE,5,UrbanEdge Market Expansion: Social Media Strategy and Market Research,37,Devon; Leah; Sam; Jordan,6,300,43.39,25689,2107,5e-07,0.000001,0.00001,0.000002,0.9
+gemini-2.5-pro,TRUE,6,Internal Q3 Content Calendar Planning,25,Devon; Leah; Sam; Jordan,6,300,43.39,25689,2107,5e-07,0.000001,0.00001,0.000002,0.9
+gemma-3-12b-it,TRUE,1,EcoBloom Summer Campaign - Initial Planning & Deadlines,13,Devon; Sam; Leah; Jordan,6,86,8.85,7432,0,0,0,0,0,0.9
+gemma-3-12b-it,TRUE,2,FitFusion Rebranding Project - Kickoff & Timeline,15,Devon; Sam; Leah; Jordan,6,86,8.85,7432,0,0,0,0,0,0.9
+gemma-3-12b-it,TRUE,3,TechNova Product Launch - Strategy & Timeline,15,Devon; Sam; Leah; Jordan,6,86,8.85,7432,0,0,0,0,0,0.9
+gemma-3-12b-it,TRUE,4,GreenScape Sustainability Report - Client Collaboration,15,Devon; Leah; Sam; Jordan,6,86,8.85,7432,0,0,0,0,0,0.9
+gemma-3-12b-it,TRUE,5,UrbanEdge Social Media Strategy - Development & Legal Review,15,Devon; Leah; Sam; Jordan,6,86,8.85,7432,0,0,0,0,0,0.9
+gemma-3-12b-it,TRUE,6,EcoBloom Summer Campaign - Design Revisions & Client Feedback,13,Devon; Sam; Leah; Jordan,6,86,8.85,7432,0,0,0,0,0,0.9
+gemma-3-1b-it,TRUE,1,EcoBloom Summer Campaign Planning,5,Devon; Sam; Leah; Jordan,5,25,2.48,7432,502,0,0,0,0,0.9
+gemma-3-1b-it,TRUE,2,UrbanEdge Social Media Strategy,5,Devon; Leah; Jordan,5,25,2.48,7432,502,0,0,0,0,0.9
+gemma-3-1b-it,TRUE,3,TechNova Product Launch,5,Devon; Jordan,5,25,2.48,7432,502,0,0,0,0,0.9
+gemma-3-1b-it,TRUE,4,EcoBloom Sustainability Report,5,Leah; Jordan,5,25,2.48,7432,502,0,0,0,0,0.9
+gemma-3-1b-it,TRUE,5,FitFusion Brand Identity,5,Devon; Sam,5,25,2.48,7432,502,0,0,0,0,0.9
+gemma-3-27b-it,TRUE,1,EcoBloom Summer Campaign - Initial Planning & Timelines,13,Devon; Sam; Leah; Jordan,6,86,17.47,7495,0,0,0,0,0,0.9
+gemma-3-27b-it,TRUE,2,FitFusion Rebranding Project - Initial Planning & Timelines,15,Devon; Sam; Leah; Jordan,6,86,17.47,7495,0,0,0,0,0,0.9
+gemma-3-27b-it,TRUE,3,TechNova Product Launch - Initial Planning & Timelines,15,Devon; Sam; Leah; Jordan,6,86,17.47,7495,0,0,0,0,0,0.9
+gemma-3-27b-it,TRUE,4,GreenScape Sustainability Report - Planning & Execution,15,Devon; Leah; Sam; Jordan,6,86,17.47,7495,0,0,0,0,0,0.9
+gemma-3-27b-it,TRUE,5,UrbanEdge Social Media Strategy - Planning & Execution,15,Devon; Leah; Sam; Jordan,6,86,17.47,7495,0,0,0,0,0,0.9
+gemma-3-27b-it,TRUE,6,EcoBloom Summer Campaign - Feedback & Revisions,13,Devon; Sam; Leah; Jordan,6,86,17.47,7495,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,1,EcoBloom Summer Campaign Kickoff & Initial Planning,8,Devon; Sam; Leah; Jordan,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,2,EcoBloom Campaign Timeline & Deliverables,4,Devon; Sam; Leah,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,3,FitFusion Rebranding Project - Initial Brief,6,Devon; Sam; Leah; Jordan,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,4,FitFusion Timeline & Deliverables,3,Devon; Sam; Leah,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,5,FitFusion Contract Review & Legal Considerations,3,Jordan; Sam,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,6,FitFusion Brand Voice & Design Alignment,4,Leah; Sam; Devon; Jordan,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,7,TechNova Product Launch - Initial Brief,3,Devon; Sam; Leah,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,8,TechNova Timeline & Deliverables,3,Devon; Jordan; Sam,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,9,TechNova Legal Review & Compliance,3,Jordan; Devon; Leah; Sam,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,10,TechNova Design Concepts & Messaging,3,Sam; Devon; Leah,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,11,EcoBloom Campaign - Revised Designs & Client Feedback,4,Devon; Sam; Leah; Jordan,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,12,GreenScape Sustainability Report - Initial Client Discussion,3,Devon; Leah; Sam,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,13,GreenScape Sustainability Report - Timeline & Legal Review,5,Devon; Leah; Jordan; Sam,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3-4b-it,TRUE,14,GreenScape Sustainability Report - Content & Design Development,6,Leah; Sam; Devon; Jordan,14,58,9.37,7432,0,0,0,0,0,0.9
+gemma-3n-e2b-it,TRUE,1,EcoBloom Summer Campaign Kickoff,5,Devon; Sam; Leah,4,73,10.95,7495,690,0,0,0,0,0.9
+gemma-3n-e2b-it,TRUE,2,FitFusion Rebrand Project,20,Devon; Sam; Leah; Jordan,4,73,10.95,7495,690,0,0,0,0,0.9
+gemma-3n-e2b-it,TRUE,3,UrbanEdge Social Media Strategy,48,Devon; Leah; Sam; Jordan,4,73,10.95,7495,690,0,0,0,0,0.9
+gemma-3n-e2b-it,TRUE,4,EcoBloom Campaign Revision,13,Devon; Sam; Leah; Jordan,4,73,10.95,7495,690,0,0,0,0,0.9
+gemma-3n-e4b-it,TRUE,1,EcoBloom Summer Campaign Kickoff & Initial Planning,5,Devon; Sam; Leah; Jordan,5,86,10.97,7495,832,0,0,0,0,0.9
+gemma-3n-e4b-it,TRUE,2,EcoBloom Rebrand Project,81,Devon; Sam; Leah; Jordan,5,86,10.97,7495,832,0,0,0,0,0.9
+gemma-3n-e4b-it,TRUE,3,UrbanEdge Social Media Strategy,6,Devon; Leah; Sam,5,86,10.97,7495,832,0,0,0,0,0.9
+gemma-3n-e4b-it,TRUE,4,GreenScape Sustainability Report,6,Devon; Leah; Jordan,5,86,10.97,7495,832,0,0,0,0,0.9
+gemma-3n-e4b-it,TRUE,5,TechNova Product Launch Campaign,5,Devon; Sam; Jordan,5,86,10.97,7495,832,0,0,0,0,0.9
+gpt-3.5-turbo,FALSE,0,N/A,0,N/A,0,0,0,0,0,0,0,0,0,0
+gpt-4,FALSE,0,N/A,0,N/A,0,0,0,0,0,0,0,0,0,0
+gpt-4o,TRUE,1,EcoBloom Summer Campaign Initial Planning and Coordination,13,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,2,FitFusion Rebranding Project Kickoff and Planning,15,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,3,TechNova Product Launch Campaign Planning,15,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,4,GreenScape Sustainability Report Development,15,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,5,UrbanEdge Social Media Strategy Development,15,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,6,EcoBloom Campaign Design Revisions,15,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,7,FitFusion Rebranding Legal and Tagline Adjustments,23,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,8,Q3 Content Calendar Development,25,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,9,TechNova Campaign Budget Finalization,31,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,10,GreenScape Sustainability Report Deadline Extension,29,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,11,EcoBloom Final Design Submission,16,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,12,FitFusion Brand Guidelines Development,22,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,13,TechNova Product Descriptions Finalization,22,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,14,GreenScape Data Visualizations for Sustainability Report,22,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-4o,TRUE,15,UrbanEdge Market Research for Expansion,22,Devon; Sam; Leah; Jordan,15,300,100,22568,1964,2.5e-06,0,0,0,0.9
+gpt-5,TRUE,1,EcoBloom Summer Campaign Kickoff and Scheduling,13,Devon; Sam; Leah; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,1,"EcoBloom Summer Campaign Planning and Revisions (July 28, 2025 deadline)",28,Devon; Sam; Leah; Jordan,5,0,72.23,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,1,"EcoBloom Summer Campaign: Planning, Revisions, and Finalization",44,Devon; Sam; Leah; Jordan,7,300,102.92,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,2,FitFusion Rebrand Kickoff and Timeline Planning,15,Devon; Sam; Leah; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,2,"FitFusion Rebrand Planning and Trademark/Legal Review (Aug 15, 2025)",27,Devon; Sam; Leah; Jordan,5,0,72.23,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,2,"FitFusion Rebrand: Planning, Trademark/Legal, and Brand Guidelines",60,Devon; Sam; Leah; Jordan,7,300,102.92,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,3,TechNova Product Launch Kickoff and Milestones,15,Devon; Sam; Leah; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,3,"TechNova Smart Home Product Launch Planning (Sept 10, 2025)",15,Devon; Sam; Leah; Jordan,5,0,72.23,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,3,"TechNova Product Launch: Planning, Budget, and Product Descriptions",68,Devon; Sam; Leah; Jordan,7,300,102.92,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,4,GreenScape Sustainability Report Kickoff and Timeline,15,Devon; Leah; Sam; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,4,"GreenScape Sustainability Report Coordination (Aug 30, 2025)",15,Devon; Sam; Leah; Jordan,5,0,72.23,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,4,"GreenScape Sustainability Report: Kickoff, Timeline Extension, and Data Visualizations",66,Devon; Sam; Leah; Jordan,7,300,102.92,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,5,UrbanEdge Social Media Strategy Planning and Timelines,15,Devon; Leah; Sam; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,5,"UrbanEdge Social Media Strategy Development (July 20, 2025)",15,Devon; Sam; Leah; Jordan,5,0,72.23,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,5,UrbanEdge Social Media Strategy,15,Devon; Sam; Leah; Jordan,7,300,102.92,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,6,EcoBloom Campaign Revisions After Client Feedback,15,Devon; Sam; Leah; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,6,Q3 Content Calendar (Cross-Client Planning),25,Devon; Sam; Leah; Jordan,7,300,102.92,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,7,FitFusion Trademark Review and Tagline Selection,23,Jordan; Devon; Sam; Leah,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,7,UrbanEdge Market Research for Expansion,22,Devon; Sam; Leah; Jordan,7,300,102.92,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,8,Companywide Q3 Content Calendar Development,25,Devon; Leah; Sam; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,9,TechNova Campaign Budget Development and Approval,31,Devon; Sam; Leah; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,10,GreenScape Sustainability Report Deadline Extension Coordination,29,Devon; Leah; Sam; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,11,EcoBloom Campaign Finalization and Legal Approval,16,Devon; Sam; Leah; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,12,FitFusion Brand Guidelines Development and Legal Review,22,Devon; Sam; Leah; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,13,TechNova Product Descriptions Development and Compliance,22,Devon; Leah; Sam; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,14,GreenScape Data Visualizations Creation and Approval,22,Devon; Sam; Leah; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+gpt-5,TRUE,15,UrbanEdge Market Research Development and Compliance Review,22,Devon; Leah; Sam; Jordan,15,0,63.82,0,0,5e-06,0,0,0,0
+grok-2-1212,TRUE,1,EcoBloom Summer Campaign Planning,13,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,2,FitFusion Rebranding Project Planning,15,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,3,TechNova Product Launch Planning,15,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,4,GreenScape Sustainability Report Planning,15,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,5,UrbanEdge Social Media Strategy Planning,15,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,6,EcoBloom Summer Campaign Revisions,15,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,7,FitFusion Rebranding Legal Review,23,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,8,Q3 Content Calendar Development,25,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,9,TechNova Budget Finalization,31,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,10,GreenScape Sustainability Report Deadline Extension,29,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,11,EcoBloom Summer Campaign Finalization,16,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,12,FitFusion Brand Guidelines Development,22,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,13,TechNova Product Descriptions Development,22,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,14,GreenScape Data Visualizations Development,22,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-1212,TRUE,15,UrbanEdge Market Research Development,22,Devon; Sam; Leah; Jordan,15,300,31.24,24871,2740,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,1,EcoBloom Summer Campaign Development,29,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,2,FitFusion Rebranding Project,38,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,3,TechNova Product Launch Preparation,68,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,4,GreenScape Sustainability Report Development,66,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,5,UrbanEdge Market Expansion Research,37,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,6,EcoBloom Campaign Revisions,15,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,7,Q3 Content Calendar Development,25,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,8,TechNova Budget Finalization,31,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,9,GreenScape Deadline Extension,29,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-2-vision-1212,TRUE,10,FitFusion Brand Guidelines Development,22,Devon; Sam; Leah; Jordan,10,300,62.64,24871,2743,9e-07,0,0,0,0.9
+grok-3,TRUE,1,EcoBloom Summer Campaign Planning and Execution,44,Devon; Sam; Leah; Jordan,6,300,31.51,22397,1392,9e-07,0,0,0,0.9
+grok-3,TRUE,2,FitFusion Rebranding Project,60,Devon; Sam; Leah; Jordan,6,300,31.51,22397,1392,9e-07,0,0,0,0.9
+grok-3,TRUE,3,TechNova Smart Home Device Launch Campaign,68,Devon; Sam; Leah; Jordan,6,300,31.51,22397,1392,9e-07,0,0,0,0.9
+grok-3,TRUE,4,GreenScape Sustainability Report Development,66,Devon; Sam; Leah; Jordan,6,300,31.51,22397,1392,9e-07,0,0,0,0.9
+grok-3,TRUE,5,UrbanEdge Social Media Strategy and Market Expansion Research,37,Devon; Sam; Leah; Jordan,6,300,31.51,22397,1392,9e-07,0,0,0,0.9
+grok-3,TRUE,6,Q3 Content Calendar Development,25,Devon; Sam; Leah; Jordan,6,300,31.51,22397,1392,9e-07,0,0,0,0.9
+llama3-70b-8192,FALSE,0,N/A,0,N/A,0,0,0,0,0,0,0,0,0,0
+llama3-8b-8192,FALSE,0,N/A,0,N/A,0,0,0,0,0,0,0,0,0,0
+mixtral-8x7b-32768,FALSE,0,N/A,0,N/A,0,0,0,0,0,0,0,0,0,0
+unknown,FALSE,0,N/A,0,N/A,0,0,0,0,0,0,0,0,0,0
+unknown,FALSE,0,N/A,0,N/A,0,0,0,0,0,0,0,0,0,0

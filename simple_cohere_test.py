@@ -15,7 +15,7 @@ def test_cohere_clustering():
     print("🚀 Testing Cohere Step 1 Clustering")
     print("=" * 40)
     
-    
+    # Load messages
     messages_file = "data/Synthetic_Slack_Messages.csv"
     if not os.path.exists(messages_file):
         print(f"❌ File not found: {messages_file}")
@@ -35,10 +35,10 @@ def test_cohere_clustering():
         
         print(f"✅ Loaded {len(messages)} messages")
         
-        
+        # Test with first 20 messages
         test_messages = messages[:20]
         
-        
+        # Load model
         model_name = "CohereLabs/c4ai-command-r-plus-08-2024"
         print(f"🔄 Loading {model_name}...")
         
@@ -52,7 +52,7 @@ def test_cohere_clustering():
         
         print("✅ Model loaded")
         
-        
+        # Create simple clustering prompt
         messages_text = "\n".join([
             f"{i+1}. {msg['user']}: {msg['content'][:100]}"
             for i, msg in enumerate(test_messages)
@@ -64,7 +64,7 @@ def test_cohere_clustering():
 
 Return JSON with clusters containing message numbers, titles, and participants."""
         
-        
+        # Generate
         messages_chat = [{"role": "user", "content": prompt}]
         input_ids = tokenizer.apply_chat_template(
             messages_chat, 

@@ -8,10 +8,10 @@ import os
 import sys
 from dotenv import load_dotenv
 
-
+# Load environment variables from .env file
 load_dotenv()
 
-
+# Add current directory to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from phases.phase3_topic_clustering import Phase3Evaluator
@@ -21,14 +21,14 @@ def main():
     print("🚀 Starting Phase 3: Topic Clustering Evaluation")
     print("=" * 60)
     
-    
+    # Check if CSV file exists
     csv_path = os.path.join("data", "Synthetic_Slack_Messages.csv")
     if not os.path.exists(csv_path):
         print(f"❌ Error: {csv_path} not found!")
         print("Please ensure the CSV file exists in the data directory.")
         return
     
-    
+    # Check API keys
     required_keys = ["OPENAI_API_KEY", "GOOGLE_API_KEY", "GROQ_API_KEY", "ANTHROPIC_API_KEY"]
     missing_keys = [key for key in required_keys if not os.getenv(key)]
     
@@ -38,7 +38,7 @@ def main():
             print(f"   - {key}")
         print("\nYou can still run the evaluation with available models.")
     
-    
+    # Run evaluation
     try:
         evaluator = Phase3Evaluator()
         evaluator.run_evaluation()

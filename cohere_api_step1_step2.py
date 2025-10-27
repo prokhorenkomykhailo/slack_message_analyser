@@ -60,7 +60,7 @@ def test_cohere_api_step1():
     print("🚀 Step 1: Message Clustering (Cohere API)")
     print("=" * 60)
     
-    
+    # Check API key
     api_key = os.getenv("COHERE_API_KEY")
     if not api_key:
         print("❌ COHERE_API_KEY not found!")
@@ -74,7 +74,7 @@ def test_cohere_api_step1():
         print(f"❌ Failed to initialize Cohere client: {e}")
         return False
     
-    
+    # Load messages
     messages = load_messages()
     if not messages:
         return False
@@ -82,7 +82,7 @@ def test_cohere_api_step1():
     print(f"📝 Processing {len(messages)} messages")
     
     try:
-        
+        # Prepare messages for clustering
         messages_text = "\n".join([
             f"{i+1}. {msg['user']}: {msg['content'][:100]}..."
             for i, msg in enumerate(messages)
@@ -116,7 +116,7 @@ Format as JSON array of cluster objects."""
         
         print(f"✅ Clustering completed in {duration:.2f} seconds")
         
-        
+        # Parse response
         try:
             clusters = json.loads(clustering_response)
             print(f"✅ Parsed {len(clusters)} clusters")
@@ -124,7 +124,7 @@ Format as JSON array of cluster objects."""
             print("⚠️  Could not parse JSON response")
             clusters = []
         
-        
+        # Save results
         result = {
             "success": True,
             "step": "step1_clustering",
@@ -161,7 +161,7 @@ def test_cohere_api_step2(clusters):
     print("\n🚀 Step 2: Merge/Split Operations (Cohere API)")
     print("=" * 60)
     
-    
+    # Check API key
     api_key = os.getenv("COHERE_API_KEY")
     if not api_key:
         print("❌ COHERE_API_KEY not found!")
@@ -174,7 +174,7 @@ def test_cohere_api_step2(clusters):
         print(f"❌ Failed to initialize Cohere client: {e}")
         return False
     
-    
+    # Load benchmark topics
     benchmark_topics = load_benchmark_topics()
     if not benchmark_topics:
         print("⚠️  No benchmark topics found, proceeding without comparison")
@@ -182,7 +182,7 @@ def test_cohere_api_step2(clusters):
     print(f"📝 Processing {len(clusters)} clusters from Step 1")
     
     try:
-        
+        # Prepare clusters for merge/split analysis
         clusters_text = "\n".join([
             f"Cluster {cluster.get('cluster_id', i)}: {cluster.get('title', 'Untitled')}\n"
             f"  Messages: {cluster.get('message_ids', [])}\n"
@@ -225,7 +225,7 @@ Format as JSON object."""
         
         print(f"✅ Merge/Split completed in {duration:.2f} seconds")
         
-        
+        # Parse response
         try:
             result_data = json.loads(merge_split_response)
             refined_clusters = result_data.get("refined_clusters", [])
@@ -237,7 +237,7 @@ Format as JSON object."""
             refined_clusters = []
             operations = []
         
-        
+        # Save results
         result = {
             "success": True,
             "step": "step2_merge_split",
@@ -275,13 +275,13 @@ def main():
     print("🔧 Starting Cohere API Step 1 & Step 2...")
     print("This version uses Cohere's cloud API - no hardware limitations")
     
-    
+    # Step 1: Clustering
     clusters = test_cohere_api_step1()
     if not clusters:
         print("\n❌ Step 1 failed")
         return
     
-    
+    # Step 2: Merge/Split
     refined_clusters = test_cohere_api_step2(clusters)
     if not refined_clusters:
         print("\n❌ Step 2 failed")

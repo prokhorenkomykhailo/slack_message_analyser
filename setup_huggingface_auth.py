@@ -13,15 +13,15 @@ def setup_huggingface_auth():
     print("🔐 Hugging Face Authentication Setup")
     print("=" * 40)
     
-    
+    # Load existing .env file
     load_dotenv()
     
-    
+    # Check if token already exists
     existing_token = os.getenv('HUGGINGFACE_TOKEN')
     if existing_token:
         print(f"✅ HUGGINGFACE_TOKEN already set: {existing_token[:10]}...")
         
-        
+        # Test the token
         try:
             from huggingface_hub import HfApi
             api = HfApi(token=existing_token)
@@ -33,7 +33,7 @@ def setup_huggingface_auth():
             print("Please get a new token from: https://huggingface.co/settings/tokens")
             return False
     
-    
+    # Get token from user
     print("\n📝 To access the Cohere Command R+ model, you need a Hugging Face token.")
     print("1. Go to: https://huggingface.co/settings/tokens")
     print("2. Create a new token with 'Read' permissions")
@@ -46,14 +46,14 @@ def setup_huggingface_auth():
         print("❌ No token provided")
         return False
     
-    
+    # Test the token
     try:
         from huggingface_hub import HfApi
         api = HfApi(token=token)
         user_info = api.whoami()
         print(f"✅ Token is valid. Authenticated as: {user_info['name']}")
         
-        
+        # Save to .env file
         env_file = '.env'
         with open(env_file, 'a') as f:
             f.write(f"\nHUGGINGFACE_TOKEN={token}\n")
