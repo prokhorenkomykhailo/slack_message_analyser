@@ -1,0 +1,107 @@
+{
+  "provider": "groq",
+  "model": "llama3-70b-8192",
+  "phase": "phase5_metadata_generation",
+  "timestamp": "2025-10-20T00:13:30.332350",
+  "success": false,
+  "duration": 0,
+  "usage": {
+    "total_tokens": 0
+  },
+  "cost": {
+    "total_cost": 0.0
+  },
+  "clusters_processed": 15,
+  "metadata_results": [
+    {
+      "cluster_id": "topic_001",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_002",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_003",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_004",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_005",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_006",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_007",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_008",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_009",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_010",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_011",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_012",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_013",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_014",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_015",
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "metadata": {}
+    }
+  ]
+}

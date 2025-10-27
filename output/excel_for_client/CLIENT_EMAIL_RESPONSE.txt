@@ -1,0 +1,53 @@
+Hi [Client Name],
+
+Great questions! Let me clarify both points for you:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 QUESTION 1: Status - What's the difference between "active" and "in_progress"?
+
+There are actually TWO types of status in the Excel files:
+
+1️⃣ TOPIC/PROJECT LEVEL (the overall conversation or project):
+   • "active" = Urgent, needs immediate attention right now
+   • "in_progress" = Work is happening, but less time-sensitive
+   • "completed" = Fully finished
+
+2️⃣ ACTION ITEM LEVEL (individual tasks):
+   • "pending" = Not started yet
+   • "in_progress" = Currently being worked on  
+   • "completed" = Task finished
+
+EXAMPLE from your data:
+Topic: "EcoBloom Summer Campaign"
+  → Status: "active" (urgent deadline approaching)
+  → Action Item #1: "pending" (hasn't started)
+  → Action Item #2: "in_progress" (Sam is working on it)
+  → Action Item #3: "completed" (already done)
+
+So "active" means the whole project is hot/urgent, while "in_progress" at the topic level means work is happening but it's less critical.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 QUESTION 2: What is the current date used for the testing?
+
+The AI models were tested on: October 19, 2025
+
+However, the test data (simulated Slack messages) covers a 3-month period:
+  • Start: June 15, 2025
+  • End: September 15, 2025
+
+So all the dates you see in the Excel files (like due dates "2025-07-28") are from the SIMULATED conversations that happened between June-September 2025. The AI models were analyzing these "historical" messages to extract the dates, deadlines, and action items correctly.
+
+Think of it like this:
+✓ Test date = October 19, 2025 (when we ran the evaluation)
+✓ Data dates = June-Sept 2025 (timeframe of the conversations being analyzed)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+I've also created a detailed explanation document (CLIENT_STATUS_EXPLANATION.md) in the same folder as your Excel files if you need more details.
+
+Let me know if you have any other questions!
+
+Best regards
+

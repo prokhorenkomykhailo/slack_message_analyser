@@ -1,0 +1,20 @@
+PHASE 4 ANALYSIS SUMMARY
+============================================================
+
+Analysis Date: 2025-10-03 00:53:30
+Total Models Analyzed: 25
+Best Combined Score: 93.03 (openai_gpt-5)
+Average Combined Score: 61.79
+
+TOP 10 MODELS:
+================================================================================
+ 1. openai_gpt-5 - Score: 93.03
+ 2. google_gemini-2.5-flash-lite - Score: 91.93
+ 3. google_gemini-1.5-pro - Score: 91.49
+ 4. google_gemini-2.0-flash - Score: 91.45
+ 5. google_gemini-2.0-flash-001 - Score: 91.28
+ 6. google_gemini-1.5-pro-latest - Score: 91.25
+ 7. google_gemini-2.5-flash - Score: 87.59
+ 8. openai_gpt-4o - Score: 67.76
+ 9. google_gemini-1.5-flash-8b - Score: 66.30
+10. google_gemini-1.5-flash-latest - Score: 63.65

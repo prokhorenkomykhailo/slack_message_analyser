@@ -1,0 +1,31 @@
+{
+  "evaluation_timestamp": "2025-10-03T00:53:29.946327",
+  "summary_statistics": {
+    "total_models_evaluated": 25,
+    "successful_models": 25,
+    "success_rate": 1.0,
+    "avg_similarity_score": 0.42215087809762086,
+    "avg_quality_rate": 0.40980352980352985,
+    "avg_clusters_generated": 9.88,
+    "avg_duration_seconds": 11.3683846950531,
+    "avg_operations": 0.0
+  },
+  "best_performers": {
+    "highest_similarity": {
+      "model": "openai_gpt-5",
+      "similarity_score": 0.8601649169410978
+    },
+    "highest_quality_rate": {
+      "model": "openai_gpt-5",
+      "quality_rate": 0.9285714285714286
+    },
+    "fastest_execution": {
+      "model": "google_gemini-2.0-flash",
+      "duration": 1.364166498184204
+    },
+    "most_operations": {
+      "model": "xai_grok-2-vision-1212",
+      "operations": 0
+    }
+  }
+}

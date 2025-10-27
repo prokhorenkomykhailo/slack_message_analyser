@@ -1,0 +1,107 @@
+{
+  "provider": "google",
+  "model": "gemini-1.5-flash-002",
+  "phase": "phase5_metadata_generation",
+  "timestamp": "2025-10-19T23:48:39.512808",
+  "success": false,
+  "duration": 0,
+  "usage": {
+    "total_tokens": 0
+  },
+  "cost": {
+    "total_cost": 0.0
+  },
+  "clusters_processed": 15,
+  "metadata_results": [
+    {
+      "cluster_id": "topic_001",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_002",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_003",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_004",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_005",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_006",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_007",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_008",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_009",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_010",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_011",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_012",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_013",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_014",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_015",
+      "success": false,
+      "error": "404 models/gemini-1.5-flash-002 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "metadata": {}
+    }
+  ]
+}

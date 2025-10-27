@@ -1,0 +1,1132 @@
+{
+  "provider": "google",
+  "model": "gemini-2.5-flash-lite",
+  "phase": "phase5_metadata_generation",
+  "timestamp": "2025-10-20T00:04:38.852812",
+  "success": true,
+  "duration": 27.79426407814026,
+  "usage": {
+    "total_tokens": 52638
+  },
+  "cost": {
+    "total_cost": 0.0
+  },
+  "clusters_processed": 15,
+  "metadata_results": [
+    {
+      "cluster_id": "topic_001",
+      "success": true,
+      "metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a firm deadline of July 28, 2025. Key dates for content delivery (June 30), design review (July 10), and legal review (July 14) have been set to meet the final deadline.",
+        "action_items": [
+          {
+            "task": "Schedule kickoff meeting for EcoBloom summer campaign",
+            "owner": "@devon",
+            "due_date": "2025-06-10",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Prepare initial design concepts for EcoBloom summer campaign",
+            "owner": "@sam",
+            "due_date": "2025-06-10",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy for EcoBloom summer campaign",
+            "owner": "@leah",
+            "due_date": "2025-06-10",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom contract terms for summer campaign",
+            "owner": "@jordan",
+            "due_date": "2025-06-10",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Have initial content ready for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Complete initial designs for EcoBloom",
+            "owner": "@sam",
+            "due_date": "2025-06-25",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Complete legal review",
+            "owner": "@jordan",
+            "due_date": "2025-07-14",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Complete designs on time",
+            "owner": "@sam",
+            "due_date": "2025-07-21",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "tags": [
+          "ecobloom",
+          "campaign",
+          "summer",
+          "planning",
+          "timeline",
+          "marketing",
+          "sustainability"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Summer Campaign Planning\",\n  \"summary\": \"The team is planning the EcoBloom summer campaign with a firm deadline of July 28, 2025. Key dates for content delivery (June 30), design review (July 10), and legal review (July 14) have been set to meet the final deadline.\",\n  \"action_items\": [\n    {\n      \"task\": \"Schedule kickoff meeting for EcoBloom summer campaign\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-06-10\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare initial design concepts for EcoBloom summer campaign\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-06-10\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Draft content strategy for EcoBloom summer campaign\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-06-10\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Review EcoBloom contract terms for summer campaign\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-06-10\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Have initial content ready for review\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-06-30\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Complete initial designs for EcoBloom\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-06-25\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Complete legal review\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-14\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Complete designs on time\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-21\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@Devon\",\n    \"@Sam\",\n    \"@Leah\",\n    \"@Jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-28\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"ecobloom\",\n    \"campaign\",\n    \"summer\",\n    \"planning\",\n    \"timeline\",\n    \"marketing\",\n    \"sustainability\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_002",
+      "success": true,
+      "metadata": {
+        "title": "FitFusion Rebranding Kickoff & Planning",
+        "summary": "The team is kicking off the FitFusion rebranding project with a firm launch deadline of August 15, 2025. Key discussions include timelines for design, messaging, and legal review, with initial concepts due July 16, 2025.",
+        "action_items": [
+          {
+            "task": "Prepare initial messaging ideas for FitFusion's rebrand",
+            "owner": "@leah",
+            "due_date": "2025-07-02",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Develop initial design concepts for FitFusion rebrand",
+            "owner": "@sam",
+            "due_date": "2025-07-16",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Complete legal review of branding materials",
+            "owner": "@jordan",
+            "due_date": "2025-08-07",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Conduct trademark search for FitFusion logo variations",
+            "owner": "@jordan",
+            "due_date": "2025-07-30",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Share brand voice guidelines for review",
+            "owner": "@leah",
+            "due_date": "2025-06-26",
+            "priority": "medium",
+            "status": "completed"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-08-15",
+        "status": "active",
+        "tags": [
+          "fitfusion",
+          "rebranding",
+          "planning",
+          "marketing",
+          "strategy",
+          "timeline",
+          "legal-review"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"FitFusion Rebranding Kickoff & Planning\",\n  \"summary\": \"The team is kicking off the FitFusion rebranding project with a firm launch deadline of August 15, 2025. Key discussions include timelines for design, messaging, and legal review, with initial concepts due July 16, 2025.\",\n  \"action_items\": [\n    {\n      \"task\": \"Prepare initial messaging ideas for FitFusion's rebrand\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-02\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop initial design concepts for FitFusion rebrand\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-16\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Complete legal review of branding materials\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-08-07\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Conduct trademark search for FitFusion logo variations\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-30\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Share brand voice guidelines for review\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-06-26\",\n      \"priority\": \"medium\",\n      \"status\": \"completed\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@sam\",\n    \"@leah\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-08-15\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"fitfusion\",\n    \"rebranding\",\n    \"planning\",\n    \"marketing\",\n    \"strategy\",\n    \"timeline\",\n    \"legal-review\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_003",
+      "success": true,
+      "metadata": {
+        "title": "TechNova Product Launch Planning",
+        "summary": "Kickoff meeting for TechNova's smart home device launch on September 10, 2025. Discussed marketing campaign strategy, design timelines, and legal compliance. Key deadlines set for July 8 to August 26, 2025.",
+        "action_items": [
+          {
+            "task": "Research target audience and competitors for TechNova launch",
+            "owner": "@leah",
+            "due_date": "2025-07-07",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Develop product messaging framework for TechNova",
+            "owner": "@leah",
+            "due_date": "2025-07-22",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Develop initial design concepts for TechNova product launch",
+            "owner": "@sam",
+            "due_date": "2025-08-12",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare product packaging and promotional materials for legal review",
+            "owner": "@sam",
+            "due_date": "2025-08-26",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Ensure all marketing materials comply with tech advertising regulations",
+            "owner": "@jordan",
+            "due_date": "2025-09-02",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Review product description and key messaging points",
+            "owner": "@devon",
+            "due_date": "2025-07-08",
+            "priority": "medium",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-09-10",
+        "status": "active",
+        "tags": [
+          "technova",
+          "product-launch",
+          "marketing-campaign",
+          "planning",
+          "smart-home",
+          "tech-advertising",
+          "compliance",
+          "strategy"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"TechNova Product Launch Planning\",\n  \"summary\": \"Kickoff meeting for TechNova's smart home device launch on September 10, 2025. Discussed marketing campaign strategy, design timelines, and legal compliance. Key deadlines set for July 8 to August 26, 2025.\",\n  \"action_items\": [\n    {\n      \"task\": \"Research target audience and competitors for TechNova launch\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-07\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop product messaging framework for TechNova\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-22\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop initial design concepts for TechNova product launch\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-08-12\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Prepare product packaging and promotional materials for legal review\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-08-26\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Ensure all marketing materials comply with tech advertising regulations\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-09-02\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Review product description and key messaging points\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-08\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@devon\", \"@sam\", \"@leah\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-09-10\",\n  \"status\": \"active\",\n  \"tags\": [\"technova\", \"product-launch\", \"marketing-campaign\", \"planning\", \"smart-home\", \"tech-advertising\", \"compliance\", \"strategy\"]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_004",
+      "success": true,
+      "metadata": {
+        "title": "GreenScape Sustainability Report Planning",
+        "summary": "Team is kicking off GreenScape's annual sustainability report, due August 30, 2025. Key focus is verifying environmental claims and highlighting a 30% carbon emission reduction. Content and design timelines are being established.",
+        "action_items": [
+          {
+            "task": "Prepare questions for client call and research previous reports",
+            "owner": "@leah",
+            "due_date": "2025-07-01",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Draft content for sustainability report",
+            "owner": "@leah",
+            "due_date": "2025-08-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Complete design and data visualization for the report",
+            "owner": "@sam",
+            "due_date": "2025-08-30",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Provide complete draft of sustainability report for legal review",
+            "owner": "@leah",
+            "due_date": "2025-08-16",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Complete legal review of sustainability report",
+            "owner": "@jordan",
+            "due_date": "2025-08-23",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Share design concepts for feedback",
+            "owner": "@sam",
+            "due_date": "2025-07-15",
+            "priority": "medium",
+            "status": "in_progress"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@leah",
+          "@sam",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-08-30",
+        "status": "active",
+        "tags": [
+          "greenscape",
+          "sustainability-report",
+          "planning",
+          "reporting",
+          "sustainability",
+          "environmental-claims",
+          "data-visualization",
+          "legal-review"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"GreenScape Sustainability Report Planning\",\n  \"summary\": \"Team is kicking off GreenScape's annual sustainability report, due August 30, 2025. Key focus is verifying environmental claims and highlighting a 30% carbon emission reduction. Content and design timelines are being established.\",\n  \"action_items\": [\n    {\n      \"task\": \"Prepare questions for client call and research previous reports\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-01\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Draft content for sustainability report\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-08-10\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Complete design and data visualization for the report\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-08-30\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Provide complete draft of sustainability report for legal review\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-08-16\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Complete legal review of sustainability report\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-08-23\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Share design concepts for feedback\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-15\",\n      \"priority\": \"medium\",\n      \"status\": \"in_progress\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@leah\",\n    \"@sam\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-08-30\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"greenscape\",\n    \"sustainability-report\",\n    \"planning\",\n    \"reporting\",\n    \"sustainability\",\n    \"environmental-claims\",\n    \"data-visualization\",\n    \"legal-review\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_005",
+      "success": true,
+      "metadata": {
+        "title": "UrbanEdge Social Media Strategy",
+        "summary": "Developing a comprehensive social media strategy for UrbanEdge's market expansion. Key deliverables include content strategy, visual identity, and legal compliance review. Strategy document due July 20, 2025.",
+        "action_items": [
+          {
+            "task": "Research target audience and competitive landscape for UrbanEdge",
+            "owner": "@leah",
+            "due_date": "2025-07-05",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Develop full content strategy for UrbanEdge social media",
+            "owner": "@leah",
+            "due_date": "2025-07-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Develop visual identity and content templates for UrbanEdge social media",
+            "owner": "@sam",
+            "due_date": "2025-07-18",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review UrbanEdge social media requirements for legal compliance",
+            "owner": "@jordan",
+            "due_date": "2025-07-19",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Finalize content calendar and posting schedule for UrbanEdge",
+            "owner": "@leah",
+            "due_date": "2025-07-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Ensure all content complies with advertising standards and disclosure regulations",
+            "owner": "@jordan",
+            "due_date": "2025-07-19",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@leah",
+          "@sam",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-20",
+        "status": "active",
+        "tags": [
+          "urbanedge",
+          "social-media",
+          "strategy",
+          "planning",
+          "marketing",
+          "sustainability",
+          "launch"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"UrbanEdge Social Media Strategy\",\n  \"summary\": \"Developing a comprehensive social media strategy for UrbanEdge's market expansion. Key deliverables include content strategy, visual identity, and legal compliance review. Strategy document due July 20, 2025.\",\n  \"action_items\": [\n    {\n      \"task\": \"Research target audience and competitive landscape for UrbanEdge\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-05\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Develop full content strategy for UrbanEdge social media\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Develop visual identity and content templates for UrbanEdge social media\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-18\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Review UrbanEdge social media requirements for legal compliance\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-19\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Finalize content calendar and posting schedule for UrbanEdge\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Ensure all content complies with advertising standards and disclosure regulations\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-19\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@leah\",\n    \"@sam\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-20\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"urbanedge\",\n    \"social-media\",\n    \"strategy\",\n    \"planning\",\n    \"marketing\",\n    \"sustainability\",\n    \"launch\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_006",
+      "success": true,
+      "metadata": {
+        "title": "EcoBloom Summer Campaign Revisions",
+        "summary": "EcoBloom campaign design revisions are underway due to client feedback. Key tasks include color palette overhaul and content adjustments. Revised designs are due July 12, 2025, with a final campaign deadline of July 28, 2025.",
+        "action_items": [
+          {
+            "task": "Revise EcoBloom campaign designs incorporating client feedback",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Develop and share new color palette for EcoBloom campaign",
+            "owner": "@sam",
+            "due_date": "2025-07-03",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Adjust EcoBloom campaign content and imagery to new color palette",
+            "owner": "@leah",
+            "due_date": "2025-07-08",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Conduct expedited legal review of revised EcoBloom designs",
+            "owner": "@jordan",
+            "due_date": "2025-07-21",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Integrate revised designs with updated content for EcoBloom campaign",
+            "owner": "@leah",
+            "due_date": "2025-07-12",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "tags": [
+          "ecobloom",
+          "campaign",
+          "design-revisions",
+          "summer",
+          "marketing",
+          "planning",
+          "timeline",
+          "client-feedback"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Summer Campaign Revisions\",\n  \"summary\": \"EcoBloom campaign design revisions are underway due to client feedback. Key tasks include color palette overhaul and content adjustments. Revised designs are due July 12, 2025, with a final campaign deadline of July 28, 2025.\",\n  \"action_items\": [\n    {\n      \"task\": \"Revise EcoBloom campaign designs incorporating client feedback\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-10\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Develop and share new color palette for EcoBloom campaign\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-03\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Adjust EcoBloom campaign content and imagery to new color palette\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-08\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Conduct expedited legal review of revised EcoBloom designs\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-21\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Integrate revised designs with updated content for EcoBloom campaign\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-12\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@sam\",\n    \"@leah\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-28\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"ecobloom\",\n    \"campaign\",\n    \"design-revisions\",\n    \"summer\",\n    \"marketing\",\n    \"planning\",\n    \"timeline\",\n    \"client-feedback\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_007",
+      "success": true,
+      "metadata": {
+        "title": "FitFusion Rebranding Legal Review & Tagline",
+        "summary": "The team is finalizing FitFusion's rebrand, focusing on legal review of taglines and design integration. Key taglines were approved, and designs are being updated for an August 15, 2025 launch. Final legal review is set for July 30, 2025.",
+        "action_items": [
+          {
+            "task": "Initiate legal review for FitFusion rebranding campaign",
+            "owner": "@jordan",
+            "due_date": "2025-07-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Provide design concepts for trademark review",
+            "owner": "@sam",
+            "due_date": null,
+            "priority": "medium",
+            "status": "completed"
+          },
+          {
+            "task": "Share brand messaging and taglines for legal review",
+            "owner": "@leah",
+            "due_date": null,
+            "priority": "medium",
+            "status": "completed"
+          },
+          {
+            "task": "Develop alternative taglines for FitFusion's rebrand",
+            "owner": "@leah",
+            "due_date": "2025-07-08",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review alternative taglines and provide feedback",
+            "owner": "@jordan",
+            "due_date": "2025-07-09",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Refine final tagline options 2, 4, and 5",
+            "owner": "@leah",
+            "due_date": "2025-07-09",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Approve final tagline selection",
+            "owner": "@jordan",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Integrate final tagline into design concepts",
+            "owner": "@sam",
+            "due_date": "2025-07-12",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Share updated designs for team review",
+            "owner": "@sam",
+            "due_date": "2025-07-12",
+            "priority": "medium",
+            "status": "completed"
+          },
+          {
+            "task": "Ensure all components are ready for final legal review",
+            "owner": "@devon",
+            "due_date": "2025-07-30",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Have all design components ready for Jordan's review",
+            "owner": "@sam",
+            "due_date": "2025-07-28",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Have all content components ready for Jordan's review",
+            "owner": "@leah",
+            "due_date": "2025-07-28",
+            "priority": "high",
+            "status": "completed"
+          }
+        ],
+        "participants": [
+          "@jordan",
+          "@devon",
+          "@sam",
+          "@leah"
+        ],
+        "urgency": "high",
+        "deadline": "2025-08-15",
+        "status": "active",
+        "tags": [
+          "fitfusion",
+          "rebranding",
+          "legal-review",
+          "tagline",
+          "marketing",
+          "launch",
+          "strategy",
+          "trademark"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"FitFusion Rebranding Legal Review & Tagline\",\n  \"summary\": \"The team is finalizing FitFusion's rebrand, focusing on legal review of taglines and design integration. Key taglines were approved, and designs are being updated for an August 15, 2025 launch. Final legal review is set for July 30, 2025.\",\n  \"action_items\": [\n    {\n      \"task\": \"Initiate legal review for FitFusion rebranding campaign\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Provide design concepts for trademark review\",\n      \"owner\": \"@sam\",\n      \"due_date\": null,\n      \"priority\": \"medium\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Share brand messaging and taglines for legal review\",\n      \"owner\": \"@leah\",\n      \"due_date\": null,\n      \"priority\": \"medium\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Develop alternative taglines for FitFusion's rebrand\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-08\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Review alternative taglines and provide feedback\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-09\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Refine final tagline options 2, 4, and 5\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-09\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Approve final tagline selection\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-10\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Integrate final tagline into design concepts\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-12\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Share updated designs for team review\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-12\",\n      \"priority\": \"medium\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Ensure all components are ready for final legal review\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-30\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Have all design components ready for Jordan's review\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-28\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Have all content components ready for Jordan's review\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-28\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    }\n  ],\n  \"participants\": [\n    \"@jordan\",\n    \"@devon\",\n    \"@sam\",\n    \"@leah\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-08-15\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"fitfusion\",\n    \"rebranding\",\n    \"legal-review\",\n    \"tagline\",\n    \"marketing\",\n    \"launch\",\n    \"strategy\",\n    \"trademark\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_008",
+      "success": true,
+      "metadata": {
+        "title": "Q3 Content Calendar Planning",
+        "summary": "The team is developing the Q3 content calendar, focusing on client requirements, design, and legal reviews. The calendar was drafted, revised based on feedback, and finalized ahead of the July 20, 2025 deadline.",
+        "action_items": [
+          {
+            "task": "Develop Q3 content calendar draft",
+            "owner": "@leah",
+            "due_date": "2025-07-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Provide design requirements and timelines for Q3 content calendar",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Provide legal review requirements and timelines for Q3 content calendar",
+            "owner": "@jordan",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Incorporate feedback and revise Q3 content calendar",
+            "owner": "@leah",
+            "due_date": "2025-07-17",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Final review of revised Q3 content calendar",
+            "owner": "@devon",
+            "due_date": "2025-07-15",
+            "priority": "high",
+            "status": "completed"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@leah",
+          "@sam",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-20",
+        "status": "completed",
+        "tags": [
+          "q3-content",
+          "planning",
+          "content-calendar",
+          "marketing",
+          "strategy",
+          "timeline",
+          "budget",
+          "sustainability"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"Q3 Content Calendar Planning\",\n  \"summary\": \"The team is developing the Q3 content calendar, focusing on client requirements, design, and legal reviews. The calendar was drafted, revised based on feedback, and finalized ahead of the July 20, 2025 deadline.\",\n  \"action_items\": [\n    {\n      \"task\": \"Develop Q3 content calendar draft\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Provide design requirements and timelines for Q3 content calendar\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-10\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Provide legal review requirements and timelines for Q3 content calendar\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-10\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Incorporate feedback and revise Q3 content calendar\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-17\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Final review of revised Q3 content calendar\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    }\n  ],\n  \"participants\": [\"@devon\", \"@leah\", \"@sam\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-20\",\n  \"status\": \"completed\",\n  \"tags\": [\"q3-content\", \"planning\", \"content-calendar\", \"marketing\", \"strategy\", \"timeline\", \"budget\", \"sustainability\"]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_009",
+      "success": true,
+      "metadata": {
+        "title": "TechNova Campaign Budget Finalization",
+        "summary": "The team finalized the TechNova product launch campaign budget, with individual cost breakdowns submitted by July 20, 2025. Devon consolidated and shared a revised budget by July 23, 2025, for final review. The client submission is set for July 25, 2025.",
+        "action_items": [
+          {
+            "task": "Prepare design and production costs breakdown",
+            "owner": "@sam",
+            "due_date": "2025-07-20",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Prepare content creation and distribution costs breakdown",
+            "owner": "@leah",
+            "due_date": "2025-07-20",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Prepare legal review and compliance costs breakdown",
+            "owner": "@jordan",
+            "due_date": "2025-07-20",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Consolidate all cost breakdowns into a comprehensive budget document",
+            "owner": "@devon",
+            "due_date": "2025-07-25",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Share draft budget for review",
+            "owner": "@devon",
+            "due_date": "2025-07-22",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Provide feedback or corrections on the consolidated budget",
+            "owner": "@sam",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Provide feedback or corrections on the consolidated budget",
+            "owner": "@leah",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Provide feedback or corrections on the consolidated budget",
+            "owner": "@jordan",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Incorporate feedback and share revised budget",
+            "owner": "@devon",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Final review of the revised budget",
+            "owner": "@jordan",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Finalize and submit budget to client",
+            "owner": "@devon",
+            "due_date": "2025-07-25",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-25",
+        "status": "active",
+        "tags": [
+          "technova",
+          "campaign",
+          "budget",
+          "planning",
+          "launch",
+          "marketing",
+          "finance",
+          "client-submission"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"TechNova Campaign Budget Finalization\",\n  \"summary\": \"The team finalized the TechNova product launch campaign budget, with individual cost breakdowns submitted by July 20, 2025. Devon consolidated and shared a revised budget by July 23, 2025, for final review. The client submission is set for July 25, 2025.\",\n  \"action_items\": [\n    {\n      \"task\": \"Prepare design and production costs breakdown\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-20\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare content creation and distribution costs breakdown\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-20\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare legal review and compliance costs breakdown\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-20\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Consolidate all cost breakdowns into a comprehensive budget document\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-25\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Share draft budget for review\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-22\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Provide feedback or corrections on the consolidated budget\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-23\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Provide feedback or corrections on the consolidated budget\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-23\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Provide feedback or corrections on the consolidated budget\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-23\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Incorporate feedback and share revised budget\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-23\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Final review of the revised budget\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-23\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Finalize and submit budget to client\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-25\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@sam\",\n    \"@leah\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-25\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"technova\",\n    \"campaign\",\n    \"budget\",\n    \"planning\",\n    \"launch\",\n    \"marketing\",\n    \"finance\",\n    \"client-submission\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_010",
+      "success": true,
+      "metadata": {
+        "title": "GreenScape Sustainability Report Extension",
+        "summary": "The team approved GreenScape's request to extend their sustainability report deadline from August 30, 2025, to September 15, 2025. This allows for better quality and resource allocation, impacting other high-priority projects.",
+        "action_items": [
+          {
+            "task": "Approve GreenScape's extension request to September 15, 2025",
+            "owner": "@devon",
+            "due_date": "2025-08-XX",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Adjust content timeline for GreenScape report, final draft by September 1, 2025",
+            "owner": "@leah",
+            "due_date": "2025-09-01",
+            "priority": "medium",
+            "status": "in_progress"
+          },
+          {
+            "task": "Adjust design timeline for GreenScape report, final designs by September 5, 2025",
+            "owner": "@sam",
+            "due_date": "2025-09-05",
+            "priority": "medium",
+            "status": "in_progress"
+          },
+          {
+            "task": "Adjust legal review timeline for GreenScape report, completion by September 10, 2025",
+            "owner": "@jordan",
+            "due_date": "2025-09-10",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Inform GreenScape of the approved extension to September 15, 2025",
+            "owner": "@devon",
+            "due_date": "2025-08-XX",
+            "priority": "high",
+            "status": "completed"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@leah",
+          "@sam",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-09-15",
+        "status": "active",
+        "tags": [
+          "greenscape",
+          "sustainability-report",
+          "extension",
+          "deadline-management",
+          "planning",
+          "legal-review",
+          "content-calendar",
+          "design-timeline"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"GreenScape Sustainability Report Extension\",\n  \"summary\": \"The team approved GreenScape's request to extend their sustainability report deadline from August 30, 2025, to September 15, 2025. This allows for better quality and resource allocation, impacting other high-priority projects.\",\n  \"action_items\": [\n    {\n      \"task\": \"Approve GreenScape's extension request to September 15, 2025\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-08-XX\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Adjust content timeline for GreenScape report, final draft by September 1, 2025\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-09-01\",\n      \"priority\": \"medium\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Adjust design timeline for GreenScape report, final designs by September 5, 2025\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-09-05\",\n      \"priority\": \"medium\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Adjust legal review timeline for GreenScape report, completion by September 10, 2025\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-09-10\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Inform GreenScape of the approved extension to September 15, 2025\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-08-XX\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@leah\",\n    \"@sam\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-09-15\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"greenscape\",\n    \"sustainability-report\",\n    \"extension\",\n    \"deadline-management\",\n    \"planning\",\n    \"legal-review\",\n    \"content-calendar\",\n    \"design-timeline\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_011",
+      "success": true,
+      "metadata": {
+        "title": "EcoBloom Summer Campaign Final Approval",
+        "summary": "The team finalized EcoBloom's summer campaign designs and content. Legal review was completed, and the final package is being prepared for client submission by July 25, 2025, ahead of the July 28, 2025 launch.",
+        "action_items": [
+          {
+            "task": "Finalize EcoBloom summer campaign designs",
+            "owner": "@sam",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Conduct final legal review of campaign materials",
+            "owner": "@jordan",
+            "due_date": "2025-07-24",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Integrate content elements into campaign designs",
+            "owner": "@leah",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Prepare final campaign package for delivery",
+            "owner": "@sam",
+            "due_date": "2025-07-25",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Organize and label all content files",
+            "owner": "@leah",
+            "due_date": "2025-07-25",
+            "priority": "medium",
+            "status": "completed"
+          },
+          {
+            "task": "Monitor for client feedback and make adjustments",
+            "owner": "@sam",
+            "due_date": "2025-07-28",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "tags": [
+          "ecobloom",
+          "campaign",
+          "summer",
+          "planning",
+          "approval",
+          "launch",
+          "marketing",
+          "sustainability"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Summer Campaign Final Approval\",\n  \"summary\": \"The team finalized EcoBloom's summer campaign designs and content. Legal review was completed, and the final package is being prepared for client submission by July 25, 2025, ahead of the July 28, 2025 launch.\",\n  \"action_items\": [\n    {\n      \"task\": \"Finalize EcoBloom summer campaign designs\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-23\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Conduct final legal review of campaign materials\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-24\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Integrate content elements into campaign designs\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-23\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare final campaign package for delivery\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-25\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Organize and label all content files\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-25\",\n      \"priority\": \"medium\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Monitor for client feedback and make adjustments\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-28\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@sam\",\n    \"@leah\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-28\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"ecobloom\",\n    \"campaign\",\n    \"summer\",\n    \"planning\",\n    \"approval\",\n    \"launch\",\n    \"marketing\",\n    \"sustainability\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_012",
+      "success": true,
+      "metadata": {
+        "title": "FitFusion Brand Guidelines Development",
+        "summary": "The team is developing FitFusion's brand guidelines for an upcoming rebranding. Key discussions involved drafting visual components, messaging, and legal review. The final document is due August 5, 2025, for client submission.",
+        "action_items": [
+          {
+            "task": "Develop comprehensive draft of FitFusion brand guidelines",
+            "owner": "@sam",
+            "due_date": "2025-08-01",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Provide messaging and tone of voice guidelines for FitFusion",
+            "owner": "@leah",
+            "due_date": "2025-07-29",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review FitFusion brand guidelines for legal compliance and trademark usage",
+            "owner": "@jordan",
+            "due_date": "2025-08-03",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Incorporate legal review suggestions into FitFusion brand guidelines",
+            "owner": "@sam",
+            "due_date": "2025-08-03",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare final FitFusion brand guidelines package for client delivery",
+            "owner": "@sam",
+            "due_date": "2025-08-05",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-08-05",
+        "status": "active",
+        "tags": [
+          "fitfusion",
+          "brand-guidelines",
+          "rebranding",
+          "planning",
+          "marketing",
+          "legal",
+          "launch"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"FitFusion Brand Guidelines Development\",\n  \"summary\": \"The team is developing FitFusion's brand guidelines for an upcoming rebranding. Key discussions involved drafting visual components, messaging, and legal review. The final document is due August 5, 2025, for client submission.\",\n  \"action_items\": [\n    {\n      \"task\": \"Develop comprehensive draft of FitFusion brand guidelines\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-08-01\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Provide messaging and tone of voice guidelines for FitFusion\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-29\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Review FitFusion brand guidelines for legal compliance and trademark usage\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-08-03\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Incorporate legal review suggestions into FitFusion brand guidelines\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-08-03\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Prepare final FitFusion brand guidelines package for client delivery\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-08-05\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@sam\",\n    \"@leah\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-08-05\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"fitfusion\",\n    \"brand-guidelines\",\n    \"rebranding\",\n    \"planning\",\n    \"marketing\",\n    \"legal\",\n    \"launch\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_013",
+      "success": true,
+      "metadata": {
+        "title": "TechNova Product Descriptions Development",
+        "summary": "Team finalized TechNova product descriptions for launch. Leah developed drafts, Sam provided visuals, and Jordan ensured compliance. Final approved version is ready for client submission by August 10, 2025.",
+        "action_items": [
+          {
+            "task": "Develop comprehensive product descriptions",
+            "owner": "@leah",
+            "due_date": "2025-08-07",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Provide visual support for product descriptions",
+            "owner": "@sam",
+            "due_date": "2025-08-05",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review product descriptions for compliance",
+            "owner": "@jordan",
+            "due_date": "2025-08-08",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Incorporate compliance feedback on performance claims",
+            "owner": "@leah",
+            "due_date": "2025-08-09",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Prepare final package for client delivery",
+            "owner": "@leah",
+            "due_date": "2025-08-10",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-08-10",
+        "status": "active",
+        "tags": [
+          "technova",
+          "product-descriptions",
+          "launch",
+          "compliance",
+          "marketing",
+          "development",
+          "approval"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"TechNova Product Descriptions Development\",\n  \"summary\": \"Team finalized TechNova product descriptions for launch. Leah developed drafts, Sam provided visuals, and Jordan ensured compliance. Final approved version is ready for client submission by August 10, 2025.\",\n  \"action_items\": [\n    {\n      \"task\": \"Develop comprehensive product descriptions\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-08-07\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Provide visual support for product descriptions\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-08-05\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Review product descriptions for compliance\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-08-08\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Incorporate compliance feedback on performance claims\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-08-09\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare final package for client delivery\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-08-10\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@sam\",\n    \"@leah\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-08-10\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"technova\",\n    \"product-descriptions\",\n    \"launch\",\n    \"compliance\",\n    \"marketing\",\n    \"development\",\n    \"approval\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_014",
+      "success": true,
+      "metadata": {
+        "title": "GreenScape Data Visualizations Development",
+        "summary": "Team is developing and approving data visualizations for GreenScape's sustainability report. Key data points and design concepts are being integrated. Final approval is pending Jordan's review by September 2, 2025, for the September 15, 2025 report launch.",
+        "action_items": [
+          {
+            "task": "Develop data visualization components",
+            "owner": "@sam",
+            "due_date": "2025-08-30",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Provide data points and key insights",
+            "owner": "@leah",
+            "due_date": "2025-08-20",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review data visualizations for accuracy of environmental claims",
+            "owner": "@jordan",
+            "due_date": "2025-09-02",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Incorporate suggested adjustments to clarify data sources",
+            "owner": "@sam",
+            "due_date": "2025-09-03",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare final package for client delivery",
+            "owner": "@sam",
+            "due_date": "2025-09-05",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-09-05",
+        "status": "active",
+        "tags": [
+          "greenscape",
+          "data-visualization",
+          "sustainability-report",
+          "development",
+          "approval",
+          "marketing",
+          "reporting"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"GreenScape Data Visualizations Development\",\n  \"summary\": \"Team is developing and approving data visualizations for GreenScape's sustainability report. Key data points and design concepts are being integrated. Final approval is pending Jordan's review by September 2, 2025, for the September 15, 2025 report launch.\",\n  \"action_items\": [\n    {\n      \"task\": \"Develop data visualization components\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-08-30\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Provide data points and key insights\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-08-20\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Review data visualizations for accuracy of environmental claims\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-09-02\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Incorporate suggested adjustments to clarify data sources\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-09-03\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Prepare final package for client delivery\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-09-05\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@sam\",\n    \"@leah\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-09-05\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"greenscape\",\n    \"data-visualization\",\n    \"sustainability-report\",\n    \"development\",\n    \"approval\",\n    \"marketing\",\n    \"reporting\"\n  ]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_015",
+      "success": true,
+      "metadata": {
+        "title": "UrbanEdge Market Research & Compliance",
+        "summary": "Team focused on UrbanEdge's market expansion research and compliance. Key deadlines set for September 15, 2025, with specific tasks for research findings and data privacy review. Final approval achieved.",
+        "action_items": [
+          {
+            "task": "Conduct market research for UrbanEdge's new market expansion",
+            "owner": "@leah",
+            "due_date": "2025-09-10",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Provide visual analysis of competitor positioning and market trends",
+            "owner": "@sam",
+            "due_date": "2025-09-08",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review market research for compliance with data privacy regulations",
+            "owner": "@jordan",
+            "due_date": "2025-09-12",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Finalize UrbanEdge market research based on team feedback",
+            "owner": "@leah",
+            "due_date": "2025-09-12",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Incorporate suggested changes for data privacy compliance",
+            "owner": "@leah",
+            "due_date": "2025-09-13",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Prepare final package for client delivery",
+            "owner": "@leah",
+            "due_date": "2025-09-15",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@leah",
+          "@sam",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-09-15",
+        "status": "active",
+        "tags": [
+          "urbanedge",
+          "market-research",
+          "compliance",
+          "expansion",
+          "data-privacy",
+          "planning",
+          "strategy"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"UrbanEdge Market Research & Compliance\",\n  \"summary\": \"Team focused on UrbanEdge's market expansion research and compliance. Key deadlines set for September 15, 2025, with specific tasks for research findings and data privacy review. Final approval achieved.\",\n  \"action_items\": [\n    {\n      \"task\": \"Conduct market research for UrbanEdge's new market expansion\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-09-10\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Provide visual analysis of competitor positioning and market trends\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-09-08\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Review market research for compliance with data privacy regulations\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-09-12\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Finalize UrbanEdge market research based on team feedback\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-09-12\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Incorporate suggested changes for data privacy compliance\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-09-13\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Prepare final package for client delivery\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-09-15\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\n    \"@devon\",\n    \"@leah\",\n    \"@sam\",\n    \"@jordan\"\n  ],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-09-15\",\n  \"status\": \"active\",\n  \"tags\": [\n    \"urbanedge\",\n    \"market-research\",\n    \"compliance\",\n    \"expansion\",\n    \"data-privacy\",\n    \"planning\",\n    \"strategy\"\n  ]\n}\n```"
+    }
+  ]
+}

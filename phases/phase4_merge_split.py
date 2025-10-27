@@ -25,7 +25,7 @@ class Phase4Evaluator:
     def __init__(self):
         self.phase_name = "phase4_merge_split"
         self.output_dir = os.path.join("output", self.phase_name)
-        os.makedirs(self.output_dir, exist_ok=True)
+    os.makedirs(self.output_dir, exist_ok=True)
         
         # Load previous phase results
         self.initial_clusters = self.load_initial_clusters()

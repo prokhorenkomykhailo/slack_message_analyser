@@ -1,0 +1,107 @@
+{
+  "provider": "anthropic",
+  "model": "claude-3-opus-20240229",
+  "phase": "phase5_metadata_generation",
+  "timestamp": "2025-10-20T00:15:13.107396",
+  "success": false,
+  "duration": 0,
+  "usage": {
+    "total_tokens": 0
+  },
+  "cost": {
+    "total_cost": 0.0
+  },
+  "clusters_processed": 15,
+  "metadata_results": [
+    {
+      "cluster_id": "topic_001",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV73wJ73Jg5G8SHC8Rj'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_002",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV7JSBQU234xY7mLao1'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_003",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV7YwJzySwN44sd39z7'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_004",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV7oWQY51AAu8KY8tve'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_005",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV844mFvrkKu9JfdeqL'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_006",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV8JtFGMQXLXzdkEd1A'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_007",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV8ZN96ffSuAh29TNTW'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_008",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV8p8PtpFHbky6w6jw2'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_009",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV94kxrkUzAmfmuRJcK'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_010",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV9Ku3SbqGF8NBuRwyP'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_011",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV9aUPNrUVDYgX9pJ3R'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_012",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHV9qWmA6Ujhr17cpk6B'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_013",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHVA6WQktcf6n9VX1Esw'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_014",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHVAMYYWQo6a8WyYCid3'}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_015",
+      "success": false,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUHVAcCbcYHc7eXFkbG3F'}",
+      "metadata": {}
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "provider": "google",
+  "model": "gemma-3-1b-it",
+  "phase": "phase5_metadata_generation",
+  "timestamp": "2025-10-20T00:05:19.645841",
+  "success": false,
+  "duration": 11.57148790359497,
+  "usage": {
+    "total_tokens": 16594
+  },
+  "cost": {
+    "total_cost": 0.0
+  },
+  "clusters_processed": 15,
+  "metadata_results": [
+    {
+      "cluster_id": "topic_001",
+      "success": true,
+      "metadata": {
+        "title": "EcoBloom Summer Campaign Planning & Timeline",
+        "summary": "Team discussed EcoBloom summer campaign strategy including budget allocation ($50K), target audience, and sustainability messaging. Decided on 2-month campaign duration launching June 1st. Action items assigned with specific deadlines.",
+        "action_items": [
+          {
+            "task": "Create campaign timeline with key milestones",
+            "owner": "@devon",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Develop sustainability messaging framework",
+            "owner": "@sam",
+            "due_date": "2024-05-20",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Allocate $50K budget across marketing channels",
+            "owner": "@leah",
+            "due_date": "2024-05-18",
+            "priority": "medium",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2024-06-01",
+        "status": "active",
+        "tags": [
+          "ecobloom",
+          "campaign",
+          "summer",
+          "sustainability",
+          "marketing",
+          "budget",
+          "planning"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Summer Campaign Planning & Timeline\",\n  \"summary\": \"Team discussed EcoBloom summer campaign strategy including budget allocation ($50K), target audience, and sustainability messaging. Decided on 2-month campaign duration launching June 1st. Action items assigned with specific deadlines.\",\n  \"action_items\": [\n    {\n      \"task\": \"Create campaign timeline with key milestones\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-05-15\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop sustainability messaging framework\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-05-20\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Allocate $50K budget across marketing channels\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-05-18\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@devon\", \"@sam\", \"@leah\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-06-01\",\n  \"status\": \"active\",\n  \"tags\": [\"ecobloom\", \"campaign\", \"summer\", \"sustainability\", \"marketing\", \"budget\", \"planning\"]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_002",
+      "success": true,
+      "metadata": {
+        "title": "FitFusion Rebranding Kickoff & Planning",
+        "summary": "The team discussed FitFusion\u2019s rebranding strategy, focusing on a summer campaign launch by August 15, 2025. Key decisions included a 2-month campaign duration, budget allocation ($50K), and a sustainability messaging framework. Action items were assigned with deadlines and priorities.",
+        "action_items": [
+          {
+            "task": "Create campaign timeline with key milestones",
+            "owner": "@devon",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Develop sustainability messaging framework",
+            "owner": "@sam",
+            "due_date": "2024-05-20",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Allocate $50K budget across marketing channels",
+            "owner": "@leah",
+            "due_date": "2024-05-18",
+            "priority": "medium",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2024-06-01",
+        "status": "active",
+        "tags": [
+          "ecobloom",
+          "campaign",
+          "summer",
+          "sustainability",
+          "marketing",
+          "budget",
+          "planning"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"FitFusion Rebranding Kickoff & Planning\",\n  \"summary\": \"The team discussed FitFusion\u2019s rebranding strategy, focusing on a summer campaign launch by August 15, 2025. Key decisions included a 2-month campaign duration, budget allocation ($50K), and a sustainability messaging framework. Action items were assigned with deadlines and priorities.\",\n  \"action_items\": [\n    {\n      \"task\": \"Create campaign timeline with key milestones\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-05-15\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop sustainability messaging framework\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-05-20\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Allocate $50K budget across marketing channels\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-05-18\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@devon\", \"@sam\", \"@leah\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-06-01\",\n  \"status\": \"active\",\n  \"tags\": [\"ecobloom\", \"campaign\", \"summer\", \"sustainability\", \"marketing\", \"budget\", \"planning\"]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_003",
+      "success": true,
+      "metadata": {
+        "title": "FitFusion New Workout App Launch & Planning",
+        "summary": "The team discussed the launch of FitFusion\u2019s new mobile app, focusing on personalized workout plans and integration with wearable devices. Key decisions include a 6-month launch timeline, a $75K budget, and a focus on social media marketing. Action items include finalizing the app design and scheduling a marketing launch meeting.",
+        "action_items": [
+          {
+            "task": "Finalize app design and user interface",
+            "owner": "@sam",
+            "due_date": "2024-05-29",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Develop social media marketing strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-31",
+            "priority": "medium",
+            "status": "pending"
+          },
+          {
+            "task": "Secure wearable device integration",
+            "owner": "@jordan",
+            "due_date": "2024-06-05",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@sam",
+          "@leah",
+          "@jordan",
+          "@devon"
+        ],
+        "urgency": "high",
+        "deadline": "2024-06-05",
+        "status": "active",
+        "tags": [
+          "fitfusion",
+          "workout",
+          "app",
+          "mobile",
+          "social-media",
+          "marketing",
+          "wearable"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"FitFusion New Workout App Launch & Planning\",\n  \"summary\": \"The team discussed the launch of FitFusion\u2019s new mobile app, focusing on personalized workout plans and integration with wearable devices. Key decisions include a 6-month launch timeline, a $75K budget, and a focus on social media marketing. Action items include finalizing the app design and scheduling a marketing launch meeting.\",\n  \"action_items\": [\n    {\n      \"task\": \"Finalize app design and user interface\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-05-29\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop social media marketing strategy\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-05-31\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Secure wearable device integration\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-06-05\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@sam\", \"@leah\", \"@jordan\", \"@devon\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-06-05\",\n  \"status\": \"active\",\n  \"tags\": [\"fitfusion\", \"workout\", \"app\", \"mobile\", \"social-media\", \"marketing\", \"wearable\"]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_004",
+      "success": true,
+      "metadata": {
+        "title": "FitFusion New Workout App Launch",
+        "summary": "Team brainstormed the launch of FitFusion\u2019s new workout app, focusing on personalized plans and integration with wearable devices. Key decisions include a 6-month launch window, a $75K marketing budget, and a focus on user acquisition through social media. Action items assigned with deadlines.",
+        "action_items": [
+          {
+            "task": "Develop initial workout plan templates",
+            "owner": "@sam",
+            "due_date": "2024-05-22",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Create social media campaign strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-25",
+            "priority": "medium",
+            "status": "pending"
+          },
+          {
+            "task": "Finalize app store listing and marketing materials",
+            "owner": "@devon",
+            "due_date": "2024-05-28",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Set up analytics tracking and reporting",
+            "owner": "@jordan",
+            "due_date": "2024-05-30",
+            "priority": "medium",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@sam",
+          "@leah",
+          "@devon",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2024-06-03",
+        "status": "active",
+        "tags": [
+          "fitfusion",
+          "workout",
+          "app",
+          "marketing",
+          "launch",
+          "digital"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"FitFusion New Workout App Launch\",\n  \"summary\": \"Team brainstormed the launch of FitFusion\u2019s new workout app, focusing on personalized plans and integration with wearable devices. Key decisions include a 6-month launch window, a $75K marketing budget, and a focus on user acquisition through social media. Action items assigned with deadlines.\",\n  \"action_items\": [\n    {\n      \"task\": \"Develop initial workout plan templates\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-05-22\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Create social media campaign strategy\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-05-25\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Finalize app store listing and marketing materials\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-05-28\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Set up analytics tracking and reporting\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-05-30\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@sam\", \"@leah\", \"@devon\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-06-03\",\n  \"status\": \"active\",\n  \"tags\": [\"fitfusion\", \"workout\", \"app\", \"marketing\", \"launch\", \"digital\"]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_005",
+      "success": true,
+      "metadata": {
+        "title": "FitFusion New Membership Launch",
+        "summary": "Team discussed the launch of FitFusion\u2019s new membership program, focusing on personalized fitness plans and group challenges. Budget allocated $100K, timeline for launch by November 15, 2024, with initial marketing push starting October 1st. Key outcome: securing 200 new members.",
+        "action_items": [
+          {
+            "task": "Develop personalized fitness plan templates",
+            "owner": "@sam",
+            "due_date": "2024-10-15",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Create social media campaign to promote membership",
+            "owner": "@leah",
+            "due_date": "2024-10-31",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Finalize membership pricing and package options",
+            "owner": "@devon",
+            "due_date": "2024-11-08",
+            "priority": "medium",
+            "status": "pending"
+          },
+          {
+            "task": "Schedule initial marketing campaign rollout",
+            "owner": "@jordan",
+            "due_date": "2024-11-15",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2024-11-15",
+        "status": "active",
+        "tags": [
+          "fitfusion",
+          "membership",
+          "fitness",
+          "marketing",
+          "launch",
+          "personalization"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"FitFusion New Membership Launch\",\n  \"summary\": \"Team discussed the launch of FitFusion\u2019s new membership program, focusing on personalized fitness plans and group challenges. Budget allocated $100K, timeline for launch by November 15, 2024, with initial marketing push starting October 1st. Key outcome: securing 200 new members.\",\n  \"action_items\": [\n    {\n      \"task\": \"Develop personalized fitness plan templates\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-10-15\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Create social media campaign to promote membership\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-10-31\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Finalize membership pricing and package options\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-11-08\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Schedule initial marketing campaign rollout\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-11-15\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@devon\", \"@sam\", \"@leah\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-11-15\",\n  \"status\": \"active\",\n  \"tags\": [\"fitfusion\", \"membership\", \"fitness\", \"marketing\", \"launch\", \"personalization\"]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_006",
+      "success": true,
+      "metadata": {
+        "title": "EcoBloom Campaign Design Revisions",
+        "summary": "Team discussed EcoBloom summer campaign strategy including budget allocation ($50K), target audience, and sustainability messaging. Decided on 2-month campaign duration launching June 1st. Action items assigned with specific deadlines.",
+        "action_items": [
+          {
+            "task": "Create campaign timeline with key milestones",
+            "owner": "@devon",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Develop sustainability messaging framework",
+            "owner": "@sam",
+            "due_date": "2024-05-20",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Allocate $50K budget across marketing channels",
+            "owner": "@leah",
+            "due_date": "2024-05-18",
+            "priority": "medium",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@devon",
+          "@sam",
+          "@leah",
+          "@jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2024-06-01",
+        "status": "active",
+        "tags": [
+          "ecobloom",
+          "campaign",
+          "summer",
+          "sustainability",
+          "marketing",
+          "budget",
+          "planning"
+        ]
+      },
+      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Campaign Design Revisions\",\n  \"summary\": \"Team discussed EcoBloom summer campaign strategy including budget allocation ($50K), target audience, and sustainability messaging. Decided on 2-month campaign duration launching June 1st. Action items assigned with specific deadlines.\",\n  \"action_items\": [\n    {\n      \"task\": \"Create campaign timeline with key milestones\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-05-15\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop sustainability messaging framework\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-05-20\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Allocate $50K budget across marketing channels\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-05-18\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@devon\", \"@sam\", \"@leah\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-06-01\",\n  \"status\": \"active\",\n  \"tags\": [\"ecobloom\", \"campaign\", \"summer\", \"sustainability\", \"marketing\", \"budget\", \"planning\"]\n}\n```"
+    },
+    {
+      "cluster_id": "topic_007",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 6.367871063s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 6\n}\n]",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_008",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 3.112783412s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 3\n}\n]",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_009",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 59.816276131s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 59\n}\n]",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_010",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 56.566934601s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 56\n}\n]",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_011",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 53.334615442s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 53\n}\n]",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_012",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 50.075449927s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 50\n}\n]",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_013",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 46.845145111s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 46\n}\n]",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_014",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 43.614095215s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 43\n}\n]",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_015",
+      "success": false,
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 40.379409666s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-1b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 40\n}\n]",
+      "metadata": {}
+    }
+  ]
+}

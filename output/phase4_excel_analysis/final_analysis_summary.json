@@ -1,0 +1,9 @@
+{
+  "analysis_timestamp": "2025-10-03T00:53:30.557204",
+  "total_models_evaluated": 25,
+  "successful_models": 25,
+  "success_rate": 1.0,
+  "best_performing_model": "openai_gpt-5",
+  "fastest_model": "google_gemini-2.0-flash",
+  "most_operations_model": "xai_grok-2-vision-1212"
+}

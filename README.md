@@ -13,24 +13,50 @@ This engine evaluates **37+ models** across **6 providers** (OpenAI, Google, Gro
 - **Phase 7**: User Filtering
 - **Phase 8**: New Message Processing
 
-## 🏗️ Architecture
+## 🏗️ Organized Project Structure
 
 ```
 phase_evaluation_engine/
-├── config/
-│   └── model_config.py          # Model configurations and API keys
-├── utils/
-│   └── model_clients.py         # API client implementations
-├── phases/
+├── 📁 analysis/                    # Analysis scripts and results
+│   ├── CSV/Excel analysis files
+│   ├── JSON data files
+│   └── Analysis Python scripts
+├── 📁 client_deliverables/         # Client-facing documents
+│   ├── CLIENT_*.md files
+│   └── Final analysis results
+├── 📁 cohere_tests/               # Cohere AI model testing
+│   ├── cohere_*.py files
+│   └── Cohere integration guides
+├── 📁 config/                     # Configuration files
+│   └── model_config.py
+├── 📁 data/                       # Dataset files
+│   └── benchmark_topics_corrected_fixed.json
+├── 📁 docs/                       # Documentation
+│   ├── *.md files
+│   └── Guide documents
+├── 📁 evaluations/                # Evaluation engines
+│   ├── evaluate_*.py files
+│   └── ROUGE evaluation tools
+├── 📁 output/                     # Generated output files
+│   └── Phase results and logs
+├── 📁 phase3_tests/               # Phase 3 (Topic Clustering) tests
+├── 📁 phase4_tests/               # Phase 4 (Merge/Split) tests
+├── 📁 phases/                     # Core phase implementations
 │   ├── phase3_topic_clustering.py
 │   ├── phase4_merge_split.py
 │   ├── phase5_metadata_generation.py
 │   ├── phase6_embedding.py
 │   ├── phase7_user_filtering.py
 │   └── phase8_new_message_processing.py
-├── output/                      # Evaluation results
-├── run_all_phases.py           # Main runner script
-└── requirements.txt
+├── 📁 scripts/                    # Utility scripts
+├── 📁 tests/                      # Test files
+├── 📁 utilities/                  # Utility tools
+├── 📁 utils/                      # Utility modules
+│   └── model_clients.py
+├── 📄 requirements.txt            # Main dependencies
+├── 📄 run_all_phases.py          # Main runner script
+├── 📄 setup.py                   # Setup script
+└── 📄 PROJECT_STRUCTURE.md       # Detailed structure guide
 ```
 
 ## 🚀 Quick Start

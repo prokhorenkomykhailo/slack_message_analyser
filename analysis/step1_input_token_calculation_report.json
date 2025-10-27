@@ -1,0 +1,15 @@
+{
+  "input_file": "data/Synthetic_Slack_Messages.csv",
+  "total_messages": 300,
+  "character_count": 95347,
+  "word_count": 14922,
+  "estimated_tokens_simple": 23836,
+  "estimated_tokens_accurate": 21617,
+  "prompt_template_tokens": 358,
+  "formatted_messages_tokens": 21259,
+  "actual_prompt_tokens": 25474,
+  "actual_completion_tokens": 3236,
+  "actual_total_tokens": 28710,
+  "estimation_difference": 3857,
+  "estimation_accuracy_percent": 84.85907199497527
+}

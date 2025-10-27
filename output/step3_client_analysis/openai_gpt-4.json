@@ -1,0 +1,120 @@
+{
+  "provider": "openai",
+  "model": "gpt-4",
+  "phase": "step3_client_analysis",
+  "timestamp": "2025-10-17T18:17:12.811987",
+  "success": false,
+  "duration": 0,
+  "usage": {
+    "total_tokens": 0
+  },
+  "cost": {
+    "total_cost": 0.0
+  },
+  "clusters_processed": 15,
+  "metadata_results": [
+    {
+      "cluster_id": "topic_001",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10058 tokens (1866 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_002",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10324 tokens (2132 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_003",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10309 tokens (2117 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_004",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10294 tokens (2102 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_005",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10299 tokens (2107 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_006",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10405 tokens (2213 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_007",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10987 tokens (2795 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_008",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 11130 tokens (2938 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_009",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 11331 tokens (3139 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_010",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 11609 tokens (3417 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_011",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10335 tokens (2143 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_012",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10826 tokens (2634 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_013",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10772 tokens (2580 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_014",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10774 tokens (2582 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    },
+    {
+      "cluster_id": "topic_015",
+      "success": false,
+      "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 8192 tokens. However, you requested 10786 tokens (2594 in the messages, 8192 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "metadata": {}
+    }
+  ],
+  "metrics": {
+    "clusters_processed": 15,
+    "successful_generations": 0,
+    "success_rate": 0.0,
+    "overall_score": 0.0,
+    "title_score_avg": 0.0,
+    "summary_score_avg": 0.0,
+    "action_items_score_avg": 0.0,
+    "participants_score_avg": 0.0,
+    "tags_score_avg": 0.0,
+    "urgency_score_avg": 0.0,
+    "status_score_avg": 0.0
+  }
+}
