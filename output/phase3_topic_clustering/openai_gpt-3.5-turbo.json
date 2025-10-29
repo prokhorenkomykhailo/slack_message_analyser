@@ -2,7 +2,7 @@
   "provider": "openai",
   "model": "gpt-3.5-turbo",
   "phase": "phase3_topic_clustering",
-  "timestamp": "2025-09-04T09:05:48.547755",
+  "timestamp": "2025-10-28T14:42:11.018396",
   "success": false,
   "duration": 0,
   "usage": {
@@ -34,7 +34,7 @@
     "participant_accuracy": 0.0
   },
   "raw_response": "",
-  "error": "Error code: 400 - {'error': {'message': \"This model's maximum context length is 16385 tokens. However, you requested 17319 tokens (13223 in the messages, 4096 in the completion). Please reduce the length of the messages or completion.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
-  "prompt_tokens_estimated": 13615,
+  "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+  "prompt_tokens_estimated": 13601,
   "messages_used": 171
 }

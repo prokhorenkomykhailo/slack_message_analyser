@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-"""
-Model Configuration for Phase Evaluation Engine
-Defines all models across different providers for comprehensive evaluation
-"""
+
 
 import os
 from typing import Dict, List, Any

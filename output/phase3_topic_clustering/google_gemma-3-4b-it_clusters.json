@@ -65,11 +65,12 @@
       20,
       21
     ],
-    "draft_title": "FitFusion Timeline & Deliverables",
+    "draft_title": "FitFusion Timeline & Resource Allocation",
     "participants": [
       "Devon",
       "Sam",
-      "Leah"
+      "Leah",
+      "Jordan"
     ],
     "channel": "#campaign-briefs",
     "thread_id": "thread_002"
@@ -83,8 +84,7 @@
     ],
     "draft_title": "FitFusion Contract Review & Legal Considerations",
     "participants": [
-      "Jordan",
-      "Sam"
+      "Jordan"
     ],
     "channel": "#campaign-briefs",
     "thread_id": "thread_002"
@@ -97,7 +97,7 @@
       27,
       28
     ],
-    "draft_title": "FitFusion Brand Voice & Design Alignment",
+    "draft_title": "FitFusion Design Concepts & Brand Voice",
     "participants": [
       "Leah",
       "Sam",
@@ -112,13 +112,15 @@
     "message_ids": [
       29,
       30,
-      31
+      31,
+      32
     ],
     "draft_title": "TechNova Product Launch - Initial Brief",
     "participants": [
       "Devon",
       "Sam",
-      "Leah"
+      "Leah",
+      "Jordan"
     ],
     "channel": "#campaign-briefs",
     "thread_id": "thread_003"
@@ -126,15 +128,17 @@
   {
     "cluster_id": "cluster_008",
     "message_ids": [
-      32,
       33,
-      34
+      34,
+      35,
+      36
     ],
     "draft_title": "TechNova Timeline & Deliverables",
     "participants": [
       "Devon",
-      "Jordan",
-      "Sam"
+      "Sam",
+      "Leah",
+      "Jordan"
     ],
     "channel": "#campaign-briefs",
     "thread_id": "thread_003"
@@ -142,16 +146,14 @@
   {
     "cluster_id": "cluster_009",
     "message_ids": [
-      35,
-      36,
-      37
+      37,
+      38,
+      39,
+      40
     ],
     "draft_title": "TechNova Legal Review & Compliance",
     "participants": [
-      "Jordan",
-      "Devon",
-      "Leah",
-      "Sam"
+      "Jordan"
     ],
     "channel": "#campaign-briefs",
     "thread_id": "thread_003"
@@ -159,15 +161,17 @@
   {
     "cluster_id": "cluster_010",
     "message_ids": [
-      38,
-      39,
-      40
+      41,
+      42,
+      43,
+      44
     ],
-    "draft_title": "TechNova Design Concepts & Messaging",
+    "draft_title": "TechNova Design & Content Collaboration",
     "participants": [
       "Sam",
       "Devon",
-      "Leah"
+      "Leah",
+      "Jordan"
     ],
     "channel": "#campaign-briefs",
     "thread_id": "thread_003"
@@ -175,33 +179,34 @@
   {
     "cluster_id": "cluster_011",
     "message_ids": [
-      41,
-      42,
-      43,
-      44
-    ],
-    "draft_title": "EcoBloom Campaign - Revised Designs & Client Feedback",
-    "participants": [
-      "Devon",
-      "Sam",
-      "Leah",
-      "Jordan"
-    ],
-    "channel": "#client-communications",
-    "thread_id": "thread_006"
-  },
-  {
-    "cluster_id": "cluster_012",
-    "message_ids": [
       45,
       46,
       47
     ],
-    "draft_title": "GreenScape Sustainability Report - Initial Client Discussion",
+    "draft_title": "GreenScape Sustainability Report - Initial Request",
     "participants": [
       "Devon",
       "Leah",
-      "Sam"
+      "Sam",
+      "Jordan"
+    ],
+    "channel": "#client-communications",
+    "thread_id": "thread_004"
+  },
+  {
+    "cluster_id": "cluster_012",
+    "message_ids": [
+      48,
+      49,
+      50,
+      51
+    ],
+    "draft_title": "GreenScape Sustainability Report - Timeline & Review",
+    "participants": [
+      "Devon",
+      "Leah",
+      "Sam",
+      "Jordan"
     ],
     "channel": "#client-communications",
     "thread_id": "thread_004"
@@ -209,33 +214,14 @@
   {
     "cluster_id": "cluster_013",
     "message_ids": [
-      48,
-      49,
-      50,
-      51,
-      52
-    ],
-    "draft_title": "GreenScape Sustainability Report - Timeline & Legal Review",
-    "participants": [
-      "Devon",
-      "Leah",
-      "Jordan",
-      "Sam"
-    ],
-    "channel": "#client-communications",
-    "thread_id": "thread_004"
-  },
-  {
-    "cluster_id": "cluster_014",
-    "message_ids": [
+      52,
       53,
       54,
       55,
       56,
-      57,
-      58
+      57
     ],
-    "draft_title": "GreenScape Sustainability Report - Content & Design Development",
+    "draft_title": "GreenScape Sustainability Report - Content & Design Collaboration",
     "participants": [
       "Leah",
       "Sam",

@@ -50,8 +50,8 @@
       "Devon",
       "Jordan"
     ],
-    "channel": "#client-communications",
-    "thread_id": "thread_003"
+    "channel": "#campaign-briefs",
+    "thread_id": "thread_005"
   },
   {
     "cluster_id": "cluster_004",
@@ -68,7 +68,7 @@
       "Jordan"
     ],
     "channel": "#client-communications",
-    "thread_id": "thread_004"
+    "thread_id": "thread_006"
   },
   {
     "cluster_id": "cluster_005",
@@ -79,12 +79,13 @@
       24,
       25
     ],
-    "draft_title": "FitFusion Brand Identity",
+    "draft_title": "EcoBloom Campaign Design",
     "participants": [
       "Devon",
-      "Sam"
+      "Leah",
+      "Jordan"
     ],
-    "channel": "#client-communications",
-    "thread_id": "thread_005"
+    "channel": "#campaign-briefs",
+    "thread_id": "thread_006"
   }
 ]

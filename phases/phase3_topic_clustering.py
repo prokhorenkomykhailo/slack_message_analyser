@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Phase 3: Topic Clustering Evaluation
-Evaluates all models on topic clustering task using synthetic Slack messages
-"""
 
 import os
 import json
@@ -31,10 +26,8 @@ class Phase3Evaluator:
         self.output_dir = os.path.join("output", self.phase_name)
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Load data from CSV
         self.messages = self.load_messages_from_csv()
         
-        # Load reference clusters (ground truth)
         self.reference_clusters = self.load_reference_clusters()
         
         # Topic clustering prompt
@@ -118,7 +111,7 @@ Given a set of Slack messages, your task is to:
 - Consider both explicit relationships (threads) and implicit ones (same topic)
 - Merge related threads and topics into cohesive clusters
 - Provide clear, descriptive titles for each cluster
-- Pay attention to project names (EcoBloom, FitFusion, TechNova, GreenScape, UrbanEdge)
+- Pay attention to project names
 - Consider temporal relationships and deadlines mentioned
 - Focus on creating logical, meaningful groupings rather than arbitrary cluster counts
 

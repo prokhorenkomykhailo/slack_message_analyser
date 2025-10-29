@@ -1,0 +1,9 @@
+# Step 4: Vector Database Dependencies
+# PostgreSQL + pgvector for cost-effective vector storage
+
+psycopg2-binary>=2.9.0
+numpy>=1.21.0
+python-dotenv>=0.19.0
+
+# Optional: For advanced vector operations
+scikit-learn>=1.0.0

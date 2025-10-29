@@ -2,7 +2,7 @@
   "provider": "anthropic",
   "model": "claude-3-opus-20240229",
   "phase": "phase3_topic_clustering",
-  "timestamp": "2025-09-04T09:15:21.228473",
+  "timestamp": "2025-10-28T14:47:34.413405",
   "success": false,
   "duration": 0,
   "usage": {
@@ -34,7 +34,7 @@
     "participant_accuracy": 0.0
   },
   "raw_response": "",
-  "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CSo79RrLWt4pRH1RkhG6e'}",
-  "prompt_tokens_estimated": 23837,
+  "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CUZnAEcrn9yAgD2q29VPX'}",
+  "prompt_tokens_estimated": 23823,
   "messages_used": 300
 }

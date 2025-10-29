@@ -2,7 +2,7 @@
   "provider": "groq",
   "model": "llama3-8b-8192",
   "phase": "phase3_topic_clustering",
-  "timestamp": "2025-09-04T09:15:11.022462",
+  "timestamp": "2025-10-28T14:47:24.503381",
   "success": false,
   "duration": 0,
   "usage": {
@@ -35,6 +35,6 @@
   },
   "raw_response": "",
   "error": "Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
-  "prompt_tokens_estimated": 6960,
+  "prompt_tokens_estimated": 6946,
   "messages_used": 86
 }

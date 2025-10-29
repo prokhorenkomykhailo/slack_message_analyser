@@ -1,0 +1,25 @@
+{
+  "step": "step4_embedding_vector_db",
+  "timestamp": "2025-10-29T17:51:57.688589",
+  "total_topics": 15,
+  "vector_dimensions": 768,
+  "embedding_format": "768-dimensional normalized vectors",
+  "storage_method": "Supabase pgvector",
+  "topics": [
+    "cluster_001",
+    "cluster_002",
+    "cluster_003",
+    "cluster_004",
+    "cluster_005",
+    "cluster_006",
+    "cluster_007",
+    "cluster_008",
+    "cluster_009",
+    "cluster_010",
+    "cluster_011",
+    "cluster_012",
+    "cluster_013",
+    "cluster_014",
+    "cluster_015"
+  ]
+}

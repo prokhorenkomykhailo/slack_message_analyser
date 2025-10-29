@@ -44,12 +44,6 @@
       86,
       87,
       88,
-      207,
-      208,
-      209,
-      210,
-      211,
-      212,
       197,
       198,
       199,
@@ -59,9 +53,15 @@
       203,
       204,
       205,
-      206
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212
     ],
-    "draft_title": "EcoBloom Summer Campaign - Revisions, Finalization, and Client Submission",
+    "draft_title": "EcoBloom Summer Campaign - Revisions, Finalization, and Legal Approval",
     "participants": [
       "Devon",
       "Sam",
@@ -163,7 +163,7 @@
       233,
       234
     ],
-    "draft_title": "FitFusion Rebranding - Brand Guidelines Development and Legal Approval",
+    "draft_title": "FitFusion Rebranding - Brand Guideline Development and Legal Approval",
     "participants": [
       "Devon",
       "Sam",
@@ -205,6 +205,42 @@
   {
     "cluster_id": "cluster_007",
     "message_ids": [
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256
+    ],
+    "draft_title": "TechNova Product Launch - Product Descriptions and Compliance Review",
+    "participants": [
+      "Devon",
+      "Leah",
+      "Sam",
+      "Jordan"
+    ],
+    "channel": "#project-updates",
+    "thread_id": "thread_013"
+  },
+  {
+    "cluster_id": "cluster_008",
+    "message_ids": [
       137,
       138,
       139,
@@ -237,7 +273,7 @@
       166,
       167
     ],
-    "draft_title": "TechNova Product Launch - Budget Finalization and Client Submission",
+    "draft_title": "TechNova Product Launch - Budget Finalization and Approval",
     "participants": [
       "Devon",
       "Sam",
@@ -246,42 +282,6 @@
     ],
     "channel": "#project-updates",
     "thread_id": "thread_009"
-  },
-  {
-    "cluster_id": "cluster_008",
-    "message_ids": [
-      235,
-      236,
-      237,
-      238,
-      239,
-      240,
-      241,
-      242,
-      243,
-      244,
-      245,
-      246,
-      247,
-      248,
-      249,
-      250,
-      251,
-      252,
-      253,
-      254,
-      255,
-      256
-    ],
-    "draft_title": "TechNova Product Launch - Product Descriptions and Compliance Review",
-    "participants": [
-      "Devon",
-      "Sam",
-      "Leah",
-      "Jordan"
-    ],
-    "channel": "#project-updates",
-    "thread_id": "thread_013"
   },
   {
     "cluster_id": "cluster_009",
@@ -302,7 +302,7 @@
       57,
       58
     ],
-    "draft_title": "GreenScape Sustainability Report - Initial Planning and Timeline",
+    "draft_title": "GreenScape Sustainability Report - Initial Planning and Content Creation",
     "participants": [
       "Devon",
       "Leah",
@@ -381,7 +381,7 @@
       277,
       278
     ],
-    "draft_title": "GreenScape Sustainability Report - Data Visualization Development and Review",
+    "draft_title": "GreenScape Sustainability Report - Data Visualization Development and Accuracy Review",
     "participants": [
       "Devon",
       "Sam",
@@ -410,7 +410,7 @@
       72,
       73
     ],
-    "draft_title": "UrbanEdge Social Media Strategy - Initial Planning and Timeline",
+    "draft_title": "UrbanEdge Social Media Strategy - Development and Compliance Review",
     "participants": [
       "Devon",
       "Leah",
@@ -446,7 +446,7 @@
       299,
       300
     ],
-    "draft_title": "UrbanEdge Market Research - Development and Compliance Review",
+    "draft_title": "UrbanEdge Market Research - Analysis and Data Privacy Compliance",
     "participants": [
       "Devon",
       "Leah",

@@ -47,14 +47,15 @@
       211,
       212
     ],
-    "draft_title": "EcoBloom Summer Campaign Management",
+    "draft_title": "EcoBloom Summer Campaign: Planning, Revisions & Finalization",
     "participants": [
       "Devon",
       "Sam",
       "Leah",
       "Jordan"
     ],
-    "channel": "#campaign-briefs"
+    "channel": "#campaign-briefs",
+    "thread_id": null
   },
   {
     "cluster_id": "cluster_002",
@@ -120,14 +121,15 @@
       233,
       234
     ],
-    "draft_title": "FitFusion Rebranding Project Management",
+    "draft_title": "FitFusion Rebranding Project: Planning, Legal & Brand Guidelines",
     "participants": [
       "Devon",
       "Sam",
       "Leah",
       "Jordan"
     ],
-    "channel": "#campaign-briefs"
+    "channel": "#campaign-briefs",
+    "thread_id": null
   },
   {
     "cluster_id": "cluster_003",
@@ -201,14 +203,15 @@
       255,
       256
     ],
-    "draft_title": "TechNova Product Launch Campaign Management",
+    "draft_title": "TechNova Product Launch: Planning, Budget & Product Descriptions",
     "participants": [
       "Devon",
       "Sam",
       "Leah",
       "Jordan"
     ],
-    "channel": "#campaign-briefs"
+    "channel": "#campaign-briefs",
+    "thread_id": null
   },
   {
     "cluster_id": "cluster_004",
@@ -280,14 +283,15 @@
       277,
       278
     ],
-    "draft_title": "GreenScape Sustainability Report Management",
+    "draft_title": "GreenScape Sustainability Report: Planning, Deadline Extension & Data Visualization",
     "participants": [
       "Devon",
-      "Leah",
       "Sam",
+      "Leah",
       "Jordan"
     ],
-    "channel": "#client-communications"
+    "channel": "#client-communications",
+    "thread_id": null
   },
   {
     "cluster_id": "cluster_005",
@@ -330,14 +334,15 @@
       299,
       300
     ],
-    "draft_title": "UrbanEdge Market Expansion Strategy & Research",
+    "draft_title": "UrbanEdge Market Expansion: Social Media Strategy & Market Research",
     "participants": [
       "Devon",
-      "Leah",
       "Sam",
+      "Leah",
       "Jordan"
     ],
-    "channel": "#client-communications"
+    "channel": "#client-communications",
+    "thread_id": null
   },
   {
     "cluster_id": "cluster_006",
@@ -368,7 +373,7 @@
       135,
       136
     ],
-    "draft_title": "Q3 Content Calendar Development",
+    "draft_title": "Q3 Content Calendar Planning & Finalization",
     "participants": [
       "Devon",
       "Leah",
