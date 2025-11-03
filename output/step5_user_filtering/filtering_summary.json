@@ -1,0 +1,33 @@
+{
+  "step": "step5_user_filtering",
+  "timestamp": "2025-11-03T07:54:44.226409",
+  "total_topics": 15,
+  "users_processed": 4,
+  "filtering_rules": {
+    "rule1": "User must have at least one open action item in the topic",
+    "rule2": "User must be a member of the topic's channel"
+  },
+  "results": {
+    "devon": [
+      "topic_006",
+      "topic_009"
+    ],
+    "sam": [
+      "topic_001",
+      "topic_002",
+      "topic_003",
+      "topic_004",
+      "topic_011"
+    ],
+    "leah": [
+      "topic_004",
+      "topic_005"
+    ],
+    "jordan": [
+      "topic_004",
+      "topic_005",
+      "topic_006",
+      "topic_007"
+    ]
+  }
+}

@@ -174,6 +174,12 @@ You are an expert business analyst specializing in Slack conversation analysis. 
    - Format: "YYYY-MM-DD"
    - If no specific date, infer from context
 
+9. **CHANNEL REQUIREMENTS:**
+   - Use the channel from the cluster info provided
+   - Format: "#channel-name" (e.g., "#campaign-briefs", "#client-communications")
+   - If channel is "N/A" or not provided, look at message IDs to infer the channel
+   - DO NOT use "unspecified" or "N/A" - infer from message content
+
 **Topic Cluster:**
 {cluster_info}
 
@@ -220,6 +226,7 @@ You are an expert business analyst specializing in Slack conversation analysis. 
   "urgency": "high",
   "deadline": "2024-06-01",
   "status": "active",
+  "channel": "#campaign-briefs",
   "tags": ["ecobloom", "campaign", "summer", "sustainability", "marketing", "budget", "planning"]
 }}
 
@@ -230,6 +237,7 @@ You are an expert business analyst specializing in Slack conversation analysis. 
 ✅ All participants listed with @ prefix
 ✅ Urgency is "high", "medium", or "low"
 ✅ Status is one of the valid values
+✅ Channel correctly identified from cluster info or messages
 ✅ 5-8 relevant tags including project name
 ✅ All dates in YYYY-MM-DD format
 
@@ -238,10 +246,12 @@ Analyze the messages and generate the metadata in STRICT JSON format (no extra t
     
     def format_cluster_for_prompt(self, cluster: Dict) -> str:
         """Format a single cluster for the prompt"""
+        channel = cluster.get('channel', 'N/A')
         return f"""
 Cluster ID: {cluster['cluster_id']}
 Title: {cluster['draft_title']}
 Participants: {cluster['participants']}
+Channel: {channel}
 Message IDs: {cluster['message_ids']}
 """
     

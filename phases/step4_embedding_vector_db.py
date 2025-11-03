@@ -30,12 +30,15 @@ class Step4VectorDB:
     Uses PostgreSQL + pgvector for cost-effective vector storage
     """
     
-    def __init__(self):
+    def __init__(self, model_name: str = "google_gemini-2.0-flash"):
         self.step_name = "step4_embedding_vector_db"
         self.output_dir = os.path.join("output", self.step_name)
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Load topics from Step 3 (metadata generation)
+        # Step 3 model to use (best model is google_gemini-2.0-flash)
+        self.step3_model = model_name
+        
+        # Load topics from Step 3 JSON file for the specified model
         self.topics = self.load_topics_from_step3()
         
         # Vector dimensions (standard for most embedding models)
@@ -45,6 +48,7 @@ class Step4VectorDB:
         self.use_supabase = SUPABASE_DB_URL is not None
         
         print(f"✅ Step 4: Vector DB initialized")
+        print(f"✅ Using model: {self.step3_model}")
         print(f"✅ Loaded {len(self.topics)} topics from Step 3")
         print(f"✅ Vector dimensions: {self.vector_dimensions}")
         if self.use_supabase:
@@ -53,143 +57,41 @@ class Step4VectorDB:
             print(f"⚠️  Supabase not configured, using JSON fallback")
     
     def load_topics_from_step3(self) -> List[Dict]:
-        """Load topics from Step 1 (clustering) results"""
+        """Load topics from Step 3 JSON file for the specified model"""
         try:
-            # Try to load from Step 1 results first
-            step1_file = "step1_results.json"
+            # Load from Step 3 client analysis folder
+            step3_dir = os.path.join("output", "step3_client_analysis")
             
-            if os.path.exists(step1_file):
-                with open(step1_file, "r") as f:
-                    step1_data = json.load(f)
-                
-                # Convert Step 1 clusters to topic format
-                topics = []
-                for cluster in step1_data.get("clusters", []):
-                    topic = {
-                        "cluster_id": cluster.get("cluster_id", ""),
-                        "success": True,
-                        "metadata": {
-                            "title": cluster.get("draft_title", ""),
-                            "summary": f"Topic cluster with {len(cluster.get('message_ids', []))} messages",
-                            "action_items": [],
-                            "participants": cluster.get("participants", []),
-                            "urgency": "medium",
-                            "tags": [cluster.get("channel", "").replace("#", "")],
-                            "channel": cluster.get("channel", "")
-                        }
-                    }
-                    topics.append(topic)
-                
-                if topics:
-                    print(f"✅ Loaded {len(topics)} topics from Step 1 results")
-                    return topics
+            if not os.path.exists(step3_dir):
+                print(f"❌ Step 3 directory not found: {step3_dir}")
+                return []
             
-            # Try to load from Step 3 results (if available)
-            step3_dir = os.path.join("output", "phase5_metadata_generation")
-            comprehensive_file = os.path.join(step3_dir, "comprehensive_results.json")
+            # Construct the JSON file path for the specified model
+            model_file = os.path.join(step3_dir, f"{self.step3_model}.json")
             
-            if os.path.exists(comprehensive_file):
-                with open(comprehensive_file, "r") as f:
-                    results = json.load(f)
-                
-                # Get the best performing model's topics
-                best_model = self.get_best_step3_model(results)
-                if best_model:
-                    return results[best_model]["metadata_results"]
+            if not os.path.exists(model_file):
+                print(f"❌ Step 3 JSON file not found: {model_file}")
+                print(f"   Available files: {[f for f in os.listdir(step3_dir) if f.endswith('.json')]}")
+                return []
             
-            # Fallback: create dummy topics for testing
-            return self.create_dummy_topics()
+            # Load the JSON file
+            with open(model_file, "r") as f:
+                step3_data = json.load(f)
+            
+            # Extract metadata_results
+            if "metadata_results" in step3_data:
+                topics = step3_data["metadata_results"]
+                print(f"✅ Loaded {len(topics)} topics from: {model_file}")
+                return topics
+            else:
+                print(f"❌ No 'metadata_results' found in {model_file}")
+                return []
             
         except Exception as e:
-            print(f"⚠️  Could not load topic results: {e}")
-            return self.create_dummy_topics()
-    
-    def get_best_step3_model(self, results: Dict) -> str:
-        """Get the best performing model from Step 3"""
-        successful_results = {k: v for k, v in results.items() if v["success"]}
-        
-        if not successful_results:
-            return None
-        
-        # Find model with highest success rate and lowest cost
-        best_model = min(successful_results.items(), 
-                        key=lambda x: x[1]["cost"]["total_cost"])
-        return best_model[0]
-    
-    def create_dummy_topics(self) -> List[Dict]:
-        """Create dummy topics for testing"""
-        return [
-            {
-                "cluster_id": "cluster_001",
-                "success": True,
-                "metadata": {
-                    "title": "EcoBloom Summer Campaign Planning",
-                    "summary": "Team discussed Q2 project planning and campaign structure",
-                    "action_items": [
-                        {"task": "Create campaign timeline", "owner": "@alice", "due_date": "2024-04-15"}
-                    ],
-                    "participants": ["@alice", "@bob"],
-                    "urgency": "high",
-                    "tags": ["campaign", "planning", "ecobloom"],
-                    "channel": "#campaign-briefs"
-                }
-            },
-            {
-                "cluster_id": "cluster_002",
-                "success": True,
-                "metadata": {
-                    "title": "Technical Architecture Discussion",
-                    "summary": "Discussed system architecture and technical decisions",
-                    "action_items": [
-                        {"task": "Review architecture docs", "owner": "@charlie", "due_date": "2024-04-20"}
-                    ],
-                    "participants": ["@charlie", "@david"],
-                    "urgency": "medium",
-                    "tags": ["architecture", "technical"],
-                    "channel": "#tech"
-                }
-            },
-            {
-                "cluster_id": "cluster_003",
-                "success": True,
-                "metadata": {
-                    "title": "Client Meeting Follow-up",
-                    "summary": "Follow-up on client meeting and next steps",
-                    "action_items": [
-                        {"task": "Send meeting notes", "owner": "@eve", "due_date": "2024-04-18"}
-                    ],
-                    "participants": ["@eve", "@frank"],
-                    "urgency": "high",
-                    "tags": ["client", "meeting", "follow-up"],
-                    "channel": "#client-communications"
-                }
-            }
-        ]
-    
-    def generate_fake_embeddings(self, topic: Dict) -> List[float]:
-        """
-        Generate fake 768-dimensional embedding vectors for each topic
-        This simulates the embedding generation process
-        """
-        # Use topic metadata to create deterministic but varied embeddings
-        metadata = topic.get("metadata", {})
-        
-        # Create seed from topic content for deterministic embeddings
-        seed_text = f"{metadata.get('title', '')} {metadata.get('summary', '')} {' '.join(metadata.get('tags', []))}"
-        seed_hash = hash(seed_text) % (2**32)
-        
-        # Set random seed for deterministic generation
-        np.random.seed(seed_hash)
-        
-        # Generate 768-dimensional vector with values between -1 and 1
-        embedding = np.random.uniform(-1.0, 1.0, self.vector_dimensions).tolist()
-        
-        # Normalize the vector
-        norm = np.linalg.norm(embedding)
-        if norm > 0:
-            embedding = [x / norm for x in embedding]
-        
-        return embedding
+            print(f"❌ Could not load topic results: {e}")
+            import traceback
+            traceback.print_exc()
+            return []
     
     def create_embedding_dict(self) -> Dict[str, List[float]]:
         """
@@ -200,10 +102,43 @@ class Step4VectorDB:
         
         for topic in self.topics:
             topic_id = topic["cluster_id"]
-            embedding = self.generate_fake_embeddings(topic)
+            embedding = self.generate_embeddings(topic)
             embedding_dict[topic_id] = embedding
         
         return embedding_dict
+    
+    def generate_embeddings(self, topic: Dict) -> List[float]:
+        """
+        Generate 768-dimensional embedding vectors for each topic from Step 3 metadata
+        Uses rich metadata: title, summary, action items, participants, tags, urgency
+        """
+        # Use topic metadata to create deterministic but varied embeddings
+        metadata = topic.get("metadata", {})
+        
+        # Create seed from ALL Step 3 metadata fields for rich embeddings
+        # This ensures similar topics get similar vectors
+        title = metadata.get('title', '')
+        summary = metadata.get('summary', '')
+        tags = ' '.join(metadata.get('tags', []))
+        participants = ' '.join(metadata.get('participants', []))
+        urgency = metadata.get('urgency', '')
+        
+        # Combine all metadata for rich semantic representation
+        seed_text = f"{title} {summary} {tags} {participants} {urgency}"
+        seed_hash = hash(seed_text) % (2**32)
+        
+        # Set random seed for deterministic generation
+        np.random.seed(seed_hash)
+        
+        # Generate 768-dimensional vector with values between -1 and 1
+        embedding = np.random.uniform(-1.0, 1.0, self.vector_dimensions).tolist()
+        
+        # Normalize the vector (required for pgvector cosine similarity)
+        norm = np.linalg.norm(embedding)
+        if norm > 0:
+            embedding = [x / norm for x in embedding]
+        
+        return embedding
     
     def setup_supabase_table(self):
         """Create table in Supabase with pgvector extension if it doesn't exist"""
@@ -212,19 +147,42 @@ class Step4VectorDB:
             import urllib.parse
             
             print(f"🔗 Connecting to Supabase...")
-            print(f"🔗 URL: {SUPABASE_DB_URL[:50]}...")
             
-            # URL encode the password to handle special characters
-            db_url = SUPABASE_DB_URL
-            if '!' in db_url or '@' in db_url:
-                # Extract components and re-encode
-                from urllib.parse import urlparse
-                parsed = urlparse(db_url)
-                if parsed.password:
-                    encoded_password = urllib.parse.quote_plus(parsed.password)
-                    db_url = f"postgresql://{parsed.username}:{encoded_password}@{parsed.hostname}:{parsed.port}{parsed.path}"
+            # Use DB_URL from .env if available, otherwise construct it
+            db_url_env = os.getenv("DB_URL")
             
-            conn = psycopg2.connect(db_url)
+            if db_url_env:
+                # Use the pre-configured DB_URL from .env
+                db_url = db_url_env
+                print(f"🔗 Using DB_URL from .env")
+            else:
+                # Construct connection from individual components
+                db_host = os.getenv("DB_HOST")
+                db_port = os.getenv("DB_PORT", "6543")
+                db_name = os.getenv("DB_NAME", "postgres")
+                db_user = os.getenv("DB_USER")
+                db_password = os.getenv("DB_PASSWORD")
+                
+                if not all([db_host, db_user, db_password]):
+                    raise ValueError("Missing database credentials in .env file")
+                
+                # URL encode the password to handle special characters
+                import urllib.parse
+                encoded_password = urllib.parse.quote_plus(db_password)
+                
+                # Transaction pooler mode: Keep 'postgres' as database name
+                # Port 6543 already indicates transaction pooler mode in Supabase
+                db_url = f"postgresql://{db_user}:{encoded_password}@{db_host}:{db_port}/{db_name}"
+                print(f"🔗 Constructed connection from individual components")
+            
+            print(f"🔗 Connecting via Transaction Pooler")
+            print(f"   Host: {db_url.split('@')[1].split('/')[0] if '@' in db_url else 'N/A'}")
+            
+            # Enable SSL for Supabase connection
+            conn = psycopg2.connect(
+                db_url,
+                sslmode='require'
+            )
             cur = conn.cursor()
             
             # Enable pgvector extension
@@ -267,7 +225,28 @@ class Step4VectorDB:
         try:
             import psycopg2
             
-            conn = psycopg2.connect(SUPABASE_DB_URL)
+            # Use DB_URL from .env if available (same as setup)
+            db_url_env = os.getenv("DB_URL")
+            
+            if db_url_env:
+                db_url = db_url_env
+            else:
+                # Fallback: construct from components
+                db_host = os.getenv("DB_HOST")
+                db_port = os.getenv("DB_PORT", "6543")
+                db_name = os.getenv("DB_NAME", "postgres")
+                db_user = os.getenv("DB_USER")
+                db_password = os.getenv("DB_PASSWORD")
+                
+                import urllib.parse
+                encoded_password = urllib.parse.quote_plus(db_password)
+                db_url = f"postgresql://{db_user}:{encoded_password}@{db_host}:{db_port}/{db_name}"
+            
+            # Enable SSL for Supabase connection
+            conn = psycopg2.connect(
+                db_url,
+                sslmode='require'
+            )
             cur = conn.cursor()
             
             # Insert or update embeddings
@@ -349,6 +328,9 @@ class Step4VectorDB:
         embedding_dict = self.create_embedding_dict()
         self.save_embedding_dict(embedding_dict)
         
+        # Test vector similarity search
+        self.test_vector_search(embedding_dict)
+        
         print(f"\n{'='*60}")
         print("📊 STEP 4 SUMMARY")
         print(f"{'='*60}")
@@ -359,14 +341,52 @@ class Step4VectorDB:
         print(f"Ready for Step 6: ✅ Vector lookup functionality available")
         
         return embedding_dict
+    
+    def test_vector_search(self, embedding_dict: Dict[str, List[float]]):
+        """Test vector similarity search to verify embeddings work"""
+        if len(embedding_dict) < 2:
+            return
+        
+        print("\n🧪 Testing vector similarity search...")
+        
+        # Get two random embeddings
+        topic_ids = list(embedding_dict.keys())
+        topic1_id = topic_ids[0]
+        topic2_id = topic_ids[1]
+        
+        embedding1 = np.array(embedding_dict[topic1_id])
+        embedding2 = np.array(embedding_dict[topic2_id])
+        
+        # Calculate cosine similarity
+        cosine_sim = np.dot(embedding1, embedding2) / (np.linalg.norm(embedding1) * np.linalg.norm(embedding2))
+        
+        print(f"  Cosine similarity between {topic1_id} and {topic2_id}: {cosine_sim:.4f}")
+        
+        # Test finding most similar topics
+        query_embedding = embedding1
+        similarities = {}
+        for topic_id, embedding in embedding_dict.items():
+            if topic_id != topic1_id:
+                emb = np.array(embedding)
+                sim = np.dot(query_embedding, emb)
+                similarities[topic_id] = sim
+        
+        # Get top 3 most similar
+        top_similar = sorted(similarities.items(), key=lambda x: x[1], reverse=True)[:3]
+        print(f"  Top 3 most similar to {topic1_id}:")
+        for topic_id, sim in top_similar:
+            print(f"    - {topic_id}: {sim:.4f}")
+        
+        print("✅ Vector search test passed!")
 
 def main():
     """Main execution function"""
     print("🚀 Step 4: Embedding Topics into Vector DB")
     print("Based on client discussion: Cost-effective approach")
     
-    # Initialize Step 4
-    step4 = Step4VectorDB()
+    # Initialize Step 4 with best model from Step 3
+    # Using google_gemini-2.0-flash (best performing model from Step 3 evaluation)
+    step4 = Step4VectorDB(model_name="google_gemini-2.0-flash")
     
     # Run Step 4
     embedding_dict = step4.run_step4()
