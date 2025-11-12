@@ -8,6 +8,7 @@ NO AI - Pure rule-based logic
 import os
 import json
 from typing import Dict, List, Any
+from collections import defaultdict
 from datetime import datetime
 
 class Step5UserFiltering:
@@ -21,23 +22,17 @@ class Step5UserFiltering:
         # Load topics from Step 3
         self.topics = self.load_topics_from_step3()
         
-        # Define test users with their channel memberships
-        # Using actual users from Step 1 & 3 data
-        self.test_users = {
-            "devon": ["#campaign-briefs", "#project-updates", "#client-communications"],
-            "sam": ["#campaign-briefs", "#project-updates", "#client-communications"],
-            "leah": ["#project-updates", "#client-communications"],
-            "jordan": ["#client-communications", "#project-updates"]
-        }
+        # Derive channel memberships from message data (not hardcoded)
+        self.user_channels = self.load_user_channel_memberships()
         
         print(f"✅ Step 5: User Filtering initialized")
         print(f"✅ Loaded {len(self.topics)} topics from Step 3")
-        print(f"✅ Defined {len(self.test_users)} test users")
+        print(f"✅ Derived channel memberships for {len(self.user_channels)} users from Step 3 metadata")
     
     def load_topics_from_step3(self) -> List[Dict]:
         """Load topics from Step 3 JSON file"""
         try:
-            step3_file = "output/step3_client_analysis/google_gemini-2.0-flash.json"
+            step3_file = "output/phase5_metadata_generation/google_gemini-2.0-flash.json"
             
             if not os.path.exists(step3_file):
                 print(f"❌ Step 3 file not found: {step3_file}")
@@ -61,13 +56,62 @@ class Step5UserFiltering:
             print(f"❌ Error loading topics: {e}")
             return []
     
+    def load_user_channel_memberships(self) -> Dict[str, List[str]]:
+        """
+        Derive channel memberships from Step 3 metadata.
+        
+        Logic: If a user is a participant in a topic, and the topic is in channel X,
+               then that user is a member of channel X.
+        
+        This is more accurate than CSV because:
+        - Step 3 already has topic-channel-participant relationships
+        - Participants in a topic must be members of that topic's channel
+        - Aligns with Step 5's topic-based filtering logic
+        """
+        user_channels = defaultdict(set)
+        
+        if not self.topics:
+            print(f"⚠️  No topics loaded from Step 3")
+            return {}
+        
+        for topic in self.topics:
+            # Check if topic has valid metadata
+            if not topic.get("success") or not topic.get("metadata"):
+                continue
+            
+            metadata = topic["metadata"]
+            channel = metadata.get("channel", "").lower()
+            participants = metadata.get("participants", [])
+            
+            # Skip if channel is invalid
+            if not channel or channel in ["n/a", "unspecified", ""]:
+                continue
+            
+            # For each participant, add this channel to their membership list
+            for participant in participants:
+                # Remove @ prefix and convert to lowercase
+                user = participant.replace("@", "").lower().strip()
+                
+                if user:  # Only add if user name is valid
+                    user_channels[user].add(channel)
+        
+        # Convert sets to sorted lists
+        result = {user: sorted(list(channels)) for user, channels in user_channels.items()}
+        
+        print(f"✅ Derived channel memberships from Step 3 metadata")
+        print(f"   Logic: Participants in a topic → members of that topic's channel")
+        for user, channels in sorted(result.items()):
+            print(f"   {user}: {len(channels)} channels")
+        
+        return result
+    
     def filter_topics_for_user(self, user_name: str) -> List[str]:
         """
         Filter topics for a specific user based on two rules:
         1. User must have at least one open action item in the topic
         2. User must be a member of the topic's channel
         """
-        user_channels = self.test_users.get(user_name, [])
+        user_channels = self.user_channels.get(user_name.lower(), [])
         visible_topics = []
         
         for topic in self.topics:
@@ -118,7 +162,7 @@ class Step5UserFiltering:
         
         all_results = {}
         
-        for user_name in self.test_users.keys():
+        for user_name in self.user_channels.keys():
             visible_topics = self.filter_topics_for_user(user_name)
             all_results[user_name] = visible_topics
             
@@ -138,11 +182,12 @@ class Step5UserFiltering:
             "step": "step5_user_filtering",
             "timestamp": datetime.now().isoformat(),
             "total_topics": len(self.topics),
-            "users_processed": len(self.test_users),
+            "users_processed": len(self.user_channels),
             "filtering_rules": {
                 "rule1": "User must have at least one open action item in the topic",
                 "rule2": "User must be a member of the topic's channel"
             },
+            "user_channel_memberships": {user: channels for user, channels in self.user_channels.items()},
             "results": all_results
         }
         
@@ -163,7 +208,7 @@ class Step5UserFiltering:
         all_verified = True
         
         for user_name, visible_topics in results.items():
-            user_channels = self.test_users[user_name]
+            user_channels = self.user_channels.get(user_name.lower(), [])
             
             for topic_id in visible_topics:
                 # Find the topic

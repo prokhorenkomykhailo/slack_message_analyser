@@ -8,16 +8,28 @@
     "topic_002",
     "topic_003",
     "topic_004",
-    "topic_011"
+    "topic_007",
+    "topic_010",
+    "topic_011",
+    "topic_012",
+    "topic_014"
   ],
   "leah": [
+    "topic_001",
+    "topic_002",
+    "topic_003",
     "topic_004",
-    "topic_005"
+    "topic_007",
+    "topic_010",
+    "topic_013"
   ],
   "jordan": [
+    "topic_002",
+    "topic_003",
     "topic_004",
     "topic_005",
     "topic_006",
-    "topic_007"
+    "topic_007",
+    "topic_010"
   ]
 }

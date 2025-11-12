@@ -2,7 +2,7 @@
   "provider": "groq",
   "model": "mixtral-8x7b-32768",
   "phase": "phase5_metadata_generation",
-  "timestamp": "2025-10-20T00:14:21.378927",
+  "timestamp": "2025-11-05T08:45:23.448299",
   "success": false,
   "duration": 0,
   "usage": {

@@ -1,11 +1,65 @@
 {
   "step": "step5_user_filtering",
-  "timestamp": "2025-11-03T07:54:44.226409",
+  "timestamp": "2025-11-07T02:36:52.011417",
   "total_topics": 15,
   "users_processed": 4,
   "filtering_rules": {
     "rule1": "User must have at least one open action item in the topic",
     "rule2": "User must be a member of the topic's channel"
+  },
+  "user_channel_memberships": {
+    "devon": [
+      "#agency-content",
+      "#campaign-briefs",
+      "#design-feedback",
+      "#general",
+      "#greenscape",
+      "#market-research",
+      "#marketing",
+      "#product-descriptions",
+      "#project-greenscape",
+      "#rebranding",
+      "#social-media"
+    ],
+    "sam": [
+      "#agency-content",
+      "#campaign-briefs",
+      "#design-feedback",
+      "#general",
+      "#greenscape",
+      "#market-research",
+      "#marketing",
+      "#product-descriptions",
+      "#project-greenscape",
+      "#rebranding",
+      "#social-media"
+    ],
+    "leah": [
+      "#agency-content",
+      "#campaign-briefs",
+      "#design-feedback",
+      "#general",
+      "#greenscape",
+      "#market-research",
+      "#marketing",
+      "#product-descriptions",
+      "#project-greenscape",
+      "#rebranding",
+      "#social-media"
+    ],
+    "jordan": [
+      "#agency-content",
+      "#campaign-briefs",
+      "#design-feedback",
+      "#general",
+      "#greenscape",
+      "#market-research",
+      "#marketing",
+      "#product-descriptions",
+      "#project-greenscape",
+      "#rebranding",
+      "#social-media"
+    ]
   },
   "results": {
     "devon": [
@@ -17,17 +71,29 @@
       "topic_002",
       "topic_003",
       "topic_004",
-      "topic_011"
+      "topic_007",
+      "topic_010",
+      "topic_011",
+      "topic_012",
+      "topic_014"
     ],
     "leah": [
+      "topic_001",
+      "topic_002",
+      "topic_003",
       "topic_004",
-      "topic_005"
+      "topic_007",
+      "topic_010",
+      "topic_013"
     ],
     "jordan": [
+      "topic_002",
+      "topic_003",
       "topic_004",
       "topic_005",
       "topic_006",
-      "topic_007"
+      "topic_007",
+      "topic_010"
     ]
   }
 }

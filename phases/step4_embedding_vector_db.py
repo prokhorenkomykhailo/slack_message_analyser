@@ -11,6 +11,7 @@ import numpy as np
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 import sys
+import urllib.parse
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -19,10 +20,12 @@ load_dotenv()
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from utils.supabase_helpers import build_supabase_db_url
+
 # Supabase credentials
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_ANON_KEY")  # Anon key for API access
-SUPABASE_DB_URL = os.getenv("DB_URL")  # Direct PostgreSQL connection string
+SUPABASE_DB_URL = build_supabase_db_url()
 
 class Step4VectorDB:
     """
@@ -144,40 +147,23 @@ class Step4VectorDB:
         """Create table in Supabase with pgvector extension if it doesn't exist"""
         try:
             import psycopg2
-            import urllib.parse
-            
             print(f"🔗 Connecting to Supabase...")
-            
-            # Use DB_URL from .env if available, otherwise construct it
-            db_url_env = os.getenv("DB_URL")
-            
-            if db_url_env:
-                # Use the pre-configured DB_URL from .env
-                db_url = db_url_env
-                print(f"🔗 Using DB_URL from .env")
-            else:
-                # Construct connection from individual components
-                db_host = os.getenv("DB_HOST")
-                db_port = os.getenv("DB_PORT", "6543")
-                db_name = os.getenv("DB_NAME", "postgres")
-                db_user = os.getenv("DB_USER")
-                db_password = os.getenv("DB_PASSWORD")
-                
-                if not all([db_host, db_user, db_password]):
-                    raise ValueError("Missing database credentials in .env file")
-                
-                # URL encode the password to handle special characters
-                import urllib.parse
-                encoded_password = urllib.parse.quote_plus(db_password)
-                
-                # Transaction pooler mode: Keep 'postgres' as database name
-                # Port 6543 already indicates transaction pooler mode in Supabase
-                db_url = f"postgresql://{db_user}:{encoded_password}@{db_host}:{db_port}/{db_name}"
-                print(f"🔗 Constructed connection from individual components")
-            
-            print(f"🔗 Connecting via Transaction Pooler")
-            print(f"   Host: {db_url.split('@')[1].split('/')[0] if '@' in db_url else 'N/A'}")
-            
+
+            db_url = SUPABASE_DB_URL
+            if not db_url:
+                raise ValueError("Missing database credentials in environment configuration")
+
+            host_display = "N/A"
+            try:
+                parsed = urllib.parse.urlparse(db_url)
+                if parsed.hostname:
+                    host_display = parsed.hostname
+            except Exception:
+                pass
+
+            print("🔗 Connecting via Transaction Pooler")
+            print(f"   Host: {host_display}")
+
             # Enable SSL for Supabase connection
             conn = psycopg2.connect(
                 db_url,
@@ -224,23 +210,9 @@ class Step4VectorDB:
         """Save embeddings to Supabase pgvector"""
         try:
             import psycopg2
-            
-            # Use DB_URL from .env if available (same as setup)
-            db_url_env = os.getenv("DB_URL")
-            
-            if db_url_env:
-                db_url = db_url_env
-            else:
-                # Fallback: construct from components
-                db_host = os.getenv("DB_HOST")
-                db_port = os.getenv("DB_PORT", "6543")
-                db_name = os.getenv("DB_NAME", "postgres")
-                db_user = os.getenv("DB_USER")
-                db_password = os.getenv("DB_PASSWORD")
-                
-                import urllib.parse
-                encoded_password = urllib.parse.quote_plus(db_password)
-                db_url = f"postgresql://{db_user}:{encoded_password}@{db_host}:{db_port}/{db_name}"
+            db_url = SUPABASE_DB_URL
+            if not db_url:
+                raise ValueError("Missing database credentials in environment configuration")
             
             # Enable SSL for Supabase connection
             conn = psycopg2.connect(

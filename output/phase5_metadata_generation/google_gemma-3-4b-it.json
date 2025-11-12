@@ -2,11 +2,11 @@
   "provider": "google",
   "model": "gemma-3-4b-it",
   "phase": "phase5_metadata_generation",
-  "timestamp": "2025-10-20T00:06:15.542330",
+  "timestamp": "2025-11-05T08:36:56.138166",
   "success": false,
-  "duration": 26.669243574142456,
+  "duration": 25.84640097618103,
   "usage": {
-    "total_tokens": 14266
+    "total_tokens": 14956
   },
   "cost": {
     "total_cost": 0.0
@@ -18,7 +18,7 @@
       "success": true,
       "metadata": {
         "title": "EcoBloom Summer Campaign Planning",
-        "summary": "The team convened to finalize the EcoBloom summer campaign, focusing on vibrant visuals and natural elements. Key decisions included content delivery by July 10, 2025, design completion by July 21, 2025, and legal review by July 14, 2025.  The overall campaign deadline is July 28, 2025, with a high priority.",
+        "summary": "The team convened to finalize the EcoBloom summer campaign, focusing on vibrant visuals and natural elements to align with the brand. Key decisions included content delivery by July 10, 2025, design completion by July 21, 2025, and legal review by July 14, 2025, all with a final campaign deadline of July 28, 2025.  Action items were assigned to ensure timely completion.",
         "action_items": [
           {
             "task": "Schedule kickoff meeting for EcoBloom summer campaign",
@@ -28,16 +28,16 @@
             "status": "completed"
           },
           {
-            "task": "Finalize content strategy for EcoBloom campaign",
-            "owner": "@leah",
-            "due_date": "2024-06-30",
+            "task": "Prepare initial design concepts for EcoBloom campaign",
+            "owner": "@sam",
+            "due_date": "2024-06-25",
             "priority": "high",
             "status": "in_progress"
           },
           {
-            "task": "Develop initial design concepts for EcoBloom campaign",
-            "owner": "@sam",
-            "due_date": "2024-06-25",
+            "task": "Draft content strategy for EcoBloom summer campaign",
+            "owner": "@leah",
+            "due_date": "2024-06-30",
             "priority": "high",
             "status": "in_progress"
           },
@@ -49,7 +49,7 @@
             "status": "in_progress"
           },
           {
-            "task": "Complete legal review of marketing materials for EcoBloom",
+            "task": "Finalize marketing materials by July 7, 2025",
             "owner": "@jordan",
             "due_date": "2024-07-07",
             "priority": "high",
@@ -65,6 +65,7 @@
         "urgency": "high",
         "deadline": "2024-07-28",
         "status": "active",
+        "channel": "#campaign-briefs",
         "tags": [
           "ecobloom",
           "campaign",
@@ -76,68 +77,47 @@
           "budget"
         ]
       },
-      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Summer Campaign Planning\",\n  \"summary\": \"The team convened to finalize the EcoBloom summer campaign, focusing on vibrant visuals and natural elements. Key decisions included content delivery by July 10, 2025, design completion by July 21, 2025, and legal review by July 14, 2025.  The overall campaign deadline is July 28, 2025, with a high priority.\",\n  \"action_items\": [\n    {\n      \"task\": \"Schedule kickoff meeting for EcoBloom summer campaign\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-05-31\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Finalize content strategy for EcoBloom campaign\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-06-30\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Develop initial design concepts for EcoBloom campaign\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-06-25\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Review EcoBloom contract terms and deliverables\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-14\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Complete legal review of marketing materials for EcoBloom\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-07\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    }\n  ],\n  \"participants\": [\"@devon\", \"@sam\", \"@leah\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-07-28\",\n  \"status\": \"active\",\n  \"tags\": [\"ecobloom\", \"campaign\", \"summer\", \"marketing\", \"sustainability\", \"content\", \"timeline\", \"budget\"]\n}\n```"
+      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Summer Campaign Planning\",\n  \"summary\": \"The team convened to finalize the EcoBloom summer campaign, focusing on vibrant visuals and natural elements to align with the brand. Key decisions included content delivery by July 10, 2025, design completion by July 21, 2025, and legal review by July 14, 2025, all with a final campaign deadline of July 28, 2025.  Action items were assigned to ensure timely completion.\",\n  \"action_items\": [\n    {\n      \"task\": \"Schedule kickoff meeting for EcoBloom summer campaign\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-05-31\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare initial design concepts for EcoBloom campaign\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-06-25\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Draft content strategy for EcoBloom summer campaign\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-06-30\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Review EcoBloom contract terms and deliverables\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-14\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Finalize marketing materials by July 7, 2025\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-07\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    }\n  ],\n  \"participants\": [\"@devon\", \"@sam\", \"@leah\", \"@jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-07-28\",\n  \"status\": \"active\",\n  \"channel\": \"#campaign-briefs\",\n  \"tags\": [\"ecobloom\", \"campaign\", \"summer\", \"marketing\", \"sustainability\", \"content\", \"timeline\", \"budget\"]\n}\n```"
     },
     {
       "cluster_id": "topic_002",
       "success": true,
       "metadata": {
         "title": "FitFusion Rebranding Kickoff & Planning",
-        "summary": "The team initiated the FitFusion rebranding project, receiving a firm deadline of August 15, 2025. Discussions centered around establishing a timeline, developing brand messaging, and ensuring legal compliance, particularly regarding trademark searches. Key milestones and deliverables were identified to meet the project deadline.",
+        "summary": "The team initiated the FitFusion rebranding project, awarded with a launch deadline of August 15, 2025. Discussions centered around establishing a timeline, developing brand messaging, and ensuring legal compliance, particularly regarding trademark searches. Key milestones and deliverables were identified to meet the urgent deadline.",
         "action_items": [
           {
             "task": "Schedule a kickoff meeting for tomorrow at 2 PM",
             "owner": "@devon",
-            "due_date": "2024-05-29",
+            "due_date": "2024-06-01",
             "priority": "high",
-            "status": "completed"
+            "status": "in_progress"
           },
           {
             "task": "Research FitFusion's current brand identity and competitors",
             "owner": "@sam",
-            "due_date": "2024-05-30",
+            "due_date": "2024-06-01",
             "priority": "high",
             "status": "pending"
           },
           {
             "task": "Prepare initial messaging ideas for FitFusion's rebrand",
             "owner": "@leah",
-            "due_date": "2024-07-02",
-            "priority": "high",
-            "status": "pending"
-          },
-          {
-            "task": "Review the FitFusion contract and outline deliverables",
-            "owner": "@jordan",
-            "due_date": "2024-05-29",
-            "priority": "high",
-            "status": "completed"
-          },
-          {
-            "task": "Develop a 3-week design development timeline starting June 25, 2025",
-            "owner": "@sam",
-            "due_date": "2024-06-25",
+            "due_date": "2024-06-02",
             "priority": "high",
             "status": "in_progress"
           },
           {
-            "task": "Draft brand voice guidelines for FitFusion's rebrand",
-            "owner": "@leah",
-            "due_date": "2024-06-26",
-            "priority": "high",
-            "status": "pending"
-          },
-          {
-            "task": "Prepare branding materials by July 30, 2025 for legal review",
+            "task": "Check for similar logos in their industry and related sectors",
             "owner": "@jordan",
             "due_date": "2024-07-30",
             "priority": "high",
-            "status": "in_progress"
+            "status": "pending"
           },
           {
-            "task": "Ensure designs align with brand voice",
+            "task": "Provide at least 3 logo variations with distinct elements",
             "owner": "@sam",
-            "due_date": "2024-07-05",
+            "due_date": "2024-07-30",
             "priority": "high",
             "status": "pending"
           }
@@ -151,6 +131,7 @@
         "urgency": "high",
         "deadline": "2025-08-15",
         "status": "active",
+        "channel": "#campaign-briefs",
         "tags": [
           "fitfusion",
           "rebranding",
@@ -161,38 +142,37 @@
           "budget",
           "timeline",
           "marketing",
-          "sustainability",
           "trademark"
         ]
       },
-      "raw_response": "```json\n{\n  \"title\": \"FitFusion Rebranding Kickoff & Planning\",\n  \"summary\": \"The team initiated the FitFusion rebranding project, receiving a firm deadline of August 15, 2025. Discussions centered around establishing a timeline, developing brand messaging, and ensuring legal compliance, particularly regarding trademark searches. Key milestones and deliverables were identified to meet the project deadline.\",\n  \"action_items\": [\n    {\n      \"task\": \"Schedule a kickoff meeting for tomorrow at 2 PM\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-05-29\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Research FitFusion's current brand identity and competitors\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-05-30\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Prepare initial messaging ideas for FitFusion's rebrand\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-02\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Review the FitFusion contract and outline deliverables\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-05-29\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Develop a 3-week design development timeline starting June 25, 2025\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-06-25\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Draft brand voice guidelines for FitFusion's rebrand\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-06-26\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Prepare branding materials by July 30, 2025 for legal review\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-30\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Ensure designs align with brand voice\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-07-05\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Sam\", \"@Leah\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-08-15\",\n  \"status\": \"active\",\n  \"tags\": [\"fitfusion\", \"rebranding\", \"planning\", \"meeting\", \"launch\", \"campaign\", \"budget\", \"timeline\", \"marketing\", \"sustainability\", \"trademark\"]\n}\n```"
+      "raw_response": "```json\n{\n  \"title\": \"FitFusion Rebranding Kickoff & Planning\",\n  \"summary\": \"The team initiated the FitFusion rebranding project, awarded with a launch deadline of August 15, 2025. Discussions centered around establishing a timeline, developing brand messaging, and ensuring legal compliance, particularly regarding trademark searches. Key milestones and deliverables were identified to meet the urgent deadline.\",\n  \"action_items\": [\n    {\n      \"task\": \"Schedule a kickoff meeting for tomorrow at 2 PM\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-06-01\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Research FitFusion's current brand identity and competitors\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-06-01\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Prepare initial messaging ideas for FitFusion's rebrand\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-06-02\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Check for similar logos in their industry and related sectors\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-30\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Provide at least 3 logo variations with distinct elements\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-07-30\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Sam\", \"@Leah\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-08-15\",\n  \"status\": \"active\",\n  \"channel\": \"#campaign-briefs\",\n  \"tags\": [\"fitfusion\", \"rebranding\", \"planning\", \"meeting\", \"launch\", \"campaign\", \"budget\", \"timeline\", \"marketing\", \"trademark\"]\n}\n```"
     },
     {
       "cluster_id": "topic_003",
       "success": true,
       "metadata": {
         "title": "TechNova Product Launch Kickoff & Planning",
-        "summary": "The team initiated planning for TechNova's new smart home device launch on September 10, 2025. Discussions centered around marketing campaign strategy, design timelines, legal compliance, and material readiness. Key decisions included establishing a July 15, 2025, design start date and an August 26, 2025, legal review deadline.",
+        "summary": "The team initiated planning for TechNova's new smart home device launch on September 10, 2025. Discussions centered around marketing campaign strategy, design timelines, legal review, and ensuring compliance with advertising regulations. Key milestones and deadlines were established to ensure a successful launch.",
         "action_items": [
           {
-            "task": "Establish a detailed marketing campaign timeline with key milestones",
+            "task": "Establish internal milestones based on September 10, 2025 launch date",
             "owner": "@devon",
-            "due_date": "2024-07-12",
+            "due_date": "2024-07-15",
             "priority": "high",
             "status": "pending"
           },
           {
             "task": "Develop initial design concepts for the smart home device",
             "owner": "@sam",
-            "due_date": "2024-08-01",
+            "due_date": "2024-08-12",
             "priority": "high",
             "status": "in_progress"
           },
           {
-            "task": "Draft product description and key messaging points",
+            "task": "Research target audience and competitors",
             "owner": "@leah",
-            "due_date": "2024-07-08",
-            "priority": "high",
+            "due_date": "2024-07-22",
+            "priority": "medium",
             "status": "in_progress"
           },
           {
@@ -203,11 +183,11 @@
             "status": "pending"
           },
           {
-            "task": "Finalize product packaging and promotional materials",
-            "owner": "@sam",
-            "due_date": "2024-08-26",
-            "priority": "medium",
-            "status": "in_progress"
+            "task": "Complete legal review and address any issues",
+            "owner": "@jordan",
+            "due_date": "2024-09-02",
+            "priority": "high",
+            "status": "pending"
           }
         ],
         "participants": [
@@ -217,41 +197,42 @@
           "@Jordan"
         ],
         "urgency": "high",
-        "deadline": "2025-09-10",
+        "deadline": "2024-09-10",
         "status": "active",
+        "channel": "#campaign-briefs",
         "tags": [
-          "TechNova",
-          "product_launch",
+          "technova",
+          "product launch",
           "marketing",
+          "planning",
           "design",
           "legal",
           "compliance",
-          "smart_home",
           "advertising"
         ]
       },
-      "raw_response": "```json\n{\n  \"title\": \"TechNova Product Launch Kickoff & Planning\",\n  \"summary\": \"The team initiated planning for TechNova's new smart home device launch on September 10, 2025. Discussions centered around marketing campaign strategy, design timelines, legal compliance, and material readiness. Key decisions included establishing a July 15, 2025, design start date and an August 26, 2025, legal review deadline.\",\n  \"action_items\": [\n    {\n      \"task\": \"Establish a detailed marketing campaign timeline with key milestones\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-07-12\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop initial design concepts for the smart home device\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-08-01\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Draft product description and key messaging points\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-08\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Prepare marketing materials for legal review\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-08-26\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Finalize product packaging and promotional materials\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-08-26\",\n      \"priority\": \"medium\",\n      \"status\": \"in_progress\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Sam\", \"@Leah\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-09-10\",\n  \"status\": \"active\",\n  \"tags\": [\"TechNova\", \"product_launch\", \"marketing\", \"design\", \"legal\", \"compliance\", \"smart_home\", \"advertising\"]\n}\n```"
+      "raw_response": "```json\n{\n  \"title\": \"TechNova Product Launch Kickoff & Planning\",\n  \"summary\": \"The team initiated planning for TechNova's new smart home device launch on September 10, 2025. Discussions centered around marketing campaign strategy, design timelines, legal review, and ensuring compliance with advertising regulations. Key milestones and deadlines were established to ensure a successful launch.\",\n  \"action_items\": [\n    {\n      \"task\": \"Establish internal milestones based on September 10, 2025 launch date\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Develop initial design concepts for the smart home device\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-08-12\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Research target audience and competitors\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-22\",\n      \"priority\": \"medium\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Prepare marketing materials for legal review\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-08-26\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Complete legal review and address any issues\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-09-02\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Sam\", \"@Leah\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-09-10\",\n  \"status\": \"active\",\n  \"channel\": \"#campaign-briefs\",\n  \"tags\": [\"technova\", \"product launch\", \"marketing\", \"planning\", \"design\", \"legal\", \"compliance\", \"advertising\"]\n}\n```"
     },
     {
       "cluster_id": "topic_004",
       "success": true,
       "metadata": {
         "title": "GreenScape Sustainability Report Kickoff",
-        "summary": "The team initiated work on GreenScape's annual sustainability report, with a firm deadline of August 30, 2025. Key discussions centered around data verification, content drafting, design elements, and legal review. The project requires a collaborative effort to ensure all environmental claims are substantiated and compliant.",
+        "summary": "The team initiated the GreenScape sustainability report project, focusing on a deadline of August 30, 2025. Key discussions centered around data verification, content drafting, design elements, and legal review. The project requires a detailed timeline, environmental claim documentation, and alignment between content and visuals.",
         "action_items": [
           {
             "task": "Schedule client call for GreenScape to gather data and requirements",
             "owner": "@devon",
-            "due_date": "2024-07-01",
+            "due_date": "2024-07-03",
             "priority": "high",
             "status": "completed"
           },
           {
             "task": "Prepare questions for client call regarding sustainability report",
             "owner": "@leah",
-            "due_date": "2024-07-01",
+            "due_date": "2024-07-03",
             "priority": "high",
-            "status": "completed"
+            "status": "in_progress"
           },
           {
             "task": "Draft content for sustainability report, aiming for a final version by August 10, 2025",
@@ -286,7 +267,7 @@
             "owner": "@jordan",
             "due_date": "2024-08-23",
             "priority": "high",
-            "status": "pending"
+            "status": "in_progress"
           }
         ],
         "participants": [
@@ -296,60 +277,62 @@
           "@Jordan"
         ],
         "urgency": "high",
-        "deadline": "2025-08-30",
+        "deadline": "2024-08-30",
         "status": "active",
+        "channel": "#campaign-briefs",
         "tags": [
-          "GreenScape",
+          "greenscape",
           "sustainability",
           "report",
           "planning",
           "budget",
           "timeline",
           "environmental",
-          "compliance"
+          "legal",
+          "content"
         ]
       },
-      "raw_response": "```json\n{\n  \"title\": \"GreenScape Sustainability Report Kickoff\",\n  \"summary\": \"The team initiated work on GreenScape's annual sustainability report, with a firm deadline of August 30, 2025. Key discussions centered around data verification, content drafting, design elements, and legal review. The project requires a collaborative effort to ensure all environmental claims are substantiated and compliant.\",\n  \"action_items\": [\n    {\n      \"task\": \"Schedule client call for GreenScape to gather data and requirements\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-07-01\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare questions for client call regarding sustainability report\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-01\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Draft content for sustainability report, aiming for a final version by August 10, 2025\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-05\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Develop design concept for sustainability report with clean, natural aesthetics\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Review GreenScape's sustainability reporting requirements and ensure compliance\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-01\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare complete draft of sustainability report for legal review by August 16, 2025\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-08-16\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Complete legal review of sustainability report by August 23, 2025\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-08-23\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Leah\", \"@Sam\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-08-30\",\n  \"status\": \"active\",\n  \"tags\": [\"GreenScape\", \"sustainability\", \"report\", \"planning\", \"budget\", \"timeline\", \"environmental\", \"compliance\"]\n}\n```"
+      "raw_response": "```json\n{\n  \"title\": \"GreenScape Sustainability Report Kickoff\",\n  \"summary\": \"The team initiated the GreenScape sustainability report project, focusing on a deadline of August 30, 2025. Key discussions centered around data verification, content drafting, design elements, and legal review. The project requires a detailed timeline, environmental claim documentation, and alignment between content and visuals.\",\n  \"action_items\": [\n    {\n      \"task\": \"Schedule client call for GreenScape to gather data and requirements\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2024-07-03\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare questions for client call regarding sustainability report\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-03\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Draft content for sustainability report, aiming for a final version by August 10, 2025\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-05\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Develop design concept for sustainability report with clean, natural aesthetics\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Review GreenScape's sustainability reporting requirements and ensure compliance\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-01\",\n      \"priority\": \"high\",\n      \"status\": \"completed\"\n    },\n    {\n      \"task\": \"Prepare complete draft of sustainability report for legal review by August 16, 2025\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-08-16\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Complete legal review of sustainability report by August 23, 2025\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-08-23\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Leah\", \"@Sam\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-08-30\",\n  \"status\": \"active\",\n  \"channel\": \"#campaign-briefs\",\n  \"tags\": [\"greenscape\", \"sustainability\", \"report\", \"planning\", \"budget\", \"timeline\", \"environmental\", \"legal\", \"content\"]\n}\n```"
     },
     {
       "cluster_id": "topic_005",
       "success": true,
       "metadata": {
         "title": "UrbanEdge Social Media Strategy",
-        "summary": "The team is developing a comprehensive social media strategy for UrbanEdge's market expansion, focusing on a 25-40 year old demographic interested in sustainable living. The strategy requires a content strategy, visual identity, and legal compliance review by July 20, 2025. Key deliverables include audience research, content templates, and legal guidelines.",
+        "summary": "The team is developing a comprehensive social media strategy for UrbanEdge's new market expansion. Key elements include audience research, content strategy, visual identity, and legal compliance. The strategy must be finalized and ready for integration by July 18, 2025, with a final deadline of July 20, 2025.  Collaboration between Devon, Leah, and Sam is crucial to meet these deadlines.",
         "action_items": [
           {
             "task": "Conduct audience research for UrbanEdge's social media strategy",
-            "owner": "@leah",
-            "due_date": "2024-07-05",
+            "owner": "@Leah",
+            "due_date": "2025-07-05",
             "priority": "high",
             "status": "in_progress"
           },
           {
-            "task": "Develop a content strategy for UrbanEdge's social media",
-            "owner": "@leah",
-            "due_date": "2024-07-15",
+            "task": "Develop a full content strategy for UrbanEdge's social media",
+            "owner": "@Leah",
+            "due_date": "2025-07-15",
             "priority": "high",
             "status": "in_progress"
           },
           {
-            "task": "Create visual identity and content templates for UrbanEdge's social media strategy",
-            "owner": "@sam",
-            "due_date": "2024-07-18",
+            "task": "Develop visual identity and content templates for UrbanEdge's social media strategy",
+            "owner": "@Sam",
+            "due_date": "2025-07-18",
             "priority": "high",
             "status": "in_progress"
           },
           {
             "task": "Review UrbanEdge's social media requirements for legal compliance",
-            "owner": "@jordan",
-            "due_date": "2024-07-19",
+            "owner": "@Jordan",
+            "due_date": "2025-07-19",
             "priority": "high",
             "status": "pending"
           },
           {
             "task": "Finalize the content calendar and posting schedule",
-            "owner": "@leah",
-            "due_date": "2024-07-15",
+            "owner": "@Leah",
+            "due_date": "2025-07-15",
             "priority": "medium",
             "status": "in_progress"
           }
@@ -361,63 +344,64 @@
           "@Jordan"
         ],
         "urgency": "high",
-        "deadline": "2024-07-20",
+        "deadline": "2025-07-20",
         "status": "active",
+        "channel": "#campaign-briefs",
         "tags": [
           "urbanedge",
           "social-media",
           "strategy",
           "marketing",
           "content",
-          "sustainability",
           "planning",
-          "budget",
-          "timeline"
+          "sustainability",
+          "legal",
+          "disclosure"
         ]
       },
-      "raw_response": "```json\n{\n  \"title\": \"UrbanEdge Social Media Strategy\",\n  \"summary\": \"The team is developing a comprehensive social media strategy for UrbanEdge's market expansion, focusing on a 25-40 year old demographic interested in sustainable living. The strategy requires a content strategy, visual identity, and legal compliance review by July 20, 2025. Key deliverables include audience research, content templates, and legal guidelines.\",\n  \"action_items\": [\n    {\n      \"task\": \"Conduct audience research for UrbanEdge's social media strategy\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-05\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Develop a content strategy for UrbanEdge's social media\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Create visual identity and content templates for UrbanEdge's social media strategy\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2024-07-18\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Review UrbanEdge's social media requirements for legal compliance\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2024-07-19\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Finalize the content calendar and posting schedule\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2024-07-15\",\n      \"priority\": \"medium\",\n      \"status\": \"in_progress\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Leah\", \"@Sam\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2024-07-20\",\n  \"status\": \"active\",\n  \"tags\": [\"urbanedge\", \"social-media\", \"strategy\", \"marketing\", \"content\", \"sustainability\", \"planning\", \"budget\", \"timeline\"]\n}\n```"
+      "raw_response": "```json\n{\n  \"title\": \"UrbanEdge Social Media Strategy\",\n  \"summary\": \"The team is developing a comprehensive social media strategy for UrbanEdge's new market expansion. Key elements include audience research, content strategy, visual identity, and legal compliance. The strategy must be finalized and ready for integration by July 18, 2025, with a final deadline of July 20, 2025.  Collaboration between Devon, Leah, and Sam is crucial to meet these deadlines.\",\n  \"action_items\": [\n    {\n      \"task\": \"Conduct audience research for UrbanEdge's social media strategy\",\n      \"owner\": \"@Leah\",\n      \"due_date\": \"2025-07-05\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Develop a full content strategy for UrbanEdge's social media\",\n      \"owner\": \"@Leah\",\n      \"due_date\": \"2025-07-15\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Develop visual identity and content templates for UrbanEdge's social media strategy\",\n      \"owner\": \"@Sam\",\n      \"due_date\": \"2025-07-18\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Review UrbanEdge's social media requirements for legal compliance\",\n      \"owner\": \"@Jordan\",\n      \"due_date\": \"2025-07-19\",\n      \"priority\": \"high\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Finalize the content calendar and posting schedule\",\n      \"owner\": \"@Leah\",\n      \"due_date\": \"2025-07-15\",\n      \"priority\": \"medium\",\n      \"status\": \"in_progress\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Leah\", \"@Sam\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-20\",\n  \"status\": \"active\",\n  \"channel\": \"#campaign-briefs\",\n  \"tags\": [\"urbanedge\", \"social-media\", \"strategy\", \"marketing\", \"content\", \"planning\", \"sustainability\", \"legal\", \"disclosure\"]\n}\n```"
     },
     {
       "cluster_id": "topic_006",
       "success": true,
       "metadata": {
         "title": "EcoBloom Campaign Design Revisions",
-        "summary": "The team addressed revisions to EcoBloom's summer campaign design based on client feedback. Key changes include a complete color palette overhaul and adjustments to content to align with the new direction. The project is focused on meeting a July 28, 2025, deadline, requiring expedited legal review and content integration.",
+        "summary": "The team addressed revisions to EcoBloom's summer campaign design based on client feedback. Key changes include a complete color palette overhaul and adjustments to content imagery. The project requires urgent action to meet the July 28, 2025 campaign launch deadline, necessitating revisions and legal review.",
         "action_items": [
           {
-            "task": "Revise design concepts incorporating the new color palette",
+            "task": "Revise design concepts incorporating color palette changes",
             "owner": "@sam",
             "due_date": "2025-07-10",
             "priority": "high",
             "status": "in_progress"
           },
           {
-            "task": "Adjust content for EcoBloom's campaign to align with the new visual direction",
+            "task": "Adjust content for new color palette and visual references",
             "owner": "@leah",
             "due_date": "2025-07-08",
             "priority": "high",
             "status": "in_progress"
           },
           {
-            "task": "Share the new color palette with Leah by July 5, 2025",
-            "owner": "@sam",
-            "due_date": "2025-07-05",
-            "priority": "high",
-            "status": "in_progress"
-          },
-          {
-            "task": "Block time for expedited legal review of EcoBloom's revised designs",
+            "task": "Conduct expedited legal review of revised designs",
             "owner": "@jordan",
             "due_date": "2025-07-21",
             "priority": "high",
             "status": "in_progress"
           },
           {
-            "task": "Ensure all materials are delivered by July 21, 2025 to allow for a thorough review",
-            "owner": "@jordan",
-            "due_date": "2025-07-21",
-            "priority": "high",
-            "status": "in_progress"
+            "task": "Share revised design concepts with the team for feedback",
+            "owner": "@devon",
+            "due_date": "2025-07-10",
+            "priority": "medium",
+            "status": "pending"
+          },
+          {
+            "task": "Ensure Leah has all necessary materials for content integration",
+            "owner": "@devon",
+            "due_date": "2025-07-12",
+            "priority": "medium",
+            "status": "pending"
           }
         ],
         "participants": [
@@ -429,6 +413,7 @@
         "urgency": "high",
         "deadline": "2025-07-28",
         "status": "active",
+        "channel": "#campaign-briefs",
         "tags": [
           "ecobloom",
           "campaign",
@@ -441,60 +426,60 @@
           "sustainability"
         ]
       },
-      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Campaign Design Revisions\",\n  \"summary\": \"The team addressed revisions to EcoBloom's summer campaign design based on client feedback. Key changes include a complete color palette overhaul and adjustments to content to align with the new direction. The project is focused on meeting a July 28, 2025, deadline, requiring expedited legal review and content integration.\",\n  \"action_items\": [\n    {\n      \"task\": \"Revise design concepts incorporating the new color palette\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-10\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Adjust content for EcoBloom's campaign to align with the new visual direction\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-08\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Share the new color palette with Leah by July 5, 2025\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-05\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Block time for expedited legal review of EcoBloom's revised designs\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-21\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Ensure all materials are delivered by July 21, 2025 to allow for a thorough review\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-21\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Sam\", \"@Leah\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-28\",\n  \"status\": \"active\",\n  \"tags\": [\"ecobloom\", \"campaign\", \"summer\", \"design\", \"revisions\", \"color-palette\", \"content\", \"marketing\", \"sustainability\"]\n}\n```"
+      "raw_response": "```json\n{\n  \"title\": \"EcoBloom Campaign Design Revisions\",\n  \"summary\": \"The team addressed revisions to EcoBloom's summer campaign design based on client feedback. Key changes include a complete color palette overhaul and adjustments to content imagery. The project requires urgent action to meet the July 28, 2025 campaign launch deadline, necessitating revisions and legal review.\",\n  \"action_items\": [\n    {\n      \"task\": \"Revise design concepts incorporating color palette changes\",\n      \"owner\": \"@sam\",\n      \"due_date\": \"2025-07-10\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Adjust content for new color palette and visual references\",\n      \"owner\": \"@leah\",\n      \"due_date\": \"2025-07-08\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Conduct expedited legal review of revised designs\",\n      \"owner\": \"@jordan\",\n      \"due_date\": \"2025-07-21\",\n      \"priority\": \"high\",\n      \"status\": \"in_progress\"\n    },\n    {\n      \"task\": \"Share revised design concepts with the team for feedback\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-10\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    },\n    {\n      \"task\": \"Ensure Leah has all necessary materials for content integration\",\n      \"owner\": \"@devon\",\n      \"due_date\": \"2025-07-12\",\n      \"priority\": \"medium\",\n      \"status\": \"pending\"\n    }\n  ],\n  \"participants\": [\"@Devon\", \"@Sam\", \"@Leah\", \"@Jordan\"],\n  \"urgency\": \"high\",\n  \"deadline\": \"2025-07-28\",\n  \"status\": \"active\",\n  \"channel\": \"#campaign-briefs\",\n  \"tags\": [\"ecobloom\", \"campaign\", \"summer\", \"design\", \"revisions\", \"color-palette\", \"content\", \"marketing\", \"sustainability\"]\n}\n```"
     },
     {
       "cluster_id": "topic_007",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 10.416589004s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 10\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 29.899288152s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 29\n}\n]",
       "metadata": {}
     },
     {
       "cluster_id": "topic_008",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 7.186595309s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 7\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 26.636575478s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 26\n}\n]",
       "metadata": {}
     },
     {
       "cluster_id": "topic_009",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 3.881066793s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 3\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 23.312621142s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 23\n}\n]",
       "metadata": {}
     },
     {
       "cluster_id": "topic_010",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 626.750998ms. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 20.065168632s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 20\n}\n]",
       "metadata": {}
     },
     {
       "cluster_id": "topic_011",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 57.403639602s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 57\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 16.84017503s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 16\n}\n]",
       "metadata": {}
     },
     {
       "cluster_id": "topic_012",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 54.171825269s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 54\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 13.597807135s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 13\n}\n]",
       "metadata": {}
     },
     {
       "cluster_id": "topic_013",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 50.944119064s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 50\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 10.368193403s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 10\n}\n]",
       "metadata": {}
     },
     {
       "cluster_id": "topic_014",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 47.715449836s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 47\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 7.138037846s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 7\n}\n]",
       "metadata": {}
     },
     {
       "cluster_id": "topic_015",
       "success": false,
-      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 44.483267345s. [violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, retry_delay {\n  seconds: 44\n}\n]",
+      "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 15000\nPlease retry in 3.891810744s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count\"\n  quota_id: \"GenerateContentPaidTierInputTokensPerModelPerMinute\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemma-3-4b\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 15000\n}\n, retry_delay {\n  seconds: 3\n}\n]",
       "metadata": {}
     }
   ]

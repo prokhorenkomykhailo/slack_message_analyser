@@ -6,9 +6,9 @@ Evaluates all models on filtering topics per user
 
 import os
 import json
-import time
 import numpy as np
 from typing import Dict, List, Any
+from collections import defaultdict
 from datetime import datetime
 import sys
 
@@ -16,7 +16,10 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.model_clients import call_model_with_retry
-from config.model_config import get_available_models, get_model_config, get_model_cost
+from config.model_config import (
+    get_available_models,
+    get_model_cost
+)
 
 class Phase7Evaluator:
     """Evaluates models on user-based topic filtering"""
@@ -26,24 +29,28 @@ class Phase7Evaluator:
         self.output_dir = os.path.join("output", self.phase_name)
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Load topics from Phase 5
+        # Load topics from Phase 5 (Step 3)
         self.topics = self.load_topics()
         
-        # Define test users
+        # Derive channel memberships from Step 3 metadata (not hardcoded)
+        self.user_channels = self.load_user_channel_memberships()
+        
+        # Create test users list directly from user_channels (no separate function needed)
         self.test_users = [
-            {"name": "alice", "channels": ["#general", "#planning"]},
-            {"name": "bob", "channels": ["#general", "#tech"]},
-            {"name": "charlie", "channels": ["#tech", "#development"]},
-            {"name": "david", "channels": ["#general", "#marketing"]}
+            {"name": user_name, "channels": channels}
+            for user_name, channels in sorted(self.user_channels.items())
         ]
+        
+        if self.test_users:
+            print(f"✅ Found {len(self.test_users)} users from Step 3 metadata")
         
         # User filtering prompt
         self.prompt_template = self.get_filtering_prompt()
     
     def load_topics(self) -> List[Dict]:
-        """Load topics from Phase 5"""
+        """Load topics from Phase 5 (Step 3)"""
         try:
-            # Try to load from Phase 5 results
+            # Try to load from Phase 5 results (comprehensive)
             phase5_dir = os.path.join("output", "phase5_metadata_generation")
             comprehensive_file = os.path.join(phase5_dir, "comprehensive_results.json")
             
@@ -54,14 +61,68 @@ class Phase7Evaluator:
                 # Get the best performing model's topics
                 best_model = self.get_best_phase5_model(results)
                 if best_model:
-                    return results[best_model]["metadata_results"]
+                    topics = results[best_model]["metadata_results"]
+                    print(f"✅ Loaded {len(topics)} topics from Phase 5 (best model: {best_model})")
+                    return topics
             
-            # Fallback: create dummy topics for testing
-            return self.create_dummy_topics()
+            # Try to load from single model result (google_gemini-2.0-flash)
+            single_model_file = os.path.join(phase5_dir, "google_gemini-2.0-flash.json")
+            if os.path.exists(single_model_file):
+                with open(single_model_file, "r") as f:
+                    data = json.load(f)
+                    if "metadata_results" in data:
+                        topics = data["metadata_results"]
+                        print(f"✅ Loaded {len(topics)} topics from {single_model_file}")
+                        return topics
+            
+            # No topics found - return empty list (no dummy data)
+            print("❌ No topics found in Phase 5 results. Please run Step 3 first.")
+            return []
             
         except Exception as e:
-            print(f"⚠️  Could not load Phase 5 results: {e}")
-            return self.create_dummy_topics()
+            print(f"❌ Could not load Phase 5 results: {e}")
+            return []
+    
+    def load_user_channel_memberships(self) -> Dict[str, List[str]]:
+        """
+        Derive channel memberships from Step 3 metadata.
+        
+        Logic: If a user is a participant in a topic, and the topic is in channel X,
+               then that user is a member of channel X.
+        """
+        user_channels = defaultdict(set)
+        
+        if not self.topics:
+            return {}
+        
+        for topic in self.topics:
+            # Check if topic has valid metadata
+            if not topic.get("success") or not topic.get("metadata"):
+                continue
+            
+            metadata = topic["metadata"]
+            channel = metadata.get("channel", "").lower()
+            participants = metadata.get("participants", [])
+            
+            # Skip if channel is invalid
+            if not channel or channel in ["n/a", "unspecified", ""]:
+                continue
+            
+            # For each participant, add this channel to their membership list
+            for participant in participants:
+                # Remove @ prefix and convert to lowercase
+                user = participant.replace("@", "").lower().strip()
+                
+                if user:  # Only add if user name is valid
+                    user_channels[user].add(channel)
+        
+        # Convert sets to sorted lists
+        result = {user: sorted(list(channels)) for user, channels in user_channels.items()}
+        
+        if result:
+            print(f"✅ Derived channel memberships for {len(result)} users from Step 3 metadata")
+        
+        return result
     
     def get_best_phase5_model(self, results: Dict) -> str:
         """Get the best performing model from Phase 5"""
@@ -74,41 +135,6 @@ class Phase7Evaluator:
         best_model = max(successful_results.items(), 
                         key=lambda x: x[1]["metrics"]["success_rate"])
         return best_model[0]
-    
-    def create_dummy_topics(self) -> List[Dict]:
-        """Create dummy topics for testing"""
-        return [
-            {
-                "cluster_id": "cluster_001",
-                "success": True,
-                "metadata": {
-                    "title": "Project Planning & Sprint Setup",
-                    "summary": "Team discussed Q2 project planning and sprint structure",
-                    "action_items": [
-                        {"task": "Create sprint board", "owner": "@alice", "due_date": "2024-04-15"}
-                    ],
-                    "participants": ["@alice", "@bob"],
-                    "urgency": "medium",
-                    "tags": ["planning", "sprint"],
-                    "channel": "#general"
-                }
-            },
-            {
-                "cluster_id": "cluster_002",
-                "success": True,
-                "metadata": {
-                    "title": "Technical Architecture Discussion",
-                    "summary": "Discussed system architecture and technical decisions",
-                    "action_items": [
-                        {"task": "Review architecture docs", "owner": "@charlie", "due_date": "2024-04-20"}
-                    ],
-                    "participants": ["@charlie", "@david"],
-                    "urgency": "high",
-                    "tags": ["architecture", "technical"],
-                    "channel": "#tech"
-                }
-            }
-        ]
     
     def get_filtering_prompt(self) -> str:
         """Get the user filtering prompt"""
@@ -136,26 +162,26 @@ Given a user and a set of topics, filter topics where:
 
 **Output Format (JSON):**
 {{
-  "user": "alice",
+  "user": "<user_name>",
   "visible_topics": [
     {{
-      "topic_id": "cluster_001",
-      "title": "Project Planning & Sprint Setup",
+      "topic_id": "<topic_id>",
+      "title": "<topic_title>",
       "relevance_score": 0.95,
       "reason": "User is participant and has action items",
       "action_items": [
         {{
-          "task": "Create sprint board",
-          "owner": "@alice",
-          "due_date": "2024-04-15"
+          "task": "<task_description>",
+          "owner": "@<user_name>",
+          "due_date": "YYYY-MM-DD"
         }}
       ]
     }}
   ],
   "filtered_out": [
     {{
-      "topic_id": "cluster_002",
-      "reason": "User not in #tech channel"
+      "topic_id": "<topic_id>",
+      "reason": "User not in <channel_name> channel"
     }}
   ]
 }}
@@ -332,6 +358,16 @@ Tags: {metadata.get('tags', [])}
         """Run evaluation on all available models"""
         print(f"🎯 {self.phase_name.upper()} EVALUATION")
         print("=" * 60)
+        
+        # Validate that we have topics and test users
+        if not self.topics:
+            print("❌ No topics found. Please run Step 3 (Phase 5) first to generate topic metadata.")
+            return
+        
+        if not self.test_users:
+            print("❌ No test users found. Cannot run evaluation without users.")
+            print("   This usually means no participants were found in the topics.")
+            return
         
         available_models = get_available_models()
         if not available_models:
