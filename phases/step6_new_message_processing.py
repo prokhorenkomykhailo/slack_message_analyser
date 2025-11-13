@@ -752,14 +752,21 @@ def main():
     
     # Example: Process a new message
     # In production, this would come from Slack webhook or message queue
+    # new_message = {
+    #     "id": 301,
+    #     "channel": "#campaign-briefs",
+    #     "user": "Devon",
+    #     "text": "@team The EcoBloom campaign deadline has been moved to August 5, 2025. Please update your timelines accordingly.",
+    #     "timestamp": "2025-06-25T10:00:00"
+    # }
+    
     new_message = {
         "id": 301,
-        "channel": "#campaign-briefs",
-        "user": "Devon",
-        "text": "@team The EcoBloom campaign deadline has been moved to August 5, 2025. Please update your timelines accordingly.",
+        "channel": "#finance-updates",
+        "user": "Priya",
+        "text": "@finance-team The Q3 invoice for Horizon Robotics (PO-HR-7784) is still unpaid. Please confirm that the wire transfer is scheduled before the July 3, 2025 cutoff to avoid penalties.",
         "timestamp": "2025-06-25T10:00:00"
     }
-    
     # Process single message
     result = step6.process_new_message(new_message)
     
