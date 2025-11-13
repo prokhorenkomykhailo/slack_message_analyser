@@ -8,7 +8,7 @@ Based on client discussion: Avoid expensive Pinecone, optimize pgvector instead
 import os
 import json
 import numpy as np
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Optional
 from datetime import datetime
 import sys
 import urllib.parse
@@ -20,6 +20,7 @@ load_dotenv()
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from config.model_config import GOOGLE_API_KEY, OPENAI_API_KEY
 from utils.supabase_helpers import build_supabase_db_url
 
 # Supabase credentials
@@ -44,20 +45,150 @@ class Step4VectorDB:
         # Load topics from Step 3 JSON file for the specified model
         self.topics = self.load_topics_from_step3()
         
-        # Vector dimensions (standard for most embedding models)
-        self.vector_dimensions = 768
+        # Embedding configuration
+        self.embedding_provider = os.getenv(
+            "STEP4_EMBEDDING_PROVIDER",
+            "google",
+        ).lower()
+        self.embedding_model_name = os.getenv(
+            "STEP4_EMBEDDING_MODEL",
+            "models/text-embedding-004",
+        )
+        self.default_vector_dimensions = int(
+            os.getenv("STEP4_VECTOR_DIMENSIONS", "768")
+        )
+        self.vector_dimensions = self.default_vector_dimensions
+        self._google_genai = None
+        self._openai_client = None
+        self._embedding_backend = self._initialize_embedding_backend()
         
         # Check if Supabase is available
         self.use_supabase = SUPABASE_DB_URL is not None
         
-        print(f"✅ Step 4: Vector DB initialized")
+        print("✅ Step 4: Vector DB initialized")
         print(f"✅ Using model: {self.step3_model}")
         print(f"✅ Loaded {len(self.topics)} topics from Step 3")
+        if self._embedding_backend:
+            print(f"✅ Embedding provider: {self.embedding_provider} ({self.embedding_model_name})")
+        else:
+            print("⚠️  Using deterministic fallback embeddings (no provider configured)")
         print(f"✅ Vector dimensions: {self.vector_dimensions}")
         if self.use_supabase:
             print(f"✅ Using Supabase pgvector for storage")
         else:
-            print(f"⚠️  Supabase not configured, using JSON fallback")
+            print("⚠️  Supabase not configured, using JSON fallback")
+
+    def _initialize_embedding_backend(self) -> Optional[str]:
+        """Initialize embedding backend based on configuration"""
+        provider = self.embedding_provider
+
+        if provider == "google":
+            try:
+                import google.generativeai as genai  # type: ignore
+            except ImportError:
+                print("⚠️  google-generativeai missing (pip install google-generativeai)")
+                return None
+
+            if not GOOGLE_API_KEY:
+                print("⚠️  GOOGLE_API_KEY not set. Falling back to deterministic embeddings.")
+                return None
+
+            try:
+                genai.configure(api_key=GOOGLE_API_KEY)
+                self._google_genai = genai
+                print("✅ Google Generative AI client configured for embeddings")
+                return "google"
+            except Exception as exc:
+                print(
+                    f"⚠️  Google embedding setup failed ({exc}). "
+                    "Using deterministic fallback."
+                )
+                return None
+
+        if provider == "openai":
+            try:
+                from openai import OpenAI  # type: ignore
+            except ImportError:
+                print("⚠️  openai package missing (pip install openai)")
+                return None
+
+            if not OPENAI_API_KEY:
+                print("⚠️  OPENAI_API_KEY not set. Falling back to deterministic embeddings.")
+                return None
+
+            try:
+                self._openai_client = OpenAI(api_key=OPENAI_API_KEY)
+                print("✅ OpenAI client configured for embeddings")
+                return "openai"
+            except Exception as exc:
+                print(
+                    f"⚠️  OpenAI embedding setup failed ({exc}). "
+                    "Using deterministic fallback."
+                )
+                return None
+
+        if provider not in {"google", "openai"}:
+            print(
+                f"⚠️  Unsupported embedding provider '{provider}'. "
+                "Using deterministic fallback."
+            )
+
+        return None
+
+    def _normalize_embedding(self, embedding: List[float]) -> List[float]:
+        """Normalize embedding vector to unit length"""
+        vector = np.array(embedding, dtype=float)
+        norm = np.linalg.norm(vector)
+        if norm == 0:
+            return vector.tolist()
+        return (vector / norm).tolist()
+
+    def _generate_embedding_with_backend(self, seed_text: str) -> Optional[List[float]]:
+        """Generate embedding using configured backend; returns None on failure"""
+        if not self._embedding_backend:
+            return None
+
+        try:
+            if self._embedding_backend == "google":
+                response = self._google_genai.embed_content(
+                    model=self.embedding_model_name,
+                    content=seed_text
+                )
+                embedding = (
+                    response.get("embedding")
+                    if isinstance(response, dict)
+                    else getattr(response, "embedding", None)
+                )
+                if not embedding:
+                    raise ValueError("Empty embedding returned by Google API")
+                return self._normalize_embedding(embedding)
+
+            if self._embedding_backend == "openai":
+                response = self._openai_client.embeddings.create(
+                    model=self.embedding_model_name,
+                    input=seed_text
+                )
+                data = getattr(response, "data", [])
+                if not data:
+                    raise ValueError("Empty embedding returned by OpenAI API")
+                embedding = data[0].embedding
+                return self._normalize_embedding(embedding)
+
+        except Exception as exc:
+            print(
+                f"⚠️  {self._embedding_backend} embedding error: {exc}. "
+                "Using deterministic fallback."
+            )
+            return None
+
+        return None
+
+    def _generate_fallback_embedding(self, seed_text: str) -> List[float]:
+        """Generate deterministic embedding via pseudo-random fallback"""
+        seed_hash = hash(seed_text) % (2**32)
+        rng = np.random.default_rng(seed_hash)
+        embedding = rng.uniform(-1.0, 1.0, self.vector_dimensions).astype(float)
+        return self._normalize_embedding(embedding.tolist())
     
     def load_topics_from_step3(self) -> List[Dict]:
         """Load topics from Step 3 JSON file for the specified model"""
@@ -128,19 +259,17 @@ class Step4VectorDB:
         
         # Combine all metadata for rich semantic representation
         seed_text = f"{title} {summary} {tags} {participants} {urgency}"
-        seed_hash = hash(seed_text) % (2**32)
-        
-        # Set random seed for deterministic generation
-        np.random.seed(seed_hash)
-        
-        # Generate 768-dimensional vector with values between -1 and 1
-        embedding = np.random.uniform(-1.0, 1.0, self.vector_dimensions).tolist()
-        
-        # Normalize the vector (required for pgvector cosine similarity)
-        norm = np.linalg.norm(embedding)
-        if norm > 0:
-            embedding = [x / norm for x in embedding]
-        
+        if not seed_text.strip():
+            seed_text = f"{topic.get('cluster_id', 'topic')} metadata unavailable"
+
+        embedding = self._generate_embedding_with_backend(seed_text)
+
+        if embedding is None:
+            embedding = self._generate_fallback_embedding(seed_text)
+        else:
+            # Update vector dimension dynamically to match backend output
+            self.vector_dimensions = len(embedding)
+
         return embedding
     
     def setup_supabase_table(self):
@@ -175,10 +304,10 @@ class Step4VectorDB:
             cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
             
             # Create topics_embeddings table if it doesn't exist
-            cur.execute("""
+            cur.execute(f"""
                 CREATE TABLE IF NOT EXISTS topics_embeddings (
                     topic_id VARCHAR PRIMARY KEY,
-                    embedding vector(768),
+                    embedding vector({self.vector_dimensions}),
                     created_at TIMESTAMP DEFAULT NOW(),
                     updated_at TIMESTAMP DEFAULT NOW()
                 );

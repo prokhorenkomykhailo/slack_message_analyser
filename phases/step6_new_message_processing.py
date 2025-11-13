@@ -19,6 +19,7 @@ load_dotenv()
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from config.model_config import GOOGLE_API_KEY, OPENAI_API_KEY
 from utils.supabase_helpers import build_supabase_db_url
 from utils.model_clients import call_model_with_retry
 
@@ -46,12 +47,166 @@ class Step6NewMessageProcessing:
         # Load embeddings from Step 4 / Supabase
         self.topic_embeddings = self.load_embeddings_from_step4()
         self.total_embeddings = len(self.topic_embeddings)
+
+        # Embedding configuration (mirror Step 4 defaults)
+        default_provider = os.getenv("STEP4_EMBEDDING_PROVIDER", "google")
+        default_model = os.getenv("STEP4_EMBEDDING_MODEL", "models/text-embedding-004")
+        default_dim = os.getenv("STEP4_VECTOR_DIMENSIONS", "768")
+
+        self.embedding_provider = os.getenv(
+            "STEP6_EMBEDDING_PROVIDER", default_provider
+        ).lower()
+        self.embedding_model_name = os.getenv(
+            "STEP6_EMBEDDING_MODEL", default_model
+        )
+        self.default_vector_dimensions = int(
+            os.getenv("STEP6_VECTOR_DIMENSIONS", default_dim)
+        )
+        self.vector_dimensions = self.default_vector_dimensions
+        self._google_genai = None
+        self._openai_client = None
+        self._embedding_backend = self._initialize_embedding_backend()
+
+        # Align vector dimensions with Step 4 embeddings if available
+        if self.topic_embeddings:
+            sample_vector = next(iter(self.topic_embeddings.values()))
+            if isinstance(sample_vector, list):
+                self.vector_dimensions = len(sample_vector)
         
         print(f"✅ Step 6: New Message Processing initialized")
         print(f"✅ Loaded {len(self.existing_topics)} existing topics")
         if self.use_supabase:
             print(f"✅ Supabase pgvector enabled")
         print(f"✅ Loaded {self.total_embeddings} topic embeddings")
+        if self._embedding_backend:
+            print(
+                f"✅ Message embedding provider: "
+                f"{self.embedding_provider} ({self.embedding_model_name})"
+            )
+        else:
+            print(
+                "⚠️  Message embeddings using deterministic fallback "
+                "(no provider configured)"
+            )
+
+    def _initialize_embedding_backend(self) -> Optional[str]:
+        """Configure embedding backend for new messages."""
+        provider = self.embedding_provider
+
+        if provider == "google":
+            try:
+                import google.generativeai as genai  # type: ignore
+            except ImportError:
+                print(
+                    "⚠️  google-generativeai missing "
+                    "(pip install google-generativeai)"
+                )
+                return None
+
+            if not GOOGLE_API_KEY:
+                print(
+                    "⚠️  GOOGLE_API_KEY not set. "
+                    "Using deterministic message embeddings."
+                )
+                return None
+
+            try:
+                genai.configure(api_key=GOOGLE_API_KEY)
+                self._google_genai = genai
+                return "google"
+            except Exception as exc:
+                print(
+                    f"⚠️  Google embedding setup failed ({exc}). "
+                    "Using deterministic message embeddings."
+                )
+                return None
+
+        if provider == "openai":
+            try:
+                from openai import OpenAI  # type: ignore
+            except ImportError:
+                print("⚠️  openai package missing (pip install openai)")
+                return None
+
+            if not OPENAI_API_KEY:
+                print(
+                    "⚠️  OPENAI_API_KEY not set. "
+                    "Using deterministic message embeddings."
+                )
+                return None
+
+            try:
+                self._openai_client = OpenAI(api_key=OPENAI_API_KEY)
+                return "openai"
+            except Exception as exc:
+                print(
+                    f"⚠️  OpenAI embedding setup failed ({exc}). "
+                    "Using deterministic message embeddings."
+                )
+                return None
+
+        if provider not in {"google", "openai"}:
+            print(
+                f"⚠️  Unsupported embedding provider '{provider}'. "
+                "Using deterministic message embeddings."
+            )
+
+        return None
+
+    def _normalize_embedding(self, embedding: List[float]) -> List[float]:
+        """Normalize embedding vector to unit length."""
+        vector = np.array(embedding, dtype=float)
+        norm = np.linalg.norm(vector)
+        if norm == 0:
+            return vector.tolist()
+        return (vector / norm).tolist()
+
+    def _generate_embedding_with_backend(self, text: str) -> Optional[List[float]]:
+        """Generate embedding for message using configured backend."""
+        if not self._embedding_backend:
+            return None
+
+        try:
+            if self._embedding_backend == "google":
+                response = self._google_genai.embed_content(
+                    model=self.embedding_model_name,
+                    content=text,
+                )
+                embedding = (
+                    response.get("embedding")
+                    if isinstance(response, dict)
+                    else getattr(response, "embedding", None)
+                )
+                if not embedding:
+                    raise ValueError("Empty embedding returned by Google API")
+                return self._normalize_embedding(embedding)
+
+            if self._embedding_backend == "openai":
+                response = self._openai_client.embeddings.create(
+                    model=self.embedding_model_name,
+                    input=text,
+                )
+                data = getattr(response, "data", [])
+                if not data:
+                    raise ValueError("Empty embedding returned by OpenAI API")
+                embedding = data[0].embedding
+                return self._normalize_embedding(embedding)
+
+        except Exception as exc:
+            print(
+                f"⚠️  {self._embedding_backend} embedding error: {exc}. "
+                "Using deterministic message embeddings."
+            )
+            return None
+
+        return None
+
+    def _generate_fallback_embedding(self, text: str) -> List[float]:
+        """Generate deterministic fallback embedding matching configured size."""
+        seed_hash = hash(text) % (2**32)
+        rng = np.random.default_rng(seed_hash)
+        embedding = rng.normal(0.0, 0.1, self.vector_dimensions).astype(float)
+        return self._normalize_embedding(embedding.tolist())
     
     def load_topics_from_step3(self) -> List[Dict]:
         """Load topics from Step 3 JSON file"""
@@ -185,18 +340,16 @@ class Step6NewMessageProcessing:
         user = message.get("user", "")
         channel = message.get("channel", "")
         
-        combined_text = f"{channel} {user} {text}".lower()
-        
-        # Simple embedding: convert text to 768-dim vector using hash-based approach
-        # In production, replace this with OpenAI text-embedding-3-small or Google embeddings
-        np.random.seed(hash(combined_text) % 2**32)
-        embedding = np.random.normal(0, 0.1, 768).tolist()
-        
-        # Normalize
-        norm = np.linalg.norm(embedding)
-        if norm > 0:
-            embedding = (np.array(embedding) / norm).tolist()
-        
+        combined_text = f"{channel} {user} {text}".strip().lower()
+        if not combined_text:
+            combined_text = (
+                f"{channel} {user} empty message content"
+            ).strip().lower()
+
+        embedding = self._generate_embedding_with_backend(combined_text)
+        if embedding is None:
+            embedding = self._generate_fallback_embedding(combined_text)
+
         return embedding
     
     def find_similar_topics(self, message_embedding: List[float], threshold: float = 0.7) -> List[Tuple[str, float]]:
