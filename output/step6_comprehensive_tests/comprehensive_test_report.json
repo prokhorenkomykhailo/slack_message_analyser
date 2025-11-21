@@ -1,0 +1,2275 @@
+{
+  "test_suite": "Step 6 Comprehensive Test Suite",
+  "timestamp": "2025-11-20T12:18:08.321467",
+  "aggregate_metrics": {
+    "total_tests": 28,
+    "passed_tests": 25,
+    "failed_tests": 3,
+    "pass_rate": 89.3,
+    "by_category": {
+      "UPDATE": {
+        "total": 8,
+        "passed": 7
+      },
+      "CREATE": {
+        "total": 10,
+        "passed": 9
+      },
+      "DISCARD": {
+        "total": 5,
+        "passed": 5
+      },
+      "UPDATE_NON_ACTIONABLE": {
+        "total": 3,
+        "passed": 3
+      },
+      "EDGE_CASE": {
+        "total": 2,
+        "passed": 1
+      }
+    },
+    "total_duration": 108.928
+  },
+  "test_results": [
+    {
+      "test_id": "TC001",
+      "category": "UPDATE",
+      "test_name": "Status Update - Bug Fix Progress",
+      "expected_action": "update",
+      "actual_action": "update",
+      "passed": true,
+      "similarity_score": 0.7707,
+      "duration_seconds": 6.301,
+      "message": {
+        "id": 1001,
+        "channel": "#campaign-briefs",
+        "user": "Sam",
+        "text": "@Devon I've completed the design mockups for EcoBloom. Ready for your review. Files are in Figma: https://figma.com/ecobloom-designs",
+        "thread_ts": "1",
+        "timestamp": "2025-06-26T14:30:00"
+      },
+      "expected_behavior": "Should update topic_001 (EcoBloom Campaign) and mark Sam's design task as completed",
+      "result": {
+        "success": true,
+        "topic_id": "topic_011",
+        "action": "updated",
+        "metadata": {
+          "title": "EcoBloom Campaign Final Approval & Delivery",
+          "summary": "EcoBloom campaign designs finalized and approved for client submission. @Sam prepared the final package, @Leah organized content, and @Jordan completed legal review. The campaign is set for delivery by July 25, 2025, ahead of the July 28 launch. @Sam has completed the design mockups for EcoBloom and is ready for @Devon's review. Files are in Figma: https://figma.com/ecobloom-designs",
+          "action_items": [
+            {
+              "task": "Prepare final package for client delivery",
+              "owner": "@sam",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Organize and label all content files",
+              "owner": "@leah",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Monitor for client feedback",
+              "owner": "@sam",
+              "due_date": "2025-07-28",
+              "priority": "high",
+              "status": "in_progress"
+            },
+            {
+              "task": "Make quick adjustments based on client feedback",
+              "owner": "@sam",
+              "due_date": "2025-07-28",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Ensure all designs are delivered for legal review",
+              "owner": "@sam",
+              "due_date": "2025-07-23",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Review EcoBloom design mockups",
+              "owner": "@devon",
+              "due_date": null,
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@devon",
+            "@sam",
+            "@leah",
+            "@jordan"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-25",
+          "status": "active",
+          "channel": "#campaign-briefs",
+          "tags": [
+            "ecobloom",
+            "campaign",
+            "delivery",
+            "legal-review",
+            "client-submission",
+            "summer",
+            "marketing",
+            "approval"
+          ]
+        },
+        "message": {
+          "id": 1001,
+          "channel": "#campaign-briefs",
+          "user": "Sam",
+          "text": "@Devon I've completed the design mockups for EcoBloom. Ready for your review. Files are in Figma: https://figma.com/ecobloom-designs",
+          "thread_ts": "1",
+          "timestamp": "2025-06-26T14:30:00"
+        },
+        "similar_topics": [
+          [
+            "topic_011",
+            0.7706550895846396
+          ],
+          [
+            "topic_006",
+            0.769915268968527
+          ],
+          [
+            "topic_001",
+            0.7266966630734519
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "TC002",
+      "category": "UPDATE",
+      "test_name": "Deadline Extension - Same Thread",
+      "expected_action": "update",
+      "actual_action": "update",
+      "passed": true,
+      "similarity_score": 0.8085,
+      "duration_seconds": 6.336,
+      "message": {
+        "id": 1002,
+        "channel": "#campaign-briefs",
+        "user": "Devon",
+        "text": "@team Update: The EcoBloom campaign deadline has been extended to August 15, 2025 due to client request. Please adjust your timelines.",
+        "thread_ts": "1",
+        "timestamp": "2025-06-27T09:00:00"
+      },
+      "expected_behavior": "Should update topic_001 deadline field and summary",
+      "result": {
+        "success": true,
+        "topic_id": "topic_001",
+        "action": "updated",
+        "metadata": {
+          "title": "EcoBloom Summer Campaign Planning",
+          "summary": "The team is planning the EcoBloom summer campaign with a deadline of August 15, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025. The campaign deadline has been extended to August 15, 2025 due to client request. Team members should adjust their timelines.",
+          "action_items": [
+            {
+              "task": "Prepare initial design concepts",
+              "owner": "@sam",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Draft content strategy",
+              "owner": "@leah",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Review EcoBloom's contract terms",
+              "owner": "@jordan",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Complete designs",
+              "owner": "@sam",
+              "due_date": "2025-07-10",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Prepare content for review",
+              "owner": "@leah",
+              "due_date": "2025-06-30",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Adjust timelines to reflect new deadline",
+              "owner": "@sam",
+              "due_date": "2025-07-10",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Adjust timelines to reflect new deadline",
+              "owner": "@leah",
+              "due_date": "2025-06-30",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Adjust timelines to reflect new deadline",
+              "owner": "@jordan",
+              "due_date": "2025-07-14",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Devon",
+            "@Sam",
+            "@Leah",
+            "@Jordan"
+          ],
+          "urgency": "high",
+          "deadline": "2025-08-15",
+          "status": "active",
+          "channel": "#campaign-briefs",
+          "tags": [
+            "ecobloom",
+            "summer",
+            "campaign",
+            "planning",
+            "timeline",
+            "marketing",
+            "content",
+            "designs"
+          ]
+        },
+        "message": {
+          "id": 1002,
+          "channel": "#campaign-briefs",
+          "user": "Devon",
+          "text": "@team Update: The EcoBloom campaign deadline has been extended to August 15, 2025 due to client request. Please adjust your timelines.",
+          "thread_ts": "1",
+          "timestamp": "2025-06-27T09:00:00"
+        },
+        "similar_topics": [
+          [
+            "topic_001",
+            0.8084775337869593
+          ],
+          [
+            "topic_006",
+            0.7817524050276771
+          ],
+          [
+            "topic_011",
+            0.7811465483270782
+          ],
+          [
+            "topic_010",
+            0.7147714423172863
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "TC003",
+      "category": "UPDATE",
+      "test_name": "New Action Item - Same Thread",
+      "expected_action": "update",
+      "actual_action": "update",
+      "passed": true,
+      "similarity_score": 0.702,
+      "duration_seconds": 5.565,
+      "message": {
+        "id": 1003,
+        "channel": "#campaign-briefs",
+        "user": "Leah",
+        "text": "@Jordan Can you also review the legal compliance for EU GDPR requirements? We need this by July 20, 2025 before launch.",
+        "thread_ts": "1",
+        "timestamp": "2025-06-28T10:15:00"
+      },
+      "expected_behavior": "Should add new action item for Jordan (GDPR review) without removing existing items",
+      "result": {
+        "success": true,
+        "topic_id": "topic_011",
+        "action": "updated",
+        "metadata": {
+          "title": "EcoBloom Campaign Final Approval & Delivery",
+          "summary": "EcoBloom campaign designs finalized and approved for client submission. @Sam prepared the final package, @Leah organized content, and @Jordan completed legal review. The campaign is set for delivery by July 25, 2025, ahead of the July 28 launch. @Leah requested @Jordan to review legal compliance for EU GDPR requirements by July 20, 2025.",
+          "action_items": [
+            {
+              "task": "Prepare final package for client delivery",
+              "owner": "@sam",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Organize and label all content files",
+              "owner": "@leah",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Monitor for client feedback",
+              "owner": "@sam",
+              "due_date": "2025-07-28",
+              "priority": "high",
+              "status": "in_progress"
+            },
+            {
+              "task": "Make quick adjustments based on client feedback",
+              "owner": "@sam",
+              "due_date": "2025-07-28",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Ensure all designs are delivered for legal review",
+              "owner": "@sam",
+              "due_date": "2025-07-23",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Review legal compliance for EU GDPR requirements",
+              "owner": "@jordan",
+              "due_date": "2025-07-20",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Devon",
+            "@Sam",
+            "@Leah",
+            "@Jordan"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-28",
+          "status": "active",
+          "channel": "#campaign-briefs",
+          "tags": [
+            "ecobloom",
+            "campaign",
+            "delivery",
+            "legal-review",
+            "client-submission",
+            "summer",
+            "marketing",
+            "approval"
+          ]
+        },
+        "message": {
+          "id": 1003,
+          "channel": "#campaign-briefs",
+          "user": "Leah",
+          "text": "@Jordan Can you also review the legal compliance for EU GDPR requirements? We need this by July 20, 2025 before launch.",
+          "thread_ts": "1",
+          "timestamp": "2025-06-28T10:15:00"
+        },
+        "similar_topics": [
+          [
+            "topic_011",
+            0.7020029509509069
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "TC004",
+      "category": "UPDATE",
+      "test_name": "Task Completion - Same Thread",
+      "expected_action": "update",
+      "actual_action": "create",
+      "passed": false,
+      "similarity_score": 0.0,
+      "duration_seconds": 2.692,
+      "message": {
+        "id": 1004,
+        "channel": "#campaign-briefs",
+        "user": "Leah",
+        "text": "@Devon Content strategy is done! I've uploaded all materials to Google Drive. Ready for review.",
+        "thread_ts": "1",
+        "timestamp": "2025-06-29T16:45:00"
+      },
+      "expected_behavior": "Should mark Leah's content task as 'completed' status",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "Content Strategy Review - Campaign Briefs",
+          "summary": "Leah has completed the content strategy and uploaded the materials to Google Drive, requesting Devon to review them.",
+          "action_items": [
+            {
+              "task": "Review content strategy materials on Google Drive",
+              "owner": "@Devon",
+              "due_date": "2025-07-03",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Leah",
+            "@Devon"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-03",
+          "status": "active",
+          "channel": "#campaign-briefs",
+          "tags": [
+            "content strategy",
+            "review",
+            "campaign",
+            "google drive"
+          ]
+        },
+        "message": {
+          "id": 1004,
+          "channel": "#campaign-briefs",
+          "user": "Leah",
+          "text": "@Devon Content strategy is done! I've uploaded all materials to Google Drive. Ready for review.",
+          "thread_ts": "1",
+          "timestamp": "2025-06-29T16:45:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains actionable information: it announces the completion of the content strategy and indicates that materials are ready for review. This implies a task for Devon to review the materials.",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC005",
+      "category": "UPDATE",
+      "test_name": "Multiple Participants - Same Thread",
+      "expected_action": "update",
+      "actual_action": "update",
+      "passed": true,
+      "similarity_score": 0.8019,
+      "duration_seconds": 6.538,
+      "message": {
+        "id": 1005,
+        "channel": "#campaign-briefs",
+        "user": "Devon",
+        "text": "@sam @leah @jordan Team sync tomorrow at 2pm to review EcoBloom progress. Please bring your status updates.",
+        "thread_ts": "1",
+        "timestamp": "2025-06-30T11:00:00"
+      },
+      "expected_behavior": "Should add meeting action item for all three participants",
+      "result": {
+        "success": true,
+        "topic_id": "topic_001",
+        "action": "updated",
+        "metadata": {
+          "title": "EcoBloom Summer Campaign Planning",
+          "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025. @Devon scheduled a team sync for tomorrow, July 1st, 2025 at 2pm to review EcoBloom progress, requesting status updates from @sam, @leah, and @jordan.",
+          "action_items": [
+            {
+              "task": "Prepare initial design concepts",
+              "owner": "@sam",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Draft content strategy",
+              "owner": "@leah",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Review EcoBloom's contract terms",
+              "owner": "@jordan",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Complete designs",
+              "owner": "@sam",
+              "due_date": "2025-07-10",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Prepare content for review",
+              "owner": "@leah",
+              "due_date": "2025-06-30",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Prepare status update for team sync",
+              "owner": "@sam",
+              "due_date": "2025-07-01",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Prepare status update for team sync",
+              "owner": "@leah",
+              "due_date": "2025-07-01",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Prepare status update for team sync",
+              "owner": "@jordan",
+              "due_date": "2025-07-01",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Devon",
+            "@Sam",
+            "@Leah",
+            "@Jordan"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-28",
+          "status": "active",
+          "channel": "#campaign-briefs",
+          "tags": [
+            "ecobloom",
+            "summer",
+            "campaign",
+            "planning",
+            "timeline",
+            "marketing",
+            "content",
+            "designs"
+          ]
+        },
+        "message": {
+          "id": 1005,
+          "channel": "#campaign-briefs",
+          "user": "Devon",
+          "text": "@sam @leah @jordan Team sync tomorrow at 2pm to review EcoBloom progress. Please bring your status updates.",
+          "thread_ts": "1",
+          "timestamp": "2025-06-30T11:00:00"
+        },
+        "similar_topics": [
+          [
+            "topic_006",
+            0.8018965978004609
+          ],
+          [
+            "topic_001",
+            0.7916315049199149
+          ],
+          [
+            "topic_011",
+            0.7873342753912506
+          ],
+          [
+            "topic_010",
+            0.7151839264679438
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "TC006",
+      "category": "UPDATE",
+      "test_name": "Technical Question - Same Thread",
+      "expected_action": "update",
+      "actual_action": "update",
+      "passed": true,
+      "similarity_score": 0.7299,
+      "duration_seconds": 5.34,
+      "message": {
+        "id": 1006,
+        "channel": "#campaign-briefs",
+        "user": "Sam",
+        "text": "@Devon Should we use the old EcoBloom brand colors (#2D5016, #8BC34A) or the new rebrand palette for this campaign? This affects all my designs.",
+        "thread_ts": "1",
+        "timestamp": "2025-07-01T09:30:00"
+      },
+      "expected_behavior": "Should update topic with decision needed (brand colors) as action item",
+      "result": {
+        "success": true,
+        "topic_id": "topic_006",
+        "action": "updated",
+        "metadata": {
+          "title": "EcoBloom Design Revision & Legal Review",
+          "summary": "EcoBloom requested design revisions for their summer campaign, including a color palette overhaul. Sam is updating the designs, Leah is adjusting content, and Jordan will conduct a legal review by July 21, 2025, to meet the July 28, 2025 deadline. Sam is also seeking clarification from Devon on whether to use the old or new EcoBloom brand colors for the campaign.",
+          "action_items": [
+            {
+              "task": "Prioritize color palette changes and share with Leah",
+              "owner": "@sam",
+              "due_date": "2025-07-03",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Adjust content to align with the new color palette",
+              "owner": "@leah",
+              "due_date": "2025-07-08",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Complete revised design concepts for client review",
+              "owner": "@sam",
+              "due_date": "2025-07-10",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Prepare for expedited legal review of revised designs",
+              "owner": "@jordan",
+              "due_date": "2025-07-21",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Present revised concepts to the client",
+              "owner": "@devon",
+              "due_date": "2025-07-12",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Clarify which EcoBloom brand colors to use for the campaign",
+              "owner": "@devon",
+              "due_date": null,
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Devon",
+            "@Sam",
+            "@Leah",
+            "@Jordan"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-28",
+          "status": "active",
+          "channel": "#design-feedback",
+          "tags": [
+            "ecobloom",
+            "campaign",
+            "design",
+            "revision",
+            "legal-review",
+            "color-palette",
+            "summer",
+            "marketing"
+          ]
+        },
+        "message": {
+          "id": 1006,
+          "channel": "#campaign-briefs",
+          "user": "Sam",
+          "text": "@Devon Should we use the old EcoBloom brand colors (#2D5016, #8BC34A) or the new rebrand palette for this campaign? This affects all my designs.",
+          "thread_ts": "1",
+          "timestamp": "2025-07-01T09:30:00"
+        },
+        "similar_topics": [
+          [
+            "topic_006",
+            0.7299154265079217
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "TC007",
+      "category": "UPDATE",
+      "test_name": "Resource Request - Same Thread",
+      "expected_action": "update",
+      "actual_action": "update",
+      "passed": true,
+      "similarity_score": 0.7216,
+      "duration_seconds": 6.347,
+      "message": {
+        "id": 1007,
+        "channel": "#campaign-briefs",
+        "user": "Jordan",
+        "text": "@Devon I need budget approval for $5,000 to hire an external copywriter for the EcoBloom landing page. Our internal team is at capacity.",
+        "thread_ts": "1",
+        "timestamp": "2025-07-02T14:00:00"
+      },
+      "expected_behavior": "Should add budget approval as new action item with $5,000 amount",
+      "result": {
+        "success": true,
+        "topic_id": "topic_011",
+        "action": "updated",
+        "metadata": {
+          "title": "EcoBloom Campaign Final Approval & Delivery",
+          "summary": "EcoBloom campaign designs finalized and approved for client submission. @Sam prepared the final package, @Leah organized content, and @Jordan completed legal review. The campaign is set for delivery by July 25, 2025, ahead of the July 28 launch. @Jordan requested budget approval of $5,000 from @Devon to hire an external copywriter for the EcoBloom landing page due to internal team capacity.",
+          "action_items": [
+            {
+              "task": "Prepare final package for client delivery",
+              "owner": "@sam",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Organize and label all content files",
+              "owner": "@leah",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Monitor for client feedback",
+              "owner": "@sam",
+              "due_date": "2025-07-28",
+              "priority": "high",
+              "status": "in_progress"
+            },
+            {
+              "task": "Make quick adjustments based on client feedback",
+              "owner": "@sam",
+              "due_date": "2025-07-28",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Ensure all designs are delivered for legal review",
+              "owner": "@sam",
+              "due_date": "2025-07-23",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Approve $5,000 budget for external copywriter",
+              "owner": "@devon",
+              "due_date": null,
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Hire external copywriter for EcoBloom landing page",
+              "owner": "@jordan",
+              "due_date": null,
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@devon",
+            "@sam",
+            "@leah",
+            "@jordan"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-28",
+          "status": "active",
+          "channel": "#campaign-briefs",
+          "tags": [
+            "ecobloom",
+            "campaign",
+            "delivery",
+            "legal-review",
+            "client-submission",
+            "summer",
+            "marketing",
+            "approval"
+          ]
+        },
+        "message": {
+          "id": 1007,
+          "channel": "#campaign-briefs",
+          "user": "Jordan",
+          "text": "@Devon I need budget approval for $5,000 to hire an external copywriter for the EcoBloom landing page. Our internal team is at capacity.",
+          "thread_ts": "1",
+          "timestamp": "2025-07-02T14:00:00"
+        },
+        "similar_topics": [
+          [
+            "topic_006",
+            0.7215662602341631
+          ],
+          [
+            "topic_011",
+            0.7028318472311591
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "TC008",
+      "category": "UPDATE",
+      "test_name": "Blocker Notification - Same Thread",
+      "expected_action": "update",
+      "actual_action": "update",
+      "passed": true,
+      "similarity_score": 0.7941,
+      "duration_seconds": 5.681,
+      "message": {
+        "id": 1008,
+        "channel": "#campaign-briefs",
+        "user": "Sam",
+        "text": "@Devon URGENT: EcoBloom client hasn't approved the design concepts yet. This is blocking development. Can you follow up with them ASAP?",
+        "thread_ts": "1",
+        "timestamp": "2025-07-03T08:15:00"
+      },
+      "expected_behavior": "Should increase urgency to 'critical' and add blocker as action item",
+      "result": {
+        "success": true,
+        "topic_id": "topic_011",
+        "action": "updated",
+        "metadata": {
+          "title": "EcoBloom Campaign Final Approval & Delivery",
+          "summary": "EcoBloom campaign designs finalized and approved for client submission. @Sam prepared the final package, @Leah organized content, and @Jordan completed legal review. The campaign is set for delivery by July 25, 2025, ahead of the July 28 launch. However, the client has not yet approved the design concepts, blocking development. @Devon is requested to follow up with the client ASAP.",
+          "action_items": [
+            {
+              "task": "Prepare final package for client delivery",
+              "owner": "@sam",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Organize and label all content files",
+              "owner": "@leah",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Monitor for client feedback",
+              "owner": "@sam",
+              "due_date": "2025-07-28",
+              "priority": "high",
+              "status": "in_progress"
+            },
+            {
+              "task": "Make quick adjustments based on client feedback",
+              "owner": "@sam",
+              "due_date": "2025-07-28",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Ensure all designs are delivered for legal review",
+              "owner": "@sam",
+              "due_date": "2025-07-23",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Follow up with EcoBloom client for design concept approval",
+              "owner": "@Devon",
+              "due_date": "2025-07-04",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Devon",
+            "@Sam",
+            "@Leah",
+            "@Jordan"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-28",
+          "status": "in_progress",
+          "channel": "#campaign-briefs",
+          "tags": [
+            "ecobloom",
+            "campaign",
+            "delivery",
+            "legal-review",
+            "client-submission",
+            "summer",
+            "marketing",
+            "approval"
+          ]
+        },
+        "message": {
+          "id": 1008,
+          "channel": "#campaign-briefs",
+          "user": "Sam",
+          "text": "@Devon URGENT: EcoBloom client hasn't approved the design concepts yet. This is blocking development. Can you follow up with them ASAP?",
+          "thread_ts": "1",
+          "timestamp": "2025-07-03T08:15:00"
+        },
+        "similar_topics": [
+          [
+            "topic_006",
+            0.7941012192830685
+          ],
+          [
+            "topic_011",
+            0.7813504945809266
+          ],
+          [
+            "topic_001",
+            0.7707507110516708
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "TC009",
+      "category": "CREATE",
+      "test_name": "Different Channel - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 3.871,
+      "message": {
+        "id": 2001,
+        "channel": "#engineering",
+        "user": "Alex",
+        "text": "@backend-team We have a critical API performance issue in production. Response times are 5-8 seconds (should be <500ms). User ID 47291 reported timeouts. Need root cause analysis by EOD.",
+        "thread_ts": "100",
+        "timestamp": "2025-06-26T10:00:00"
+      },
+      "expected_behavior": "Should create new topic about API performance (different channel from EcoBloom)",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "Critical API Performance Degradation in Production",
+          "summary": "Production API response times have increased to 5-8 seconds, significantly exceeding the target of <500ms. User ID 47291 reported timeouts. Root cause analysis is required urgently.",
+          "action_items": [
+            {
+              "task": "Investigate API performance issue in production",
+              "owner": "@backend-team",
+              "due_date": "2025-06-26",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Identify root cause of slow response times",
+              "owner": "@backend-team",
+              "due_date": "2025-06-26",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Implement fix or workaround to restore API performance",
+              "owner": "@backend-team",
+              "due_date": "2025-06-27",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "Alex",
+            "@backend-team"
+          ],
+          "urgency": "high",
+          "deadline": "2025-06-26",
+          "status": "active",
+          "channel": "#engineering",
+          "tags": [
+            "API",
+            "performance",
+            "production",
+            "timeout",
+            "backend",
+            "critical"
+          ]
+        },
+        "message": {
+          "id": 2001,
+          "channel": "#engineering",
+          "user": "Alex",
+          "text": "@backend-team We have a critical API performance issue in production. Response times are 5-8 seconds (should be <500ms). User ID 47291 reported timeouts. Need root cause analysis by EOD.",
+          "thread_ts": "100",
+          "timestamp": "2025-06-26T10:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains actionable information: a critical API performance issue requiring root cause analysis by EOD. It also includes specific data points (response times, user ID) and a clear deadline.",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC010",
+      "category": "CREATE",
+      "test_name": "Same Channel, Different Thread - New Topic",
+      "expected_action": "create",
+      "actual_action": "update",
+      "passed": false,
+      "similarity_score": 0.7132,
+      "duration_seconds": 7.171,
+      "message": {
+        "id": 2002,
+        "channel": "#campaign-briefs",
+        "user": "Maria",
+        "text": "@creative-team Launching new Q3 campaign for TechNova Software (tech startup client). Need logo design, website mockups, and social media assets by July 30, 2025. Budget: $15,000.",
+        "thread_ts": "200",
+        "timestamp": "2025-06-26T11:30:00"
+      },
+      "expected_behavior": "Should create new topic (TechNova campaign, different from EcoBloom)",
+      "result": {
+        "success": true,
+        "topic_id": "topic_009",
+        "action": "updated",
+        "metadata": {
+          "title": "TechNova Budget Finalization & Client Submission",
+          "summary": "Team finalized the TechNova product launch campaign budget, incorporating design, content, and legal costs. Optimization suggestions were integrated, and the budget was approved for client submission by July 25, 2025, for a September 10, 2025 launch. A new Q3 campaign for TechNova Software requires logo design, website mockups, and social media assets by July 30, 2025, with a budget of $15,000.",
+          "action_items": [
+            {
+              "task": "Prepare design and production costs breakdown",
+              "owner": "@Sam",
+              "due_date": "2025-07-20",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Prepare content creation and distribution costs breakdown",
+              "owner": "@Leah",
+              "due_date": "2025-07-20",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Prepare legal review and compliance costs breakdown",
+              "owner": "@Jordan",
+              "due_date": "2025-07-20",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Consolidate cost breakdowns into a comprehensive budget document",
+              "owner": "@Devon",
+              "due_date": "2025-07-22",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Submit final budget to client",
+              "owner": "@Devon",
+              "due_date": "2025-07-25",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Design logo for TechNova Software Q3 campaign",
+              "owner": "@creative-team",
+              "due_date": "2025-07-30",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Create website mockups for TechNova Software Q3 campaign",
+              "owner": "@creative-team",
+              "due_date": "2025-07-30",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Create social media assets for TechNova Software Q3 campaign",
+              "owner": "@creative-team",
+              "due_date": "2025-07-30",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Devon",
+            "@Sam",
+            "@Leah",
+            "@Jordan",
+            "@creative-team"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-30",
+          "status": "active",
+          "channel": "#marketing",
+          "tags": [
+            "technova",
+            "budget",
+            "campaign",
+            "product-launch",
+            "finance",
+            "planning",
+            "marketing",
+            "legal"
+          ]
+        },
+        "message": {
+          "id": 2002,
+          "channel": "#campaign-briefs",
+          "user": "Maria",
+          "text": "@creative-team Launching new Q3 campaign for TechNova Software (tech startup client). Need logo design, website mockups, and social media assets by July 30, 2025. Budget: $15,000.",
+          "thread_ts": "200",
+          "timestamp": "2025-06-26T11:30:00"
+        },
+        "similar_topics": [
+          [
+            "topic_009",
+            0.7131616531664727
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "TC011",
+      "category": "CREATE",
+      "test_name": "Bug Report - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 4.806,
+      "message": {
+        "id": 2003,
+        "channel": "#bug-reports",
+        "user": "Priya",
+        "text": "\ud83d\udc1b BUG: User authentication fails intermittently on Safari 17.2 (macOS Sonoma). Error: 'Invalid CSRF token'. Affects ~500 users/day. Reproduction steps: 1) Open app in Safari 2) Clear cookies 3) Try to log in. Priority: HIGH",
+        "thread_ts": "300",
+        "timestamp": "2025-06-26T13:00:00"
+      },
+      "expected_behavior": "Should create new bug topic with reproduction steps and priority",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "Intermittent User Authentication Failure on Safari 17.2 (macOS Sonoma) - Invalid CSRF Token",
+          "summary": "Users are experiencing intermittent authentication failures on Safari 17.2 (macOS Sonoma) due to an 'Invalid CSRF token' error. This issue affects approximately 500 users per day. The problem can be reproduced by opening the app in Safari, clearing cookies, and attempting to log in.",
+          "action_items": [
+            {
+              "task": "Investigate the cause of the invalid CSRF token error on Safari 17.2 (macOS Sonoma).",
+              "owner": "@engineering",
+              "due_date": "2025-06-28",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Implement a fix to address the CSRF token validation issue on Safari 17.2 (macOS Sonoma).",
+              "owner": "@engineering",
+              "due_date": "2025-06-30",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Deploy the fix to production and monitor for resolution of the authentication failures.",
+              "owner": "@devops",
+              "due_date": "2025-07-01",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Communicate the fix to affected users.",
+              "owner": "@support",
+              "due_date": "2025-07-02",
+              "priority": "medium",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Priya"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-01",
+          "status": "active",
+          "channel": "#bug-reports",
+          "tags": [
+            "authentication",
+            "bug",
+            "csrf",
+            "safari",
+            "macos",
+            "sonoma",
+            "17.2"
+          ]
+        },
+        "message": {
+          "id": 2003,
+          "channel": "#bug-reports",
+          "user": "Priya",
+          "text": "\ud83d\udc1b BUG: User authentication fails intermittently on Safari 17.2 (macOS Sonoma). Error: 'Invalid CSRF token'. Affects ~500 users/day. Reproduction steps: 1) Open app in Safari 2) Clear cookies 3) Try to log in. Priority: HIGH",
+          "thread_ts": "300",
+          "timestamp": "2025-06-26T13:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains substantial information exchange (bug report with details, reproduction steps, affected users) and actionable information (identifies a high-priority bug that needs fixing).",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC012",
+      "category": "CREATE",
+      "test_name": "Feature Request - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 4.358,
+      "message": {
+        "id": 2004,
+        "channel": "#product-ideas",
+        "user": "Kevin",
+        "text": "@product-team Feature request from 15 enterprise clients: Bulk user import via CSV. Requirements: Support 10k+ users, role assignment, custom fields mapping, validation errors report. Est. dev time: 3 sprints. ROI: $50k ARR.",
+        "thread_ts": "400",
+        "timestamp": "2025-06-26T14:30:00"
+      },
+      "expected_behavior": "Should create feature request topic with requirements and ROI",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "Feature Request: Bulk User Import via CSV for Enterprise Clients",
+          "summary": "Kevin reported a feature request from 15 enterprise clients for bulk user import via CSV. The feature should support 10k+ users, role assignment, custom fields mapping, and a validation errors report. Estimated development time is 3 sprints with a potential ROI of $50k ARR.",
+          "action_items": [
+            {
+              "task": "Evaluate feasibility and scope of bulk user import feature.",
+              "owner": "@product-team",
+              "due_date": "2025-07-03",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Discuss implementation details and potential challenges.",
+              "owner": "@product-team",
+              "due_date": "2025-07-10",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Prioritize the feature based on ROI and resource availability.",
+              "owner": "@product-team",
+              "due_date": "2025-07-17",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "Kevin",
+            "@product-team"
+          ],
+          "urgency": "medium",
+          "deadline": "2025-07-17",
+          "status": "active",
+          "channel": "#product-ideas",
+          "tags": [
+            "feature request",
+            "bulk import",
+            "CSV",
+            "user management",
+            "enterprise",
+            "ROI",
+            "validation"
+          ]
+        },
+        "message": {
+          "id": 2004,
+          "channel": "#product-ideas",
+          "user": "Kevin",
+          "text": "@product-team Feature request from 15 enterprise clients: Bulk user import via CSV. Requirements: Support 10k+ users, role assignment, custom fields mapping, validation errors report. Est. dev time: 3 sprints. ROI: $50k ARR.",
+          "thread_ts": "400",
+          "timestamp": "2025-06-26T14:30:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains a feature request with specific requirements, estimated development time, and potential ROI. This constitutes substantial information exchange and a request for work/consideration by the product team.",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC013",
+      "category": "CREATE",
+      "test_name": "Deployment Notification - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 2.661,
+      "message": {
+        "id": 2005,
+        "channel": "#deployments",
+        "user": "DevOps",
+        "text": "\ud83d\ude80 DEPLOYMENT SCHEDULED: v2.5.0 to production on July 5, 2025 at 2am UTC (maintenance window). Changes: new payment gateway, database migration, API v3 rollout. Estimated downtime: 30min. Rollback plan ready.",
+        "thread_ts": "500",
+        "timestamp": "2025-06-26T16:00:00"
+      },
+      "expected_behavior": "Should create deployment topic with version, date, changes, downtime",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "Scheduled Production Deployment: v2.5.0",
+          "summary": "Scheduled deployment of v2.5.0 to production on July 5, 2025 at 2am UTC. Includes a new payment gateway, database migration, and API v3 rollout. Estimated downtime is 30 minutes. A rollback plan is in place.",
+          "action_items": [],
+          "participants": [
+            "@DevOps"
+          ],
+          "urgency": "medium",
+          "deadline": "2025-07-05",
+          "status": "planned",
+          "channel": "#deployments",
+          "tags": [
+            "deployment",
+            "production",
+            "v2.5.0",
+            "payment gateway",
+            "database migration",
+            "API v3",
+            "maintenance window",
+            "rollback plan"
+          ]
+        },
+        "message": {
+          "id": 2005,
+          "channel": "#deployments",
+          "user": "DevOps",
+          "text": "\ud83d\ude80 DEPLOYMENT SCHEDULED: v2.5.0 to production on July 5, 2025 at 2am UTC (maintenance window). Changes: new payment gateway, database migration, API v3 rollout. Estimated downtime: 30min. Rollback plan ready.",
+          "thread_ts": "500",
+          "timestamp": "2025-06-26T16:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "This message contains an important announcement about a scheduled deployment, including the version, date, time, changes, estimated downtime, and rollback plan. This is actionable information and a major update.",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC014",
+      "category": "CREATE",
+      "test_name": "Hiring Announcement - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 3.397,
+      "message": {
+        "id": 2006,
+        "channel": "#hr-announcements",
+        "user": "HR",
+        "text": "@team Opening: Senior Backend Engineer (Python/Django). Location: Remote US. Salary: $140k-$180k. Requirements: 5+ years Python, microservices, Kubernetes. Applications due July 20, 2025. Refer qualified candidates for $3k bonus.",
+        "thread_ts": "600",
+        "timestamp": "2025-06-27T09:00:00"
+      },
+      "expected_behavior": "Should create hiring topic with role, requirements, salary, deadline",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "Senior Backend Engineer Opening (Remote US)",
+          "summary": "HR has announced an opening for a Senior Backend Engineer with Python/Django experience. The position is remote within the US, with a salary range of $140k-$180k. Key requirements include 5+ years of Python experience, microservices architecture knowledge, and Kubernetes experience. The application deadline is July 20, 2025. A $3k referral bonus is offered for qualified candidates.",
+          "action_items": [
+            {
+              "task": "Submit application for Senior Backend Engineer role",
+              "owner": "@team",
+              "due_date": "2025-07-20",
+              "priority": "medium",
+              "status": "pending"
+            },
+            {
+              "task": "Refer qualified candidates for Senior Backend Engineer role",
+              "owner": "@team",
+              "due_date": "2025-07-20",
+              "priority": "low",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "HR",
+            "@team"
+          ],
+          "urgency": "medium",
+          "deadline": "2025-07-20",
+          "status": "active",
+          "channel": "#hr-announcements",
+          "tags": [
+            "hiring",
+            "backend",
+            "engineer",
+            "python",
+            "django",
+            "remote",
+            "kubernetes",
+            "microservices",
+            "job opening",
+            "referral bonus"
+          ]
+        },
+        "message": {
+          "id": 2006,
+          "channel": "#hr-announcements",
+          "user": "HR",
+          "text": "@team Opening: Senior Backend Engineer (Python/Django). Location: Remote US. Salary: $140k-$180k. Requirements: 5+ years Python, microservices, Kubernetes. Applications due July 20, 2025. Refer qualified candidates for $3k bonus.",
+          "thread_ts": "600",
+          "timestamp": "2025-06-27T09:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "This message contains an important announcement (hiring) and actionable information (application deadline, referral bonus).",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC015",
+      "category": "CREATE",
+      "test_name": "Security Incident - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 4.61,
+      "message": {
+        "id": 2007,
+        "channel": "#security-alerts",
+        "user": "Security",
+        "text": "\u26a0\ufe0f SECURITY: Detected unusual API traffic from IP 185.220.101.x (TOR exit node). 10k requests/min to /api/users endpoint. Possible data scraping attempt. Actions: 1) Rate limiting enabled 2) IP blocked 3) Investigating data exposure. Incident ID: SEC-2025-047",
+        "thread_ts": "700",
+        "timestamp": "2025-06-27T11:45:00"
+      },
+      "expected_behavior": "Should create security incident topic with incident ID and actions taken",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "Possible Data Scraping Attempt - Unusual API Traffic from TOR Exit Node",
+          "summary": "Detected unusual API traffic originating from a TOR exit node (185.220.101.x). The traffic consists of 10,000 requests per minute to the /api/users endpoint, indicating a potential data scraping attempt. Rate limiting has been enabled, the IP address has been blocked, and an investigation into potential data exposure is underway. Incident ID: SEC-2025-047.",
+          "action_items": [
+            {
+              "task": "Investigate potential data exposure resulting from the unusual API traffic.",
+              "owner": "@Security",
+              "due_date": "2025-06-28",
+              "priority": "high",
+              "status": "in_progress"
+            },
+            {
+              "task": "Monitor API traffic for similar patterns and potential new TOR exit nodes.",
+              "owner": "@Security",
+              "due_date": "2025-07-04",
+              "priority": "medium",
+              "status": "pending"
+            },
+            {
+              "task": "Review and adjust rate limiting thresholds for the /api/users endpoint.",
+              "owner": "@Security",
+              "due_date": "2025-07-01",
+              "priority": "medium",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Security"
+          ],
+          "urgency": "high",
+          "deadline": "2025-06-28",
+          "status": "active",
+          "channel": "#security-alerts",
+          "tags": [
+            "security",
+            "api",
+            "traffic",
+            "tor",
+            "scraping",
+            "data exposure",
+            "rate limiting",
+            "incident response"
+          ]
+        },
+        "message": {
+          "id": 2007,
+          "channel": "#security-alerts",
+          "user": "Security",
+          "text": "\u26a0\ufe0f SECURITY: Detected unusual API traffic from IP 185.220.101.x (TOR exit node). 10k requests/min to /api/users endpoint. Possible data scraping attempt. Actions: 1) Rate limiting enabled 2) IP blocked 3) Investigating data exposure. Incident ID: SEC-2025-047",
+          "thread_ts": "700",
+          "timestamp": "2025-06-27T11:45:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains actionable information (rate limiting, IP blocking, investigation) and important information exchange (security alert, details of the incident, possible data scraping attempt).",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC016",
+      "category": "CREATE",
+      "test_name": "Customer Escalation - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 4.548,
+      "message": {
+        "id": 2008,
+        "channel": "#customer-escalations",
+        "user": "Support",
+        "text": "\ud83d\udd25 ESCALATION: Enterprise customer AcmeCorp (account ID: 12847, MRR: $25k/mo) threatening to churn. Issue: Data export feature broken for 3 weeks, no response from eng team. CEO demanding call with our CEO. Need immediate fix + exec response.",
+        "thread_ts": "800",
+        "timestamp": "2025-06-27T15:00:00"
+      },
+      "expected_behavior": "Should create high-urgency escalation topic with account details and impact",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "AcmeCorp Churn Threat - Data Export Issue",
+          "summary": "Enterprise customer AcmeCorp (account ID: 12847, MRR: $25k/mo) is threatening to churn due to a broken data export feature for the past 3 weeks and lack of response from the engineering team. The CEO of AcmeCorp is demanding a call with our CEO.",
+          "action_items": [
+            {
+              "task": "Investigate and fix the data export feature for AcmeCorp",
+              "owner": "@engineering",
+              "due_date": "2025-06-28",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Coordinate a call between AcmeCorp CEO and our CEO",
+              "owner": "@executives",
+              "due_date": "2025-06-28",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Communicate status updates to AcmeCorp",
+              "owner": "@Support",
+              "due_date": "2025-06-28",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Support",
+            "@engineering",
+            "@executives"
+          ],
+          "urgency": "high",
+          "deadline": "2025-06-28",
+          "status": "active",
+          "channel": "#customer_escalations",
+          "tags": [
+            "churn",
+            "enterprise",
+            "acmecorp",
+            "data_export",
+            "bug",
+            "escalation",
+            "ceo"
+          ]
+        },
+        "message": {
+          "id": 2008,
+          "channel": "#customer-escalations",
+          "user": "Support",
+          "text": "\ud83d\udd25 ESCALATION: Enterprise customer AcmeCorp (account ID: 12847, MRR: $25k/mo) threatening to churn. Issue: Data export feature broken for 3 weeks, no response from eng team. CEO demanding call with our CEO. Need immediate fix + exec response.",
+          "thread_ts": "800",
+          "timestamp": "2025-06-27T15:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains actionable information (need immediate fix + exec response) and important information (enterprise customer threatening to churn due to a broken feature). It also includes context (customer name, account ID, MRR, issue details, timeline).",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC017",
+      "category": "CREATE",
+      "test_name": "Vendor Invoice - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 4.146,
+      "message": {
+        "id": 2009,
+        "channel": "#finance",
+        "user": "Finance",
+        "text": "@accounting Invoice from AWS for June 2025 is $47,892.33 (expected: $35k). Investigating: EC2 instances running in eu-west-2 (unauthorized region). Need eng team to audit and terminate unused resources by July 10, 2025 to avoid overage.",
+        "thread_ts": "900",
+        "timestamp": "2025-06-28T10:00:00"
+      },
+      "expected_behavior": "Should create finance topic with invoice discrepancy and action items",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "AWS June 2025 Invoice Anomaly: Unauthorized EC2 Instances in eu-west-2",
+          "summary": "The AWS invoice for June 2025 is $47,892.33, significantly higher than the expected $35,000. The discrepancy is attributed to unauthorized EC2 instances running in the eu-west-2 region. The engineering team needs to audit and terminate these unused resources to avoid further overage charges.",
+          "action_items": [
+            {
+              "task": "Audit EC2 instances in eu-west-2 region and identify unauthorized resources.",
+              "owner": "@eng",
+              "due_date": "2025-07-10",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Terminate identified unauthorized EC2 instances in eu-west-2.",
+              "owner": "@eng",
+              "due_date": "2025-07-10",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Investigate the root cause of unauthorized EC2 instance creation in eu-west-2.",
+              "owner": null,
+              "due_date": null,
+              "priority": "medium",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@accounting",
+            "@eng",
+            "@Finance"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-10",
+          "status": "active",
+          "channel": "#finance",
+          "tags": [
+            "AWS",
+            "invoice",
+            "cost optimization",
+            "EC2",
+            "eu-west-2",
+            "unauthorized",
+            "cloud",
+            "overage"
+          ]
+        },
+        "message": {
+          "id": 2009,
+          "channel": "#finance",
+          "user": "Finance",
+          "text": "@accounting Invoice from AWS for June 2025 is $47,892.33 (expected: $35k). Investigating: EC2 instances running in eu-west-2 (unauthorized region). Need eng team to audit and terminate unused resources by July 10, 2025 to avoid overage.",
+          "thread_ts": "900",
+          "timestamp": "2025-06-28T10:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains actionable information: a deadline (July 10, 2025) and a task (audit and terminate unused resources). It also contains important information about an unexpected AWS invoice and unauthorized resource usage.",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC018",
+      "category": "CREATE",
+      "test_name": "Compliance Update - New Topic",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 4.564,
+      "message": {
+        "id": 2010,
+        "channel": "#legal-compliance",
+        "user": "Legal",
+        "text": "\ud83d\udccb COMPLIANCE: New GDPR requirement effective August 1, 2025 - must implement 'Right to Data Portability' API. Requirements: JSON/CSV export, all user data, within 30 days of request. Penalty: \u20ac20M or 4% revenue. Eng estimate: 6 weeks.",
+        "thread_ts": "1000",
+        "timestamp": "2025-06-28T13:30:00"
+      },
+      "expected_behavior": "Should create compliance topic with regulation, deadline, penalty, estimate",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "New GDPR 'Right to Data Portability' Requirement",
+          "summary": "A new GDPR requirement regarding the 'Right to Data Portability' goes into effect on August 1, 2025. This necessitates the implementation of an API allowing users to export all their data in JSON/CSV format within 30 days of a request. Failure to comply carries a penalty of \u20ac20M or 4% of revenue. Engineering estimates a 6-week development timeline.",
+          "action_items": [
+            {
+              "task": "Implement 'Right to Data Portability' API",
+              "owner": "@Engineering",
+              "due_date": "2025-08-01",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Define API specifications for JSON/CSV export",
+              "owner": "@Engineering",
+              "due_date": "2025-07-05",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Review and approve API specifications with Legal",
+              "owner": "@Legal",
+              "due_date": "2025-07-12",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Test the implemented API",
+              "owner": "@QA",
+              "due_date": "2025-07-26",
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Legal",
+            "@Engineering",
+            "@QA"
+          ],
+          "urgency": "high",
+          "deadline": "2025-08-01",
+          "status": "active",
+          "channel": "#legal-compliance",
+          "tags": [
+            "GDPR",
+            "Data Portability",
+            "Compliance",
+            "API",
+            "Legal",
+            "Privacy"
+          ]
+        },
+        "message": {
+          "id": 2010,
+          "channel": "#legal-compliance",
+          "user": "Legal",
+          "text": "\ud83d\udccb COMPLIANCE: New GDPR requirement effective August 1, 2025 - must implement 'Right to Data Portability' API. Requirements: JSON/CSV export, all user data, within 30 days of request. Penalty: \u20ac20M or 4% revenue. Eng estimate: 6 weeks.",
+          "thread_ts": "1000",
+          "timestamp": "2025-06-28T13:30:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains actionable information (new GDPR requirement, implementation deadline, specific requirements for the API, penalty for non-compliance, and engineering estimate). It also constitutes an important announcement regarding a policy change.",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC019",
+      "category": "DISCARD",
+      "test_name": "Casual Question - Should Discard",
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 1.2,
+      "message": {
+        "id": 3001,
+        "channel": "#general",
+        "user": "Alex",
+        "text": "Hey, I heard about the EcoBloom campaign. Can someone share the latest updates?",
+        "thread_ts": "5000",
+        "timestamp": "2025-06-29T10:00:00"
+      },
+      "expected_behavior": "Should discard - casual question without actionable content or context",
+      "result": {
+        "success": true,
+        "action": "discarded",
+        "reason": "The message is a casual question without sufficient context. It simply asks for updates on the EcoBloom campaign without providing any specific information or request for action. It falls under the category of 'Casual questions without context'.",
+        "message": {
+          "id": 3001,
+          "channel": "#general",
+          "user": "Alex",
+          "text": "Hey, I heard about the EcoBloom campaign. Can someone share the latest updates?",
+          "thread_ts": "5000",
+          "timestamp": "2025-06-29T10:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": false,
+          "reason": "The message is a casual question without sufficient context. It simply asks for updates on the EcoBloom campaign without providing any specific information or request for action. It falls under the category of 'Casual questions without context'.",
+          "suggested_action": "discard"
+        }
+      }
+    },
+    {
+      "test_id": "TC020",
+      "category": "DISCARD",
+      "test_name": "Acknowledgment - Should Discard",
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 0.954,
+      "message": {
+        "id": 3002,
+        "channel": "#campaign-briefs",
+        "user": "Sam",
+        "text": "Thanks Devon! Got it \ud83d\udc4d",
+        "thread_ts": "5001",
+        "timestamp": "2025-06-29T11:00:00"
+      },
+      "expected_behavior": "Should discard - simple acknowledgment without substance",
+      "result": {
+        "success": true,
+        "action": "discarded",
+        "reason": "This message is a simple acknowledgment ('Got it') and does not contain any actionable information, important announcements, substantial information exchange, or requests with context. It should be discarded.",
+        "message": {
+          "id": 3002,
+          "channel": "#campaign-briefs",
+          "user": "Sam",
+          "text": "Thanks Devon! Got it \ud83d\udc4d",
+          "thread_ts": "5001",
+          "timestamp": "2025-06-29T11:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": false,
+          "reason": "This message is a simple acknowledgment ('Got it') and does not contain any actionable information, important announcements, substantial information exchange, or requests with context. It should be discarded.",
+          "suggested_action": "discard"
+        }
+      }
+    },
+    {
+      "test_id": "TC021",
+      "category": "DISCARD",
+      "test_name": "Small Talk - Should Discard",
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 1.043,
+      "message": {
+        "id": 3003,
+        "channel": "#general",
+        "user": "Maria",
+        "text": "Good morning everyone! Hope you all have a great Friday! \ud83c\udf89",
+        "thread_ts": "5002",
+        "timestamp": "2025-06-29T08:00:00"
+      },
+      "expected_behavior": "Should discard - small talk with no business value",
+      "result": {
+        "success": true,
+        "action": "discarded",
+        "reason": "This message is a greeting and well-wishing. It falls under the category of small talk and does not contain any actionable information, important announcements, substantial information exchange, or requests with context.",
+        "message": {
+          "id": 3003,
+          "channel": "#general",
+          "user": "Maria",
+          "text": "Good morning everyone! Hope you all have a great Friday! \ud83c\udf89",
+          "thread_ts": "5002",
+          "timestamp": "2025-06-29T08:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": false,
+          "reason": "This message is a greeting and well-wishing. It falls under the category of small talk and does not contain any actionable information, important announcements, substantial information exchange, or requests with context.",
+          "suggested_action": "discard"
+        }
+      }
+    },
+    {
+      "test_id": "TC022",
+      "category": "DISCARD",
+      "test_name": "Vague Reference - Should Discard",
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 1.214,
+      "message": {
+        "id": 3004,
+        "channel": "#engineering",
+        "user": "Kevin",
+        "text": "What's the status on that bug?",
+        "thread_ts": "5003",
+        "timestamp": "2025-06-29T14:30:00"
+      },
+      "expected_behavior": "Should discard - vague, no context (which bug?)",
+      "result": {
+        "success": true,
+        "action": "discarded",
+        "reason": "The message is a casual question without sufficient context. It vaguely refers to a bug, but doesn't provide any details or actionable information. It's likely a follow-up on an existing topic or a simple status check.",
+        "message": {
+          "id": 3004,
+          "channel": "#engineering",
+          "user": "Kevin",
+          "text": "What's the status on that bug?",
+          "thread_ts": "5003",
+          "timestamp": "2025-06-29T14:30:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": false,
+          "reason": "The message is a casual question without sufficient context. It vaguely refers to a bug, but doesn't provide any details or actionable information. It's likely a follow-up on an existing topic or a simple status check.",
+          "suggested_action": "discard"
+        }
+      }
+    },
+    {
+      "test_id": "TC023",
+      "category": "DISCARD",
+      "test_name": "Emoji Only - Should Discard",
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 1.643,
+      "message": {
+        "id": 3005,
+        "channel": "#product-ideas",
+        "user": "Priya",
+        "text": "\ud83d\udc4d\ud83d\udc4d\ud83d\udc4d",
+        "thread_ts": "5004",
+        "timestamp": "2025-06-29T16:00:00"
+      },
+      "expected_behavior": "Should discard - emoji-only message with no content",
+      "result": {
+        "success": true,
+        "action": "discarded",
+        "reason": "The message consists only of thumbs-up emojis, which is a simple acknowledgment and does not contain any actionable information, important announcements, substantial information exchange, or requests with context. It lacks the substance required to create a meaningful topic.",
+        "message": {
+          "id": 3005,
+          "channel": "#product-ideas",
+          "user": "Priya",
+          "text": "\ud83d\udc4d\ud83d\udc4d\ud83d\udc4d",
+          "thread_ts": "5004",
+          "timestamp": "2025-06-29T16:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": false,
+          "reason": "The message consists only of thumbs-up emojis, which is a simple acknowledgment and does not contain any actionable information, important announcements, substantial information exchange, or requests with context. It lacks the substance required to create a meaningful topic.",
+          "suggested_action": "discard"
+        }
+      }
+    },
+    {
+      "test_id": "TC026",
+      "category": "UPDATE_NON_ACTIONABLE",
+      "test_name": "CRITICAL: Acknowledgment in Same Thread - Should NOT Update",
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 1.13,
+      "message": {
+        "id": 3006,
+        "channel": "#campaign-briefs",
+        "user": "Sam",
+        "text": "Thanks Devon! Got it \ud83d\udc4d",
+        "thread_ts": "1",
+        "timestamp": "2025-06-29T17:00:00"
+      },
+      "expected_behavior": "Should DISCARD even though same thread - no actionable information to update topic",
+      "result": {
+        "success": true,
+        "action": "discarded",
+        "reason": "This message is a simple acknowledgment ('Got it') and does not contain any actionable information, important announcements, substantial information exchange, or requests with context. It should be discarded.",
+        "message": {
+          "id": 3006,
+          "channel": "#campaign-briefs",
+          "user": "Sam",
+          "text": "Thanks Devon! Got it \ud83d\udc4d",
+          "thread_ts": "1",
+          "timestamp": "2025-06-29T17:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": false,
+          "reason": "This message is a simple acknowledgment ('Got it') and does not contain any actionable information, important announcements, substantial information exchange, or requests with context. It should be discarded.",
+          "suggested_action": "discard"
+        }
+      }
+    },
+    {
+      "test_id": "TC027",
+      "category": "UPDATE_NON_ACTIONABLE",
+      "test_name": "CRITICAL: Small Talk in Same Thread - Should NOT Update",
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 1.144,
+      "message": {
+        "id": 3007,
+        "channel": "#campaign-briefs",
+        "user": "Leah",
+        "text": "Have a great weekend everyone! \ud83c\udf89",
+        "thread_ts": "1",
+        "timestamp": "2025-06-29T18:00:00"
+      },
+      "expected_behavior": "Should DISCARD - social message adds no business value to topic",
+      "result": {
+        "success": true,
+        "action": "discarded",
+        "reason": "This message is a simple well-wishing and falls under the category of small talk/chit-chat. It doesn't contain any actionable information, important announcements, substantial information exchange, or requests with context.",
+        "message": {
+          "id": 3007,
+          "channel": "#campaign-briefs",
+          "user": "Leah",
+          "text": "Have a great weekend everyone! \ud83c\udf89",
+          "thread_ts": "1",
+          "timestamp": "2025-06-29T18:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": false,
+          "reason": "This message is a simple well-wishing and falls under the category of small talk/chit-chat. It doesn't contain any actionable information, important announcements, substantial information exchange, or requests with context.",
+          "suggested_action": "discard"
+        }
+      }
+    },
+    {
+      "test_id": "TC028",
+      "category": "UPDATE_NON_ACTIONABLE",
+      "test_name": "CRITICAL: Vague Question in Same Thread - Should NOT Update",
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 1.315,
+      "message": {
+        "id": 3008,
+        "channel": "#campaign-briefs",
+        "user": "Jordan",
+        "text": "Any updates?",
+        "thread_ts": "1",
+        "timestamp": "2025-06-30T09:00:00"
+      },
+      "expected_behavior": "Should DISCARD - vague question without specific actionable request",
+      "result": {
+        "success": true,
+        "action": "discarded",
+        "reason": "The message \"Any updates?\" is a casual question without context. It doesn't contain actionable information, important announcements, substantial information exchange, or a request with context. It's too vague to generate meaningful metadata.",
+        "message": {
+          "id": 3008,
+          "channel": "#campaign-briefs",
+          "user": "Jordan",
+          "text": "Any updates?",
+          "thread_ts": "1",
+          "timestamp": "2025-06-30T09:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": false,
+          "reason": "The message \"Any updates?\" is a casual question without context. It doesn't contain actionable information, important announcements, substantial information exchange, or a request with context. It's too vague to generate meaningful metadata.",
+          "suggested_action": "discard"
+        }
+      }
+    },
+    {
+      "test_id": "TC024",
+      "category": "EDGE_CASE",
+      "test_name": "Borderline Topic-Worthiness - Question with Some Context",
+      "expected_action": "create",
+      "actual_action": "create",
+      "passed": true,
+      "similarity_score": 0.0,
+      "duration_seconds": 4.66,
+      "message": {
+        "id": 4001,
+        "channel": "#engineering",
+        "user": "Alex",
+        "text": "@backend-team Has anyone looked at the database slow query warnings from yesterday? I'm seeing some in the logs but not sure if it's urgent.",
+        "thread_ts": "6000",
+        "timestamp": "2025-06-30T09:00:00"
+      },
+      "expected_behavior": "Borderline - has some context (database, slow queries, logs) but lacks urgency/action",
+      "result": {
+        "success": true,
+        "topic_id": "topic_016",
+        "action": "created",
+        "metadata": {
+          "title": "Database Slow Query Warnings - 2025-06-29",
+          "summary": "Alex reported seeing slow query warnings in the logs from yesterday (2025-06-29) and is asking the backend team to investigate and assess the urgency.",
+          "action_items": [
+            {
+              "task": "Investigate slow query warnings from 2025-06-29 in the database logs.",
+              "owner": "@backend-team",
+              "due_date": "2025-07-01",
+              "priority": "medium",
+              "status": "pending"
+            },
+            {
+              "task": "Assess the urgency and potential impact of the slow queries.",
+              "owner": "@backend-team",
+              "due_date": "2025-07-01",
+              "priority": "medium",
+              "status": "pending"
+            },
+            {
+              "task": "Report findings and proposed solutions (if necessary).",
+              "owner": "@backend-team",
+              "due_date": "2025-07-02",
+              "priority": "medium",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "Alex",
+            "@backend-team"
+          ],
+          "urgency": "medium",
+          "deadline": "2025-07-02",
+          "status": "active",
+          "channel": "#engineering",
+          "tags": [
+            "database",
+            "slow query",
+            "performance",
+            "backend",
+            "logs"
+          ]
+        },
+        "message": {
+          "id": 4001,
+          "channel": "#engineering",
+          "user": "Alex",
+          "text": "@backend-team Has anyone looked at the database slow query warnings from yesterday? I'm seeing some in the logs but not sure if it's urgent.",
+          "thread_ts": "6000",
+          "timestamp": "2025-06-30T09:00:00"
+        },
+        "similar_topics": [],
+        "worthiness_evaluation": {
+          "is_worthy": true,
+          "reason": "The message contains a request for information about database slow query warnings, which could lead to actionable information (identifying and fixing the slow queries). It also provides context (seeing warnings in the logs). This falls under 'Requests with context' and potentially 'Substantial information exchange' if the backend team responds with details.",
+          "suggested_action": "create"
+        }
+      }
+    },
+    {
+      "test_id": "TC025",
+      "category": "EDGE_CASE",
+      "test_name": "High Semantic, Different Structure - Should Create",
+      "expected_action": "create",
+      "actual_action": "update",
+      "passed": false,
+      "similarity_score": 0.7383,
+      "duration_seconds": 5.693,
+      "message": {
+        "id": 4002,
+        "channel": "#general",
+        "user": "NewUser",
+        "text": "@team Starting work on EcoBloom summer campaign designs. Need access to brand guidelines and asset library. When is the kickoff meeting?",
+        "thread_ts": "7000",
+        "timestamp": "2025-06-30T10:30:00"
+      },
+      "expected_behavior": "Should CREATE (different channel/thread despite semantic similarity to topic_001)",
+      "result": {
+        "success": true,
+        "topic_id": "topic_001",
+        "action": "updated",
+        "metadata": {
+          "title": "EcoBloom Summer Campaign Planning",
+          "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025. @NewUser is starting work on EcoBloom summer campaign designs and needs access to brand guidelines and asset library. They are also asking about the kickoff meeting.",
+          "action_items": [
+            {
+              "task": "Prepare initial design concepts",
+              "owner": "@sam",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Draft content strategy",
+              "owner": "@leah",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Review EcoBloom's contract terms",
+              "owner": "@jordan",
+              "due_date": "2024-05-15",
+              "priority": "high",
+              "status": "completed"
+            },
+            {
+              "task": "Complete designs",
+              "owner": "@sam",
+              "due_date": "2025-07-10",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Prepare content for review",
+              "owner": "@leah",
+              "due_date": "2025-06-30",
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Provide access to brand guidelines and asset library",
+              "owner": "@team",
+              "due_date": null,
+              "priority": "high",
+              "status": "pending"
+            },
+            {
+              "task": "Schedule EcoBloom summer campaign kickoff meeting",
+              "owner": "@team",
+              "due_date": null,
+              "priority": "high",
+              "status": "pending"
+            }
+          ],
+          "participants": [
+            "@Devon",
+            "@Sam",
+            "@Leah",
+            "@Jordan",
+            "@NewUser"
+          ],
+          "urgency": "high",
+          "deadline": "2025-07-28",
+          "status": "active",
+          "channel": "#campaign-briefs",
+          "tags": [
+            "ecobloom",
+            "summer",
+            "campaign",
+            "planning",
+            "timeline",
+            "marketing",
+            "content",
+            "designs"
+          ]
+        },
+        "message": {
+          "id": 4002,
+          "channel": "#general",
+          "user": "NewUser",
+          "text": "@team Starting work on EcoBloom summer campaign designs. Need access to brand guidelines and asset library. When is the kickoff meeting?",
+          "thread_ts": "7000",
+          "timestamp": "2025-06-30T10:30:00"
+        },
+        "similar_topics": [
+          [
+            "topic_001",
+            0.738259675148238
+          ],
+          [
+            "topic_006",
+            0.7276748200649417
+          ],
+          [
+            "topic_011",
+            0.7242947896724201
+          ]
+        ]
+      }
+    }
+  ]
+}

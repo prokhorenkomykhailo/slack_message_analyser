@@ -243,8 +243,10 @@ class Step4VectorDB:
     
     def generate_embeddings(self, topic: Dict) -> List[float]:
         """
-        Generate 768-dimensional embedding vectors for each topic from Step 3 metadata
-        Uses rich metadata: title, summary, action items, participants, tags, urgency
+        Generate embedding vectors for each topic from Step 3 metadata.
+        Uses rich metadata: title, summary, tags, participants (from/to), urgency, channel, thread_root.
+        Includes channel, thread_root, and participants for structural similarity matching.
+        Participants represent both senders (from) and recipients (to) in the topic.
         """
         # Use topic metadata to create deterministic but varied embeddings
         metadata = topic.get("metadata", {})
@@ -254,11 +256,26 @@ class Step4VectorDB:
         title = metadata.get('title', '')
         summary = metadata.get('summary', '')
         tags = ' '.join(metadata.get('tags', []))
-        participants = ' '.join(metadata.get('participants', []))
+        participants_list = metadata.get('participants', [])
+        participants = ' '.join(participants_list)  # All participants (from/to)
         urgency = metadata.get('urgency', '')
+        channel = metadata.get('channel', '')
+        thread_root = metadata.get('thread_root', '')
         
-        # Combine all metadata for rich semantic representation
-        seed_text = f"{title} {summary} {tags} {participants} {urgency}"
+        # Format participants as "from_to" to match message embedding format
+        # Participants represent both senders and recipients in the topic
+        participants_part = f"from_to_{participants}" if participants else ""
+        
+        # Weight structural metadata by repeating them before embedding
+        # This gives them stronger influence in the embedding space
+        # Weights: channel=3x, thread=3x, participants=2x, semantic=1x
+        channel_weighted = f"{channel} {channel} {channel}" if channel else ""
+        thread_weighted = f"thread_{thread_root} thread_{thread_root} thread_{thread_root}" if thread_root else ""
+        participants_weighted = f"{participants_part} {participants_part}" if participants_part else ""
+        
+        # Combine with weighted structural metadata first (higher influence)
+        # Format: "channel*3 thread*3 participants*2 title summary tags urgency"
+        seed_text = f"{channel_weighted} {thread_weighted} {participants_weighted} {title} {summary} {tags} {urgency}"
         if not seed_text.strip():
             seed_text = f"{topic.get('cluster_id', 'topic')} metadata unavailable"
 

@@ -243,6 +243,7 @@ class Step6NewMessageProcessing:
             if "metadata_results" in step3_data:
                 topics = step3_data["metadata_results"]
                 print(f"✅ Loaded {len(topics)} topics from Step 3")
+                print(f"   📂 Source file: {step3_file}")
                 return topics
             else:
                 print(f"❌ No 'metadata_results' found in Step 3 file")
@@ -330,20 +331,45 @@ class Step6NewMessageProcessing:
         
         return embeddings
     
+    def _extract_mentions(self, text: str) -> str:
+        """Extract @mentions from message text (the 'to' field)"""
+        import re
+        mentions = re.findall(r'@\w+', text)
+        return ' '.join(mentions) if mentions else ''
+    
     def generate_message_embedding(self, message: Dict) -> List[float]:
         """
         Generate embedding for a new message.
-        Uses simple text-based embedding (can be replaced with OpenAI/Google embeddings).
+        Includes channel, thread_id, from (sender), and to (mentions) for similarity matching.
+        Matches the format used in Step 4 topic embeddings.
         """
-        # Combine message text, user, and channel for embedding
+        # Extract message fields
         text = message.get("text", "")
-        user = message.get("user", "")
+        user = message.get("user", "")  # "from" - the sender
         channel = message.get("channel", "")
+        thread_id = message.get("thread_ts") or message.get("thread_id", "")
         
-        combined_text = f"{channel} {user} {text}".strip().lower()
+        # Extract mentions from text (the "to" field - who the message is addressed to)
+        mentions = self._extract_mentions(text)
+        
+        # Format thread_id similar to topic embedding (thread_root)
+        thread_part = f"thread_{thread_id}" if thread_id else ""
+        
+        # Weight structural metadata by repeating them before embedding
+        # This gives them stronger influence in the embedding space
+        # Weights: channel=3x, thread=3x, from/to=2x, text=1x
+        channel_weighted = f"{channel} {channel} {channel}" if channel else ""
+        thread_weighted = f"{thread_part} {thread_part} {thread_part}" if thread_part else ""
+        from_part = f"from_{user}" if user else ""
+        to_part = f"to_{mentions}" if mentions else ""
+        from_to_weighted = f"{from_part} {to_part} {from_part} {to_part}" if (from_part or to_part) else ""
+        
+        # Combine with weighted structural metadata first (higher influence)
+        # Format: "channel*3 thread*3 from_to*2 text*1"
+        combined_text = f"{channel_weighted} {thread_weighted} {from_to_weighted} {text}".strip().lower()
         if not combined_text:
             combined_text = (
-                f"{channel} {user} empty message content"
+                f"{channel} {from_part} empty message content"
             ).strip().lower()
 
         embedding = self._generate_embedding_with_backend(combined_text)
@@ -352,9 +378,15 @@ class Step6NewMessageProcessing:
 
         return embedding
     
-    def find_similar_topics(self, message_embedding: List[float], threshold: float = 0.7) -> List[Tuple[str, float]]:
+    def find_similar_topics(self, message: Dict, message_embedding: List[float], threshold: float = 0.7) -> List[Tuple[str, float]]:
         """
-        Find similar topics using cosine similarity.
+        Find similar topics using cosine similarity of embeddings.
+        
+        Note: Structural metadata (channel, thread, from/to) is already weighted in embeddings
+        by repeating them multiple times (channel 3x, thread 3x, from/to 2x).
+        This means if threads match, similarity will naturally be high.
+        No need for complex fallback rules or thread matching logic.
+        
         Returns list of (topic_id, similarity_score) tuples.
         """
         if self.use_supabase and not self.topic_embeddings:
@@ -365,24 +397,26 @@ class Step6NewMessageProcessing:
         if not self.topic_embeddings:
             return []
         
-        similarities = []
+        similar_topics = []
         message_vec = np.array(message_embedding)
         
         for topic_id, topic_embedding in self.topic_embeddings.items():
             topic_vec = np.array(topic_embedding)
             
-            # Cosine similarity
+            # Calculate cosine similarity
             dot_product = np.dot(message_vec, topic_vec)
             norm_product = np.linalg.norm(message_vec) * np.linalg.norm(topic_vec)
             
             if norm_product > 0:
                 similarity = dot_product / norm_product
+                
+                # Include if similarity meets threshold
                 if similarity >= threshold:
-                    similarities.append((topic_id, float(similarity)))
+                    similar_topics.append((topic_id, float(similarity)))
         
-        # Sort by similarity (highest first)
-        similarities.sort(key=lambda x: x[1], reverse=True)
-        return similarities
+        # Sort by similarity score (highest first)
+        similar_topics.sort(key=lambda x: x[1], reverse=True)
+        return similar_topics
     
     def should_update_existing_topic(self, message: Dict, similar_topics: List[Tuple[str, float]]) -> Optional[str]:
         """
@@ -471,10 +505,10 @@ Analyze and provide your decision in JSON format.
                 decision = json.loads(json_str)
                 
                 if decision.get("decision") == "update_existing" and decision.get("topic_id"):
-                    print(f"✅ AI decision: Update existing topic {decision.get('topic_id')} (confidence: {decision.get('confidence', 0):.2f})")
+                    print(f"✅ AI decision: Update existing topic {decision.get('topic_id')}")
                     return decision.get("topic_id")
                 else:
-                    print(f"✅ AI decision: Create new topic (confidence: {decision.get('confidence', 0):.2f})")
+                    print(f"✅ AI decision: Create new topic")
                     return None
             else:
                 # Fallback
@@ -488,6 +522,100 @@ Analyze and provide your decision in JSON format.
             if top_topics and top_topics[0][1] > 0.8:
                 return top_topics[0][0]
             return None
+    
+    def is_message_topic_worthy(self, message: Dict) -> Dict:
+        """
+        Evaluate if a message contains enough substance to create a new topic.
+        
+        A message is topic-worthy if it contains:
+        - Actionable information (tasks, deadlines, decisions, requests)
+        - Important announcements (projects, policies, hiring, updates)
+        - Substantial information exchange (not just casual questions/comments)
+        - Enough context to generate meaningful metadata
+        
+        Returns:
+        {
+            "is_worthy": bool,
+            "reason": str,
+            "suggested_action": "create" | "discard"
+        }
+        """
+        prompt = f"""
+You are evaluating if a message contains enough substance to create a topic.
+
+**Message to Evaluate:**
+Channel: {message.get("channel", "N/A")}
+User: {message.get("user", "N/A")}
+Text: {message.get("text", "")}
+Timestamp: {message.get("timestamp", "N/A")}
+
+**Definition of a Topic-Worthy Message:**
+A message should create a topic ONLY if it contains at least one of these:
+1. **Actionable information**: Tasks, deadlines, action items, decisions, commitments
+2. **Important announcements**: New projects, policy changes, hiring, major updates
+3. **Substantial information exchange**: Detailed explanations, reports, data, analysis
+4. **Requests with context**: Requests for work, approvals, resources (not just casual questions)
+
+**NOT Topic-Worthy (should be DISCARDED):**
+- Casual questions without context ("I heard about X, can someone share updates?")
+- Simple acknowledgments ("Thanks!", "Got it", "OK")
+- Small talk or chit-chat
+- Vague references to existing topics without new information
+- Messages that don't contain enough context to generate meaningful metadata
+
+**Your Task:**
+Evaluate if this message is topic-worthy and should create a new topic, or if it should be discarded.
+
+Respond in JSON format:
+{{
+    "is_worthy": true/false,
+    "reason": "Brief explanation of why this message is or isn't topic-worthy",
+    "suggested_action": "create" or "discard"
+}}
+"""
+        
+        try:
+            result = call_model_with_retry(
+                self.metadata_model,
+                self.metadata_model_name,
+                prompt,
+                max_retries=3
+            )
+            
+            if not result.get("success"):
+                print(f"⚠️  Topic-worthiness evaluation failed: {result.get('error', 'Unknown error')}")
+                # Conservative fallback: assume it's worthy to avoid losing potentially important messages
+                return {
+                    "is_worthy": True,
+                    "reason": "Evaluation failed, assuming worthy to be safe",
+                    "suggested_action": "create"
+                }
+            
+            # Parse JSON response
+            response_text = result.get("response", "")
+            start_idx = response_text.find("{")
+            end_idx = response_text.rfind("}") + 1
+            
+            if start_idx != -1 and end_idx > 0:
+                json_str = response_text[start_idx:end_idx]
+                evaluation = json.loads(json_str)
+                return evaluation
+            else:
+                # Fallback
+                return {
+                    "is_worthy": True,
+                    "reason": "Could not parse response, assuming worthy to be safe",
+                    "suggested_action": "create"
+                }
+                
+        except Exception as e:
+            print(f"⚠️  Error evaluating topic-worthiness: {e}")
+            # Conservative fallback
+            return {
+                "is_worthy": True,
+                "reason": f"Error during evaluation: {e}",
+                "suggested_action": "create"
+            }
     
     def update_existing_topic(self, topic_id: str, message: Dict) -> Dict:
         """
@@ -523,11 +651,32 @@ Timestamp: {message.get("timestamp", "N/A")}
 
 **Task:**
 Update the topic metadata to incorporate the new message:
-1. Update summary if the message adds new information
-2. Add new action items if mentioned
-3. Update participants if new user
-4. Update urgency if changed
-5. Keep title if still relevant, or update if topic shifted
+
+1. **Update Summary**: Include new information from the message
+
+2. **Action Items - CRITICAL RULES**:
+   a. **KEEP ALL EXISTING ACTION ITEMS** - Do not remove or regenerate them
+   b. **UPDATE EXISTING ACTION ITEM STATUS**:
+      - If the message mentions completing a task, find the matching existing action item and change its status to "completed"
+      - If the message mentions starting work, change status to "in_progress"
+      - Match by task description, owner, or context (e.g., "completed content" matches "Prepare content for review")
+   c. **ADD NEW ACTION ITEMS**:
+      - Extract ALL actionable instructions from the message (e.g., "update timelines", "review by end of week", "confirm wire transfer")
+      - Create new action items for each instruction
+      - If multiple people are mentioned for the same task, create SEPARATE DISTINCT tasks for each person (NOT duplicates with same description)
+      - Example: If message says "@sam @jordan please review", create two distinct tasks:
+        * "Review content draft - design perspective" (owner: "@sam")
+        * "Review content draft - legal perspective" (owner: "@jordan")
+      - OR if it's truly the same task for multiple people, create one task with a clear description and assign to the primary owner, mentioning others in the task description
+   d. **NO DUPLICATES**: Before adding a new action item, check if a similar one already exists
+
+3. **Update Participants**: Add new users if mentioned
+
+4. **Update Urgency**: Change if the message indicates urgency change
+
+5. **Update Title**: Keep if still relevant, update if topic shifted
+
+6. **Update Deadline**: Change if the message mentions a deadline change
 
 **Output Format (JSON only):**
 {{
@@ -549,6 +698,18 @@ Update the topic metadata to incorporate the new message:
   "channel": "#channel-name",
   "tags": ["tag1", "tag2"]
 }}
+
+**CRITICAL ACTION ITEM RULES**:
+1. Include ALL existing action items (preserve them exactly, but update status if completion is mentioned)
+2. Extract EVERY actionable instruction from the new message and create action items
+3. Update status of existing action items when the message indicates completion/progress
+4. NO duplicate action items - if multiple people need to do the same task, create distinct tasks with different perspectives
+5. Match existing action items to message content to update their status appropriately
+
+**EXAMPLES**:
+- Message: "Please update your timelines accordingly" → Create action item: "Update timelines to reflect new deadline"
+- Message: "I've completed the first draft" → Find existing action item "Prepare content for review" and change status to "completed"
+- Message: "@sam @jordan please review by end of week" → Create two distinct tasks: "Review content draft - design" (owner: "@sam") and "Review content draft - legal" (owner: "@jordan")
 
 Provide the updated metadata in JSON format.
 """
@@ -678,8 +839,8 @@ Provide the metadata in JSON format.
         # Step 1: Generate embedding for new message
         message_embedding = self.generate_message_embedding(message)
         
-        # Step 2: Find similar topics
-        similar_topics = self.find_similar_topics(message_embedding, threshold=0.7)
+        # Step 2: Find similar topics (with fallback rule for structural matches)
+        similar_topics = self.find_similar_topics(message, message_embedding, threshold=0.7)
         
         if similar_topics:
             print(f"📊 Found {len(similar_topics)} similar topics (top similarity: {similar_topics[0][1]:.2f})")
@@ -691,15 +852,34 @@ Provide the metadata in JSON format.
         
         # Step 4: Update or create
         if topic_id:
+            # Update existing topic
             result = self.update_existing_topic(topic_id, message)
             result["message"] = message
             result["similar_topics"] = similar_topics
             return result
         else:
-            result = self.create_new_topic(message)
-            result["message"] = message
-            result["similar_topics"] = similar_topics
-            return result
+            # No match found - check if message is topic-worthy before creating
+            print(f"🔍 No matching topic found. Evaluating if message is topic-worthy...")
+            worthiness = self.is_message_topic_worthy(message)
+            
+            if worthiness.get("is_worthy") and worthiness.get("suggested_action") == "create":
+                print(f"✅ Message is topic-worthy: {worthiness.get('reason')}")
+                result = self.create_new_topic(message)
+                result["message"] = message
+                result["similar_topics"] = similar_topics
+                result["worthiness_evaluation"] = worthiness
+                return result
+            else:
+                print(f"❌ Message is NOT topic-worthy: {worthiness.get('reason')}")
+                print(f"🗑️  Message will be discarded (not creating topic)")
+                return {
+                    "success": True,
+                    "action": "discarded",
+                    "reason": worthiness.get("reason"),
+                    "message": message,
+                    "similar_topics": similar_topics,
+                    "worthiness_evaluation": worthiness
+                }
     
     def process_multiple_messages(self, messages: List[Dict]) -> Dict:
         """Process multiple new messages"""
@@ -709,6 +889,7 @@ Provide the metadata in JSON format.
         results = []
         updated_topics = set()
         created_topics = []
+        discarded_messages = []
         
         for i, message in enumerate(messages, 1):
             print(f"\n[{i}/{len(messages)}] Processing message...")
@@ -720,6 +901,13 @@ Provide the metadata in JSON format.
                     updated_topics.add(result.get("topic_id"))
                 elif result.get("action") == "created":
                     created_topics.append(result.get("topic_id"))
+                elif result.get("action") == "discarded":
+                    discarded_messages.append({
+                        "message_id": message.get("id"),
+                        "user": message.get("user"),
+                        "text": message.get("text"),
+                        "reason": result.get("reason")
+                    })
         
         # Save results
         output_file = os.path.join(self.output_dir, "processing_results.json")
@@ -729,17 +917,20 @@ Provide the metadata in JSON format.
                 "total_messages": len(messages),
                 "updated_topics": list(updated_topics),
                 "created_topics": created_topics,
+                "discarded_messages": discarded_messages,
                 "results": results
             }, f, indent=2)
         
         print(f"\n📁 Results saved to: {output_file}")
         print(f"✅ Updated {len(updated_topics)} existing topics")
         print(f"✅ Created {len(created_topics)} new topics")
+        print(f"🗑️  Discarded {len(discarded_messages)} messages (not topic-worthy)")
         
         return {
             "total_messages": len(messages),
             "updated_topics": list(updated_topics),
             "created_topics": created_topics,
+            "discarded_messages": discarded_messages,
             "results": results
         }
 

@@ -1,0 +1,1191 @@
+{
+  "test_suite": "Step 6 New Message Processing",
+  "timestamp": "2025-11-19T13:00:56.868816",
+  "aggregate_metrics": {
+    "total_tests": 10,
+    "update_tests": 5,
+    "create_tests": 5,
+    "passed_tests": 6,
+    "failed_tests": 4,
+    "pass_rate": 60.0,
+    "total_duration": 52.204
+  },
+  "test_results": [
+    {
+      "test_id": "TC001",
+      "test_name": "Update EcoBloom Campaign Deadline",
+      "expected_action": "update",
+      "expected_topic_id": "topic_001",
+      "message": {
+        "id": 301,
+        "channel": "#campaign-briefs",
+        "user": "Devon",
+        "text": "@team The EcoBloom campaign deadline has been moved to August 5, 2025. Please update your timelines accordingly.",
+        "thread_ts": "1",
+        "timestamp": "2025-06-25T10:00:00"
+      },
+      "duration_seconds": 8.302,
+      "results": {
+        "action": "update",
+        "topic_id": "topic_001",
+        "similarity_score": 0.8022,
+        "similar_topics_count": 3,
+        "success": true,
+        "passed": true
+      },
+      "validation": {
+        "action_correct": true,
+        "topic_id_correct": true,
+        "similarity_valid": true
+      },
+      "original_metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025.",
+        "action_items": [
+          {
+            "task": "Prepare initial design concepts",
+            "owner": "@sam",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom's contract terms",
+            "owner": "@jordan",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Complete designs",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare content for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "summer",
+          "campaign",
+          "planning",
+          "timeline",
+          "marketing",
+          "content",
+          "designs"
+        ]
+      },
+      "updated_metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a deadline of August 5, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025. The campaign deadline has been moved to August 5, 2025.",
+        "action_items": [
+          {
+            "task": "Prepare initial design concepts",
+            "owner": "@sam",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom's contract terms",
+            "owner": "@jordan",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Complete designs",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare content for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Update timelines to reflect new deadline",
+            "owner": "@sam",
+            "due_date": "2025-06-26",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Update timelines to reflect new deadline",
+            "owner": "@leah",
+            "due_date": "2025-06-26",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Update timelines to reflect new deadline",
+            "owner": "@jordan",
+            "due_date": "2025-06-26",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Update timelines to reflect new deadline",
+            "owner": "@Devon",
+            "due_date": "2025-06-26",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-08-05",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "summer",
+          "campaign",
+          "planning",
+          "timeline",
+          "marketing",
+          "content",
+          "designs"
+        ]
+      },
+      "new_metadata": null
+    },
+    {
+      "test_id": "TC002",
+      "test_name": "Update EcoBloom Content Status",
+      "expected_action": "update",
+      "expected_topic_id": "topic_001",
+      "message": {
+        "id": 302,
+        "channel": "#campaign-briefs",
+        "user": "Leah",
+        "text": "@sam @jordan I've completed the first draft of the EcoBloom content. Please review by end of week. The tone is more casual than the initial brief requested.",
+        "thread_ts": "1",
+        "timestamp": "2025-06-27T14:30:00"
+      },
+      "duration_seconds": 7.163,
+      "results": {
+        "action": "update",
+        "topic_id": "topic_001",
+        "similarity_score": 0.7624,
+        "similar_topics_count": 3,
+        "success": true,
+        "passed": true
+      },
+      "validation": {
+        "action_correct": true,
+        "topic_id_correct": true,
+        "similarity_valid": true
+      },
+      "original_metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025.",
+        "action_items": [
+          {
+            "task": "Prepare initial design concepts",
+            "owner": "@sam",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom's contract terms",
+            "owner": "@jordan",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Complete designs",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare content for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "summer",
+          "campaign",
+          "planning",
+          "timeline",
+          "marketing",
+          "content",
+          "designs"
+        ]
+      },
+      "updated_metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025. @Leah has completed the first draft of the EcoBloom content and requests @sam and @jordan to review it by the end of the week. The tone is more casual than initially requested.",
+        "action_items": [
+          {
+            "task": "Prepare initial design concepts",
+            "owner": "@sam",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom's contract terms",
+            "owner": "@jordan",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Complete designs",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare content for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review content draft - design perspective",
+            "owner": "@sam",
+            "due_date": "2025-07-04",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Review content draft - legal perspective",
+            "owner": "@jordan",
+            "due_date": "2025-07-04",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "summer",
+          "campaign",
+          "planning",
+          "timeline",
+          "marketing",
+          "content",
+          "designs"
+        ]
+      },
+      "new_metadata": null
+    },
+    {
+      "test_id": "TC003",
+      "test_name": "Fallback Rule: Same Thread + Participants, Different Topic",
+      "expected_action": "update",
+      "expected_topic_id": "topic_001",
+      "message": {
+        "id": 303,
+        "channel": "#campaign-briefs",
+        "user": "Sam",
+        "text": "@devon @leah Quick question about the meeting time tomorrow. Can we move it to 3pm instead?",
+        "thread_ts": "1",
+        "timestamp": "2025-06-28T09:00:00"
+      },
+      "duration_seconds": 3.235,
+      "results": {
+        "action": "create",
+        "topic_id": "topic_016",
+        "similarity_score": 0.0,
+        "similar_topics_count": 0,
+        "success": true,
+        "passed": false
+      },
+      "validation": {
+        "action_correct": false,
+        "topic_id_correct": false,
+        "similarity_valid": false
+      },
+      "original_metadata": null,
+      "updated_metadata": null,
+      "new_metadata": {
+        "title": "Meeting Time Change Request - Campaign Brief Meeting",
+        "summary": "Sam is requesting to reschedule the campaign brief meeting to 3pm tomorrow (June 29th, 2025). Devon and Leah need to confirm if this new time works for them.",
+        "action_items": [
+          {
+            "task": "Confirm availability for 3pm meeting time.",
+            "owner": "@devon",
+            "due_date": "2025-06-28",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Confirm availability for 3pm meeting time.",
+            "owner": "@leah",
+            "due_date": "2025-06-28",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Update meeting invite if new time is confirmed.",
+            "owner": "@sam",
+            "due_date": "2025-06-28",
+            "priority": "medium",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@sam",
+          "@devon",
+          "@leah"
+        ],
+        "urgency": "high",
+        "deadline": "2025-06-28",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "meeting",
+          "reschedule",
+          "campaign brief",
+          "time change"
+        ]
+      }
+    },
+    {
+      "test_id": "TC004",
+      "test_name": "Channel/Thread Weighting: Same Structure, Different Tags",
+      "expected_action": "update",
+      "expected_topic_id": "topic_001",
+      "message": {
+        "id": 304,
+        "channel": "#campaign-briefs",
+        "user": "Jordan",
+        "text": "@devon @sam @leah The legal review is progressing well. I've identified a few minor compliance items that need addressing before final approval.",
+        "thread_ts": "1",
+        "timestamp": "2025-06-29T11:00:00"
+      },
+      "duration_seconds": 8.519,
+      "results": {
+        "action": "update",
+        "topic_id": "topic_011",
+        "similarity_score": 0.775,
+        "similar_topics_count": 4,
+        "success": true,
+        "passed": false
+      },
+      "validation": {
+        "action_correct": true,
+        "topic_id_correct": false,
+        "similarity_valid": true
+      },
+      "original_metadata": {
+        "title": "EcoBloom Campaign Final Approval & Delivery",
+        "summary": "EcoBloom campaign designs finalized and approved for client submission. @Sam prepared the final package, @Leah organized content, and @Jordan completed legal review. The campaign is set for delivery by July 25, 2025, ahead of the July 28 launch.",
+        "action_items": [
+          {
+            "task": "Prepare final package for client delivery",
+            "owner": "@sam",
+            "due_date": "2025-07-25",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Organize and label all content files",
+            "owner": "@leah",
+            "due_date": "2025-07-25",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Monitor for client feedback",
+            "owner": "@sam",
+            "due_date": "2025-07-28",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Make quick adjustments based on client feedback",
+            "owner": "@sam",
+            "due_date": "2025-07-28",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Ensure all designs are delivered for legal review",
+            "owner": "@sam",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "completed",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "campaign",
+          "delivery",
+          "legal-review",
+          "client-submission",
+          "summer",
+          "marketing",
+          "approval"
+        ]
+      },
+      "updated_metadata": {
+        "title": "EcoBloom Campaign Final Approval & Delivery",
+        "summary": "EcoBloom campaign designs finalized and approved for client submission. @Sam prepared the final package, @Leah organized content, and @Jordan completed legal review. The campaign is set for delivery by July 25, 2025, ahead of the July 28 launch. @Jordan has identified minor compliance items that need addressing before final legal approval.",
+        "action_items": [
+          {
+            "task": "Prepare final package for client delivery",
+            "owner": "@sam",
+            "due_date": "2025-07-25",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Organize and label all content files",
+            "owner": "@leah",
+            "due_date": "2025-07-25",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Monitor for client feedback",
+            "owner": "@sam",
+            "due_date": "2025-07-28",
+            "priority": "high",
+            "status": "in_progress"
+          },
+          {
+            "task": "Make quick adjustments based on client feedback",
+            "owner": "@sam",
+            "due_date": "2025-07-28",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Ensure all designs are delivered for legal review",
+            "owner": "@sam",
+            "due_date": "2025-07-23",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Address compliance items for EcoBloom campaign",
+            "owner": "@devon",
+            "due_date": null,
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Address compliance items for EcoBloom campaign",
+            "owner": "@sam",
+            "due_date": null,
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Address compliance items for EcoBloom campaign",
+            "owner": "@leah",
+            "due_date": null,
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-25",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "campaign",
+          "delivery",
+          "legal-review",
+          "client-submission",
+          "summer",
+          "marketing",
+          "approval"
+        ]
+      },
+      "new_metadata": null
+    },
+    {
+      "test_id": "TC005",
+      "test_name": "Create New Finance Invoice Topic",
+      "expected_action": "create",
+      "expected_topic_id": null,
+      "message": {
+        "id": 305,
+        "channel": "#finance-updates",
+        "user": "Priya",
+        "text": "@finance-team The Q3 invoice for Horizon Robotics (PO-HR-7784) is still unpaid. Please confirm that the wire transfer is scheduled before the July 3, 2025 cutoff to avoid penalties.",
+        "thread_ts": "100",
+        "timestamp": "2025-06-26T09:45:00"
+      },
+      "duration_seconds": 2.534,
+      "results": {
+        "action": "create",
+        "topic_id": "topic_016",
+        "similarity_score": 0.0,
+        "similar_topics_count": 0,
+        "success": true,
+        "passed": true
+      },
+      "validation": {
+        "action_correct": true,
+        "topic_id_correct": true,
+        "similarity_valid": true
+      },
+      "original_metadata": null,
+      "updated_metadata": null,
+      "new_metadata": {
+        "title": "Unpaid Q3 Invoice for Horizon Robotics (PO-HR-7784)",
+        "summary": "Priya notified the finance team about the unpaid Q3 invoice for Horizon Robotics (PO-HR-7784). Confirmation is needed that the wire transfer is scheduled before the July 3, 2025 cutoff to avoid penalties.",
+        "action_items": [
+          {
+            "task": "Confirm wire transfer schedule for Horizon Robotics invoice (PO-HR-7784)",
+            "owner": "@finance-team",
+            "due_date": "2025-07-03",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "Priya",
+          "@finance-team"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-03",
+        "status": "active",
+        "channel": "#finance-updates",
+        "tags": [
+          "invoice",
+          "payment",
+          "Horizon Robotics",
+          "PO-HR-7784",
+          "wire transfer",
+          "Q3"
+        ]
+      }
+    },
+    {
+      "test_id": "TC006",
+      "test_name": "Create New HR Hiring Topic",
+      "expected_action": "create",
+      "expected_topic_id": null,
+      "message": {
+        "id": 306,
+        "channel": "#hr-announcements",
+        "user": "Maria",
+        "text": "@team We're opening a new Senior Product Designer position. The role will focus on our mobile app redesign project. Applications close July 15, 2025. Please share with your networks.",
+        "thread_ts": "200",
+        "timestamp": "2025-06-30T10:20:00"
+      },
+      "duration_seconds": 2.733,
+      "results": {
+        "action": "create",
+        "topic_id": "topic_016",
+        "similarity_score": 0.0,
+        "similar_topics_count": 0,
+        "success": true,
+        "passed": true
+      },
+      "validation": {
+        "action_correct": true,
+        "topic_id_correct": true,
+        "similarity_valid": true
+      },
+      "original_metadata": null,
+      "updated_metadata": null,
+      "new_metadata": {
+        "title": "New Senior Product Designer Position - Mobile App Redesign",
+        "summary": "Maria announced a new Senior Product Designer position focused on the mobile app redesign project. Applications are due July 15, 2025. Team members are asked to share the job posting within their networks.",
+        "action_items": [
+          {
+            "task": "Share the Senior Product Designer job posting with personal and professional networks.",
+            "owner": "@team",
+            "due_date": "2025-07-15",
+            "priority": "medium",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "Maria",
+          "@team"
+        ],
+        "urgency": "medium",
+        "deadline": "2025-07-15",
+        "status": "active",
+        "channel": "#hr-announcements",
+        "tags": [
+          "hiring",
+          "product design",
+          "mobile app",
+          "redesign",
+          "job posting",
+          "senior position"
+        ]
+      }
+    },
+    {
+      "test_id": "TC007",
+      "test_name": "Same Semantic Content, Different Structure (Should Create)",
+      "expected_action": "create",
+      "expected_topic_id": null,
+      "message": {
+        "id": 307,
+        "channel": "#general",
+        "user": "Alex",
+        "text": "@team I heard about the EcoBloom campaign. Can someone share the latest updates? I'm working on a similar project and would love to learn from your approach.",
+        "thread_ts": "300",
+        "timestamp": "2025-07-01T14:00:00"
+      },
+      "duration_seconds": 1.873,
+      "results": {
+        "action": "create",
+        "topic_id": "topic_016",
+        "similarity_score": 0.0,
+        "similar_topics_count": 0,
+        "success": true,
+        "passed": true
+      },
+      "validation": {
+        "action_correct": true,
+        "topic_id_correct": true,
+        "similarity_valid": true
+      },
+      "original_metadata": null,
+      "updated_metadata": null,
+      "new_metadata": {
+        "title": "EcoBloom Campaign Update Request",
+        "summary": "Alex is working on a similar project to the EcoBloom campaign and is requesting updates from the team to learn from their approach.",
+        "action_items": [
+          {
+            "task": "Share the latest EcoBloom campaign updates with Alex.",
+            "owner": "@team",
+            "due_date": "2025-07-03",
+            "priority": "medium",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Alex",
+          "@team"
+        ],
+        "urgency": "medium",
+        "deadline": "2025-07-03",
+        "status": "active",
+        "channel": "#general",
+        "tags": [
+          "EcoBloom",
+          "campaign",
+          "updates",
+          "project",
+          "collaboration",
+          "knowledge sharing"
+        ]
+      }
+    },
+    {
+      "test_id": "TC008",
+      "test_name": "Same Channel/Thread, Different Participants (Should Create)",
+      "expected_action": "create",
+      "expected_topic_id": null,
+      "message": {
+        "id": 308,
+        "channel": "#campaign-briefs",
+        "user": "Priya",
+        "text": "@finance-team @accounting I need budget approval for the Q4 marketing campaign. The total cost is $50,000 and we need to submit by July 10, 2025.",
+        "thread_ts": "1",
+        "timestamp": "2025-07-02T10:00:00"
+      },
+      "duration_seconds": 4.533,
+      "results": {
+        "action": "create",
+        "topic_id": "topic_016",
+        "similarity_score": 0.7249,
+        "similar_topics_count": 1,
+        "success": true,
+        "passed": false
+      },
+      "validation": {
+        "action_correct": true,
+        "topic_id_correct": true,
+        "similarity_valid": false
+      },
+      "original_metadata": null,
+      "updated_metadata": null,
+      "new_metadata": {
+        "title": "Q4 Marketing Campaign Budget Approval Request",
+        "summary": "Priya is requesting budget approval from the finance and accounting teams for the Q4 marketing campaign. The total budget requested is $50,000 and the deadline for submission is July 10, 2025.",
+        "action_items": [
+          {
+            "task": "Approve or reject the Q4 marketing campaign budget request.",
+            "owner": "@finance-team",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Approve or reject the Q4 marketing campaign budget request.",
+            "owner": "@accounting",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Submit the Q4 marketing campaign budget request.",
+            "owner": "Priya",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "Priya",
+          "@finance-team",
+          "@accounting"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-10",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "budget",
+          "marketing",
+          "Q4",
+          "approval",
+          "finance",
+          "accounting"
+        ]
+      }
+    },
+    {
+      "test_id": "TC009",
+      "test_name": "High Semantic Similarity, Different Thread (Should Create)",
+      "expected_action": "create",
+      "expected_topic_id": null,
+      "message": {
+        "id": 309,
+        "channel": "#campaign-briefs",
+        "user": "Devon",
+        "text": "@sam @leah @jordan We need to discuss the EcoBloom summer campaign timeline. The deadline is July 28, 2025 and we need to coordinate content, design, and legal review.",
+        "thread_ts": "400",
+        "timestamp": "2025-07-03T09:00:00"
+      },
+      "duration_seconds": 6.702,
+      "results": {
+        "action": "update",
+        "topic_id": "topic_001",
+        "similarity_score": 0.9139,
+        "similar_topics_count": 8,
+        "success": true,
+        "passed": false
+      },
+      "validation": {
+        "action_correct": false,
+        "topic_id_correct": true,
+        "similarity_valid": false
+      },
+      "original_metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025.",
+        "action_items": [
+          {
+            "task": "Prepare initial design concepts",
+            "owner": "@sam",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom's contract terms",
+            "owner": "@jordan",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Complete designs",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare content for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "summer",
+          "campaign",
+          "planning",
+          "timeline",
+          "marketing",
+          "content",
+          "designs"
+        ]
+      },
+      "updated_metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025. @Devon initiated a discussion about the EcoBloom summer campaign timeline, emphasizing the need for coordination between content, design, and legal review.",
+        "action_items": [
+          {
+            "task": "Prepare initial design concepts",
+            "owner": "@sam",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom's contract terms",
+            "owner": "@jordan",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Complete designs",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare content for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Coordinate content, design, and legal review",
+            "owner": "@devon",
+            "due_date": "2025-07-28",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "summer",
+          "campaign",
+          "planning",
+          "timeline",
+          "marketing",
+          "content",
+          "designs"
+        ]
+      },
+      "new_metadata": null
+    },
+    {
+      "test_id": "TC010",
+      "test_name": "Multiple Mentions in Same Thread (Should Update)",
+      "expected_action": "update",
+      "expected_topic_id": "topic_001",
+      "message": {
+        "id": 310,
+        "channel": "#campaign-briefs",
+        "user": "Devon",
+        "text": "@sam @leah @jordan @team All team members please note: The EcoBloom campaign kickoff meeting is scheduled for tomorrow at 2pm. Please confirm attendance.",
+        "thread_ts": "1",
+        "timestamp": "2025-07-04T15:00:00"
+      },
+      "duration_seconds": 6.61,
+      "results": {
+        "action": "update",
+        "topic_id": "topic_001",
+        "similarity_score": 0.776,
+        "similar_topics_count": 3,
+        "success": true,
+        "passed": true
+      },
+      "validation": {
+        "action_correct": true,
+        "topic_id_correct": true,
+        "similarity_valid": true
+      },
+      "original_metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025.",
+        "action_items": [
+          {
+            "task": "Prepare initial design concepts",
+            "owner": "@sam",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom's contract terms",
+            "owner": "@jordan",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Complete designs",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare content for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "summer",
+          "campaign",
+          "planning",
+          "timeline",
+          "marketing",
+          "content",
+          "designs"
+        ]
+      },
+      "updated_metadata": {
+        "title": "EcoBloom Summer Campaign Planning",
+        "summary": "The team is planning the EcoBloom summer campaign with a deadline of July 28, 2025. @Leah will provide content by June 30, 2025, @Sam designs by July 10, 2025, and @Jordan legal reviews by July 14, 2025. The EcoBloom campaign kickoff meeting is scheduled for July 5, 2025 at 2pm.",
+        "action_items": [
+          {
+            "task": "Prepare initial design concepts",
+            "owner": "@sam",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Draft content strategy",
+            "owner": "@leah",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Review EcoBloom's contract terms",
+            "owner": "@jordan",
+            "due_date": "2024-05-15",
+            "priority": "high",
+            "status": "completed"
+          },
+          {
+            "task": "Complete designs",
+            "owner": "@sam",
+            "due_date": "2025-07-10",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Prepare content for review",
+            "owner": "@leah",
+            "due_date": "2025-06-30",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Confirm attendance for EcoBloom campaign kickoff meeting",
+            "owner": "@sam",
+            "due_date": "2025-07-05",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Confirm attendance for EcoBloom campaign kickoff meeting",
+            "owner": "@leah",
+            "due_date": "2025-07-05",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Confirm attendance for EcoBloom campaign kickoff meeting",
+            "owner": "@jordan",
+            "due_date": "2025-07-05",
+            "priority": "high",
+            "status": "pending"
+          },
+          {
+            "task": "Confirm attendance for EcoBloom campaign kickoff meeting",
+            "owner": "@Devon",
+            "due_date": "2025-07-05",
+            "priority": "high",
+            "status": "pending"
+          }
+        ],
+        "participants": [
+          "@Devon",
+          "@Sam",
+          "@Leah",
+          "@Jordan"
+        ],
+        "urgency": "high",
+        "deadline": "2025-07-28",
+        "status": "active",
+        "channel": "#campaign-briefs",
+        "tags": [
+          "ecobloom",
+          "summer",
+          "campaign",
+          "planning",
+          "timeline",
+          "marketing",
+          "content",
+          "designs"
+        ]
+      },
+      "new_metadata": null
+    }
+  ]
+}
