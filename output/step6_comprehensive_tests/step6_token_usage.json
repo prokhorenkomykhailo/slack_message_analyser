@@ -1,0 +1,290 @@
+{
+  "report_path": "/home/ubuntu/vertex-set/deemerge/phase_evaluation_engine/output/step6_comprehensive_tests/comprehensive_test_report.json",
+  "encoding": "cl100k_base",
+  "total_tests": 28,
+  "total_input_tokens": 1956,
+  "total_output_tokens": 7103,
+  "total_tokens": 9059,
+  "per_test": [
+    {
+      "test_id": "TC001",
+      "category": "UPDATE",
+      "passed": true,
+      "expected_action": "update",
+      "actual_action": "update",
+      "input_tokens": 72,
+      "output_tokens": 380,
+      "total_tokens": 452
+    },
+    {
+      "test_id": "TC002",
+      "category": "UPDATE",
+      "passed": true,
+      "expected_action": "update",
+      "actual_action": "update",
+      "input_tokens": 67,
+      "output_tokens": 428,
+      "total_tokens": 495
+    },
+    {
+      "test_id": "TC003",
+      "category": "UPDATE",
+      "passed": true,
+      "expected_action": "update",
+      "actual_action": "update",
+      "input_tokens": 64,
+      "output_tokens": 368,
+      "total_tokens": 432
+    },
+    {
+      "test_id": "TC004",
+      "category": "UPDATE",
+      "passed": false,
+      "expected_action": "update",
+      "actual_action": "create",
+      "input_tokens": 57,
+      "output_tokens": 127,
+      "total_tokens": 184
+    },
+    {
+      "test_id": "TC005",
+      "category": "UPDATE",
+      "passed": true,
+      "expected_action": "update",
+      "actual_action": "update",
+      "input_tokens": 64,
+      "output_tokens": 447,
+      "total_tokens": 511
+    },
+    {
+      "test_id": "TC006",
+      "category": "UPDATE",
+      "passed": true,
+      "expected_action": "update",
+      "actual_action": "update",
+      "input_tokens": 76,
+      "output_tokens": 378,
+      "total_tokens": 454
+    },
+    {
+      "test_id": "TC007",
+      "category": "UPDATE",
+      "passed": true,
+      "expected_action": "update",
+      "actual_action": "update",
+      "input_tokens": 68,
+      "output_tokens": 411,
+      "total_tokens": 479
+    },
+    {
+      "test_id": "TC008",
+      "category": "UPDATE",
+      "passed": true,
+      "expected_action": "update",
+      "actual_action": "update",
+      "input_tokens": 68,
+      "output_tokens": 378,
+      "total_tokens": 446
+    },
+    {
+      "test_id": "TC009",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 76,
+      "output_tokens": 211,
+      "total_tokens": 287
+    },
+    {
+      "test_id": "TC010",
+      "category": "CREATE",
+      "passed": false,
+      "expected_action": "create",
+      "actual_action": "update",
+      "input_tokens": 81,
+      "output_tokens": 461,
+      "total_tokens": 542
+    },
+    {
+      "test_id": "TC011",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 99,
+      "output_tokens": 319,
+      "total_tokens": 418
+    },
+    {
+      "test_id": "TC012",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 88,
+      "output_tokens": 244,
+      "total_tokens": 332
+    },
+    {
+      "test_id": "TC013",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 95,
+      "output_tokens": 141,
+      "total_tokens": 236
+    },
+    {
+      "test_id": "TC014",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 93,
+      "output_tokens": 233,
+      "total_tokens": 326
+    },
+    {
+      "test_id": "TC015",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 105,
+      "output_tokens": 275,
+      "total_tokens": 380
+    },
+    {
+      "test_id": "TC016",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 99,
+      "output_tokens": 262,
+      "total_tokens": 361
+    },
+    {
+      "test_id": "TC017",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 96,
+      "output_tokens": 270,
+      "total_tokens": 366
+    },
+    {
+      "test_id": "TC018",
+      "category": "CREATE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 102,
+      "output_tokens": 292,
+      "total_tokens": 394
+    },
+    {
+      "test_id": "TC019",
+      "category": "DISCARD",
+      "passed": true,
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "input_tokens": 52,
+      "output_tokens": 116,
+      "total_tokens": 168
+    },
+    {
+      "test_id": "TC020",
+      "category": "DISCARD",
+      "passed": true,
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "input_tokens": 44,
+      "output_tokens": 96,
+      "total_tokens": 140
+    },
+    {
+      "test_id": "TC021",
+      "category": "DISCARD",
+      "passed": true,
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "input_tokens": 49,
+      "output_tokens": 102,
+      "total_tokens": 151
+    },
+    {
+      "test_id": "TC022",
+      "category": "DISCARD",
+      "passed": true,
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "input_tokens": 42,
+      "output_tokens": 112,
+      "total_tokens": 154
+    },
+    {
+      "test_id": "TC023",
+      "category": "DISCARD",
+      "passed": true,
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "input_tokens": 46,
+      "output_tokens": 116,
+      "total_tokens": 162
+    },
+    {
+      "test_id": "TC026",
+      "category": "UPDATE_NON_ACTIONABLE",
+      "passed": true,
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "input_tokens": 43,
+      "output_tokens": 96,
+      "total_tokens": 139
+    },
+    {
+      "test_id": "TC027",
+      "category": "UPDATE_NON_ACTIONABLE",
+      "passed": true,
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "input_tokens": 46,
+      "output_tokens": 106,
+      "total_tokens": 152
+    },
+    {
+      "test_id": "TC028",
+      "category": "UPDATE_NON_ACTIONABLE",
+      "passed": true,
+      "expected_action": "discarded",
+      "actual_action": "discarded",
+      "input_tokens": 39,
+      "output_tokens": 112,
+      "total_tokens": 151
+    },
+    {
+      "test_id": "TC024",
+      "category": "EDGE_CASE",
+      "passed": true,
+      "expected_action": "create",
+      "actual_action": "create",
+      "input_tokens": 63,
+      "output_tokens": 224,
+      "total_tokens": 287
+    },
+    {
+      "test_id": "TC025",
+      "category": "EDGE_CASE",
+      "passed": false,
+      "expected_action": "create",
+      "actual_action": "update",
+      "input_tokens": 62,
+      "output_tokens": 398,
+      "total_tokens": 460
+    }
+  ]
+}
